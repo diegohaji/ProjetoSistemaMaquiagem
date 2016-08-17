@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetoSistemaMaquiagem
 {
-    public partial class CadastroServiços : Form
+    public partial class LancamentoServicos : Form
     {
-        public CadastroServiços()
+        public LancamentoServicos()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

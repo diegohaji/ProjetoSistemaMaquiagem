@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonCadUsuario = new System.Windows.Forms.Button();
+            this.buttonEsqueciSenha = new System.Windows.Forms.Button();
+            this.buttonLogar = new System.Windows.Forms.Button();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.buttonFuncionario = new System.Windows.Forms.Button();
-            this.buttonCliente = new System.Windows.Forms.Button();
-            this.buttonServicos = new System.Windows.Forms.Button();
             this.buttonEstoque = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.buttonLogar = new System.Windows.Forms.Button();
-            this.buttonEsqueciSenha = new System.Windows.Forms.Button();
-            this.buttonCadUsuario = new System.Windows.Forms.Button();
-            this.buttonAgendServico = new System.Windows.Forms.Button();
-            this.buttonLancHorario = new System.Windows.Forms.Button();
+            this.buttonServicos = new System.Windows.Forms.Button();
+            this.buttonCliente = new System.Windows.Forms.Button();
+            this.buttonFuncionario = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.buttonServPrestado = new System.Windows.Forms.Button();
-            this.buttonAlterarEst = new System.Windows.Forms.Button();
+            this.buttonLancHorario = new System.Windows.Forms.Button();
+            this.buttonAgendServico = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonVerificarEst = new System.Windows.Forms.Button();
-            this.buttonRelatorio = new System.Windows.Forms.Button();
+            this.buttonAlterarEst = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonContFinanceiro = new System.Windows.Forms.Button();
+            this.buttonRelatorio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
@@ -75,6 +75,65 @@
             this.groupBox1.Size = new System.Drawing.Size(515, 251);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // buttonCadUsuario
+            // 
+            this.buttonCadUsuario.Location = new System.Drawing.Point(9, 181);
+            this.buttonCadUsuario.Name = "buttonCadUsuario";
+            this.buttonCadUsuario.Size = new System.Drawing.Size(111, 23);
+            this.buttonCadUsuario.TabIndex = 7;
+            this.buttonCadUsuario.Text = "Cadastrar Usuario";
+            this.buttonCadUsuario.UseVisualStyleBackColor = true;
+            // 
+            // buttonEsqueciSenha
+            // 
+            this.buttonEsqueciSenha.Location = new System.Drawing.Point(9, 222);
+            this.buttonEsqueciSenha.Name = "buttonEsqueciSenha";
+            this.buttonEsqueciSenha.Size = new System.Drawing.Size(111, 23);
+            this.buttonEsqueciSenha.TabIndex = 6;
+            this.buttonEsqueciSenha.Text = "Esqueci Senha";
+            this.buttonEsqueciSenha.UseVisualStyleBackColor = true;
+            // 
+            // buttonLogar
+            // 
+            this.buttonLogar.Location = new System.Drawing.Point(9, 139);
+            this.buttonLogar.Name = "buttonLogar";
+            this.buttonLogar.Size = new System.Drawing.Size(111, 23);
+            this.buttonLogar.TabIndex = 5;
+            this.buttonLogar.Text = "Logar";
+            this.buttonLogar.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSenha
+            // 
+            this.textBoxSenha.Location = new System.Drawing.Point(62, 88);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSenha.TabIndex = 4;
+            // 
+            // textBoxUsuario
+            // 
+            this.textBoxUsuario.Location = new System.Drawing.Point(62, 38);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUsuario.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Senha";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Usuário";
             // 
             // tabControl1
             // 
@@ -102,6 +161,42 @@
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Cadastro";
             // 
+            // buttonEstoque
+            // 
+            this.buttonEstoque.Location = new System.Drawing.Point(163, 70);
+            this.buttonEstoque.Name = "buttonEstoque";
+            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
+            this.buttonEstoque.TabIndex = 3;
+            this.buttonEstoque.Text = "Estoque";
+            this.buttonEstoque.UseVisualStyleBackColor = true;
+            // 
+            // buttonServicos
+            // 
+            this.buttonServicos.Location = new System.Drawing.Point(163, 28);
+            this.buttonServicos.Name = "buttonServicos";
+            this.buttonServicos.Size = new System.Drawing.Size(134, 23);
+            this.buttonServicos.TabIndex = 2;
+            this.buttonServicos.Text = "Serviços";
+            this.buttonServicos.UseVisualStyleBackColor = true;
+            // 
+            // buttonCliente
+            // 
+            this.buttonCliente.Location = new System.Drawing.Point(6, 71);
+            this.buttonCliente.Name = "buttonCliente";
+            this.buttonCliente.Size = new System.Drawing.Size(138, 23);
+            this.buttonCliente.TabIndex = 1;
+            this.buttonCliente.Text = "Cliente";
+            this.buttonCliente.UseVisualStyleBackColor = true;
+            // 
+            // buttonFuncionario
+            // 
+            this.buttonFuncionario.Location = new System.Drawing.Point(6, 6);
+            this.buttonFuncionario.Name = "buttonFuncionario";
+            this.buttonFuncionario.Size = new System.Drawing.Size(138, 23);
+            this.buttonFuncionario.TabIndex = 0;
+            this.buttonFuncionario.Text = "Funcionario";
+            this.buttonFuncionario.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gray;
@@ -115,6 +210,33 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Serviços";
             // 
+            // buttonServPrestado
+            // 
+            this.buttonServPrestado.Location = new System.Drawing.Point(165, 6);
+            this.buttonServPrestado.Name = "buttonServPrestado";
+            this.buttonServPrestado.Size = new System.Drawing.Size(132, 23);
+            this.buttonServPrestado.TabIndex = 2;
+            this.buttonServPrestado.Text = "Serviço Prestado";
+            this.buttonServPrestado.UseVisualStyleBackColor = true;
+            // 
+            // buttonLancHorario
+            // 
+            this.buttonLancHorario.Location = new System.Drawing.Point(7, 67);
+            this.buttonLancHorario.Name = "buttonLancHorario";
+            this.buttonLancHorario.Size = new System.Drawing.Size(138, 23);
+            this.buttonLancHorario.TabIndex = 1;
+            this.buttonLancHorario.Text = "Lançamento de horário";
+            this.buttonLancHorario.UseVisualStyleBackColor = true;
+            // 
+            // buttonAgendServico
+            // 
+            this.buttonAgendServico.Location = new System.Drawing.Point(7, 7);
+            this.buttonAgendServico.Name = "buttonAgendServico";
+            this.buttonAgendServico.Size = new System.Drawing.Size(138, 23);
+            this.buttonAgendServico.TabIndex = 0;
+            this.buttonAgendServico.Text = "Agendamento de serviço";
+            this.buttonAgendServico.UseVisualStyleBackColor = true;
+            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Gray;
@@ -126,6 +248,24 @@
             this.tabPage3.Size = new System.Drawing.Size(303, 117);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Estoque";
+            // 
+            // buttonVerificarEst
+            // 
+            this.buttonVerificarEst.Location = new System.Drawing.Point(7, 77);
+            this.buttonVerificarEst.Name = "buttonVerificarEst";
+            this.buttonVerificarEst.Size = new System.Drawing.Size(137, 23);
+            this.buttonVerificarEst.TabIndex = 1;
+            this.buttonVerificarEst.Text = "Verificar";
+            this.buttonVerificarEst.UseVisualStyleBackColor = true;
+            // 
+            // buttonAlterarEst
+            // 
+            this.buttonAlterarEst.Location = new System.Drawing.Point(7, 7);
+            this.buttonAlterarEst.Name = "buttonAlterarEst";
+            this.buttonAlterarEst.Size = new System.Drawing.Size(137, 23);
+            this.buttonAlterarEst.TabIndex = 0;
+            this.buttonAlterarEst.Text = "Alterar";
+            this.buttonAlterarEst.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
@@ -139,145 +279,14 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "ControleFinanceiro";
             // 
-            // buttonFuncionario
+            // buttonContFinanceiro
             // 
-            this.buttonFuncionario.Location = new System.Drawing.Point(6, 6);
-            this.buttonFuncionario.Name = "buttonFuncionario";
-            this.buttonFuncionario.Size = new System.Drawing.Size(138, 23);
-            this.buttonFuncionario.TabIndex = 0;
-            this.buttonFuncionario.Text = "Funcionario";
-            this.buttonFuncionario.UseVisualStyleBackColor = true;
-            // 
-            // buttonCliente
-            // 
-            this.buttonCliente.Location = new System.Drawing.Point(6, 71);
-            this.buttonCliente.Name = "buttonCliente";
-            this.buttonCliente.Size = new System.Drawing.Size(138, 23);
-            this.buttonCliente.TabIndex = 1;
-            this.buttonCliente.Text = "Cliente";
-            this.buttonCliente.UseVisualStyleBackColor = true;
-            // 
-            // buttonServicos
-            // 
-            this.buttonServicos.Location = new System.Drawing.Point(163, 6);
-            this.buttonServicos.Name = "buttonServicos";
-            this.buttonServicos.Size = new System.Drawing.Size(134, 23);
-            this.buttonServicos.TabIndex = 2;
-            this.buttonServicos.Text = "Serviços";
-            this.buttonServicos.UseVisualStyleBackColor = true;
-            // 
-            // buttonEstoque
-            // 
-            this.buttonEstoque.Location = new System.Drawing.Point(163, 70);
-            this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
-            this.buttonEstoque.TabIndex = 3;
-            this.buttonEstoque.Text = "Estoque";
-            this.buttonEstoque.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Usuário";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Senha";
-            // 
-            // textBoxUsuario
-            // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(62, 38);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(100, 20);
-            this.textBoxUsuario.TabIndex = 3;
-            // 
-            // textBoxSenha
-            // 
-            this.textBoxSenha.Location = new System.Drawing.Point(62, 88);
-            this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSenha.TabIndex = 4;
-            // 
-            // buttonLogar
-            // 
-            this.buttonLogar.Location = new System.Drawing.Point(9, 139);
-            this.buttonLogar.Name = "buttonLogar";
-            this.buttonLogar.Size = new System.Drawing.Size(111, 23);
-            this.buttonLogar.TabIndex = 5;
-            this.buttonLogar.Text = "Logar";
-            this.buttonLogar.UseVisualStyleBackColor = true;
-            // 
-            // buttonEsqueciSenha
-            // 
-            this.buttonEsqueciSenha.Location = new System.Drawing.Point(9, 222);
-            this.buttonEsqueciSenha.Name = "buttonEsqueciSenha";
-            this.buttonEsqueciSenha.Size = new System.Drawing.Size(111, 23);
-            this.buttonEsqueciSenha.TabIndex = 6;
-            this.buttonEsqueciSenha.Text = "Esqueci Senha";
-            this.buttonEsqueciSenha.UseVisualStyleBackColor = true;
-            // 
-            // buttonCadUsuario
-            // 
-            this.buttonCadUsuario.Location = new System.Drawing.Point(9, 181);
-            this.buttonCadUsuario.Name = "buttonCadUsuario";
-            this.buttonCadUsuario.Size = new System.Drawing.Size(111, 23);
-            this.buttonCadUsuario.TabIndex = 7;
-            this.buttonCadUsuario.Text = "Cadastrar Usuario";
-            this.buttonCadUsuario.UseVisualStyleBackColor = true;
-            // 
-            // buttonAgendServico
-            // 
-            this.buttonAgendServico.Location = new System.Drawing.Point(7, 7);
-            this.buttonAgendServico.Name = "buttonAgendServico";
-            this.buttonAgendServico.Size = new System.Drawing.Size(138, 23);
-            this.buttonAgendServico.TabIndex = 0;
-            this.buttonAgendServico.Text = "Agendamento de serviço";
-            this.buttonAgendServico.UseVisualStyleBackColor = true;
-            // 
-            // buttonLancHorario
-            // 
-            this.buttonLancHorario.Location = new System.Drawing.Point(7, 67);
-            this.buttonLancHorario.Name = "buttonLancHorario";
-            this.buttonLancHorario.Size = new System.Drawing.Size(138, 23);
-            this.buttonLancHorario.TabIndex = 1;
-            this.buttonLancHorario.Text = "Lançamento de horário";
-            this.buttonLancHorario.UseVisualStyleBackColor = true;
-            // 
-            // buttonServPrestado
-            // 
-            this.buttonServPrestado.Location = new System.Drawing.Point(165, 6);
-            this.buttonServPrestado.Name = "buttonServPrestado";
-            this.buttonServPrestado.Size = new System.Drawing.Size(132, 23);
-            this.buttonServPrestado.TabIndex = 2;
-            this.buttonServPrestado.Text = "Serviço Prestado";
-            this.buttonServPrestado.UseVisualStyleBackColor = true;
-            // 
-            // buttonAlterarEst
-            // 
-            this.buttonAlterarEst.Location = new System.Drawing.Point(7, 7);
-            this.buttonAlterarEst.Name = "buttonAlterarEst";
-            this.buttonAlterarEst.Size = new System.Drawing.Size(137, 23);
-            this.buttonAlterarEst.TabIndex = 0;
-            this.buttonAlterarEst.Text = "Alterar";
-            this.buttonAlterarEst.UseVisualStyleBackColor = true;
-            // 
-            // buttonVerificarEst
-            // 
-            this.buttonVerificarEst.Location = new System.Drawing.Point(7, 77);
-            this.buttonVerificarEst.Name = "buttonVerificarEst";
-            this.buttonVerificarEst.Size = new System.Drawing.Size(137, 23);
-            this.buttonVerificarEst.TabIndex = 1;
-            this.buttonVerificarEst.Text = "Verificar";
-            this.buttonVerificarEst.UseVisualStyleBackColor = true;
+            this.buttonContFinanceiro.Location = new System.Drawing.Point(7, 79);
+            this.buttonContFinanceiro.Name = "buttonContFinanceiro";
+            this.buttonContFinanceiro.Size = new System.Drawing.Size(137, 23);
+            this.buttonContFinanceiro.TabIndex = 1;
+            this.buttonContFinanceiro.Text = "Controle Financeiro";
+            this.buttonContFinanceiro.UseVisualStyleBackColor = true;
             // 
             // buttonRelatorio
             // 
@@ -287,15 +296,6 @@
             this.buttonRelatorio.TabIndex = 0;
             this.buttonRelatorio.Text = "Gerar Relatório";
             this.buttonRelatorio.UseVisualStyleBackColor = true;
-            // 
-            // buttonContFinanceiro
-            // 
-            this.buttonContFinanceiro.Location = new System.Drawing.Point(7, 79);
-            this.buttonContFinanceiro.Name = "buttonContFinanceiro";
-            this.buttonContFinanceiro.Size = new System.Drawing.Size(137, 23);
-            this.buttonContFinanceiro.TabIndex = 1;
-            this.buttonContFinanceiro.Text = "Controle Financeiro";
-            this.buttonContFinanceiro.UseVisualStyleBackColor = true;
             // 
             // TelaPrincipal
             // 

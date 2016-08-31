@@ -172,7 +172,7 @@
             // 
             // buttonServicos
             // 
-            this.buttonServicos.Location = new System.Drawing.Point(163, 28);
+            this.buttonServicos.Location = new System.Drawing.Point(163, 6);
             this.buttonServicos.Name = "buttonServicos";
             this.buttonServicos.Size = new System.Drawing.Size(134, 23);
             this.buttonServicos.TabIndex = 2;

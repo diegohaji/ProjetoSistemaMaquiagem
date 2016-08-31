@@ -116,6 +116,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(100, 20);
             this.textBoxUsuario.TabIndex = 3;
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // label2
             // 
@@ -169,6 +170,7 @@
             this.buttonEstoque.TabIndex = 3;
             this.buttonEstoque.Text = "Estoque";
             this.buttonEstoque.UseVisualStyleBackColor = true;
+            this.buttonEstoque.Click += new System.EventHandler(this.buttonEstoque_Click);
             // 
             // buttonServicos
             // 
@@ -178,6 +180,7 @@
             this.buttonServicos.TabIndex = 2;
             this.buttonServicos.Text = "Serviços";
             this.buttonServicos.UseVisualStyleBackColor = true;
+            this.buttonServicos.Click += new System.EventHandler(this.buttonServicos_Click);
             // 
             // buttonCliente
             // 
@@ -187,6 +190,7 @@
             this.buttonCliente.TabIndex = 1;
             this.buttonCliente.Text = "Cliente";
             this.buttonCliente.UseVisualStyleBackColor = true;
+            this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
             // 
             // buttonFuncionario
             // 
@@ -196,6 +200,7 @@
             this.buttonFuncionario.TabIndex = 0;
             this.buttonFuncionario.Text = "Funcionario";
             this.buttonFuncionario.UseVisualStyleBackColor = true;
+            this.buttonFuncionario.Click += new System.EventHandler(this.buttonFuncionario_Click);
             // 
             // tabPage2
             // 
@@ -218,6 +223,7 @@
             this.buttonServPrestado.TabIndex = 2;
             this.buttonServPrestado.Text = "Serviço Prestado";
             this.buttonServPrestado.UseVisualStyleBackColor = true;
+            this.buttonServPrestado.Click += new System.EventHandler(this.buttonServPrestado_Click);
             // 
             // buttonLancHorario
             // 
@@ -227,6 +233,7 @@
             this.buttonLancHorario.TabIndex = 1;
             this.buttonLancHorario.Text = "Lançamento de horário";
             this.buttonLancHorario.UseVisualStyleBackColor = true;
+            this.buttonLancHorario.Click += new System.EventHandler(this.buttonLancHorario_Click);
             // 
             // buttonAgendServico
             // 
@@ -236,6 +243,7 @@
             this.buttonAgendServico.TabIndex = 0;
             this.buttonAgendServico.Text = "Agendamento de serviço";
             this.buttonAgendServico.UseVisualStyleBackColor = true;
+            this.buttonAgendServico.Click += new System.EventHandler(this.buttonAgendServico_Click);
             // 
             // tabPage3
             // 
@@ -287,6 +295,7 @@
             this.buttonContFinanceiro.TabIndex = 1;
             this.buttonContFinanceiro.Text = "Controle Financeiro";
             this.buttonContFinanceiro.UseVisualStyleBackColor = true;
+            this.buttonContFinanceiro.Click += new System.EventHandler(this.buttonContFinanceiro_Click);
             // 
             // buttonRelatorio
             // 
@@ -296,6 +305,7 @@
             this.buttonRelatorio.TabIndex = 0;
             this.buttonRelatorio.Text = "Gerar Relatório";
             this.buttonRelatorio.UseVisualStyleBackColor = true;
+            this.buttonRelatorio.Click += new System.EventHandler(this.buttonRelatorio_Click);
             // 
             // TelaPrincipal
             // 

@@ -84,6 +84,7 @@
             this.buttonCadUsuario.TabIndex = 7;
             this.buttonCadUsuario.Text = "Cadastrar Usuario";
             this.buttonCadUsuario.UseVisualStyleBackColor = true;
+            this.buttonCadUsuario.Click += new System.EventHandler(this.buttonCadUsuario_Click);
             // 
             // buttonEsqueciSenha
             // 
@@ -109,6 +110,7 @@
             this.textBoxSenha.Name = "textBoxSenha";
             this.textBoxSenha.Size = new System.Drawing.Size(100, 20);
             this.textBoxSenha.TabIndex = 4;
+            this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
             // 
             // textBoxUsuario
             // 

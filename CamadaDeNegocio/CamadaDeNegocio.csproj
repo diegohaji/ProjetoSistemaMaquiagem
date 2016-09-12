@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClnLancamentoServicos.cs" />
+    <Compile Include="ClnLogin.cs" />
     <Compile Include="ClnProdutos.cs" />
     <Compile Include="ClnAgendaDeHorario.cs" />
     <Compile Include="ClnAgendaDeServico.cs" />

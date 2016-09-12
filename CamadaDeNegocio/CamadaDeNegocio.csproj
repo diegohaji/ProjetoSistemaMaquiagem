@@ -54,6 +54,12 @@
     <Compile Include="ClnRelatorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcessoADados\AcessoADados.csproj">
+      <Project>{ff4333e8-89bd-4865-bb36-8ea467132105}</Project>
+      <Name>AcessoADados</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

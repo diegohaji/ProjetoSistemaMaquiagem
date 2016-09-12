@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace ProjetoSistemaMaquiagem
+namespace AcessoADados
+
 {
-    class ClasseDados
+ public class ClasseDados
     {
         string conexao = @"Persist Security Info=False;server=localhost;database=sistemamaquiagem;uid=root;pwd=";
 

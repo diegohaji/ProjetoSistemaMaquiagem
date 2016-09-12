@@ -12,43 +12,31 @@ namespace CamadaDeNegocio
     public class ClnCliente
     {
         //1 - Campos privados da classe
-        private int idCli;
-        private string nomeCli;
-        private string enderecoCli;
-        private string foneCli;
-        private string faxCli;
-        private string obsCli;
+        private int cd_cliente;
+        private string nm_cliente;        
+        private string cpf_cliente;        
+        private string email_cliente;
 
         //2 - propriedades, acesso aos campos privados
-        public int IdCli
+        public int Cd_cliente
         {
-            get { return idCli; }
-            set { idCli = value; }
+            get { return cd_cliente; }
+            set { cd_cliente = value; }
         }
-        public string NomeCli
+        public string Nm_Cliente
         {
-            get { return nomeCli; }
-            set { nomeCli = value; }
-        }
-        public string EnderecoCli
+            get { return nm_cliente; }
+            set { nm_cliente = value; }
+        }        
+        public string CPF_cliente
         {
-            get { return enderecoCli; }
-            set { enderecoCli = value; }
-        }
-        public string FoneCli
+            get { return cpf_cliente; }
+            set { cpf_cliente = value; }
+        }        
+        public string Email_cliente
         {
-            get { return foneCli; }
-            set { foneCli = value; }
-        }
-        public string FaxCli
-        {
-            get { return faxCli; }
-            set { faxCli = value; }
-        }
-        public string ObsCli
-        {
-            get { return obsCli; }
-            set { obsCli = value; }
+            get { return email_cliente; }
+            set { email_cliente = value; }
         }
 
         //3 - métodos da classe de Negócios (clnCliente.cs)
@@ -58,19 +46,17 @@ namespace CamadaDeNegocio
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tbCliente where idCli=" + IdCli;
+            csql = "Select * From tb_cliente where cd_cliente=" + cd_cliente;
             DataSet ds;
-           ClasseDados seguros = new ClasseDados();
-            ds = seguros.RetornarDataSet(csql);
+           ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
-                idCli = Convert.ToInt16(dados.GetValue(0));
-                nomeCli = Convert.ToString(dados.GetValue(1));
-                enderecoCli = Convert.ToString(dados.GetValue(2));
-                foneCli = Convert.ToString(dados.GetValue(3));
-                faxCli = Convert.ToString(dados.GetValue(4));
-                obsCli = Convert.ToString(dados.GetValue(5));
+                cd_cliente = Convert.ToInt16(dados.GetValue(0));
+                nm_cliente = Convert.ToString(dados.GetValue(1));                
+                cpf_cliente = Convert.ToString(dados.GetValue(2));                
+                email_cliente = Convert.ToString(dados.GetValue(3));
             }
         }
 
@@ -79,9 +65,9 @@ namespace CamadaDeNegocio
         public int BuscarId()
         {
             string csql;
-            csql = "Select * From tbcliente order by idCli desc limit 1";
-           ClasseDados seguros = new ClasseDados();
-            return seguros.RetornarIdNumerico(csql);
+            csql = "Select * From tb_cliente order by cd_cliente desc limit 1";
+           ClasseDados cd = new ClasseDados();
+            return cd.RetornarIdNumerico(csql);
         }
 
         //3.3 Método para incluir um novo cliente no 
@@ -89,45 +75,37 @@ namespace CamadaDeNegocio
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Insert into tbCliente");
+            csql.Append("Insert into tb_cliente");
             csql.Append("(");
-            csql.Append("idCli,");
-            csql.Append("nomeCli,");
-            csql.Append("enderecoCli,");
-            csql.Append("foneCli,");
-            csql.Append("faxCli,");
-            csql.Append("obsCli) Values(");
-            csql.Append(idCli);
-            csql.Append(",'" + nomeCli + "',");
-            csql.Append("'" + enderecoCli + "',");
-            csql.Append("'" + foneCli + "',");
-            csql.Append("'" + faxCli + "',");
-            csql.Append("'" + obsCli + "')");
-            ClasseDados seguros = new ClasseDados();
-            seguros.ExecutarComando(csql.ToString());
+            csql.Append("cd_cliente,");
+            csql.Append("nm_cliente,");           
+            csql.Append("cpf_cliente,");            
+            csql.Append("email_cliente) Values(");
+            csql.Append(cd_cliente);
+            csql.Append(",'" + nm_cliente + "',");            
+            csql.Append("'" + cpf_cliente + "',");            
+            csql.Append("'" + email_cliente + "')");
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
         }
 
         //3.4 Método para atualizar (alterar um registro)
         public void Atualizar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Update tbCliente ");
-            csql.Append("set idCli=");
-            csql.Append(IdCli);
-            csql.Append(", nomeCli='");
-            csql.Append(nomeCli);
-            csql.Append("', enderecoCli='");
-            csql.Append(enderecoCli);
-            csql.Append("', foneCli='");
-            csql.Append(foneCli);
-            csql.Append("', faxCli='");
-            csql.Append(faxCli);
-            csql.Append("', obsCli='");
-            csql.Append(obsCli);
-            csql.Append("' where idCli=");
-            csql.Append(IdCli);
-            ClasseDados seguros = new ClasseDados();
-            seguros.ExecutarComando(csql.ToString());
+            csql.Append("Update tb_cliente ");
+            csql.Append("set cd_cliente=");
+            csql.Append(cd_cliente);
+            csql.Append(", nm_cliente='");
+            csql.Append(nm_cliente);
+            csql.Append("', cpf_cliente='");
+            csql.Append(cpf_cliente);
+            csql.Append("', email_cliente='");
+            csql.Append(email_cliente);            
+            csql.Append("' where cd_cliente=");
+            csql.Append(cd_cliente);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
         }
 
         //3.5 Método para excluir um cliente do 
@@ -135,21 +113,21 @@ namespace CamadaDeNegocio
         public void Excluir()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Delete From tbCliente ");
-            csql.Append(" where idCli=");
-            csql.Append(IdCli);
-            ClasseDados seguros = new ClasseDados();
-            seguros.ExecutarComando(csql.ToString());
+            csql.Append("Delete From tb_cliente ");
+            csql.Append(" where cd_cliente=");
+            csql.Append(cd_cliente);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
         }
 
         //3.6 Método para buscar os dados do cliente de acordo com o nome
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tbCliente where nomeCli like('%" + nomeCli + "%')";
+            csql = "Select * From tb_cliente where nm_cliente like('%" + nm_cliente + "%')";
             DataSet ds;
-            ClasseDados seguros = new ClasseDados();
-            ds = seguros.RetornarDataSet(csql);
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
             return ds;
         }
 

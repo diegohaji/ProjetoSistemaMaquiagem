@@ -197,6 +197,16 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcessoADados\AcessoADados.csproj">
+      <Project>{ff4333e8-89bd-4865-bb36-8ea467132105}</Project>
+      <Name>AcessoADados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CamadaDeNegocio\CamadaDeNegocio.csproj">
+      <Project>{30d97410-ea48-4cf7-8f35-ce48d3c5bda1}</Project>
+      <Name>CamadaDeNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

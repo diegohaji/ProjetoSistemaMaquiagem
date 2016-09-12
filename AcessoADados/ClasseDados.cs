@@ -11,7 +11,7 @@ namespace AcessoADados
 {
  public class ClasseDados
     {
-        string conexao = @"Persist Security Info=False;server=localhost;database=sistemamaquiagem;uid=root;pwd=";
+        string conexao = @"Persist Security Info=False;server=localhost;database=bd_lmds;uid=root;pwd=";
 
         private MySqlConnection AbrirBanco()
         {

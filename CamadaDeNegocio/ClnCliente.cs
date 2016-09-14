@@ -46,7 +46,7 @@ namespace CamadaDeNegocio
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_cliente where cd_servico=" + cd_cliente;
+            csql = "Select * From tb_cliente where cd_produto=" + cd_cliente;
             DataSet ds;
            ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -65,7 +65,7 @@ namespace CamadaDeNegocio
         public int BuscarId()
         {
             string csql;
-            csql = "Select * From tb_cliente order by cd_servico desc limit 1";
+            csql = "Select * From tb_cliente order by cd_produto desc limit 1";
            ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }
@@ -77,7 +77,7 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Insert into tb_cliente");
             csql.Append("(");
-            csql.Append("cd_servico,");
+            csql.Append("cd_produto,");
             csql.Append("nm_servico,");           
             csql.Append("vl_servico,");            
             csql.Append("email_cliente) Values(");
@@ -94,7 +94,7 @@ namespace CamadaDeNegocio
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Update tb_cliente ");
-            csql.Append("set cd_servico=");
+            csql.Append("set cd_produto=");
             csql.Append(cd_cliente);
             csql.Append(", nm_servico='");
             csql.Append(nm_cliente);
@@ -102,7 +102,7 @@ namespace CamadaDeNegocio
             csql.Append(cpf_cliente);
             csql.Append("', email_cliente='");
             csql.Append(email_cliente);            
-            csql.Append("' where cd_servico=");
+            csql.Append("' where cd_produto=");
             csql.Append(cd_cliente);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
@@ -114,7 +114,7 @@ namespace CamadaDeNegocio
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_cliente ");
-            csql.Append(" where cd_servico=");
+            csql.Append(" where cd_produto=");
             csql.Append(cd_cliente);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());

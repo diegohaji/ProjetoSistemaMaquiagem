@@ -27,6 +27,7 @@ namespace ProjetoSistemaMaquiagem
             //cliente.CPF_cliente = "10035965607";
             //cliente.Email_cliente = "capeta@paunoseucu.com";
             //cliente.Gravar();
+            
         }
     }
 }

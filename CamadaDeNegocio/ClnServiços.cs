@@ -3,60 +3,55 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Data;
 using AcessoADados;
-
 namespace CamadaDeNegocio
 {
-    public class ClnCliente
+    class ClnServiços
     {
         //1 - Campos privados da classe
-        private int cd_cliente;
-        private string nm_cliente;        
-        private string cpf_cliente;        
-        private string email_cliente;
+        private int cd_servico;
+        private string nm_servico;
+        private double vl_servico;
+       
 
         //2 - propriedades, acesso aos campos privados
-        public int Cd_cliente
+        public int Cd_Servico
         {
-            get { return cd_cliente; }
-            set { cd_cliente = value; }
+            get { return cd_servico; }
+            set { cd_servico = value; }
         }
-        public string Nm_Cliente
+        public string Nm_Servico
         {
-            get { return nm_cliente; }
-            set { nm_cliente = value; }
-        }        
-        public string CPF_cliente
-        {
-            get { return cpf_cliente; }
-            set { cpf_cliente = value; }
-        }        
-        public string Email_cliente
-        {
-            get { return email_cliente; }
-            set { email_cliente = value; }
+            get { return nm_servico; }
+            set { nm_servico = value; }
         }
+        public double VL_Servico
+        {
+            get { return vl_servico; }
+            set { vl_servico = value; }
+        }
+       
+        
 
-        //3 - métodos da classe de Negócios (clnCliente.cs)
+        //3 - métodos da classe de Negócios (clnservico.cs)
 
 
         //3.1 Buscar dados do cliente cujo codigo foi especificado
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_cliente where cd_servico=" + cd_cliente;
+            csql = "Select * From tb_cliente where cd_servico=" + cd_servico;
             DataSet ds;
-           ClasseDados cd = new ClasseDados();
+            ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
-                cd_cliente = Convert.ToInt16(dados.GetValue(0));
-                nm_cliente = Convert.ToString(dados.GetValue(1));                
-                cpf_cliente = Convert.ToString(dados.GetValue(2));                
-                email_cliente = Convert.ToString(dados.GetValue(3));
+                cd_servico = Convert.ToInt16(dados.GetValue(0));
+                nm_servico = Convert.ToString(dados.GetValue(1));
+                vl_servico = Convert.ToDouble(dados.GetValue(2));
+                                
             }
         }
 
@@ -66,7 +61,7 @@ namespace CamadaDeNegocio
         {
             string csql;
             csql = "Select * From tb_cliente order by cd_servico desc limit 1";
-           ClasseDados cd = new ClasseDados();
+            ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }
 
@@ -78,13 +73,12 @@ namespace CamadaDeNegocio
             csql.Append("Insert into tb_cliente");
             csql.Append("(");
             csql.Append("cd_servico,");
-            csql.Append("nm_servico,");           
-            csql.Append("vl_servico,");            
+            csql.Append("nm_servico,");
+            csql.Append("vl_servico,");
             csql.Append("email_cliente) Values(");
-            csql.Append(cd_cliente);
-            csql.Append(",'" + nm_cliente + "',");            
-            csql.Append("'" + cpf_cliente + "',");            
-            csql.Append("'" + email_cliente + "')");
+            csql.Append(cd_servico);
+            csql.Append(",'" + nm_servico + "',");
+            csql.Append("'" + vl_servico + "',");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
@@ -95,15 +89,14 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Update tb_cliente ");
             csql.Append("set cd_servico=");
-            csql.Append(cd_cliente);
+            csql.Append(cd_servico);
             csql.Append(", nm_servico='");
-            csql.Append(nm_cliente);
+            csql.Append(nm_servico);
             csql.Append("', vl_servico='");
-            csql.Append(cpf_cliente);
+            csql.Append(vl_servico);
             csql.Append("', email_cliente='");
-            csql.Append(email_cliente);            
             csql.Append("' where cd_servico=");
-            csql.Append(cd_cliente);
+            csql.Append(cd_servico);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
@@ -115,7 +108,7 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_cliente ");
             csql.Append(" where cd_servico=");
-            csql.Append(cd_cliente);
+            csql.Append(cd_servico);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
@@ -124,7 +117,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_cliente where nm_servico like('%" + nm_cliente + "%')";
+            csql = "Select * From tb_cliente where nm_servico like('%" + nm_servico + "%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -132,6 +125,5 @@ namespace CamadaDeNegocio
         }
 
     }
-
 }
 

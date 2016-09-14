@@ -9,7 +9,7 @@ using System.Data;
 
 namespace CamadaDeNegocio
 {
-    class ClnFuncionario
+   public class ClnFuncionario
     {
          
         //1 - Campos privados da classe
@@ -48,7 +48,7 @@ namespace CamadaDeNegocio
             set { login_funcionario = value; }
         }
 
-        public string Senha_funcionario
+        public string Senha_Funcionario
         {
             get { return senha_funcionario; }
             set { senha_funcionario = value; }
@@ -102,8 +102,8 @@ namespace CamadaDeNegocio
             csql.Append(cd_funcionario);
             csql.Append(",'" + nm_funcionario + "',");
             csql.Append("'" + cpf_funcionario + "',");
-            csql.Append("'" + email_funcionario + ",");
-            csql.Append("'" + login_funcionario + ",");
+            csql.Append("'" + email_funcionario + "',");
+            csql.Append("'" + login_funcionario + "',");
             csql.Append("'" + senha_funcionario + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());

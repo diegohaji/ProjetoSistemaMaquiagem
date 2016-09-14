@@ -21,7 +21,20 @@ namespace ProjetoSistemaMaquiagem
               Application.SetCompatibleTextRenderingDefault(false);
               Application.Run(new TelaPrincipal()); */
 
-            
+            ClnFuncionario funcionario = new ClnFuncionario();
+            funcionario.Nm_Funcionario = "Cuzão";
+            funcionario.CPF_Funcionario = "66666666666";
+            funcionario.Email_Funcionario = "cuzao@gmail.com";
+            funcionario.Login_Funcionario = "Cuzao666";
+            funcionario.Senha_Funcionario = "suamae";
+
+            funcionario.Gravar();
+
+            ClnLogin login = new ClnLogin();
+
+            login.validarLogin("Cuzao666","suamae");
+
+            login.validarLogin("aaa", "111");
 
 
         }

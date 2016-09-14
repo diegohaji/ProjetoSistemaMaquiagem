@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using AcessoADados;
 using System.Data;
 
@@ -17,7 +18,7 @@ namespace CamadaDeNegocio
         private string cpf_funcionario;
         private string email_funcionario;
         private string login_funcionario;
-        private string login_senha;
+        private string senha_funcionario;
 
         //2 - propriedades, acesso aos campos privados
         public int Cd_Funcionario
@@ -47,10 +48,10 @@ namespace CamadaDeNegocio
             set { login_funcionario = value; }
         }
 
-        public string Login_Senha
+        public string Senha_funcionario
         {
-            get { return login_senha; }
-            set { login_senha = value; }
+            get { return senha_funcionario; }
+            set { senha_funcionario = value; }
         }
 
 
@@ -95,11 +96,15 @@ namespace CamadaDeNegocio
             csql.Append("cd_funcionario,");
             csql.Append("nm_funcionario,");
             csql.Append("cpf_funcionario,");
-            csql.Append("email_funcionario) Values(");
+            csql.Append("email_funcionario,");
+            csql.Append("login_funcionario,");
+            csql.Append("senha_funcionario) Values(");
             csql.Append(cd_funcionario);
             csql.Append(",'" + nm_funcionario + "',");
             csql.Append("'" + cpf_funcionario + "',");
-            csql.Append("'" + email_funcionario + "')");
+            csql.Append("'" + email_funcionario + ",");
+            csql.Append("'" + login_funcionario + ",");
+            csql.Append("'" + senha_funcionario + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
@@ -117,6 +122,10 @@ namespace CamadaDeNegocio
             csql.Append(cpf_funcionario);
             csql.Append("', email_funcionario='");
             csql.Append(email_funcionario);
+            csql.Append("', login_funcionario='");
+            csql.Append(login_funcionario);
+            csql.Append("', senha_funcionario='");
+            csql.Append(senha_funcionario);
             csql.Append("' where cd_funcionario=");
             csql.Append(cd_funcionario);
             ClasseDados cd = new ClasseDados();

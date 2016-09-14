@@ -10,25 +10,50 @@ using AcessoADados;
 namespace CamadaDeNegocio
 {
     class ClnLogin
-    {        
+    {
+        private string login_funcionario;
+        private string senha_funcionario;
+
+        public string Login_funcionario
+        {
+            get { return this.login_funcionario; }
+            set { this.login_funcionario = value; }
+        }
+
+        public string Senha_funcionario
+        {
+            get { return this.senha_funcionario; }
+            set { this.senha_funcionario = value; }
+        }
+
         public bool validarLogin(string login, string senha)
         {
-            string sql = "Select login, senha from tb_funcionario where login_funcionario="+login;
+            string sql = "Select login_funcionario, senha_funcionario from tb_funcionario where login_funcionario=" + login;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(sql);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
+                this.login_funcionario = Convert.ToString(dados.GetValue(0));
+                this.senha_funcionario = Convert.ToString(dados.GetValue(1));
 
+                if (login.Equals(this.login_funcionario) && senha.Equals(this.senha_funcionario))
+                {
+                    Console.WriteLine("Login Efetuado Com Sucesso");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Dados inválidos, tente novamente");
+                    return false;
+                }
             }
             else
             {
-                Console.WriteLine("Usuário ou senha inválidos, tente novamente");
+                Console.WriteLine("Dados inválidos, tente novamente");
+                return false;
             }
         }
-
-
-
     }
 }

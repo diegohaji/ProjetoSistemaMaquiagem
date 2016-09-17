@@ -137,6 +137,7 @@
             this.botaoConfirmar.TabIndex = 1;
             this.botaoConfirmar.Text = "Confirmar";
             this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
             // 
             // botaoEditar
             // 

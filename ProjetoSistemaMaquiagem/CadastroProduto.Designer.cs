@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxMarca = new System.Windows.Forms.TextBox();
-            this.maskedTextBoxDtAquisicao = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxDtVencimento = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.maskedTextBoxDtVencimento = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxDtAquisicao = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxMarca = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
             this.botaoCancelar = new System.Windows.Forms.Button();
@@ -70,32 +70,66 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // textBox4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
+            this.textBox4.Location = new System.Drawing.Point(78, 172);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(359, 95);
+            this.textBox4.TabIndex = 11;
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nome";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 175);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Uso";
             // 
-            // label3
+            // label5
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Marca";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(211, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Data De Vencimento";
+            // 
+            // maskedTextBoxDtVencimento
+            // 
+            this.maskedTextBoxDtVencimento.Location = new System.Drawing.Point(337, 68);
+            this.maskedTextBoxDtVencimento.Name = "maskedTextBoxDtVencimento";
+            this.maskedTextBoxDtVencimento.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxDtVencimento.TabIndex = 8;
+            // 
+            // maskedTextBoxDtAquisicao
+            // 
+            this.maskedTextBoxDtAquisicao.Location = new System.Drawing.Point(337, 17);
+            this.maskedTextBoxDtAquisicao.Name = "maskedTextBoxDtAquisicao";
+            this.maskedTextBoxDtAquisicao.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxDtAquisicao.TabIndex = 7;
+            // 
+            // textBoxMarca
+            // 
+            this.textBoxMarca.Location = new System.Drawing.Point(78, 121);
+            this.textBoxMarca.Name = "textBoxMarca";
+            this.textBoxMarca.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMarca.TabIndex = 6;
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Location = new System.Drawing.Point(78, 69);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNome.TabIndex = 5;
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(78, 17);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCodigo.TabIndex = 4;
             // 
             // label4
             // 
@@ -107,66 +141,32 @@
             this.label4.Text = "Data De Aquisição";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBoxCodigo
+            // label3
             // 
-            this.textBoxCodigo.Location = new System.Drawing.Point(78, 17);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCodigo.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Marca";
             // 
-            // textBoxNome
+            // label2
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(78, 69);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNome.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nome";
             // 
-            // textBoxMarca
+            // label1
             // 
-            this.textBoxMarca.Location = new System.Drawing.Point(78, 121);
-            this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMarca.TabIndex = 6;
-            // 
-            // maskedTextBoxDtAquisicao
-            // 
-            this.maskedTextBoxDtAquisicao.Location = new System.Drawing.Point(337, 17);
-            this.maskedTextBoxDtAquisicao.Name = "maskedTextBoxDtAquisicao";
-            this.maskedTextBoxDtAquisicao.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxDtAquisicao.TabIndex = 7;
-            // 
-            // maskedTextBoxDtVencimento
-            // 
-            this.maskedTextBoxDtVencimento.Location = new System.Drawing.Point(337, 68);
-            this.maskedTextBoxDtVencimento.Name = "maskedTextBoxDtVencimento";
-            this.maskedTextBoxDtVencimento.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxDtVencimento.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(211, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Data De Vencimento";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Uso";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(78, 172);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(359, 95);
-            this.textBox4.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
             // 
             // botaoConfirmar
             // 
@@ -176,6 +176,7 @@
             this.botaoConfirmar.TabIndex = 1;
             this.botaoConfirmar.Text = "Confirmar";
             this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
             // 
             // botaoEditar
             // 

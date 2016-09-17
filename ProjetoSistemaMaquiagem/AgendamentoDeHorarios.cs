@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AcessoADados;
+using CamadaDeNegocio;
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -15,6 +17,11 @@ namespace ProjetoSistemaMaquiagem
         public AgendamentoDeHorarios()
         {
             InitializeComponent();
+        }
+
+        private void botaoConfirmar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

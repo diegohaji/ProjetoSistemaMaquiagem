@@ -94,6 +94,7 @@
             this.buttonEsqueciSenha.TabIndex = 6;
             this.buttonEsqueciSenha.Text = "Esqueci Senha";
             this.buttonEsqueciSenha.UseVisualStyleBackColor = true;
+            this.buttonEsqueciSenha.Click += new System.EventHandler(this.buttonEsqueciSenha_Click);
             // 
             // buttonLogar
             // 
@@ -103,6 +104,7 @@
             this.buttonLogar.TabIndex = 5;
             this.buttonLogar.Text = "Logar";
             this.buttonLogar.UseVisualStyleBackColor = true;
+            this.buttonLogar.Click += new System.EventHandler(this.buttonLogar_Click);
             // 
             // textBoxSenha
             // 

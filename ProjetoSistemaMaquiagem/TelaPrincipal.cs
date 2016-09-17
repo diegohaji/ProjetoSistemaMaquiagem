@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using AcessoADados;
+using CamadaDeNegocio;
+
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -20,7 +23,6 @@ namespace ProjetoSistemaMaquiagem
 
         private void buttonFuncionario_Click(object sender, EventArgs e)
         {
-
             CadastroFuncionario cf = new CadastroFuncionario();
             cf.Show();
 
@@ -28,7 +30,6 @@ namespace ProjetoSistemaMaquiagem
 
         private void buttonServicos_Click(object sender, EventArgs e)
         {
-
             CadastroServiços cs = new CadastroServiços();
             cs.Show();
         }
@@ -80,22 +81,26 @@ namespace ProjetoSistemaMaquiagem
 
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
-            String usuario = (String)sender;
-            
         }
 
         private void textBoxSenha_TextChanged(object sender, EventArgs e)
         {
-            String senha= (String)sender;
-
-           
         }
 
         private void buttonCadUsuario_Click(object sender, EventArgs e)
         {
-            String usuario = textBoxUsuario.Text;
-            String senha = textBoxSenha.Text;
+        }
 
+        private void buttonLogar_Click(object sender, EventArgs e)
+        {
+            string usuario = textBoxUsuario.Text;
+            string senha = textBoxSenha.Text;
+            ClnLogin login = new ClnLogin();
+            login.validarLogin(usuario,senha);
+        }
+
+        private void buttonEsqueciSenha_Click(object sender, EventArgs e)
+        {
         }
     }
 }

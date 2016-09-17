@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxServico = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
@@ -58,30 +58,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // textBoxServico
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome";
+            this.textBoxServico.Location = new System.Drawing.Point(81, 104);
+            this.textBoxServico.Name = "textBoxServico";
+            this.textBoxServico.Size = new System.Drawing.Size(100, 20);
+            this.textBoxServico.TabIndex = 5;
             // 
-            // textBoxCodigo
+            // textBoxNome
             // 
-            this.textBoxCodigo.Location = new System.Drawing.Point(81, 20);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCodigo.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Codigo";
+            this.textBoxNome.Location = new System.Drawing.Point(81, 57);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNome.TabIndex = 4;
             // 
             // label3
             // 
@@ -92,19 +81,30 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Serviço";
             // 
-            // textBoxNome
+            // label2
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(81, 57);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNome.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Codigo";
             // 
-            // textBoxServico
+            // textBoxCodigo
             // 
-            this.textBoxServico.Location = new System.Drawing.Point(81, 104);
-            this.textBoxServico.Name = "textBoxServico";
-            this.textBoxServico.Size = new System.Drawing.Size(100, 20);
-            this.textBoxServico.TabIndex = 5;
+            this.textBoxCodigo.Location = new System.Drawing.Point(81, 20);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCodigo.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome";
             // 
             // dataGridView1
             // 
@@ -122,6 +122,7 @@
             this.botaoConfirmar.TabIndex = 7;
             this.botaoConfirmar.Text = "Confirmar";
             this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
             // 
             // botaoEditar
             // 

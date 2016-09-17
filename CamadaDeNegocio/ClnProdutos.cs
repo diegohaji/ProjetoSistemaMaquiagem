@@ -7,7 +7,7 @@ using AcessoADados;
 using System.Data;
 namespace CamadaDeNegocio
 {
-    class ClnProdutos
+   public class ClnProdutos
     {
         //1 - Campos privados da classe
         private int cd_produto;

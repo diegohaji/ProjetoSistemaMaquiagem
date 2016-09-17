@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxQtdMinima = new System.Windows.Forms.TextBox();
+            this.textBoxQtdAtual = new System.Windows.Forms.TextBox();
+            this.textBoxMarca = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxMarca = new System.Windows.Forms.TextBox();
-            this.textBoxQtdAtual = new System.Windows.Forms.TextBox();
-            this.textBoxQtdMinima = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
@@ -65,6 +65,34 @@
             this.groupBox1.Size = new System.Drawing.Size(465, 181);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // textBoxQtdMinima
+            // 
+            this.textBoxQtdMinima.Location = new System.Drawing.Point(335, 68);
+            this.textBoxQtdMinima.Name = "textBoxQtdMinima";
+            this.textBoxQtdMinima.Size = new System.Drawing.Size(100, 20);
+            this.textBoxQtdMinima.TabIndex = 9;
+            // 
+            // textBoxQtdAtual
+            // 
+            this.textBoxQtdAtual.Location = new System.Drawing.Point(335, 22);
+            this.textBoxQtdAtual.Name = "textBoxQtdAtual";
+            this.textBoxQtdAtual.Size = new System.Drawing.Size(100, 20);
+            this.textBoxQtdAtual.TabIndex = 8;
+            // 
+            // textBoxMarca
+            // 
+            this.textBoxMarca.Location = new System.Drawing.Point(70, 122);
+            this.textBoxMarca.Name = "textBoxMarca";
+            this.textBoxMarca.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMarca.TabIndex = 7;
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.Location = new System.Drawing.Point(70, 73);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNome.TabIndex = 6;
             // 
             // textBoxCodigo
             // 
@@ -119,34 +147,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
-            // textBoxNome
-            // 
-            this.textBoxNome.Location = new System.Drawing.Point(70, 73);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNome.TabIndex = 6;
-            // 
-            // textBoxMarca
-            // 
-            this.textBoxMarca.Location = new System.Drawing.Point(70, 122);
-            this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMarca.TabIndex = 7;
-            // 
-            // textBoxQtdAtual
-            // 
-            this.textBoxQtdAtual.Location = new System.Drawing.Point(335, 22);
-            this.textBoxQtdAtual.Name = "textBoxQtdAtual";
-            this.textBoxQtdAtual.Size = new System.Drawing.Size(100, 20);
-            this.textBoxQtdAtual.TabIndex = 8;
-            // 
-            // textBoxQtdMinima
-            // 
-            this.textBoxQtdMinima.Location = new System.Drawing.Point(335, 68);
-            this.textBoxQtdMinima.Name = "textBoxQtdMinima";
-            this.textBoxQtdMinima.Size = new System.Drawing.Size(100, 20);
-            this.textBoxQtdMinima.TabIndex = 9;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -163,6 +163,7 @@
             this.botaoConfirmar.TabIndex = 2;
             this.botaoConfirmar.Text = "Confirmar";
             this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
             // 
             // botaoEditar
             // 

@@ -9,7 +9,7 @@ using AcessoADados;
 
 namespace CamadaDeNegocio
 {
-    class ClnLogin
+    public class ClnLogin
     {
         private string login_funcionario;
         private string senha_funcionario;
@@ -28,7 +28,7 @@ namespace CamadaDeNegocio
 
         public bool validarLogin(string login, string senha)
         {
-            string sql = "Select login_funcionario, senha_funcionario from tb_funcionario where login_funcionario=" + login;
+            string sql = "Select login_funcionario, senha_funcionario from tb_funcionario where login_funcionario='" + login+"'";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(sql);

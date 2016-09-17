@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AcessoADados;
+using CamadaDeNegocio;
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -15,6 +17,11 @@ namespace ProjetoSistemaMaquiagem
         public ControlePagamento()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

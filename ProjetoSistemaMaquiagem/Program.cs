@@ -17,17 +17,26 @@ namespace ProjetoSistemaMaquiagem
         [STAThread]
         static void Main()
         {
-              Application.EnableVisualStyles();
+            /*  Application.EnableVisualStyles();
               Application.SetCompatibleTextRenderingDefault(false);
-              Application.Run(new TelaPrincipal());
+              Application.Run(new TelaPrincipal()); */
 
-            //ClnCliente cliente = new ClnCliente();
-            //cliente.Cd_cliente = 666;
-            //cliente.Nm_Cliente = "CAPIROSCO";
-            //cliente.CPF_cliente = "10035965607";
-            //cliente.Email_cliente = "capeta@paunoseucu.com";
-            //cliente.Gravar();
-            
+            ClnFuncionario funcionario = new ClnFuncionario();
+            funcionario.Nm_Funcionario = "Cuzão";
+            funcionario.CPF_Funcionario = "66666666666";
+            funcionario.Email_Funcionario = "cuzao@gmail.com";
+            funcionario.Login_Funcionario = "Cuzao666";
+            funcionario.Senha_Funcionario = "suamae";
+
+            funcionario.Gravar();
+
+            ClnLogin login = new ClnLogin();
+
+            login.validarLogin("Cuzao666","suamae");
+
+            login.validarLogin("aaa", "111");
+
+
         }
     }
 }

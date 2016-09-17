@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CamadaDeNegocio
 {
-    class ClnAgendaDeServico
+   public class ClnAgendaDeServico
     {
     }
 }

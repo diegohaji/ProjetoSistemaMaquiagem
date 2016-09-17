@@ -26,7 +26,13 @@ namespace ProjetoSistemaMaquiagem
 
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
-
+            ClnProdutos prod = new ClnProdutos();
+            prod.Nm_Produto = textBoxNome.Text;
+            prod.Nm_Marca = textBoxMarca.Text;
+            prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
+            prod.Dt_Vencimento = Convert.ToDateTime(maskedTextBoxDtVencimento.Text);
+            prod.Dt_Aquisicao = Convert.ToDateTime(maskedTextBoxDtAquisicao.Text);
+            prod.Gravar();
         }
     }
 }

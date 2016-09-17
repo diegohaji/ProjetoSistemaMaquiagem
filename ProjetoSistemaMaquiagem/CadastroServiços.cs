@@ -31,7 +31,10 @@ namespace ProjetoSistemaMaquiagem
 
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
-
+            ClnServiços serv = new ClnServiços();
+            serv.Nm_Servico = textBoxNome.Text;
+            serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
+            serv.Gravar();
         }
     }
 }

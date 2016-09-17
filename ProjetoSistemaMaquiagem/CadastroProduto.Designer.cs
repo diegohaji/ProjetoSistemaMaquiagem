@@ -46,12 +46,16 @@
             this.botaoCancelar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxVlProduto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxVlProduto);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -213,6 +217,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(455, 116);
             this.dataGridView1.TabIndex = 5;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(214, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Valor";
+            // 
+            // textBoxVlProduto
+            // 
+            this.textBoxVlProduto.Location = new System.Drawing.Point(337, 121);
+            this.textBoxVlProduto.Name = "textBoxVlProduto";
+            this.textBoxVlProduto.Size = new System.Drawing.Size(100, 20);
+            this.textBoxVlProduto.TabIndex = 13;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +273,7 @@
         private System.Windows.Forms.Button botaoCancelar;
         private System.Windows.Forms.Button botaoExcluir;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBoxVlProduto;
+        private System.Windows.Forms.Label label7;
     }
 }

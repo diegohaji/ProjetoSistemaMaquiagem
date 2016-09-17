@@ -13,7 +13,9 @@ namespace CamadaDeNegocio
         private int cd_produto;
         private string nm_produto;
         private double vl_produto;
-
+        private string nm_marca;
+        private DateTime dt_Vencimento;
+        private DateTime dt_Aquisicao;
         
         //2 - propriedades, acesso aos campos privados
         public int Cd_Produto
@@ -30,6 +32,24 @@ namespace CamadaDeNegocio
         {
             get { return vl_produto; }
             set { vl_produto = value; }
+        }
+
+        public string Nm_Marca
+        {
+            get { return nm_marca; }
+            set { nm_marca = value; }
+        }
+
+        public DateTime Dt_Vencimento
+        {
+            get { return dt_Vencimento; }
+            set { dt_Vencimento = value; }
+        }
+
+        public DateTime Dt_Aquisicao
+        {
+            get { return dt_Aquisicao; }
+            set { dt_Aquisicao = value; }
         }
 
 

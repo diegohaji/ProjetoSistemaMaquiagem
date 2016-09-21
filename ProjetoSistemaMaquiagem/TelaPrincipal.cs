@@ -102,5 +102,11 @@ namespace ProjetoSistemaMaquiagem
         private void buttonEsqueciSenha_Click(object sender, EventArgs e)
         {
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadastroProduto p = new CadastroProduto();
+            p.Show();
+        }
     }
 }

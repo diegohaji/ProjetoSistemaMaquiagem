@@ -36,5 +36,15 @@ namespace ProjetoSistemaMaquiagem
             serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
             serv.Gravar();
         }
+
+        private void CadastroServiços_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

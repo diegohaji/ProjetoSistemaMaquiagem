@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
-            this.buttonEstoque = new System.Windows.Forms.Button();
             this.buttonServicos = new System.Windows.Forms.Button();
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonFuncionario = new System.Windows.Forms.Button();
@@ -52,6 +51,8 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonContFinanceiro = new System.Windows.Forms.Button();
             this.buttonRelatorio = new System.Windows.Forms.Button();
+            this.buttonEstoque = new System.Windows.Forms.Button();
+            this.buttonProduto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
@@ -155,7 +156,7 @@
             // tabPageCadastro
             // 
             this.tabPageCadastro.BackColor = System.Drawing.Color.Gray;
-            this.tabPageCadastro.Controls.Add(this.buttonEstoque);
+            this.tabPageCadastro.Controls.Add(this.buttonProduto);
             this.tabPageCadastro.Controls.Add(this.buttonServicos);
             this.tabPageCadastro.Controls.Add(this.buttonCliente);
             this.tabPageCadastro.Controls.Add(this.buttonFuncionario);
@@ -165,16 +166,6 @@
             this.tabPageCadastro.Size = new System.Drawing.Size(303, 117);
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Cadastro";
-            // 
-            // buttonEstoque
-            // 
-            this.buttonEstoque.Location = new System.Drawing.Point(163, 70);
-            this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
-            this.buttonEstoque.TabIndex = 3;
-            this.buttonEstoque.Text = "Estoque";
-            this.buttonEstoque.UseVisualStyleBackColor = true;
-            this.buttonEstoque.Click += new System.EventHandler(this.buttonEstoque_Click);
             // 
             // buttonServicos
             // 
@@ -252,6 +243,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Gray;
+            this.tabPage3.Controls.Add(this.buttonEstoque);
             this.tabPage3.Controls.Add(this.buttonVerificarEst);
             this.tabPage3.Controls.Add(this.buttonAlterarEst);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -272,7 +264,7 @@
             // 
             // buttonAlterarEst
             // 
-            this.buttonAlterarEst.Location = new System.Drawing.Point(7, 7);
+            this.buttonAlterarEst.Location = new System.Drawing.Point(160, 6);
             this.buttonAlterarEst.Name = "buttonAlterarEst";
             this.buttonAlterarEst.Size = new System.Drawing.Size(137, 23);
             this.buttonAlterarEst.TabIndex = 0;
@@ -311,6 +303,25 @@
             this.buttonRelatorio.UseVisualStyleBackColor = true;
             this.buttonRelatorio.Click += new System.EventHandler(this.buttonRelatorio_Click);
             // 
+            // buttonEstoque
+            // 
+            this.buttonEstoque.Location = new System.Drawing.Point(8, 6);
+            this.buttonEstoque.Name = "buttonEstoque";
+            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
+            this.buttonEstoque.TabIndex = 4;
+            this.buttonEstoque.Text = "Estoque";
+            this.buttonEstoque.UseVisualStyleBackColor = true;
+            // 
+            // buttonProduto
+            // 
+            this.buttonProduto.Location = new System.Drawing.Point(163, 70);
+            this.buttonProduto.Name = "buttonProduto";
+            this.buttonProduto.Size = new System.Drawing.Size(134, 23);
+            this.buttonProduto.TabIndex = 3;
+            this.buttonProduto.Text = "Produto";
+            this.buttonProduto.UseVisualStyleBackColor = true;
+            this.buttonProduto.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +356,6 @@
         private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonEstoque;
         private System.Windows.Forms.Button buttonServicos;
         private System.Windows.Forms.Button buttonCliente;
         private System.Windows.Forms.Button buttonFuncionario;
@@ -356,5 +366,7 @@
         private System.Windows.Forms.Button buttonAlterarEst;
         private System.Windows.Forms.Button buttonRelatorio;
         private System.Windows.Forms.Button buttonContFinanceiro;
+        private System.Windows.Forms.Button buttonProduto;
+        private System.Windows.Forms.Button buttonEstoque;
     }
 }

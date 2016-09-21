@@ -21,12 +21,27 @@ namespace ProjetoSistemaMaquiagem
 
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
-            ClnCliente cli = new ClnCliente();
-            cli.Nm_Cliente = textBoxNome.Text;
-            cli.CPF_cliente = textBoxCPF.Text;
-            cli.Email_cliente = textBoxEmail.Text;
-            cli.rg = textBoxRG.Text;
-            func.Gravar();
+            ClnCliente Cliente = new ClnCliente();
+            Cliente.Nm_Cliente = textBoxNome.Text;
+            Cliente.CPF_cliente = maskedTextBoxCPF.Text;
+            Cliente.Email_cliente = textBoxEmail.Text;
+            Cliente.RG_Cliente = maskedTextBoxRG.Text;
+            Cliente.Gravar();
+
+        }
+
+        private void CadastroCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxRua_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

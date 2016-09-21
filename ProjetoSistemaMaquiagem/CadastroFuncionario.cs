@@ -21,13 +21,12 @@ namespace ProjetoSistemaMaquiagem
 
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
-            ClnFuncionario func = new ClnFuncionario();
-            func.Nm_Funcionario = textBoxNome.Text;
-            func.CPF_Funcionario = textBoxCPF.Text;
-            func.Email_Funcionario = textBoxEmail.Text;
-            func.RG_Funcionario = textBoxRG.Text;
-            func.Gravar();
-
+            ClnFuncionario funcionario = new ClnFuncionario();
+            funcionario.Nm_Funcionario = textBoxNome.Text;
+            funcionario.CPF_Funcionario = maskedTextBoxCPF.Text;
+            funcionario.Email_Funcionario = textBoxEmail.Text;
+            funcionario.RG_Funcionario = maskedTextBoxRG.Text;
+            funcionario.Gravar();
         }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxVlProduto = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,10 +48,15 @@
             this.botaoCancelar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxVlProduto = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxPesquisar = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -73,6 +80,22 @@
             this.groupBox1.Size = new System.Drawing.Size(455, 276);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // textBoxVlProduto
+            // 
+            this.textBoxVlProduto.Location = new System.Drawing.Point(337, 121);
+            this.textBoxVlProduto.Name = "textBoxVlProduto";
+            this.textBoxVlProduto.Size = new System.Drawing.Size(100, 20);
+            this.textBoxVlProduto.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(214, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Valor";
             // 
             // textBox4
             // 
@@ -174,7 +197,7 @@
             // 
             // botaoConfirmar
             // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(23, 307);
+            this.botaoConfirmar.Location = new System.Drawing.Point(10, 29);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.botaoConfirmar.TabIndex = 1;
@@ -184,7 +207,7 @@
             // 
             // botaoEditar
             // 
-            this.botaoEditar.Location = new System.Drawing.Point(137, 307);
+            this.botaoEditar.Location = new System.Drawing.Point(130, 29);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
             this.botaoEditar.TabIndex = 2;
@@ -193,7 +216,7 @@
             // 
             // botaoCancelar
             // 
-            this.botaoCancelar.Location = new System.Drawing.Point(258, 307);
+            this.botaoCancelar.Location = new System.Drawing.Point(256, 29);
             this.botaoCancelar.Name = "botaoCancelar";
             this.botaoCancelar.Size = new System.Drawing.Size(75, 23);
             this.botaoCancelar.TabIndex = 3;
@@ -202,7 +225,7 @@
             // 
             // botaoExcluir
             // 
-            this.botaoExcluir.Location = new System.Drawing.Point(375, 307);
+            this.botaoExcluir.Location = new System.Drawing.Point(373, 29);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
             this.botaoExcluir.TabIndex = 4;
@@ -212,43 +235,77 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 350);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 455);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(455, 116);
             this.dataGridView1.TabIndex = 5;
             // 
-            // label7
+            // groupBox2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(214, 121);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Valor";
+            this.groupBox2.Controls.Add(this.botaoConfirmar);
+            this.groupBox2.Controls.Add(this.botaoEditar);
+            this.groupBox2.Controls.Add(this.botaoExcluir);
+            this.groupBox2.Controls.Add(this.botaoCancelar);
+            this.groupBox2.Location = new System.Drawing.Point(13, 295);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(454, 71);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
             // 
-            // textBoxVlProduto
+            // groupBox3
             // 
-            this.textBoxVlProduto.Location = new System.Drawing.Point(337, 121);
-            this.textBoxVlProduto.Name = "textBoxVlProduto";
-            this.textBoxVlProduto.Size = new System.Drawing.Size(100, 20);
-            this.textBoxVlProduto.TabIndex = 13;
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.textBoxPesquisar);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Location = new System.Drawing.Point(12, 372);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(456, 70);
+            this.groupBox3.TabIndex = 27;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Filtrar";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(374, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Pesquisar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPesquisar
+            // 
+            this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
+            this.textBoxPesquisar.Name = "textBoxPesquisar";
+            this.textBoxPesquisar.Size = new System.Drawing.Size(336, 20);
+            this.textBoxPesquisar.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(18, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Nome";
             // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 475);
+            this.ClientSize = new System.Drawing.Size(479, 583);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.botaoExcluir);
-            this.Controls.Add(this.botaoCancelar);
-            this.Controls.Add(this.botaoEditar);
-            this.Controls.Add(this.botaoConfirmar);
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroProduto";
             this.Text = "CadastroProduto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +332,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBoxVlProduto;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxPesquisar;
+        private System.Windows.Forms.Label label14;
     }
 }

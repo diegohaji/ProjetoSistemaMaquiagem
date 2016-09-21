@@ -55,6 +55,7 @@
     <Compile Include="ClnFuncionario.cs" />
     <Compile Include="ClnRelatorio.cs" />
     <Compile Include="ClnServiços.cs" />
+    <Compile Include="ClnValidacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

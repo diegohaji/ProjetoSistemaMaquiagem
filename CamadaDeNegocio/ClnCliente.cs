@@ -17,6 +17,16 @@ namespace CamadaDeNegocio
         private string rg_cliente;
         private string cpf_cliente;        
         private string email_cliente;
+        private int telefone_cliente;
+        private int celular_cliente;
+        private int cep_cliente;
+        private int numero_cliente;
+        private string rua_cliente;
+        private string bairro_cliente;
+        private string cidade_cliente;
+        private string estado_cliente;
+        private string complemento_cliente;
+
 
         //2 - propriedades, acesso aos campos privados
         public int Cd_cliente
@@ -45,6 +55,56 @@ namespace CamadaDeNegocio
             set { rg_cliente = value; }
         }
 
+        public int Telefone_cliente
+        {
+            get { return telefone_cliente; }
+            set { telefone_cliente = value; }
+        }
+
+        public int Celular_cliente
+        {
+            get { return celular_cliente; }
+            set { celular_cliente = value; }
+        }
+        public int CEP_cliente
+        {
+            get { return cep_cliente; }
+            set { cep_cliente = value; }
+        }
+        public string Rua_cliente
+        {
+            get { return rua_cliente; }
+            set { rua_cliente = value; }
+        }
+        public string Bairro_cliente
+        {
+            get { return bairro_cliente; }
+            set { bairro_cliente = value; }
+        }
+        public string Cidade_cliente
+        {
+            get { return cidade_cliente; }
+            set { cidade_cliente = value; }
+        }
+        public string Estado_cliente
+        {
+            get { return estado_cliente; }
+            set { estado_cliente = value; }
+        }
+        public int Numero_cliente
+        {
+            get { return numero_cliente; }
+            set { numero_cliente = value; }
+        }
+
+        public string Complemento_cliente
+        {
+            get { return complemento_cliente; }
+            set { complemento_cliente = value; }
+        }
+
+        
+
         //3 - métodos da classe de Negócios (clnCliente.cs)
 
 
@@ -52,7 +112,7 @@ namespace CamadaDeNegocio
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_cliente where cd_produto=" + cd_cliente;
+            csql = "Select * From tb_cliente where nm_cliente=" + nm_cliente;
             DataSet ds;
            ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -63,6 +123,7 @@ namespace CamadaDeNegocio
                 nm_cliente = Convert.ToString(dados.GetValue(1));                
                 cpf_cliente = Convert.ToString(dados.GetValue(2));                
                 email_cliente = Convert.ToString(dados.GetValue(3));
+
             }
         }
 
@@ -87,13 +148,36 @@ namespace CamadaDeNegocio
             csql.Append("nm_cliente,");           
             csql.Append("cpf_cliente,");
             csql.Append("rg_cliente,");
+            csql.Append("telefone_cliente,");
+            csql.Append("celular_cliente,");
             csql.Append("email_cliente) Values(");
             csql.Append(cd_cliente);
             csql.Append(",'" + nm_cliente + "',");            
             csql.Append("'" + cpf_cliente + "',");
             csql.Append("'" + rg_cliente + "',");
+            csql.Append("'" + telefone_cliente + "',");
+            csql.Append("'" + celular_cliente + "',");
             csql.Append("'" + email_cliente + "')");
             ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_endereco");
+            csql.Append("(");
+            csql.Append("cep_cliente,");
+            csql.Append("numero_cliente,");
+            csql.Append("rua_cliente,");
+            csql.Append("bairro_cliente,");
+            csql.Append("cidade_cliente,");
+            csql.Append("complemento_cliente,");
+            csql.Append("estado_cliente) Values(");
+            csql.Append(cep_cliente);
+            csql.Append(",'" + numero_cliente + "',");
+            csql.Append("'" + rua_cliente + "',");
+            csql.Append("'" + bairro_cliente + "',");
+            csql.Append("'" + cidade_cliente + "')");
+            csql.Append(",'" + complemento_cliente + "',");
+            csql.Append(",'" + estado_cliente + "',");
+            cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
 
@@ -122,8 +206,8 @@ namespace CamadaDeNegocio
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_cliente ");
-            csql.Append(" where cd_cliente=");
-            csql.Append(cd_cliente);
+            csql.Append(" where nm_cliente=");
+            csql.Append(nm_cliente);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

@@ -20,6 +20,17 @@ namespace CamadaDeNegocio
         private string rg_funcionario;
         private string login_funcionario;
         private string senha_funcionario;
+        private int telefone_funcionario;
+        private int celular_funcionario;
+        private int cep_funcionario;
+        private int numero_funcionario;
+        private string rua_funcionario;
+        private string bairro_funcionario;
+        private string cidade_funcionario;
+        private string estado_funcionario;
+        private string complemento_funcionario;
+
+
 
         //2 - propriedades, acesso aos campos privados
         public int Cd_Funcionario
@@ -59,6 +70,55 @@ namespace CamadaDeNegocio
             get { return senha_funcionario; }
             set { senha_funcionario = value; }
         }
+
+        public int Telefone_funcionario
+        {
+            get { return telefone_funcionario; }
+            set { telefone_funcionario = value; }
+        }
+
+        public int Celular_funcionario
+        {
+            get { return celular_funcionario; }
+            set { celular_funcionario = value; }
+        }
+        public int CEP_funcionario
+        {
+            get { return cep_funcionario; }
+            set { cep_funcionario = value; }
+        }
+        public string Rua_funcionario
+        {
+            get { return rua_funcionario; }
+            set { rua_funcionario = value; }
+        }
+        public string Bairro_funcionario
+        {
+            get { return bairro_funcionario; }
+            set { bairro_funcionario = value; }
+        }
+        public string Cidade_funcionario
+        {
+            get { return cidade_funcionario; }
+            set { cidade_funcionario = value; }
+        }
+        public string Estado_funcionario
+        {
+            get { return estado_funcionario; }
+            set { estado_funcionario = value; }
+        }
+        public int Numero_funcionario
+        {
+            get { return numero_funcionario; }
+            set { numero_funcionario = value; }
+        }
+
+        public string Complemento_funcionario
+        {
+            get { return complemento_funcionario; }
+            set { complemento_funcionario = value; }
+        }
+
 
 
         //3 - métodos da classe de Negócios (clnFuncionario.cs)
@@ -105,6 +165,8 @@ namespace CamadaDeNegocio
             csql.Append("cpf_funcionario,");
             csql.Append("rg_funcionario,");
             csql.Append("email_funcionario,");
+            csql.Append("telefone_funcionario,");
+            csql.Append("celular_funcionario,");
             csql.Append("login_funcionario,");
             csql.Append("senha_funcionario) Values(");
             csql.Append(cd_funcionario);
@@ -116,6 +178,26 @@ namespace CamadaDeNegocio
             csql.Append("'" + senha_funcionario + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_endereco");
+            csql.Append("(");
+            csql.Append("cep_funcionario,");
+            csql.Append("numero_funcionario,");
+            csql.Append("rua_funcionario,");
+            csql.Append("bairro_funcionario,");
+            csql.Append("cidade_funcionario,");
+            csql.Append("complemento_funcionario,");
+            csql.Append("estado_funcionario) Values(");
+            csql.Append(cep_funcionario);
+            csql.Append(",'" + numero_funcionario + "',");
+            csql.Append("'" + rua_funcionario + "',");
+            csql.Append("'" + bairro_funcionario + "',");
+            csql.Append("'" + cidade_funcionario + "')");
+            csql.Append(",'" + complemento_funcionario + "',");
+            csql.Append(",'" + estado_funcionario + "',");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
         }
 
         //3.4 Método para atualizar (alterar um registro)

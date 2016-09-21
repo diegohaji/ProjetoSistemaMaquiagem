@@ -26,7 +26,17 @@ namespace ProjetoSistemaMaquiagem
             funcionario.CPF_Funcionario = maskedTextBoxCPF.Text;
             funcionario.Email_Funcionario = textBoxEmail.Text;
             funcionario.RG_Funcionario = maskedTextBoxRG.Text;
+            funcionario.Celular_funcionario = Convert.ToInt16(maskedTextBoxCelular.Text);
+            funcionario.Telefone_funcionario = Convert.ToInt16(maskedTextBoxTelefone.Text);
+            funcionario.CEP_funcionario = Convert.ToInt16(maskedTextBoxCEP.Text);
+            funcionario.Rua_funcionario = textBoxRua.Text;
+            funcionario.Numero_funcionario = Convert.ToInt16(textBoxNumero.Text);
+            funcionario.Bairro_funcionario = textBoxBairro.Text;
+            funcionario.Cidade_funcionario = textBoxCidade.Text;
+            funcionario.Estado_funcionario = textBoxEstado.Text;
+            funcionario.Complemento_funcionario = textBoxComplemento.Text;
             funcionario.Gravar();
+
         }
     }
 }

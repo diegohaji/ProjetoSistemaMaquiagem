@@ -20,10 +20,10 @@ namespace CamadaDeNegocio
         private string rg_funcionario;
         private string login_funcionario;
         private string senha_funcionario;
-        private int telefone_funcionario;
-        private int celular_funcionario;
-        private int cep_funcionario;
-        private int numero_funcionario;
+        private string telefone_funcionario;
+        private string celular_funcionario;
+        private string cep_funcionario;
+        private string numero_funcionario;
         private string rua_funcionario;
         private string bairro_funcionario;
         private string cidade_funcionario;
@@ -71,18 +71,18 @@ namespace CamadaDeNegocio
             set { senha_funcionario = value; }
         }
 
-        public int Telefone_funcionario
+        public string Telefone_funcionario
         {
             get { return telefone_funcionario; }
             set { telefone_funcionario = value; }
         }
 
-        public int Celular_funcionario
+        public string Celular_funcionario
         {
             get { return celular_funcionario; }
             set { celular_funcionario = value; }
         }
-        public int CEP_funcionario
+        public string CEP_funcionario
         {
             get { return cep_funcionario; }
             set { cep_funcionario = value; }
@@ -107,7 +107,7 @@ namespace CamadaDeNegocio
             get { return estado_funcionario; }
             set { estado_funcionario = value; }
         }
-        public int Numero_funcionario
+        public string Numero_funcionario
         {
             get { return numero_funcionario; }
             set { numero_funcionario = value; }

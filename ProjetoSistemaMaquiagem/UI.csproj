@@ -102,6 +102,12 @@
     <Compile Include="CadastroServiços.Designer.cs">
       <DependentUpon>CadastroServiços.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroUsuario.Designer.cs">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControleEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     </Compile>
     <Compile Include="ControlePagamento.Designer.cs">
       <DependentUpon>ControlePagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsqueciSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EsqueciSenha.Designer.cs">
+      <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="LancamentoServicos.cs">
       <SubType>Form</SubType>
@@ -152,11 +164,17 @@
     <EmbeddedResource Include="CadastroServiços.resx">
       <DependentUpon>CadastroServiços.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CadastroUsuario.resx">
+      <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControleEstoque.resx">
       <DependentUpon>ControleEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlePagamento.resx">
       <DependentUpon>ControlePagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsqueciSenha.resx">
+      <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LancamentoServicos.resx">
       <DependentUpon>LancamentoServicos.cs</DependentUpon>

@@ -17,10 +17,10 @@ namespace CamadaDeNegocio
         private string rg_cliente;
         private string cpf_cliente;        
         private string email_cliente;
-        private int telefone_cliente;
-        private int celular_cliente;
-        private int cep_cliente;
-        private int numero_cliente;
+        private string telefone_cliente;
+        private string celular_cliente;
+        private string cep_cliente;
+        private string numero_cliente;
         private string rua_cliente;
         private string bairro_cliente;
         private string cidade_cliente;
@@ -55,18 +55,18 @@ namespace CamadaDeNegocio
             set { rg_cliente = value; }
         }
 
-        public int Telefone_cliente
+        public string Telefone_cliente
         {
             get { return telefone_cliente; }
             set { telefone_cliente = value; }
         }
 
-        public int Celular_cliente
+        public string Celular_cliente
         {
             get { return celular_cliente; }
             set { celular_cliente = value; }
         }
-        public int CEP_cliente
+        public string CEP_cliente
         {
             get { return cep_cliente; }
             set { cep_cliente = value; }
@@ -91,7 +91,7 @@ namespace CamadaDeNegocio
             get { return estado_cliente; }
             set { estado_cliente = value; }
         }
-        public int Numero_cliente
+        public string Numero_cliente
         {
             get { return numero_cliente; }
             set { numero_cliente = value; }

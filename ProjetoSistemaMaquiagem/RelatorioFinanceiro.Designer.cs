@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(530, 464);
             this.Controls.Add(this.dataGridView1);
             this.Name = "RelatorioFinanceiro";
-            this.Text = "RelatorioFinanceiro";
+            this.Text = "Relatorio Financeiro";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

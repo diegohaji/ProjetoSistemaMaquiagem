@@ -26,16 +26,25 @@ namespace ProjetoSistemaMaquiagem
             Cliente.CPF_cliente = maskedTextBoxCPF.Text;
             Cliente.Email_cliente = textBoxEmail.Text;
             Cliente.RG_Cliente = maskedTextBoxRG.Text;
-            Cliente.Celular_cliente = Convert.ToInt16(maskedTextBoxCelular.Text);
-            Cliente.Telefone_cliente = Convert.ToInt16(maskedTextBoxTelefone.Text);
-            Cliente.CEP_cliente = Convert.ToInt16(maskedTextBoxCEP.Text);
+            Cliente.Celular_cliente = maskedTextBoxCelular.Text;
+            Cliente.Telefone_cliente = maskedTextBoxTelefone.Text;
+            Cliente.CEP_cliente = maskedTextBoxCEP.Text;
             Cliente.Rua_cliente = textBoxRua.Text;
-            Cliente.Numero_cliente = Convert.ToInt16(textBoxNumero.Text);
+            Cliente.Numero_cliente = textBoxNumero.Text;
             Cliente.Bairro_cliente = textBoxBairro.Text;
             Cliente.Cidade_cliente = textBoxCidade.Text;
             Cliente.Estado_cliente = textBoxEstado.Text;
             Cliente.Complemento_cliente = textBoxComplemento.Text;
-            Cliente.Gravar();
+            ClnValidacao validar = new ClnValidacao();
+            if (validar.ValidaCPF(maskedTextBoxCPF.Text))
+              {
+                Cliente.Gravar();
+              }
+            else
+              {
+               MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." ,MessageBoxButtons.OK,MessageBoxIcon.Warning);
+              }
+            
 
         }
 

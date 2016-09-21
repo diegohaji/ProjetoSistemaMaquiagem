@@ -89,6 +89,8 @@ namespace ProjetoSistemaMaquiagem
 
         private void buttonCadUsuario_Click(object sender, EventArgs e)
         {
+            CadastroUsuario cu = new CadastroUsuario();
+            cu.Show();
         }
 
         private void buttonLogar_Click(object sender, EventArgs e)
@@ -96,11 +98,24 @@ namespace ProjetoSistemaMaquiagem
             string usuario = textBoxUsuario.Text;
             string senha = textBoxSenha.Text;
             ClnLogin login = new ClnLogin();
-            login.validarLogin(usuario,senha);
+            if (login.validarLogin(usuario, senha)){
+                MessageBox.Show("Logado com sucesso!", "Login válido.", MessageBoxButtons.OK
+                    , MessageBoxIcon.Exclamation);
+                groupBoxFuncionalidades.Visible = true;
+            }
+
+            else{
+                MessageBox.Show("Login inválido!\nDigite novamente.", "Login inválido.",MessageBoxButtons.OK
+                    ,MessageBoxIcon.Warning);
+
+            }
+                
         }
 
         private void buttonEsqueciSenha_Click(object sender, EventArgs e)
         {
+            EsqueciSenha es = new EsqueciSenha();
+            es.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

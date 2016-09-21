@@ -18,9 +18,8 @@ namespace ProjetoSistemaMaquiagem
         static void Main()
         {
              Application.EnableVisualStyles();
-              Application.SetCompatibleTextRenderingDefault(false);
-              Application.Run(new TelaPrincipal());
-       
+             Application.SetCompatibleTextRenderingDefault(false);
+             Application.Run(new TelaPrincipal());
 
         }
     }

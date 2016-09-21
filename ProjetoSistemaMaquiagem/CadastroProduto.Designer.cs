@@ -136,6 +136,7 @@
             this.maskedTextBoxDtAquisicao.Name = "maskedTextBoxDtAquisicao";
             this.maskedTextBoxDtAquisicao.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxDtAquisicao.TabIndex = 7;
+            this.maskedTextBoxDtAquisicao.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxDtAquisicao_MaskInputRejected);
             // 
             // textBoxMarca
             // 
@@ -299,7 +300,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroProduto";
-            this.Text = "CadastroProduto";
+            this.Text = "Cadastro de produto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.Cadastro = new System.Windows.Forms.GroupBox();
-            this.maskedTextBoxRG = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxCPF = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxRG = new System.Windows.Forms.MaskedTextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.maskedTextBoxCelular = new System.Windows.Forms.MaskedTextBox();
@@ -58,6 +58,7 @@
             this.BotaoExcluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBoxCEP = new System.Windows.Forms.MaskedTextBox();
             this.textBoxComplemento = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -65,7 +66,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.maskedTextBoxCEP = new System.Windows.Forms.MaskedTextBox();
             this.Cadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -75,8 +75,8 @@
             // 
             // Cadastro
             // 
-            this.Cadastro.Controls.Add(this.maskedTextBoxRG);
             this.Cadastro.Controls.Add(this.maskedTextBoxCPF);
+            this.Cadastro.Controls.Add(this.maskedTextBoxRG);
             this.Cadastro.Controls.Add(this.textBoxEmail);
             this.Cadastro.Controls.Add(this.label12);
             this.Cadastro.Controls.Add(this.maskedTextBoxCelular);
@@ -94,21 +94,21 @@
             this.Cadastro.TabStop = false;
             this.Cadastro.Text = "Cadastro";
             // 
-            // maskedTextBoxRG
-            // 
-            this.maskedTextBoxRG.Location = new System.Drawing.Point(245, 96);
-            this.maskedTextBoxRG.Mask = "000.000.000-00";
-            this.maskedTextBoxRG.Name = "maskedTextBoxRG";
-            this.maskedTextBoxRG.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxRG.TabIndex = 25;
-            // 
             // maskedTextBoxCPF
             // 
-            this.maskedTextBoxCPF.Location = new System.Drawing.Point(30, 96);
-            this.maskedTextBoxCPF.Mask = "00.000.000";
+            this.maskedTextBoxCPF.Location = new System.Drawing.Point(245, 96);
+            this.maskedTextBoxCPF.Mask = "000.000.000-00";
             this.maskedTextBoxCPF.Name = "maskedTextBoxCPF";
-            this.maskedTextBoxCPF.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxCPF.TabIndex = 24;
+            this.maskedTextBoxCPF.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxCPF.TabIndex = 25;
+            // 
+            // maskedTextBoxRG
+            // 
+            this.maskedTextBoxRG.Location = new System.Drawing.Point(30, 96);
+            this.maskedTextBoxRG.Mask = "00.000.000";
+            this.maskedTextBoxRG.Name = "maskedTextBoxRG";
+            this.maskedTextBoxRG.Size = new System.Drawing.Size(91, 20);
+            this.maskedTextBoxRG.TabIndex = 24;
             // 
             // textBoxEmail
             // 
@@ -353,6 +353,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
             // 
+            // maskedTextBoxCEP
+            // 
+            this.maskedTextBoxCEP.Location = new System.Drawing.Point(30, 42);
+            this.maskedTextBoxCEP.Mask = "00000-000";
+            this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
+            this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxCEP.TabIndex = 24;
+            // 
             // textBoxComplemento
             // 
             this.textBoxComplemento.Location = new System.Drawing.Point(30, 212);
@@ -418,14 +426,6 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
-            // maskedTextBoxCEP
-            // 
-            this.maskedTextBoxCEP.Location = new System.Drawing.Point(30, 42);
-            this.maskedTextBoxCEP.Mask = "00000-000";
-            this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
-            this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCEP.TabIndex = 24;
-            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +437,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Cadastro);
             this.Name = "CadastroCliente";
-            this.Text = "Cadastro Cliente";
+            this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.CadastroCliente_Load);
             this.Cadastro.ResumeLayout(false);
             this.Cadastro.PerformLayout();
@@ -480,13 +480,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCPF;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxRG;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxComplemento;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxRG;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCPF;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;

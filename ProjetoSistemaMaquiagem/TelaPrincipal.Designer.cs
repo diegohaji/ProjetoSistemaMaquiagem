@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageCadastro = new System.Windows.Forms.TabPage();
+            this.buttonProduto = new System.Windows.Forms.Button();
             this.buttonServicos = new System.Windows.Forms.Button();
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonFuncionario = new System.Windows.Forms.Button();
@@ -46,19 +47,20 @@
             this.buttonLancHorario = new System.Windows.Forms.Button();
             this.buttonAgendServico = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonEstoque = new System.Windows.Forms.Button();
             this.buttonVerificarEst = new System.Windows.Forms.Button();
             this.buttonAlterarEst = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonContFinanceiro = new System.Windows.Forms.Button();
             this.buttonRelatorio = new System.Windows.Forms.Button();
-            this.buttonEstoque = new System.Windows.Forms.Button();
-            this.buttonProduto = new System.Windows.Forms.Button();
+            this.groupBoxFuncionalidades = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBoxFuncionalidades.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -70,16 +72,16 @@
             this.groupBox1.Controls.Add(this.textBoxUsuario);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(515, 251);
+            this.groupBox1.Size = new System.Drawing.Size(139, 206);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Login";
             // 
             // buttonCadUsuario
             // 
-            this.buttonCadUsuario.Location = new System.Drawing.Point(9, 181);
+            this.buttonCadUsuario.Location = new System.Drawing.Point(9, 139);
             this.buttonCadUsuario.Name = "buttonCadUsuario";
             this.buttonCadUsuario.Size = new System.Drawing.Size(111, 23);
             this.buttonCadUsuario.TabIndex = 7;
@@ -89,7 +91,7 @@
             // 
             // buttonEsqueciSenha
             // 
-            this.buttonEsqueciSenha.Location = new System.Drawing.Point(9, 222);
+            this.buttonEsqueciSenha.Location = new System.Drawing.Point(9, 168);
             this.buttonEsqueciSenha.Name = "buttonEsqueciSenha";
             this.buttonEsqueciSenha.Size = new System.Drawing.Size(111, 23);
             this.buttonEsqueciSenha.TabIndex = 6;
@@ -99,7 +101,7 @@
             // 
             // buttonLogar
             // 
-            this.buttonLogar.Location = new System.Drawing.Point(9, 139);
+            this.buttonLogar.Location = new System.Drawing.Point(9, 111);
             this.buttonLogar.Name = "buttonLogar";
             this.buttonLogar.Size = new System.Drawing.Size(111, 23);
             this.buttonLogar.TabIndex = 5;
@@ -109,24 +111,24 @@
             // 
             // textBoxSenha
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(62, 88);
+            this.textBoxSenha.Location = new System.Drawing.Point(9, 74);
             this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSenha.Size = new System.Drawing.Size(111, 20);
             this.textBoxSenha.TabIndex = 4;
             this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
             // 
             // textBoxUsuario
             // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(62, 38);
+            this.textBoxUsuario.Location = new System.Drawing.Point(9, 35);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUsuario.Size = new System.Drawing.Size(111, 20);
             this.textBoxUsuario.TabIndex = 3;
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 91);
+            this.label2.Location = new System.Drawing.Point(6, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 2;
@@ -135,7 +137,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 41);
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 1;
@@ -147,7 +149,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(198, 19);
+            this.tabControl1.Location = new System.Drawing.Point(10, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(311, 143);
@@ -166,6 +168,16 @@
             this.tabPageCadastro.Size = new System.Drawing.Size(303, 117);
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Cadastro";
+            // 
+            // buttonProduto
+            // 
+            this.buttonProduto.Location = new System.Drawing.Point(163, 70);
+            this.buttonProduto.Name = "buttonProduto";
+            this.buttonProduto.Size = new System.Drawing.Size(134, 23);
+            this.buttonProduto.TabIndex = 3;
+            this.buttonProduto.Text = "Produto";
+            this.buttonProduto.UseVisualStyleBackColor = true;
+            this.buttonProduto.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonServicos
             // 
@@ -253,6 +265,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Estoque";
             // 
+            // buttonEstoque
+            // 
+            this.buttonEstoque.Location = new System.Drawing.Point(8, 6);
+            this.buttonEstoque.Name = "buttonEstoque";
+            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
+            this.buttonEstoque.TabIndex = 4;
+            this.buttonEstoque.Text = "Estoque";
+            this.buttonEstoque.UseVisualStyleBackColor = true;
+            // 
             // buttonVerificarEst
             // 
             this.buttonVerificarEst.Location = new System.Drawing.Point(7, 77);
@@ -303,33 +324,26 @@
             this.buttonRelatorio.UseVisualStyleBackColor = true;
             this.buttonRelatorio.Click += new System.EventHandler(this.buttonRelatorio_Click);
             // 
-            // buttonEstoque
+            // groupBoxFuncionalidades
             // 
-            this.buttonEstoque.Location = new System.Drawing.Point(8, 6);
-            this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
-            this.buttonEstoque.TabIndex = 4;
-            this.buttonEstoque.Text = "Estoque";
-            this.buttonEstoque.UseVisualStyleBackColor = true;
-            // 
-            // buttonProduto
-            // 
-            this.buttonProduto.Location = new System.Drawing.Point(163, 70);
-            this.buttonProduto.Name = "buttonProduto";
-            this.buttonProduto.Size = new System.Drawing.Size(134, 23);
-            this.buttonProduto.TabIndex = 3;
-            this.buttonProduto.Text = "Produto";
-            this.buttonProduto.UseVisualStyleBackColor = true;
-            this.buttonProduto.Click += new System.EventHandler(this.button1_Click);
+            this.groupBoxFuncionalidades.Controls.Add(this.tabControl1);
+            this.groupBoxFuncionalidades.Location = new System.Drawing.Point(158, 13);
+            this.groupBoxFuncionalidades.Name = "groupBoxFuncionalidades";
+            this.groupBoxFuncionalidades.Size = new System.Drawing.Size(327, 173);
+            this.groupBoxFuncionalidades.TabIndex = 1;
+            this.groupBoxFuncionalidades.TabStop = false;
+            this.groupBoxFuncionalidades.Text = "Funcionalidades";
+            this.groupBoxFuncionalidades.Visible = false;
             // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 280);
+            this.ClientSize = new System.Drawing.Size(499, 226);
+            this.Controls.Add(this.groupBoxFuncionalidades);
             this.Controls.Add(this.groupBox1);
             this.Name = "TelaPrincipal";
-            this.Text = "Principal";
+            this.Text = "Menu principal";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -337,6 +351,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBoxFuncionalidades.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -368,5 +383,6 @@
         private System.Windows.Forms.Button buttonContFinanceiro;
         private System.Windows.Forms.Button buttonProduto;
         private System.Windows.Forms.Button buttonEstoque;
+        private System.Windows.Forms.GroupBox groupBoxFuncionalidades;
     }
 }

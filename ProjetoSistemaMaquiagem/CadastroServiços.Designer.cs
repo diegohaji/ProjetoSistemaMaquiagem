@@ -241,7 +241,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroServiços";
-            this.Text = "CadastroServiços";
+            this.Text = "Cadastro de serviços";
             this.Load += new System.EventHandler(this.CadastroServiços_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

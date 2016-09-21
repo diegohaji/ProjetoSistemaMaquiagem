@@ -90,7 +90,7 @@
             this.ClientSize = new System.Drawing.Size(515, 438);
             this.Controls.Add(this.groupBox1);
             this.Name = "ControlePagamento";
-            this.Text = "ControlePagamento";
+            this.Text = "Controle de pagamento";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

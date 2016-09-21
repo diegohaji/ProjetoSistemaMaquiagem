@@ -110,7 +110,7 @@
             this.ClientSize = new System.Drawing.Size(490, 471);
             this.Controls.Add(this.groupBox1);
             this.Name = "LancamentoServicos";
-            this.Text = "LancamentoServicos";
+            this.Text = "Lancamento de servicos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

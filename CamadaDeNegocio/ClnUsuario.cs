@@ -29,10 +29,10 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Insert into tb_usuario");
             csql.Append("(");
-            csql.Append("usuario,");
-            csql.Append("senha) Values(");
+            csql.Append("nome_usuario,");
+            csql.Append("senha_usuario) Values(");
             csql.Append(usuario);
-            csql.Append("'" + senha + "')");
+            csql.Append(",'" + senha + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

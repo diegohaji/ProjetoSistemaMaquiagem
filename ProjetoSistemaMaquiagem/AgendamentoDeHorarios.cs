@@ -21,10 +21,19 @@ namespace ProjetoSistemaMaquiagem
 
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
-
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            agenda.Servico = comboBox1.Text;
+            agenda.NomeServico = textBoxNome.Text;
+            agenda.Horario = Convert.ToDouble(textBoxHorario.Text);
+            agenda.Gravar();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.textBoxConfirmarSenha = new System.Windows.Forms.TextBox();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,23 +54,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Usuario";
             // 
-            // label1
+            // textBoxConfirmarSenha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
+            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(8, 152);
+            this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
+            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(130, 20);
+            this.textBoxConfirmarSenha.TabIndex = 5;
             // 
-            // label2
+            // textBoxSenha
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Senha";
+            this.textBoxSenha.Location = new System.Drawing.Point(8, 99);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.Size = new System.Drawing.Size(133, 20);
+            this.textBoxSenha.TabIndex = 4;
+            // 
+            // textBoxUsuario
+            // 
+            this.textBoxUsuario.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxUsuario.Location = new System.Drawing.Point(8, 47);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(133, 20);
+            this.textBoxUsuario.TabIndex = 3;
             // 
             // label3
             // 
@@ -81,27 +85,23 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Confirmar Senha";
             // 
-            // textBoxUsuario
+            // label2
             // 
-            this.textBoxUsuario.ForeColor = System.Drawing.Color.White;
-            this.textBoxUsuario.Location = new System.Drawing.Point(8, 47);
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(133, 20);
-            this.textBoxUsuario.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Senha";
             // 
-            // textBoxSenha
+            // label1
             // 
-            this.textBoxSenha.Location = new System.Drawing.Point(8, 99);
-            this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.Size = new System.Drawing.Size(133, 20);
-            this.textBoxSenha.TabIndex = 4;
-            // 
-            // textBoxConfirmarSenha
-            // 
-            this.textBoxConfirmarSenha.Location = new System.Drawing.Point(8, 152);
-            this.textBoxConfirmarSenha.Name = "textBoxConfirmarSenha";
-            this.textBoxConfirmarSenha.Size = new System.Drawing.Size(130, 20);
-            this.textBoxConfirmarSenha.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usuario";
             // 
             // button1
             // 

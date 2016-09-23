@@ -196,6 +196,20 @@ CREATE TABLE `tb_venda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+
+CREATE TABLE `tb_usuario` (
+  `cd_usuario` int(10) UNSIGNED NOT NULL,
+  `cd_funcionario` int(10) UNSIGNED NOT NULL,
+  `nome_usuario` varchar(40) DEFAULT NULL,
+  `senha_usuario` varchar(40) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `tb_usuario`
+  ADD PRIMARY KEY (`cd_usuario`);
+  
+ ALTER TABLE `tb_usuario` 
+ ADD FOREIGN KEY (`cd_usuario`) REFERENCES `tb_funcionario` (`cd_funcionario`);
+
 -- Indexes for dumped tables
 --
 

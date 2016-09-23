@@ -45,6 +45,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxHorario = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -53,6 +55,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxHorario);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.textBoxNome);
             this.groupBox1.Controls.Add(this.label3);
@@ -70,14 +74,15 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(235, 37);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(178, 21);
             this.comboBox1.TabIndex = 5;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(30, 99);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(326, 20);
+            this.textBoxNome.Size = new System.Drawing.Size(166, 20);
             this.textBoxNome.TabIndex = 4;
             // 
             // label3
@@ -118,9 +123,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 308);
+            this.dataGridView1.Location = new System.Drawing.Point(478, 14);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 269);
             this.dataGridView1.TabIndex = 6;
             // 
             // botaoConfirmar
@@ -209,11 +214,27 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(235, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Horario";
+            // 
+            // textBoxHorario
+            // 
+            this.textBoxHorario.Location = new System.Drawing.Point(238, 98);
+            this.textBoxHorario.Name = "textBoxHorario";
+            this.textBoxHorario.Size = new System.Drawing.Size(175, 20);
+            this.textBoxHorario.TabIndex = 7;
+            // 
             // AgendamentoDeHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 509);
+            this.ClientSize = new System.Drawing.Size(933, 298);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
@@ -249,5 +270,7 @@
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxHorario;
+        private System.Windows.Forms.Label label4;
     }
 }

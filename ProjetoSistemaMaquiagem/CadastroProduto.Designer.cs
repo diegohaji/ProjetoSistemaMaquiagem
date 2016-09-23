@@ -236,9 +236,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 455);
+            this.dataGridView1.Location = new System.Drawing.Point(487, 96);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(455, 116);
+            this.dataGridView1.Size = new System.Drawing.Size(455, 270);
             this.dataGridView1.TabIndex = 5;
             // 
             // groupBox2
@@ -258,7 +258,7 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(12, 372);
+            this.groupBox3.Location = new System.Drawing.Point(486, 13);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(456, 70);
             this.groupBox3.TabIndex = 27;
@@ -294,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 583);
+            this.ClientSize = new System.Drawing.Size(946, 377);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);

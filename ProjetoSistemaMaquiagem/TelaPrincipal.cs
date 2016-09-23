@@ -123,5 +123,27 @@ namespace ProjetoSistemaMaquiagem
             CadastroProduto p = new CadastroProduto();
             p.Show();
         }
+
+        private void buttonEstoque_Click_1(object sender, EventArgs e)
+        {
+            ControleEstoque es = new ControleEstoque();
+            es.Show();
+
+         
+        }
+
+        private void buttonAlterarEstoque_Click(object sender, EventArgs e)
+        {
+            ControleEstoque es = new ControleEstoque();
+            es.Show();
+
+        }
+
+        private void buttonVerificarEst_Click(object sender, EventArgs e)
+        {
+            ControleEstoque es = new ControleEstoque();
+            es.Show();
+
+        }
     }
 }

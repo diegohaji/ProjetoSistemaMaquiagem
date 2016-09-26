@@ -75,5 +75,10 @@ namespace ProjetoSistemaMaquiagem
 
             }
         }
+
+        private void botaoExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

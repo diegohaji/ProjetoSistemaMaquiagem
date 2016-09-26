@@ -174,6 +174,7 @@
             this.botaoExcluir.TabIndex = 4;
             this.botaoExcluir.Text = "Excluir";
             this.botaoExcluir.UseVisualStyleBackColor = true;
+            this.botaoExcluir.Click += new System.EventHandler(this.botaoExcluir_Click);
             // 
             // dgv1
             // 

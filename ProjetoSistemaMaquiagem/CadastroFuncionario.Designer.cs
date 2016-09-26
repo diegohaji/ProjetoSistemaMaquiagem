@@ -379,6 +379,7 @@
             this.BotaoExcluir.TabIndex = 4;
             this.BotaoExcluir.Text = "Excluir";
             this.BotaoExcluir.UseVisualStyleBackColor = true;
+            this.BotaoExcluir.Click += new System.EventHandler(this.BotaoExcluir_Click);
             // 
             // groupBox3
             // 

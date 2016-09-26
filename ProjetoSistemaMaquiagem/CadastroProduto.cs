@@ -80,5 +80,18 @@ namespace ProjetoSistemaMaquiagem
 
         
         }
+
+        private void botaoExcluir_Click(object sender, EventArgs e)
+        {
+            string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text + " ?";
+            int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+            if (resposta == 1)
+            {
+                ClnProdutos produto = new ClnProdutos();
+                produto.Excluir(textBoxNome.Text);
+            }
+            LimparTxt(groupBox1);
+            AtualizarGrid();
+        }
     }
 }

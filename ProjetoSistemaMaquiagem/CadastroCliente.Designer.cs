@@ -322,6 +322,7 @@
             this.BotaoExcluir.TabIndex = 4;
             this.BotaoExcluir.Text = "Excluir";
             this.BotaoExcluir.UseVisualStyleBackColor = true;
+            this.BotaoExcluir.Click += new System.EventHandler(this.BotaoExcluir_Click);
             // 
             // dgv1
             // 
@@ -411,6 +412,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxPesquisar
             // 

@@ -20,6 +20,39 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
+        private void CadastroCliente_Load(Object sender, EventArgs e)
+        {
+           // AtualizarGrid();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxRua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void LimparTxt(Control controles)
+        {
+            foreach (Control ctl in controles.Controls)
+            {
+                if (ctl is TextBox) ctl.Text = string.Empty;
+                if (ctl is MaskedTextBox) ctl.Text = string.Empty;
+            }
+        }
+
+        private void AtualizarGrid()
+        {
+            DataSet ds = new DataSet();
+            ClnCliente cliente = new ClnCliente();
+            cliente.Nm_Cliente = textBoxPesquisar.Text;
+            ds = cliente.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
+        }
+
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
             StringBuilder mensagem = new StringBuilder();
@@ -44,61 +77,27 @@ namespace ProjetoSistemaMaquiagem
             if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
                 mensagem.Append("Campo Email em branco.\n");
-            }else
+            } 
             if (string.IsNullOrEmpty(maskedTextBoxRG.Text))
             {
                 mensagem.Append("Campo RG em branco.\n");
-            }else
-            if (string.IsNullOrEmpty(maskedTextBoxCPF.Text))
-            {
-                mensagem.Append("Campo CPF em branco.\n");
             }
 
 
             if (string.IsNullOrWhiteSpace(mensagem.ToString()))
             {
                 Cliente.Gravar();
+                AtualizarGrid();
+                LimparTxt(Cadastro);
             }
             else
             {
                 MessageBox.Show(mensagem.ToString(), "Campo inválido!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-            try {
-            }catch(MySqlException msqlex)
-            {
-
-                MessageBox.Show(msqlex.ToString(),"Erro!",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-
-            /*  ClnValidacao validar = new ClnValidacao();
-if (validar.ValidaCPF(maskedTextBoxCPF.Text))
-{
-Cliente.Gravar();
-}
-else
-{
-MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." ,MessageBoxButtons.OK,MessageBoxIcon.Warning);
-}
-
-*/
-        }
-
-        private void CadastroCliente_Load(object sender, EventArgs e)
-        {
+            
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxRua_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void BotaoCancelar_Click(object sender, EventArgs e)
         {
@@ -106,26 +105,7 @@ MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." 
             LimparTxt(Cadastro);
 
         }
-
-
-        public void LimparTxt(Control controles)
-        {
-            foreach (Control ctl in controles.Controls)
-            {
-                if (ctl is TextBox) ctl.Text = string.Empty;
-                if (ctl is MaskedTextBox) ctl.Text = string.Empty;
-            }
-        }
-
-        private void AtualizarGrid()
-        {
-            DataSet ds = new DataSet();
-            ClnCliente cliente = new ClnCliente();
-            cliente.Nm_Cliente = textBoxPesquisar.Text;
-            ds = cliente.BuscarporNome();
-            dgv1.DataSource = ds.Tables[0];
-        }
-
+        
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dgv1.CurrentRow.Selected = true;
@@ -140,5 +120,26 @@ MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." 
                 maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BotaoExcluir_Click(object sender, EventArgs e)
+        {
+
+            string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text  +" ?";
+            int resposta = Convert.ToInt16(MessageBox.Show(mensagem,"Excluir cadastro",MessageBoxButtons.YesNo,MessageBoxIcon.Question));
+            if(resposta == 1)
+            {
+                ClnCliente cliente = new ClnCliente();
+                cliente.Excluir(textBoxNome.Text);
+            }
+            LimparTxt(Cadastro);
+            AtualizarGrid();
+        }
+
+       
     }
 }

@@ -228,12 +228,12 @@ namespace CamadaDeNegocio
 
         //3.5 Método para excluir um funcionario do 
         //Banco de dados
-        public void Excluir()
+        public void Excluir(string nome)
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_funcionario ");
-            csql.Append(" where cd_funcionario=");
-            csql.Append(cd_funcionario);
+            csql.Append(" where nm_funcionario=");
+            csql.Append(nome);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

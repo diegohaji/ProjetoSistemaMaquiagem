@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxVlProduto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxUso = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxDtVencimento = new System.Windows.Forms.MaskedTextBox();
@@ -63,7 +63,7 @@
             // 
             this.groupBox1.Controls.Add(this.textBoxVlProduto);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBoxUso);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.maskedTextBoxDtVencimento);
@@ -97,13 +97,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Valor";
             // 
-            // textBox4
+            // textBoxUso
             // 
-            this.textBox4.Location = new System.Drawing.Point(78, 172);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(359, 95);
-            this.textBox4.TabIndex = 11;
+            this.textBoxUso.Location = new System.Drawing.Point(78, 172);
+            this.textBoxUso.Multiline = true;
+            this.textBoxUso.Name = "textBoxUso";
+            this.textBoxUso.Size = new System.Drawing.Size(359, 95);
+            this.textBoxUso.TabIndex = 11;
             // 
             // label6
             // 
@@ -223,6 +223,7 @@
             this.botaoCancelar.TabIndex = 3;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // botaoExcluir
             // 
@@ -318,7 +319,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxUso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDtVencimento;

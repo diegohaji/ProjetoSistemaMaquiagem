@@ -35,17 +35,17 @@ namespace ProjetoSistemaMaquiagem
             Cliente.Cidade_cliente = textBoxCidade.Text;
             Cliente.Estado_cliente = textBoxEstado.Text;
             Cliente.Complemento_cliente = textBoxComplemento.Text;
-            ClnValidacao validar = new ClnValidacao();
-            if (validar.ValidaCPF(maskedTextBoxCPF.Text))
-              {
-                Cliente.Gravar();
-              }
-            else
-              {
-               MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." ,MessageBoxButtons.OK,MessageBoxIcon.Warning);
-              }
+        /*  ClnValidacao validar = new ClnValidacao();
+              if (validar.ValidaCPF(maskedTextBoxCPF.Text))
+                {
+                  Cliente.Gravar();
+                }
+              else
+                {
+                  MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." ,MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
             
-
+        */
         }
 
         private void CadastroCliente_Load(object sender, EventArgs e)
@@ -61,6 +61,24 @@ namespace ProjetoSistemaMaquiagem
         private void textBoxRua_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BotaoCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxBairro.Text = null;
+            textBoxCidade.Text = null;
+            textBoxComplemento.Text = null;
+            textBoxEmail.Text = null;
+            textBoxEstado.Text = null;
+            textBoxNome.Text = null;
+            textBoxNumero.Text = null;
+            textBoxRua.Text = null;
+            maskedTextBoxCelular.Text = null;
+            maskedTextBoxCEP.Text = null;
+            maskedTextBoxCPF.Text = null;
+            maskedTextBoxRG.Text = null;
+            maskedTextBoxTelefone.Text = null;
+           
         }
     }
 }

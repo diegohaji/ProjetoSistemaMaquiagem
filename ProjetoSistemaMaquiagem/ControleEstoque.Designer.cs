@@ -182,6 +182,7 @@
             this.botaoCancelar.TabIndex = 4;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // botaoExcluir
             // 

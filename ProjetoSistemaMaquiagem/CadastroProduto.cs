@@ -39,5 +39,16 @@ namespace ProjetoSistemaMaquiagem
         {
 
         }
+
+        private void botaoCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxCodigo.Text = null;
+            textBoxMarca.Text = null;
+            textBoxNome.Text = null;
+            textBoxVlProduto.Text = null;
+            textBoxUso.Text = null;
+            maskedTextBoxDtAquisicao.Text = null;
+            maskedTextBoxDtVencimento.Text = null;
+        }
     }
 }

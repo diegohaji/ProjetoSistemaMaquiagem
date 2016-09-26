@@ -107,6 +107,8 @@ namespace ProjetoSistemaMaquiagem
             else{
                 MessageBox.Show("Login inválido!\nDigite novamente.", "Login inválido.",MessageBoxButtons.OK
                     ,MessageBoxIcon.Warning);
+                textBoxUsuario.Text = null;
+                textBoxSenha.Text = null;
 
             }
                 

@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxHorario = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxServico = new System.Windows.Forms.ComboBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxHorario = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             this.groupBox1.Controls.Add(this.textBoxHorario);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxServico);
             this.groupBox1.Controls.Add(this.textBoxNome);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -69,14 +69,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // comboBox1
+            // textBoxHorario
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(235, 37);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.textBoxHorario.Location = new System.Drawing.Point(238, 98);
+            this.textBoxHorario.Name = "textBoxHorario";
+            this.textBoxHorario.Size = new System.Drawing.Size(175, 20);
+            this.textBoxHorario.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(235, 83);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Horario";
+            // 
+            // comboBoxServico
+            // 
+            this.comboBoxServico.FormattingEnabled = true;
+            this.comboBoxServico.Location = new System.Drawing.Point(235, 37);
+            this.comboBoxServico.Name = "comboBoxServico";
+            this.comboBoxServico.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxServico.TabIndex = 5;
+            this.comboBoxServico.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBoxNome
             // 
@@ -155,6 +171,7 @@
             this.botaoCancelar.TabIndex = 9;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // botaoExcluir
             // 
@@ -214,22 +231,6 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(235, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Horario";
-            // 
-            // textBoxHorario
-            // 
-            this.textBoxHorario.Location = new System.Drawing.Point(238, 98);
-            this.textBoxHorario.Name = "textBoxHorario";
-            this.textBoxHorario.Size = new System.Drawing.Size(175, 20);
-            this.textBoxHorario.TabIndex = 7;
-            // 
             // AgendamentoDeHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,7 +270,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxServico;
         private System.Windows.Forms.TextBox textBoxHorario;
         private System.Windows.Forms.Label label4;
     }

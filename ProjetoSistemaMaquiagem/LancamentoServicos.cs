@@ -28,5 +28,11 @@ namespace ProjetoSistemaMaquiagem
         {
 
         }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            textBoxFuncionario.Text = null;
+            textBoxServico.Text = null;
+        }
     }
 }

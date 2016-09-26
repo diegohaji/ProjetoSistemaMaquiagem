@@ -46,5 +46,13 @@ namespace ProjetoSistemaMaquiagem
         {
 
         }
+
+        private void Cancelar_Click(object sender, EventArgs e)
+        {
+            textBoxDuracao.Text = null;
+            textBoxNome.Text = null;
+            textBoxPreco.Text = null;
+            comboBoxTipo.Text = null;
+        }
     }
 }

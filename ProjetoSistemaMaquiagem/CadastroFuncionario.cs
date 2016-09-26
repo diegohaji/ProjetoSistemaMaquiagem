@@ -38,5 +38,23 @@ namespace ProjetoSistemaMaquiagem
             funcionario.Gravar();
 
         }
+
+        private void BotaoCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxBairro.Text = null;
+            textBoxCidade.Text = null;
+            textBoxComplemento.Text = null;
+            textBoxEmail.Text = null;
+            textBoxEstado.Text = null;
+            textBoxNome.Text = null;
+            textBoxNumero.Text = null;
+            textBoxRua.Text = null;
+            maskedTextBoxCelular.Text = null;
+            maskedTextBoxCEP.Text = null;
+            maskedTextBoxCPF.Text = null;
+            maskedTextBoxRG.Text = null;
+            maskedTextBoxTelefone.Text = null;
+
+        }
     }
 }

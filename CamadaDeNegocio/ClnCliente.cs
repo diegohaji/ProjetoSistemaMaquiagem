@@ -15,7 +15,7 @@ namespace CamadaDeNegocio
         private int cd_cliente;
         private string nm_cliente;
         private string rg_cliente;
-        private string cpf_cliente;        
+        private string cpf_cliente;
         private string email_cliente;
         private string telefone_cliente;
         private string celular_cliente;
@@ -38,12 +38,12 @@ namespace CamadaDeNegocio
         {
             get { return nm_cliente; }
             set { nm_cliente = value; }
-        }        
+        }
         public string CPF_cliente
         {
             get { return cpf_cliente; }
             set { cpf_cliente = value; }
-        }        
+        }
         public string Email_cliente
         {
             get { return email_cliente; }
@@ -103,7 +103,7 @@ namespace CamadaDeNegocio
             set { complemento_cliente = value; }
         }
 
-        
+
 
         //3 - métodos da classe de Negócios (clnCliente.cs)
 
@@ -114,14 +114,14 @@ namespace CamadaDeNegocio
             string csql;
             csql = "Select * From tb_cliente where nm_cliente=" + nm_cliente;
             DataSet ds;
-           ClasseDados cd = new ClasseDados();
+            ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
                 cd_cliente = Convert.ToInt16(dados.GetValue(0));
-                nm_cliente = Convert.ToString(dados.GetValue(1));                
-                cpf_cliente = Convert.ToString(dados.GetValue(2));                
+                nm_cliente = Convert.ToString(dados.GetValue(1));
+                cpf_cliente = Convert.ToString(dados.GetValue(2));
                 email_cliente = Convert.ToString(dados.GetValue(3));
 
             }
@@ -133,7 +133,7 @@ namespace CamadaDeNegocio
         {
             string csql;
             csql = "Select * From tb_cliente order by cd_produto desc limit 1";
-           ClasseDados cd = new ClasseDados();
+            ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }
 
@@ -145,25 +145,24 @@ namespace CamadaDeNegocio
             csql.Append("Insert into tb_cliente");
             csql.Append("(");
             csql.Append("cd_cliente,");
-            csql.Append("nm_cliente,");           
+            csql.Append("nm_cliente,");
             csql.Append("cpf_cliente,");
             csql.Append("rg_cliente,");
-            csql.Append("telefone_cliente,");
-            csql.Append("celular_cliente,");
-            csql.Append("email_cliente) Values(");
+            csql.Append("email_cliente,");
+            csql.Append("cep_cliente) Values(");
             csql.Append(cd_cliente);
-            csql.Append(",'" + nm_cliente + "',");            
+            csql.Append(",'" + nm_cliente + "',");
             csql.Append("'" + cpf_cliente + "',");
             csql.Append("'" + rg_cliente + "',");
-            csql.Append("'" + telefone_cliente + "',");
-            csql.Append("'" + celular_cliente + "',");
-            csql.Append("'" + email_cliente + "')");
+            csql.Append("'" + email_cliente + "',");
+            csql.Append("'" + cep_cliente + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+
             csql = new StringBuilder();
             csql.Append("Insert into tb_endereco");
             csql.Append("(");
-            csql.Append("cep,");
+            csql.Append("cep_cliente,");
             csql.Append("cidade,");
             csql.Append("bairro,");
             csql.Append("logradouro,");
@@ -182,6 +181,23 @@ namespace CamadaDeNegocio
             csql.Append("'" + estado_cliente + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_fones_cliente");
+            csql.Append("(");
+            csql.Append("fone Values(");
+            csql.Append(telefone_cliente + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_fones_cliente");
+            csql.Append("(");
+            csql.Append("fone Values(");
+            csql.Append(telefone_cliente + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
         }
 
         //3.4 Método para atualizar (alterar um registro)
@@ -196,7 +212,7 @@ namespace CamadaDeNegocio
             csql.Append("', cpf_cliente='");
             csql.Append(cpf_cliente);
             csql.Append("', email_cliente='");
-            csql.Append(email_cliente);            
+            csql.Append(email_cliente);
             csql.Append("' where cd_cliente=");
             csql.Append(cd_cliente);
             ClasseDados cd = new ClasseDados();

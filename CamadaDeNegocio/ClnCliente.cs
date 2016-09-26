@@ -141,6 +141,7 @@ namespace CamadaDeNegocio
         //Banco de dados
         public void Gravar()
         {
+
             StringBuilder csql = new StringBuilder();
             csql.Append("Insert into tb_cliente");
             csql.Append("(");
@@ -162,7 +163,7 @@ namespace CamadaDeNegocio
             csql = new StringBuilder();
             csql.Append("Insert into tb_endereco");
             csql.Append("(");
-            csql.Append("cep_cliente,");
+            csql.Append("cep,");
             csql.Append("cidade,");
             csql.Append("bairro,");
             csql.Append("logradouro,");
@@ -182,6 +183,7 @@ namespace CamadaDeNegocio
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 
+
             csql = new StringBuilder();
             csql.Append("Insert into tb_fones_cliente");
             csql.Append("(");
@@ -199,7 +201,6 @@ namespace CamadaDeNegocio
             cd.ExecutarComando(csql.ToString());
 
         }
-
         //3.4 Método para atualizar (alterar um registro)
         public void Atualizar()
         {

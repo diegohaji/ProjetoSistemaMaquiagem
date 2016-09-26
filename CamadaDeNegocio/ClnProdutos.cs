@@ -97,7 +97,7 @@ namespace CamadaDeNegocio
             csql.Append("vl_servico,");
             csql.Append(cd_produto);
             csql.Append(",'" + nm_produto + "',");
-            csql.Append("'" + vl_produto + "',");
+            csql.Append("'" + vl_produto + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

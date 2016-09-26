@@ -126,16 +126,20 @@
             // maskedTextBoxDtVencimento
             // 
             this.maskedTextBoxDtVencimento.Location = new System.Drawing.Point(337, 68);
+            this.maskedTextBoxDtVencimento.Mask = "00/00/0000";
             this.maskedTextBoxDtVencimento.Name = "maskedTextBoxDtVencimento";
             this.maskedTextBoxDtVencimento.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxDtVencimento.TabIndex = 8;
+            this.maskedTextBoxDtVencimento.ValidatingType = typeof(System.DateTime);
             // 
             // maskedTextBoxDtAquisicao
             // 
             this.maskedTextBoxDtAquisicao.Location = new System.Drawing.Point(337, 17);
+            this.maskedTextBoxDtAquisicao.Mask = "00/00/0000";
             this.maskedTextBoxDtAquisicao.Name = "maskedTextBoxDtAquisicao";
             this.maskedTextBoxDtAquisicao.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxDtAquisicao.TabIndex = 7;
+            this.maskedTextBoxDtAquisicao.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxDtAquisicao.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxDtAquisicao_MaskInputRejected);
             // 
             // textBoxMarca

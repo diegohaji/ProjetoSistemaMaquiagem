@@ -44,13 +44,9 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Insert into tb_agendahorario");
             csql.Append("(");
-            csql.Append("cd_servico,");
-            csql.Append("servico,");
-            csql.Append("nome,");
+            csql.Append("cd_funcionario,");
             csql.Append("horario) Values(");
             csql.Append(cd_servico);
-            csql.Append(",'" + servico + "',");
-            csql.Append(",'" + nome + "',");
             csql.Append("'" + horario + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());

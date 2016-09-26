@@ -70,7 +70,7 @@ namespace CamadaDeNegocio
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Insert into tb_cliente");
+            csql.Append("Insert into tb_servico");
             csql.Append("(");
             csql.Append("cd_produto,");
             csql.Append("nm_servico,");

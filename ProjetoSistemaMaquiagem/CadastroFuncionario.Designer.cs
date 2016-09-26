@@ -41,7 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxEndereco = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCEP = new System.Windows.Forms.MaskedTextBox();
             this.textBoxComplemento = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -65,12 +65,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.Cadastro.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxEndereco.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // Cadastro
@@ -194,28 +194,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
-            // groupBox1
+            // groupBoxEndereco
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBoxCEP);
-            this.groupBox1.Controls.Add(this.textBoxComplemento);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxRua);
-            this.groupBox1.Controls.Add(this.textBoxEstado);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxBairro);
-            this.groupBox1.Controls.Add(this.textBoxCidade);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBoxNumero);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(12, 198);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(477, 242);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endereço";
+            this.groupBoxEndereco.Controls.Add(this.maskedTextBoxCEP);
+            this.groupBoxEndereco.Controls.Add(this.textBoxComplemento);
+            this.groupBoxEndereco.Controls.Add(this.label13);
+            this.groupBoxEndereco.Controls.Add(this.label6);
+            this.groupBoxEndereco.Controls.Add(this.textBoxRua);
+            this.groupBoxEndereco.Controls.Add(this.textBoxEstado);
+            this.groupBoxEndereco.Controls.Add(this.label7);
+            this.groupBoxEndereco.Controls.Add(this.textBoxBairro);
+            this.groupBoxEndereco.Controls.Add(this.textBoxCidade);
+            this.groupBoxEndereco.Controls.Add(this.label8);
+            this.groupBoxEndereco.Controls.Add(this.label11);
+            this.groupBoxEndereco.Controls.Add(this.textBoxNumero);
+            this.groupBoxEndereco.Controls.Add(this.label10);
+            this.groupBoxEndereco.Controls.Add(this.label9);
+            this.groupBoxEndereco.Location = new System.Drawing.Point(12, 198);
+            this.groupBoxEndereco.Name = "groupBoxEndereco";
+            this.groupBoxEndereco.Size = new System.Drawing.Size(477, 242);
+            this.groupBoxEndereco.TabIndex = 23;
+            this.groupBoxEndereco.TabStop = false;
+            this.groupBoxEndereco.Text = "Endereço";
             // 
             // maskedTextBoxCEP
             // 
@@ -417,13 +417,14 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
-            // dataGridView1
+            // dgv1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(513, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(477, 405);
-            this.dataGridView1.TabIndex = 25;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(513, 100);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(477, 405);
+            this.dgv1.TabIndex = 25;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CadastroFuncionario
             // 
@@ -431,20 +432,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1002, 510);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxEndereco);
             this.Controls.Add(this.Cadastro);
             this.Name = "CadastroFuncionario";
             this.Text = "Cadastro de funcionario";
             this.Cadastro.ResumeLayout(false);
             this.Cadastro.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxEndereco.ResumeLayout(false);
+            this.groupBoxEndereco.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,7 +465,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEndereco;
         private System.Windows.Forms.TextBox textBoxComplemento;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
@@ -487,7 +488,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCEP;
     }
 }

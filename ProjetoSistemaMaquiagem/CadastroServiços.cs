@@ -49,10 +49,31 @@ namespace ProjetoSistemaMaquiagem
 
         private void Cancelar_Click(object sender, EventArgs e)
         {
-            textBoxDuracao.Text = null;
-            textBoxNome.Text = null;
-            textBoxPreco.Text = null;
-            comboBoxTipo.Text = null;
+           LimparTxt(groupBox1);
+        }
+        public void LimparTxt(Control controles)
+        {
+            foreach (Control ctl in controles.Controls)
+            {
+                if (ctl is TextBox) ctl.Text = string.Empty;
+                if (ctl is MaskedTextBox) ctl.Text = string.Empty;
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv1.CurrentRow.Selected = true;
+            ClnServiços servicos = new ClnServiços();
+            if (dgv1.RowCount > 0)
+            {
+               
+                textBoxNome.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                textBoxPreco.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxTipo.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                textBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+
+
+            }
         }
     }
 }

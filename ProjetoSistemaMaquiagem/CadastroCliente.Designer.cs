@@ -56,8 +56,8 @@
             this.BotaoEditar = new System.Windows.Forms.Button();
             this.BotaoCancelar = new System.Windows.Forms.Button();
             this.BotaoExcluir = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.groupBoxEndereco = new System.Windows.Forms.GroupBox();
             this.maskedTextBoxCEP = new System.Windows.Forms.MaskedTextBox();
             this.textBoxComplemento = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -67,8 +67,8 @@
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.Cadastro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.groupBoxEndereco.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -323,36 +323,37 @@
             this.BotaoExcluir.Text = "Excluir";
             this.BotaoExcluir.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(512, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(477, 405);
-            this.dataGridView1.TabIndex = 5;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(512, 102);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(477, 405);
+            this.dgv1.TabIndex = 5;
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
-            // groupBox1
+            // groupBoxEndereco
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBoxCEP);
-            this.groupBox1.Controls.Add(this.textBoxComplemento);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxRua);
-            this.groupBox1.Controls.Add(this.textBoxEstado);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxBairro);
-            this.groupBox1.Controls.Add(this.textBoxCidade);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBoxNumero);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(13, 200);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(477, 242);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endereço";
+            this.groupBoxEndereco.Controls.Add(this.maskedTextBoxCEP);
+            this.groupBoxEndereco.Controls.Add(this.textBoxComplemento);
+            this.groupBoxEndereco.Controls.Add(this.label13);
+            this.groupBoxEndereco.Controls.Add(this.label6);
+            this.groupBoxEndereco.Controls.Add(this.textBoxRua);
+            this.groupBoxEndereco.Controls.Add(this.textBoxEstado);
+            this.groupBoxEndereco.Controls.Add(this.label7);
+            this.groupBoxEndereco.Controls.Add(this.textBoxBairro);
+            this.groupBoxEndereco.Controls.Add(this.textBoxCidade);
+            this.groupBoxEndereco.Controls.Add(this.label8);
+            this.groupBoxEndereco.Controls.Add(this.label11);
+            this.groupBoxEndereco.Controls.Add(this.textBoxNumero);
+            this.groupBoxEndereco.Controls.Add(this.label10);
+            this.groupBoxEndereco.Controls.Add(this.label9);
+            this.groupBoxEndereco.Location = new System.Drawing.Point(13, 200);
+            this.groupBoxEndereco.Name = "groupBoxEndereco";
+            this.groupBoxEndereco.Size = new System.Drawing.Size(477, 242);
+            this.groupBoxEndereco.TabIndex = 22;
+            this.groupBoxEndereco.TabStop = false;
+            this.groupBoxEndereco.Text = "Endereço";
             // 
             // maskedTextBoxCEP
             // 
@@ -434,17 +435,17 @@
             this.ClientSize = new System.Drawing.Size(1014, 513);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBoxEndereco);
+            this.Controls.Add(this.dgv1);
             this.Controls.Add(this.Cadastro);
             this.Name = "CadastroCliente";
             this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.CadastroCliente_Load);
             this.Cadastro.ResumeLayout(false);
             this.Cadastro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            this.groupBoxEndereco.ResumeLayout(false);
+            this.groupBoxEndereco.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -478,11 +479,11 @@
         private System.Windows.Forms.Button BotaoEditar;
         private System.Windows.Forms.Button BotaoCancelar;
         private System.Windows.Forms.Button BotaoExcluir;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxRG;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxEndereco;
         private System.Windows.Forms.TextBox textBoxComplemento;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;

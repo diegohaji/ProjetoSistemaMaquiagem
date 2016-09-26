@@ -26,6 +26,7 @@ namespace ProjetoSistemaMaquiagem
             agenda.NomeServico = textBoxNome.Text;
             agenda.Horario = Convert.ToDouble(textBoxHorario.Text);
             agenda.Gravar();
+            AtualizarGrid();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,10 +41,37 @@ namespace ProjetoSistemaMaquiagem
 
         private void botaoCancelar_Click(object sender, EventArgs e)
         {
-            comboBoxServico.Text = null;
-            textBoxCodigo.Text = null;
-            textBoxHorario.Text = null;
-            textBoxNome.Text = null;
+            LimparTxt(groupBox1);
+        }
+        public void LimparTxt(Control controles)
+        {
+            foreach (Control ctl in controles.Controls)
+            {
+                if (ctl is TextBox) ctl.Text = string.Empty;
+                if (ctl is MaskedTextBox) ctl.Text = string.Empty;
+            }
+        }
+
+        private void AtualizarGrid()
+        {
+            DataSet ds = new DataSet();
+            ClnCliente cliente = new ClnCliente();
+            cliente.Nm_Cliente = textBoxPesquisar.Text;
+            ds = cliente.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv1.CurrentRow.Selected = true;
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            if (dgv1.RowCount > 0)
+            {
+                textBoxCodigo.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                textBoxNome.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                textBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+            }
         }
     }
 }

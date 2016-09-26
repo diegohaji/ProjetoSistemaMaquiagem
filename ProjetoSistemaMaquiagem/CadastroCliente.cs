@@ -102,20 +102,43 @@ MessageBox.Show("Campo de CPF inválido! \nDigite novamente","Campo inválido." 
 
         private void BotaoCancelar_Click(object sender, EventArgs e)
         {
-            textBoxBairro.Text = null;
-            textBoxCidade.Text = null;
-            textBoxComplemento.Text = null;
-            textBoxEmail.Text = null;
-            textBoxEstado.Text = null;
-            textBoxNome.Text = null;
-            textBoxNumero.Text = null;
-            textBoxRua.Text = null;
-            maskedTextBoxCelular.Text = null;
-            maskedTextBoxCEP.Text = null;
-            maskedTextBoxCPF.Text = null;
-            maskedTextBoxRG.Text = null;
-            maskedTextBoxTelefone.Text = null;
+            LimparTxt(groupBoxEndereco);
+            LimparTxt(Cadastro);
 
+        }
+
+
+        public void LimparTxt(Control controles)
+        {
+            foreach (Control ctl in controles.Controls)
+            {
+                if (ctl is TextBox) ctl.Text = string.Empty;
+                if (ctl is MaskedTextBox) ctl.Text = string.Empty;
+            }
+        }
+
+        private void AtualizarGrid()
+        {
+            DataSet ds = new DataSet();
+            ClnCliente cliente = new ClnCliente();
+            cliente.Nm_Cliente = textBoxPesquisar.Text;
+            ds = cliente.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
+        }
+
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv1.CurrentRow.Selected = true;
+            ClnCliente cliente = new ClnCliente();
+            if (dgv1.RowCount > 0)
+            {
+                textBoxNome.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                textBoxEmail.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+            }
         }
     }
 }

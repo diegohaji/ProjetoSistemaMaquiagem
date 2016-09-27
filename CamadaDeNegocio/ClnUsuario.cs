@@ -27,13 +27,28 @@ namespace CamadaDeNegocio
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
             csql.Append("Insert into tb_usuario");
             csql.Append("(");
+            csql.Append("cd_usuario,");
+            csql.Append("cd_funcionario,");
             csql.Append("nome_usuario,");
             csql.Append("senha_usuario) Values(");
-            csql.Append(usuario);
+            ClnFuncionario funcionario = new ClnFuncionario();
+            csql.Append(1);
+            csql.Append(",'" + funcionario.Cd_Funcionario + "'");
+            csql.Append(",'" + usuario + "'");
             csql.Append(",'" + senha + "')");
-            ClasseDados cd = new ClasseDados();
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(1);
+            cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
 
@@ -41,7 +56,7 @@ namespace CamadaDeNegocio
         public bool BuscarUsuario(string usuario)
         {
             string csql;
-            csql = "Select * From tb_usuario where usuario=" + usuario;
+            csql = "Select nome_usuario From tb_usuario where nome_usuario='" + usuario + "'";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -65,14 +80,29 @@ namespace CamadaDeNegocio
         //Atualiza a senha no banco de dados
         public void NovaSenha(string senha)
         {
+            
+            string sql;
+            sql = "Select * From tb_usuario where nome_usuario='" + usuario + "'";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(sql);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Array dados = ds.Tables[0].Rows[0].ItemArray;
+                this.usuario = Convert.ToString(dados.GetValue(2));
+                this.senha = Convert.ToString(dados.GetValue(3));
+
+
+            }
             StringBuilder csql = new StringBuilder();
             csql.Append("Update tb_usuario ");
-            csql.Append("set senha=");
+            csql.Append("set senha_usuario='");
             csql.Append(senha);
-            csql.Append("' where senha=");
-            csql.Append(this.senha);
-            ClasseDados cd = new ClasseDados();
+            csql.Append("' where senha_usuario='");
+            csql.Append( this.senha + "'");
+            cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
+    
     }
 }

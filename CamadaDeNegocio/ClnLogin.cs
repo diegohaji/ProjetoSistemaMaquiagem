@@ -28,7 +28,7 @@ namespace CamadaDeNegocio
 
         public bool validarLogin(string login, string senha)
         {
-            string sql = "Select login_funcionario, senha_funcionario from tb_funcionario where login_funcionario='" + login+"'";
+            string sql = "Select nome_usuario, senha_usuario from tb_usuario where nome_usuario='" + login+"'";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(sql);

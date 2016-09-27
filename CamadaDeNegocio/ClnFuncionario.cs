@@ -158,6 +158,11 @@ namespace CamadaDeNegocio
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+           
             csql.Append("Insert into tb_funcionario");
             csql.Append("(");
             csql.Append("cd_funcionario,");
@@ -165,42 +170,47 @@ namespace CamadaDeNegocio
             csql.Append("cpf_funcionario,");
             csql.Append("rg_funcionario,");
             csql.Append("email_funcionario,");
-            csql.Append("telefone_funcionario,");
-            csql.Append("celular_funcionario,");
-            csql.Append("login_funcionario,");
-            csql.Append("senha_funcionario) Values(");
+           // csql.Append("telefone_funcionario,");
+           // csql.Append("celular_funcionario,");
+           csql.Append("login_funcionario,");
+           csql.Append("senha_funcionario) Values(");
             csql.Append(cd_funcionario);
-            csql.Append(",'" + nm_funcionario + "',");
+            csql.Append("'" + nm_funcionario + "',");
             csql.Append("'" + cpf_funcionario + "',");
             csql.Append("'" + rg_funcionario + "',");
             csql.Append("'" + email_funcionario + "',");
             csql.Append("'" + login_funcionario + "',");
             csql.Append("'" + senha_funcionario + "')");
-            ClasseDados cd = new ClasseDados();
-            cd.ExecutarComando(csql.ToString());
-            csql = new StringBuilder();
-            csql.Append("Insert into tb_endereco");
-            csql.Append("(");
-            csql.Append("cep,");
-            csql.Append("cidade,");
-            csql.Append("bairro,");
-            csql.Append("logradouro,");
-            csql.Append("num,");
-            csql.Append("complemento,");
-            csql.Append("cd_funcionario,");
-            csql.Append("estado) Values(");
-            csql.Append(cep_funcionario);
-            csql.Append(",'" + cidade_funcionario + "',");
-            csql.Append("'" + bairro_funcionario + "',");
-            csql.Append("'" + rua_funcionario + "',");
-            csql.Append("'" + bairro_funcionario + "',");
-            csql.Append("'" + numero_funcionario + "',");
-            csql.Append("'" + complemento_funcionario + "',");
-            csql.Append("'" + cd_funcionario + "',");
-            csql.Append("'" + estado_funcionario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-
+            /*
+           csql = new StringBuilder();
+           csql.Append("Insert into tb_endereco");
+           csql.Append("(");
+           csql.Append("cep,");
+           csql.Append("cidade,");
+           csql.Append("bairro,");
+           csql.Append("logradouro,");
+           csql.Append("num,");
+           csql.Append("complemento,");
+           csql.Append("cd_cliente,");
+           csql.Append("estado) Values(");
+           csql.Append(cep_funcionario);
+           csql.Append(",'" + cidade_funcionario + "',");
+           csql.Append("'" + bairro_funcionario + "',");
+           csql.Append("'" + rua_funcionario + "',");
+           csql.Append("'" + numero_funcionario + "',");
+           csql.Append("'" + complemento_funcionario + "',");
+           csql.Append("'" + cd_funcionario + "',");
+           csql.Append("'" + estado_funcionario + "')");
+           cd = new ClasseDados();
+           cd.ExecutarComando(csql.ToString());
+           csql = new StringBuilder();
+           csql.Append("SET FOREIGN_KEY_CHECKS = ");
+           csql.Append(1);
+           cd = new ClasseDados();
+           cd.ExecutarComando(csql.ToString());
+           */
         }
 
         //3.4 Método para atualizar (alterar um registro)

@@ -360,6 +360,7 @@
             this.BotaoEditar.TabIndex = 2;
             this.BotaoEditar.Text = "Editar";
             this.BotaoEditar.UseVisualStyleBackColor = true;
+            this.BotaoEditar.Click += new System.EventHandler(this.BotaoEditar_Click);
             // 
             // BotaoCancelar
             // 
@@ -439,6 +440,7 @@
             this.Controls.Add(this.Cadastro);
             this.Name = "CadastroFuncionario";
             this.Text = "Cadastro de funcionario";
+            this.Load += new System.EventHandler(this.CadastroFuncionario_Load);
             this.Cadastro.ResumeLayout(false);
             this.Cadastro.PerformLayout();
             this.groupBoxEndereco.ResumeLayout(false);

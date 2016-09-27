@@ -59,6 +59,7 @@
             // 
             this.textBoxConfirmarNovaSenha.Location = new System.Drawing.Point(12, 155);
             this.textBoxConfirmarNovaSenha.Name = "textBoxConfirmarNovaSenha";
+            this.textBoxConfirmarNovaSenha.PasswordChar = '*';
             this.textBoxConfirmarNovaSenha.Size = new System.Drawing.Size(163, 20);
             this.textBoxConfirmarNovaSenha.TabIndex = 20;
             this.textBoxConfirmarNovaSenha.TextChanged += new System.EventHandler(this.textBoxConfirmarNovaSenha_TextChanged);
@@ -67,6 +68,7 @@
             // 
             this.textBoxNovaSenha.Location = new System.Drawing.Point(12, 100);
             this.textBoxNovaSenha.Name = "textBoxNovaSenha";
+            this.textBoxNovaSenha.PasswordChar = '*';
             this.textBoxNovaSenha.Size = new System.Drawing.Size(163, 20);
             this.textBoxNovaSenha.TabIndex = 19;
             this.textBoxNovaSenha.TextChanged += new System.EventHandler(this.textBoxNovaSenha_TextChanged);

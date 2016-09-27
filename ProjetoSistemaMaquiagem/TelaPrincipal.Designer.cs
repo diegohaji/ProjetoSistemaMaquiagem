@@ -113,6 +113,7 @@
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(9, 74);
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(111, 20);
             this.textBoxSenha.TabIndex = 4;
             this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
@@ -152,7 +153,7 @@
             this.tabControl1.Location = new System.Drawing.Point(10, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(311, 143);
+            this.tabControl1.Size = new System.Drawing.Size(309, 181);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPageCadastro
@@ -165,15 +166,15 @@
             this.tabPageCadastro.Location = new System.Drawing.Point(4, 22);
             this.tabPageCadastro.Name = "tabPageCadastro";
             this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCadastro.Size = new System.Drawing.Size(303, 117);
+            this.tabPageCadastro.Size = new System.Drawing.Size(301, 155);
             this.tabPageCadastro.TabIndex = 0;
             this.tabPageCadastro.Text = "Cadastro";
             // 
             // buttonProduto
             // 
-            this.buttonProduto.Location = new System.Drawing.Point(163, 70);
+            this.buttonProduto.Location = new System.Drawing.Point(163, 83);
             this.buttonProduto.Name = "buttonProduto";
-            this.buttonProduto.Size = new System.Drawing.Size(134, 23);
+            this.buttonProduto.Size = new System.Drawing.Size(138, 67);
             this.buttonProduto.TabIndex = 3;
             this.buttonProduto.Text = "Produto";
             this.buttonProduto.UseVisualStyleBackColor = true;
@@ -183,7 +184,7 @@
             // 
             this.buttonServicos.Location = new System.Drawing.Point(163, 6);
             this.buttonServicos.Name = "buttonServicos";
-            this.buttonServicos.Size = new System.Drawing.Size(134, 23);
+            this.buttonServicos.Size = new System.Drawing.Size(138, 67);
             this.buttonServicos.TabIndex = 2;
             this.buttonServicos.Text = "Serviços";
             this.buttonServicos.UseVisualStyleBackColor = true;
@@ -191,9 +192,9 @@
             // 
             // buttonCliente
             // 
-            this.buttonCliente.Location = new System.Drawing.Point(6, 70);
+            this.buttonCliente.Location = new System.Drawing.Point(6, 83);
             this.buttonCliente.Name = "buttonCliente";
-            this.buttonCliente.Size = new System.Drawing.Size(138, 23);
+            this.buttonCliente.Size = new System.Drawing.Size(138, 67);
             this.buttonCliente.TabIndex = 1;
             this.buttonCliente.Text = "Cliente";
             this.buttonCliente.UseVisualStyleBackColor = true;
@@ -203,7 +204,7 @@
             // 
             this.buttonFuncionario.Location = new System.Drawing.Point(6, 6);
             this.buttonFuncionario.Name = "buttonFuncionario";
-            this.buttonFuncionario.Size = new System.Drawing.Size(138, 23);
+            this.buttonFuncionario.Size = new System.Drawing.Size(138, 67);
             this.buttonFuncionario.TabIndex = 0;
             this.buttonFuncionario.Text = "Funcionario";
             this.buttonFuncionario.UseVisualStyleBackColor = true;
@@ -218,7 +219,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(303, 117);
+            this.tabPage2.Size = new System.Drawing.Size(301, 155);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Serviços";
             // 
@@ -226,7 +227,7 @@
             // 
             this.buttonServPrestado.Location = new System.Drawing.Point(165, 6);
             this.buttonServPrestado.Name = "buttonServPrestado";
-            this.buttonServPrestado.Size = new System.Drawing.Size(132, 23);
+            this.buttonServPrestado.Size = new System.Drawing.Size(132, 70);
             this.buttonServPrestado.TabIndex = 2;
             this.buttonServPrestado.Text = "Serviço Prestado";
             this.buttonServPrestado.UseVisualStyleBackColor = true;
@@ -234,9 +235,9 @@
             // 
             // buttonLancHorario
             // 
-            this.buttonLancHorario.Location = new System.Drawing.Point(7, 67);
+            this.buttonLancHorario.Location = new System.Drawing.Point(6, 82);
             this.buttonLancHorario.Name = "buttonLancHorario";
-            this.buttonLancHorario.Size = new System.Drawing.Size(138, 23);
+            this.buttonLancHorario.Size = new System.Drawing.Size(290, 70);
             this.buttonLancHorario.TabIndex = 1;
             this.buttonLancHorario.Text = "Lançamento de horário";
             this.buttonLancHorario.UseVisualStyleBackColor = true;
@@ -246,7 +247,7 @@
             // 
             this.buttonAgendServico.Location = new System.Drawing.Point(7, 7);
             this.buttonAgendServico.Name = "buttonAgendServico";
-            this.buttonAgendServico.Size = new System.Drawing.Size(138, 23);
+            this.buttonAgendServico.Size = new System.Drawing.Size(138, 70);
             this.buttonAgendServico.TabIndex = 0;
             this.buttonAgendServico.Text = "Agendamento de serviço";
             this.buttonAgendServico.UseVisualStyleBackColor = true;
@@ -261,7 +262,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(303, 117);
+            this.tabPage3.Size = new System.Drawing.Size(301, 155);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Estoque";
             // 
@@ -269,7 +270,7 @@
             // 
             this.buttonEstoque.Location = new System.Drawing.Point(8, 6);
             this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(136, 23);
+            this.buttonEstoque.Size = new System.Drawing.Size(136, 70);
             this.buttonEstoque.TabIndex = 4;
             this.buttonEstoque.Text = "Estoque";
             this.buttonEstoque.UseVisualStyleBackColor = true;
@@ -277,9 +278,9 @@
             // 
             // buttonVerificarEst
             // 
-            this.buttonVerificarEst.Location = new System.Drawing.Point(7, 77);
+            this.buttonVerificarEst.Location = new System.Drawing.Point(8, 82);
             this.buttonVerificarEst.Name = "buttonVerificarEst";
-            this.buttonVerificarEst.Size = new System.Drawing.Size(137, 23);
+            this.buttonVerificarEst.Size = new System.Drawing.Size(289, 70);
             this.buttonVerificarEst.TabIndex = 1;
             this.buttonVerificarEst.Text = "Verificar";
             this.buttonVerificarEst.UseVisualStyleBackColor = true;
@@ -289,7 +290,7 @@
             // 
             this.buttonAlterarEstoque.Location = new System.Drawing.Point(160, 6);
             this.buttonAlterarEstoque.Name = "buttonAlterarEstoque";
-            this.buttonAlterarEstoque.Size = new System.Drawing.Size(137, 23);
+            this.buttonAlterarEstoque.Size = new System.Drawing.Size(137, 70);
             this.buttonAlterarEstoque.TabIndex = 0;
             this.buttonAlterarEstoque.Text = "Alterar";
             this.buttonAlterarEstoque.UseVisualStyleBackColor = true;
@@ -303,15 +304,15 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(303, 117);
+            this.tabPage4.Size = new System.Drawing.Size(301, 155);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "ControleFinanceiro";
             // 
             // buttonContFinanceiro
             // 
-            this.buttonContFinanceiro.Location = new System.Drawing.Point(7, 79);
+            this.buttonContFinanceiro.Location = new System.Drawing.Point(6, 82);
             this.buttonContFinanceiro.Name = "buttonContFinanceiro";
-            this.buttonContFinanceiro.Size = new System.Drawing.Size(137, 23);
+            this.buttonContFinanceiro.Size = new System.Drawing.Size(290, 70);
             this.buttonContFinanceiro.TabIndex = 1;
             this.buttonContFinanceiro.Text = "Controle Financeiro";
             this.buttonContFinanceiro.UseVisualStyleBackColor = true;
@@ -321,7 +322,7 @@
             // 
             this.buttonRelatorio.Location = new System.Drawing.Point(7, 7);
             this.buttonRelatorio.Name = "buttonRelatorio";
-            this.buttonRelatorio.Size = new System.Drawing.Size(137, 23);
+            this.buttonRelatorio.Size = new System.Drawing.Size(290, 70);
             this.buttonRelatorio.TabIndex = 0;
             this.buttonRelatorio.Text = "Gerar Relatório";
             this.buttonRelatorio.UseVisualStyleBackColor = true;
@@ -332,10 +333,11 @@
             this.groupBoxFuncionalidades.Controls.Add(this.tabControl1);
             this.groupBoxFuncionalidades.Location = new System.Drawing.Point(158, 13);
             this.groupBoxFuncionalidades.Name = "groupBoxFuncionalidades";
-            this.groupBoxFuncionalidades.Size = new System.Drawing.Size(327, 173);
+            this.groupBoxFuncionalidades.Size = new System.Drawing.Size(329, 206);
             this.groupBoxFuncionalidades.TabIndex = 1;
             this.groupBoxFuncionalidades.TabStop = false;
             this.groupBoxFuncionalidades.Text = "Funcionalidades";
+            this.groupBoxFuncionalidades.Visible = false;
             // 
             // TelaPrincipal
             // 

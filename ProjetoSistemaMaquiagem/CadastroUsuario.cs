@@ -24,6 +24,7 @@ namespace ProjetoSistemaMaquiagem
             usuario.Usuario = textBoxUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
             usuario.Gravar();
+            this.Close();
         }
     }
 }

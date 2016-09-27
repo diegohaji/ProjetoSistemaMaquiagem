@@ -62,6 +62,8 @@ namespace ProjetoSistemaMaquiagem
             if (usuario.BuscarUsuario(textBoxUsuario.Text) && textBoxNovaSenha.Text.Equals(textBoxConfirmarNovaSenha.Text))
             {
                 usuario.NovaSenha(textBoxNovaSenha.Text);
+                MessageBox.Show("Senha alterada com sucesso.", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
             }
             else
             {

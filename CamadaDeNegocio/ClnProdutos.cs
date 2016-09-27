@@ -57,11 +57,11 @@ namespace CamadaDeNegocio
         //3 - métodos da classe de Negócios (clnservico.cs)
 
 
-        //3.1 Buscar dados do cliente cujo codigo foi especificado
+        //3.1 Buscar dados do produto cujo codigo foi especificado
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_cliente where cd_produto=" + cd_produto;
+            csql = "Select * From tb_produto where cd_produto=" + cd_produto;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -76,25 +76,25 @@ namespace CamadaDeNegocio
         }
 
         //3.2 Buscar o próximo Id Numerico para 
-        //inclusao de um novo cliente.
+        //inclusao de um novo produto.
         public int BuscarId()
         {
             string csql;
-            csql = "Select * From tb_cliente order by cd_produto desc limit 1";
+            csql = "Select * From tb_produto order by cd_produto desc limit 1";
             ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }
 
-        //3.3 Método para incluir um novo cliente no 
+        //3.3 Método para incluir um novo produto no 
         //Banco de dados
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Insert into tb_cliente");
+            csql.Append("Insert into tb_produto");
             csql.Append("(");
             csql.Append("cd_produto,");
-            csql.Append("nm_servico,");
-            csql.Append("vl_servico,");
+            csql.Append("nm_produto,");
+            csql.Append("vl_produto) Values(");
             csql.Append(cd_produto);
             csql.Append(",'" + nm_produto + "',");
             csql.Append("'" + vl_produto + "')");
@@ -106,12 +106,12 @@ namespace CamadaDeNegocio
         public void Atualizar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Update tb_cliente ");
+            csql.Append("Update tb_produto ");
             csql.Append("set cd_produto=");
             csql.Append(cd_produto);
-            csql.Append(", nm_servico='");
+            csql.Append(", nm_produto='");
             csql.Append(nm_produto);
-            csql.Append("', vl_servico='");
+            csql.Append("', vl_produto='");
             csql.Append(vl_produto);
             csql.Append("' where cd_produto=");
             csql.Append(cd_produto);
@@ -119,23 +119,23 @@ namespace CamadaDeNegocio
             cd.ExecutarComando(csql.ToString());
         }
 
-        //3.5 Método para excluir um cliente do 
+        //3.5 Método para excluir um produto do 
         //Banco de dados
         public void Excluir(string produto)
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Delete From tb_cliente ");
+            csql.Append("Delete From tb_produto ");
             csql.Append(" where nm_produto=");
             csql.Append(produto);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
 
-        //3.6 Método para buscar os dados do cliente de acordo com o nome
+        //3.6 Método para buscar os dados do produto de acordo com o nome
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_cliente where nm_servico like('%" + nm_produto + "%')";
+            csql = "Select * From tb_produto where nm_produto like('%" + nm_produto + "%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

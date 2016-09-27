@@ -243,6 +243,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AgendamentoDeHorarios";
             this.Text = "Agendamento de horarios";
+            this.Load += new System.EventHandler(this.AgendamentoHorario);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();

@@ -24,25 +24,9 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
-        private void botaoConfirmar_Click(object sender, EventArgs e)
+        private void CadastroProduto_Load(object sender, EventArgs e)
         {
-            ClnProdutos prod = new ClnProdutos();
-            prod.Nm_Produto = textBoxNome.Text;
-            prod.Nm_Marca = textBoxMarca.Text;
-            prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
-          //  prod.Dt_Vencimento = Convert.ToDateTime(maskedTextBoxDtVencimento.Text);
-          //  prod.Dt_Aquisicao = Convert.ToDateTime(maskedTextBoxDtAquisicao.Text);
-            prod.Gravar();
-        }
-
-        private void maskedTextBoxDtAquisicao_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void botaoCancelar_Click(object sender, EventArgs e)
-        {
-            LimparTxt(groupBox1);
+            AtualizarGrid();
         }
 
         public void LimparTxt(Control controles)
@@ -57,10 +41,32 @@ namespace ProjetoSistemaMaquiagem
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
-            ClnCliente cliente = new ClnCliente();
-            cliente.Nm_Cliente = textBoxPesquisar.Text;
-            ds = cliente.BuscarporNome();
+            ClnProdutos produto = new ClnProdutos();
+            produto.Nm_Produto = textBoxPesquisar.Text;
+            ds = produto.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
+        }
+
+        private void botaoConfirmar_Click(object sender, EventArgs e)
+        {
+            ClnProdutos prod = new ClnProdutos();
+            prod.Nm_Produto = textBoxNome.Text;
+            prod.Nm_Marca = textBoxMarca.Text;
+            prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
+          //  prod.Dt_Vencimento = Convert.ToDateTime(maskedTextBoxDtVencimento.Text);
+          //  prod.Dt_Aquisicao = Convert.ToDateTime(maskedTextBoxDtAquisicao.Text);
+            prod.Gravar();
+            AtualizarGrid();
+        }
+
+        private void maskedTextBoxDtAquisicao_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void botaoCancelar_Click(object sender, EventArgs e)
+        {
+            LimparTxt(groupBox1);
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)

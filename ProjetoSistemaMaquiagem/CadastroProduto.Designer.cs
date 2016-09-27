@@ -308,6 +308,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de produto";
+            this.Load += new System.EventHandler(this.CadastroProduto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();

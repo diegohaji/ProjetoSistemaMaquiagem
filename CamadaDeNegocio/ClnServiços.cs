@@ -37,11 +37,11 @@ namespace CamadaDeNegocio
         //3 - métodos da classe de Negócios (clnservico.cs)
 
 
-        //3.1 Buscar dados do cliente cujo codigo foi especificado
+        //3.1 Buscar dados do servico cujo codigo foi especificado
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_cliente where cd_produto=" + cd_servico;
+            csql = "Select * From tb_servico where cd_servico=" + cd_servico;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -56,29 +56,39 @@ namespace CamadaDeNegocio
         }
 
         //3.2 Buscar o próximo Id Numerico para 
-        //inclusao de um novo cliente.
+        //inclusao de um novo servico.
         public int BuscarId()
         {
             string csql;
-            csql = "Select * From tb_cliente order by cd_produto desc limit 1";
+            csql = "Select * From tb_servico order by cd_produto desc limit 1";
             ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }
 
-        //3.3 Método para incluir um novo cliente no 
+        //3.3 Método para incluir um novo servico no 
         //Banco de dados
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
             csql.Append("Insert into tb_servico");
             csql.Append("(");
-            csql.Append("cd_produto,");
+            csql.Append("cd_servico,");
             csql.Append("nm_servico,");
-            csql.Append("vl_servico,");
+            csql.Append("vl_servico) Values(");
             csql.Append(cd_servico);
             csql.Append(",'" + nm_servico + "',");
-            csql.Append("'" + vl_servico + "',");
-            ClasseDados cd = new ClasseDados();
+            csql.Append("'" + vl_servico + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(1);
+            cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
 
@@ -86,36 +96,38 @@ namespace CamadaDeNegocio
         public void Atualizar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Update tb_cliente ");
-            csql.Append("set cd_produto=");
+
+            csql.Append("Update tb_servico ");
+            csql.Append("set cd_servico=");
             csql.Append(cd_servico);
             csql.Append(", nm_servico='");
             csql.Append(nm_servico);
             csql.Append("', vl_servico='");
             csql.Append(vl_servico);
-            csql.Append("' where cd_produto=");
+            csql.Append("' where cd_servico=");
             csql.Append(cd_servico);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+
         }
 
-        //3.5 Método para excluir um cliente do 
+        //3.5 Método para excluir um servico do 
         //Banco de dados
         public void Excluir(string servico)
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Delete From tb_cliente ");
+            csql.Append("Delete From tb_servico ");
             csql.Append(" where nm_servico=");
             csql.Append(servico);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
 
-        //3.6 Método para buscar os dados do cliente de acordo com o nome
+        //3.6 Método para buscar os dados do servico de acordo com o nome
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_cliente where nm_servico like('%" + nm_servico + "%')";
+            csql = "Select * From tb_servico where nm_servico like('%" + nm_servico + "%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

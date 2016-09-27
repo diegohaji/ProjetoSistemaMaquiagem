@@ -19,15 +19,6 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
-        private void botaoConfirmar_Click(object sender, EventArgs e)
-        {
-            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-            agenda.Servico = comboBoxServico.Text;
-            agenda.NomeServico = textBoxNome.Text;
-            agenda.Horario = Convert.ToDouble(textBoxHorario.Text);
-            agenda.Gravar();
-            AtualizarGrid();
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -39,10 +30,6 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
-        private void botaoCancelar_Click(object sender, EventArgs e)
-        {
-            LimparTxt(groupBox1);
-        }
         public void LimparTxt(Control controles)
         {
             foreach (Control ctl in controles.Controls)
@@ -55,10 +42,30 @@ namespace ProjetoSistemaMaquiagem
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
-            ClnCliente cliente = new ClnCliente();
-            cliente.Nm_Cliente = textBoxPesquisar.Text;
-            ds = cliente.BuscarporNome();
+           ClnServiços servico = new ClnServiços();
+            servico.Nm_Servico = textBoxPesquisar.Text;
+            ds = servico.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            agenda.Horario = Convert.ToInt16(textBoxPesquisar.Text);
+            ds = servico.BuscarporNome();
+            dgv1.DataSource = ds.Tables[1];
+
+        }
+
+        private void botaoConfirmar_Click(object sender, EventArgs e)
+        {
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            agenda.Servico = comboBoxServico.Text;
+            agenda.NomeServico = textBoxNome.Text;
+            agenda.Horario = Convert.ToDouble(textBoxHorario.Text);
+            agenda.Gravar();
+            AtualizarGrid();
+        }
+
+        private void botaoCancelar_Click(object sender, EventArgs e)
+        {
+            LimparTxt(groupBox1);
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -72,6 +79,11 @@ namespace ProjetoSistemaMaquiagem
                 textBoxNome.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 textBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
+        }
+
+        private void AgendamentoHorario(object sender, EventArgs e)
+        {
+            AtualizarGrid();
         }
     }
 }

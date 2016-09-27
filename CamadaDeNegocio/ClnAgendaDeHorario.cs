@@ -42,19 +42,30 @@ namespace CamadaDeNegocio
         public void Gravar()
         {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Insert into tb_agendahorario");
-            csql.Append("(");
-            csql.Append("cd_funcionario,");
-            csql.Append("horario) Values(");
-            csql.Append(cd_servico);
-            csql.Append("'" + horario + "')");
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_horario_func");
+            csql.Append("(");
+            csql.Append("cd_funcionario,");
+            csql.Append("horarios) Values(");
+            csql.Append(12);
+            csql.Append(",'" + horario + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
         }
     
         public void Atualizar() {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Update into tb_agendahorario");
+            csql.Append("Update into tb_horario_func");
 
 
 

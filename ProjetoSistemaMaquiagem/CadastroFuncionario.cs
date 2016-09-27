@@ -49,7 +49,6 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
-
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
             try {
@@ -68,9 +67,10 @@ namespace ProjetoSistemaMaquiagem
                 funcionario.Estado_funcionario = textBoxEstado.Text;
                 funcionario.Complemento_funcionario = textBoxComplemento.Text;
                 funcionario.Gravar();
+                AtualizarGrid();
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Fudeu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -79,7 +79,6 @@ namespace ProjetoSistemaMaquiagem
             LimparTxt(Cadastro);
             LimparTxt(groupBoxEndereco);
         }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

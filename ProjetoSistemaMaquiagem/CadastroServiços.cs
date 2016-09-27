@@ -29,17 +29,29 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
+        private void AtualizarGrid()
+        {
+            DataSet ds = new DataSet();
+            ClnServiços servicos = new ClnServiços();
+            servicos.Nm_Servico = textBoxPesquisar.Text;
+            ds = servicos.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
+
+        }
+
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnServiços serv = new ClnServiços();
             serv.Nm_Servico = textBoxNome.Text;
             serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
             serv.Gravar();
+            AtualizarGrid();
+            
         }
 
         private void CadastroServiços_Load(object sender, EventArgs e)
         {
-
+            AtualizarGrid();
         }
 
         private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,7 +90,7 @@ namespace ProjetoSistemaMaquiagem
 
         private void botaoExcluir_Click(object sender, EventArgs e)
         {
-
+            AtualizarGrid();
         }
     }
 }

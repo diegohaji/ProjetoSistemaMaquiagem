@@ -125,8 +125,8 @@ namespace CamadaDeNegocio
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_produto ");
-            csql.Append(" where nm_produto=");
-            csql.Append(produto);
+            csql.Append(" where nm_produto='");
+            csql.Append(produto + "'");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

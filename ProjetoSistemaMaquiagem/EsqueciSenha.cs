@@ -16,46 +16,55 @@ namespace ProjetoSistemaMaquiagem
 {
     public partial class EsqueciSenha : Form
     {
+        //Construtor
         public EsqueciSenha()
         {
             InitializeComponent();
         }
-
+      
+        //inutil
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
+       
+        //inutil
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+      
+        //inutil
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
+       
+        //inutil
         private void textBoxNovaSenha_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+       
+        //inutil
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
+       
+        //inutil
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
-
+       
+        //inutil
         private void textBoxConfirmarNovaSenha_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+       
+        //funcao que cria a nova senha do usuario
         private void button1_Click(object sender, EventArgs e)
         {
             ClnUsuario usuario = new ClnUsuario();

@@ -39,7 +39,7 @@ namespace CamadaDeNegocio
             csql.Append("nome_usuario,");
             csql.Append("senha_usuario) Values(");
             ClnFuncionario funcionario = new ClnFuncionario();
-            csql.Append(1);
+            csql.Append(2);
             csql.Append(",'" + funcionario.Cd_Funcionario + "'");
             csql.Append(",'" + usuario + "'");
             csql.Append(",'" + senha + "')");

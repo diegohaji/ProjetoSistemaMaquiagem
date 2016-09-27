@@ -78,11 +78,11 @@ namespace ProjetoSistemaMaquiagem
             cp.Show();
 
         }
-
+        //inutil
         private void textBoxUsuario_TextChanged(object sender, EventArgs e)
         {
         }
-
+        //inutil
         private void textBoxSenha_TextChanged(object sender, EventArgs e)
         {
         }
@@ -119,7 +119,7 @@ namespace ProjetoSistemaMaquiagem
             EsqueciSenha es = new EsqueciSenha();
             es.Show();
         }
-
+        //cria a tela do cadastro de produtos
         private void button1_Click(object sender, EventArgs e)
         {
             CadastroProduto p = new CadastroProduto();

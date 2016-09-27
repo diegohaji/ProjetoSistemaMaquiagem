@@ -13,11 +13,12 @@ namespace ProjetoSistemaMaquiagem
 {
     public partial class CadastroUsuario : Form
     {
+        //construtor
         public CadastroUsuario()
         {
             InitializeComponent();
         }
-
+        //Funcao que cadastra o usuario
         private void button1_Click(object sender, EventArgs e)
         {
             ClnUsuario usuario = new ClnUsuario();

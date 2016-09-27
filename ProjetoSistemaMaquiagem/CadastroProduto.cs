@@ -14,21 +14,32 @@ namespace ProjetoSistemaMaquiagem
 {
     public partial class CadastroProduto : Form
     {
+
+        //Construtor
         public CadastroProduto()
         {
             InitializeComponent();
         }
-
+        
+        //inutil
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
+        
+        //inutil
+        private void maskedTextBoxDtAquisicao_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
 
+        }
+
+        //função que carrega o grid quando o formulario é chamado
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
         }
 
+        //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
             foreach (Control ctl in controles.Controls)
@@ -38,6 +49,7 @@ namespace ProjetoSistemaMaquiagem
             }
         }
 
+        //funcao que atualiza o grid
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
@@ -47,6 +59,7 @@ namespace ProjetoSistemaMaquiagem
             dgv1.DataSource = ds.Tables[0];
         }
 
+        //funçao que cadastra o produto
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnProdutos prod = new ClnProdutos();
@@ -58,17 +71,14 @@ namespace ProjetoSistemaMaquiagem
             prod.Gravar();
             AtualizarGrid();
         }
-
-        private void maskedTextBoxDtAquisicao_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
+        
+        //funcao que é chamada quando é cancelado o cadastro
         private void botaoCancelar_Click(object sender, EventArgs e)
         {
             LimparTxt(groupBox1);
         }
 
+        //funcao do grid
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         dgv1.CurrentRow.Selected = true;
@@ -87,17 +97,28 @@ namespace ProjetoSistemaMaquiagem
         
         }
 
+        //função que é chamada para excluir produto
         private void botaoExcluir_Click(object sender, EventArgs e)
         {
             string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text + " ?";
             int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
-            if (resposta == 1)
+            if (resposta == 6)
             {
                 ClnProdutos produto = new ClnProdutos();
                 produto.Excluir(textBoxNome.Text);
             }
             LimparTxt(groupBox1);
             AtualizarGrid();
+        }
+
+        //funcao da pesquisa
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            ClnProdutos produto = new ClnProdutos();
+            produto.Nm_Produto = textBoxPesquisar.Text;
+            ds = produto.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
         }
     }
 }

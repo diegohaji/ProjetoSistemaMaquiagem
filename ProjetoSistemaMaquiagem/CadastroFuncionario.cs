@@ -14,11 +14,13 @@ namespace ProjetoSistemaMaquiagem
 {
     public partial class CadastroFuncionario : Form
     {
+        //Contrutor
         public CadastroFuncionario()
         {
             InitializeComponent();
         }
-
+        
+        //função que carrega o grid quando o formulario é chamado
         private void CadastroFuncionario_Load(object sender, EventArgs e)
         {
             try {
@@ -29,7 +31,8 @@ namespace ProjetoSistemaMaquiagem
                 MessageBox.Show(ex.ToString(), "Fudeu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
+        //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
             foreach (Control ctl in controles.Controls)
@@ -38,7 +41,8 @@ namespace ProjetoSistemaMaquiagem
                 if (ctl is MaskedTextBox) ctl.Text = string.Empty;
             }
         }
-
+        
+        //atualiza o grid
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
@@ -49,6 +53,7 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
+        //funçao que cadastra o cliente
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
             try {
@@ -74,12 +79,14 @@ namespace ProjetoSistemaMaquiagem
             }
         }
 
+        //funcao que é chamada quando é cancelado o cadastro
         private void BotaoCancelar_Click(object sender, EventArgs e)
         {
             LimparTxt(Cadastro);
             LimparTxt(groupBoxEndereco);
         }
-
+       
+        //função do grid
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dgv1.CurrentRow.Selected = true;
@@ -95,12 +102,13 @@ namespace ProjetoSistemaMaquiagem
             }
 
         }
-
+      
+        //função que é chamada para excluir algum horario
         private void BotaoExcluir_Click(object sender, EventArgs e)
         {
             string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text + " ?";
             int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
-            if (resposta == 1)
+            if (resposta == 6)
             {
                 ClnFuncionario funcionario = new ClnFuncionario();
                 funcionario.Excluir(textBoxNome.Text);
@@ -109,6 +117,7 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
         }
 
+        //Funcao para editar algum cadastro NAO ESTÁ FUNCIONANDO!!!!
         private void BotaoEditar_Click(object sender, EventArgs e)
         {
             try
@@ -133,7 +142,15 @@ namespace ProjetoSistemaMaquiagem
             }
 
         }
-
-     
+        
+        //funcao de pesquisa
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            ClnFuncionario funcionario = new ClnFuncionario();
+            funcionario.Nm_Funcionario = textBoxPesquisar.Text;
+            ds = funcionario.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
+        }
     }
 }

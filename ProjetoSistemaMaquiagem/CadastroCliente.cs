@@ -22,7 +22,7 @@ namespace ProjetoSistemaMaquiagem
 
         private void CadastroCliente_Load(Object sender, EventArgs e)
         {
-           // AtualizarGrid();
+            AtualizarGrid();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -83,7 +83,6 @@ namespace ProjetoSistemaMaquiagem
                 mensagem.Append("Campo RG em branco.\n");
             }
 
-
             if (string.IsNullOrWhiteSpace(mensagem.ToString()))
             {
                 Cliente.Gravar();
@@ -116,8 +115,8 @@ namespace ProjetoSistemaMaquiagem
                 textBoxEmail.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+               // maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+               // maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
             }
         }
 

@@ -170,8 +170,7 @@ namespace CamadaDeNegocio
             csql.Append("cpf_funcionario,");
             csql.Append("rg_funcionario,");
             csql.Append("email_funcionario,");
-           // csql.Append("telefone_funcionario,");
-           // csql.Append("celular_funcionario,");
+          
            csql.Append("login_funcionario,");
            csql.Append("senha_funcionario) Values(");
             csql.Append(cd_funcionario);
@@ -183,7 +182,7 @@ namespace CamadaDeNegocio
             csql.Append("'" + senha_funcionario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-            /*
+            
            csql = new StringBuilder();
            csql.Append("Insert into tb_endereco");
            csql.Append("(");
@@ -210,7 +209,27 @@ namespace CamadaDeNegocio
            csql.Append(1);
            cd = new ClasseDados();
            cd.ExecutarComando(csql.ToString());
-           */
+            /*
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_fones_funcionario");
+            csql.Append("(");
+            csql.Append("fone,");
+            csql.Append("cd_funcionario) Values('");
+            csql.Append(telefone_funcionario);
+            csql.Append("'," + cd_funcionario + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_fones_funcionario");
+            csql.Append("(");
+            csql.Append("fone,");
+            csql.Append("cd_funcionario) Values('");
+            csql.Append(telefone_funcionario);
+            csql.Append("'," + cd_funcionario + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            */
         }
 
         //3.4 Método para atualizar (alterar um registro)

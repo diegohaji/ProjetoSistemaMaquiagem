@@ -143,6 +143,12 @@ namespace CamadaDeNegocio
         {
 
             StringBuilder csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
             csql.Append("Insert into tb_cliente");
             csql.Append("(");
             csql.Append("cd_cliente,");
@@ -157,7 +163,7 @@ namespace CamadaDeNegocio
             csql.Append("'" + rg_cliente + "',");
             csql.Append("'" + email_cliente + "',");
             csql.Append("'" + cep_cliente + "')");
-            ClasseDados cd = new ClasseDados();
+            cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 
             csql = new StringBuilder();
@@ -175,28 +181,36 @@ namespace CamadaDeNegocio
             csql.Append(",'" + cidade_cliente + "',");
             csql.Append("'" + bairro_cliente + "',");
             csql.Append("'" + rua_cliente + "',");
-            csql.Append("'" + bairro_cliente + "',");
             csql.Append("'" + numero_cliente + "',");
             csql.Append("'" + complemento_cliente + "',");
             csql.Append("'" + cd_cliente + "',");
             csql.Append("'" + estado_cliente + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-
-
+            //Consertar a SQL dos Telefones
+            /*
             csql = new StringBuilder();
             csql.Append("Insert into tb_fones_cliente");
             csql.Append("(");
-            csql.Append("fone Values(");
-            csql.Append(telefone_cliente + "')");
+            csql.Append("fone,");
+            csql.Append("cd_cliente) Values('");
+            csql.Append(telefone_cliente);
+            csql.Append("'," + cd_cliente + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 
             csql = new StringBuilder();
             csql.Append("Insert into tb_fones_cliente");
             csql.Append("(");
-            csql.Append("fone Values(");
-            csql.Append(telefone_cliente + "')");
+            csql.Append("fone,");
+            csql.Append("cd_cliente) Values('");
+            csql.Append(telefone_cliente);
+            csql.Append("'," + cd_cliente + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+           */
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(1);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 
@@ -236,7 +250,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_cliente where nm_servico like('%" + nm_cliente + "%')";
+            csql = "Select * From tb_cliente where nm_cliente like('%" + nm_cliente + "%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

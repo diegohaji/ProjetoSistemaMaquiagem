@@ -46,6 +46,7 @@ namespace ProjetoSistemaMaquiagem
             funcionario.Nm_Funcionario = textBoxPesquisar.Text;
             ds = funcionario.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
+
         }
 
 

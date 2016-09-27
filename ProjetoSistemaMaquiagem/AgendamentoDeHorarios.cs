@@ -53,6 +53,21 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
+        public void PreencherComboTipo()
+        {
+            ClnServiços tipo = new ClnServiços();
+            DataSet ds = tipo.BuscarporNome();
+            comboBoxServico.DataSource = ds.Tables[0];
+            comboBoxServico.DisplayMember = "nm_servico";
+            comboBoxServico.ValueMember = "cd_servico";
+        }
+
+        private void AgendamentoHorario(object sender, EventArgs e)
+        {
+            PreencherComboTipo();
+            AtualizarGrid();
+        }
+
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
@@ -80,10 +95,6 @@ namespace ProjetoSistemaMaquiagem
                 textBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
         }
-
-        private void AgendamentoHorario(object sender, EventArgs e)
-        {
-            AtualizarGrid();
-        }
+        
     }
 }

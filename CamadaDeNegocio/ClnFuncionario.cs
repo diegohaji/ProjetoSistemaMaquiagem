@@ -53,7 +53,6 @@ namespace CamadaDeNegocio
             get { return email_funcionario; }
             set { email_funcionario = value; }
         }
-
         public string RG_Funcionario
         {
             get { return rg_funcionario; }
@@ -64,19 +63,16 @@ namespace CamadaDeNegocio
             get { return login_funcionario; }
             set { login_funcionario = value; }
         }
-
         public string Senha_Funcionario
         {
             get { return senha_funcionario; }
             set { senha_funcionario = value; }
         }
-
         public string Telefone_funcionario
         {
             get { return telefone_funcionario; }
             set { telefone_funcionario = value; }
         }
-
         public string Celular_funcionario
         {
             get { return celular_funcionario; }
@@ -112,7 +108,6 @@ namespace CamadaDeNegocio
             get { return numero_funcionario; }
             set { numero_funcionario = value; }
         }
-
         public string Complemento_funcionario
         {
             get { return complemento_funcionario; }

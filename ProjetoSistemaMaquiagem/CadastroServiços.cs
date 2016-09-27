@@ -48,15 +48,24 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
             
         }
+        public void PreencherComboTipo()
+        {
+            ClnServiços tipo = new ClnServiços();
+            DataSet ds = tipo.BuscarporNome();
+            comboBoxTipo.DataSource = ds.Tables[0];
+            comboBoxTipo.DisplayMember = "nm_servico";
+            comboBoxTipo.ValueMember = "cd_servico";
+        }
 
         private void CadastroServiços_Load(object sender, EventArgs e)
         {
+            PreencherComboTipo();
             AtualizarGrid();
         }
 
         private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+     
         }
 
         private void Cancelar_Click(object sender, EventArgs e)
@@ -78,13 +87,10 @@ namespace ProjetoSistemaMaquiagem
             ClnServiços servicos = new ClnServiços();
             if (dgv1.RowCount > 0)
             {
-               
                 textBoxNome.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
                 textBoxPreco.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 comboBoxTipo.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 textBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-
-
             }
         }
 
@@ -92,5 +98,9 @@ namespace ProjetoSistemaMaquiagem
         {
             AtualizarGrid();
         }
+
+      
+
+
     }
 }

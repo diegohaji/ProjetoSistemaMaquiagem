@@ -14,7 +14,7 @@ namespace CamadaDeNegocio
         private int cd_servico;
         private string servico;
         private string nome;
-        private double horario;
+        private string horario;
 
 
         public int Cd_servico
@@ -32,7 +32,7 @@ namespace CamadaDeNegocio
             get { return nome; }
             set { nome = value; }
         }
-        public double Horario
+        public string Horario
         {
             get { return horario; }
             set { horario = value; }
@@ -50,7 +50,7 @@ namespace CamadaDeNegocio
             csql.Append("Insert into tb_horario_func");
             csql.Append("(");
             csql.Append("cd_funcionario,");
-            csql.Append("horarios) Values(");
+            csql.Append("horario) Values(");
             csql.Append(12);
             csql.Append(",'" + horario + "')");
             cd = new ClasseDados();

@@ -16,10 +16,8 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `bd_lmds`
---
-
+create database sistemamaquiagem;
+use sistemamaquiagem;
 -- --------------------------------------------------------
 
 --
@@ -207,8 +205,7 @@ CREATE TABLE `tb_usuario` (
 ALTER TABLE `tb_usuario`
   ADD PRIMARY KEY (`cd_usuario`);
   
- ALTER TABLE `tb_usuario` 
- ADD FOREIGN KEY (`cd_usuario`) REFERENCES `tb_funcionario` (`cd_funcionario`);
+
 
 -- Indexes for dumped tables
 --

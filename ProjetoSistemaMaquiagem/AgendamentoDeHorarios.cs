@@ -51,7 +51,7 @@ namespace ProjetoSistemaMaquiagem
             ds = servico.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-            agenda.Horario = Convert.ToInt16(textBoxPesquisar.Text);
+            agenda.Horario = (textBoxPesquisar.Text);
             ds = servico.BuscarporNome();
             dgv1.DataSource = ds.Tables[1];
 
@@ -71,7 +71,7 @@ namespace ProjetoSistemaMaquiagem
         private void AgendamentoHorario(object sender, EventArgs e)
         {
             PreencherComboTipo();
-            AtualizarGrid();
+           // AtualizarGrid();
         }
     
         //funçao que cadastra o agendamento
@@ -80,7 +80,7 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             agenda.Servico = comboBoxServico.Text;
             agenda.NomeServico = textBoxNome.Text;
-            agenda.Horario = Convert.ToDouble(textBoxHorario.Text);
+            agenda.Horario = (textBoxHorario.Text);
             agenda.Gravar();
             AtualizarGrid();
         }

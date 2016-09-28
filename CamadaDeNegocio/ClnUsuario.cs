@@ -26,30 +26,19 @@ namespace CamadaDeNegocio
         //grava o usuario no banco de dados
         public void Gravar()
         {
-            StringBuilder csql = new StringBuilder();
-            csql.Append("SET FOREIGN_KEY_CHECKS = ");
-            csql.Append(0);
             ClasseDados cd = new ClasseDados();
-            cd.ExecutarComando(csql.ToString());
-            csql = new StringBuilder();
+            StringBuilder csql = new StringBuilder();            
             csql.Append("Insert into tb_usuario");
             csql.Append("(");
             csql.Append("cd_usuario,");
-            csql.Append("cd_funcionario,");
             csql.Append("nome_usuario,");
             csql.Append("senha_usuario) Values(");
             ClnFuncionario funcionario = new ClnFuncionario();
-            csql.Append(2);
-            csql.Append(",'" + funcionario.Cd_Funcionario + "'");
+            csql.Append("''");
             csql.Append(",'" + usuario + "'");
             csql.Append(",'" + senha + "')");
             cd = new ClasseDados();
-            cd.ExecutarComando(csql.ToString());
-            csql = new StringBuilder();
-            csql.Append("SET FOREIGN_KEY_CHECKS = ");
-            csql.Append(1);
-            cd = new ClasseDados();
-            cd.ExecutarComando(csql.ToString());
+            cd.ExecutarComando(csql.ToString());            
         }
 
         //busca o usuario para atualizar no banco de dados
@@ -89,10 +78,8 @@ namespace CamadaDeNegocio
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
-                this.usuario = Convert.ToString(dados.GetValue(2));
-                this.senha = Convert.ToString(dados.GetValue(3));
-
-
+                this.usuario = Convert.ToString(dados.GetValue(1));
+                this.senha = Convert.ToString(dados.GetValue(2));
             }
             StringBuilder csql = new StringBuilder();
             csql.Append("Update tb_usuario ");

@@ -73,7 +73,10 @@ namespace ProjetoSistemaMaquiagem
                 funcionario.Complemento_funcionario = textBoxComplemento.Text;
                 funcionario.Gravar();
                 AtualizarGrid();
-            }catch(Exception ex)
+                LimparTxt(Cadastro);
+                LimparTxt(groupBoxEndereco);
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

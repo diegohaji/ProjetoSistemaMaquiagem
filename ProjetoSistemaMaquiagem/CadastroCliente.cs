@@ -96,6 +96,7 @@ namespace ProjetoSistemaMaquiagem
                     Cliente.Gravar();
                     AtualizarGrid();
                     LimparTxt(Cadastro);
+                    LimparTxt(groupBoxEndereco);
                 }
                 else
                 {

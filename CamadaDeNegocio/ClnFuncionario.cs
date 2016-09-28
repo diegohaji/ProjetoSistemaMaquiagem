@@ -18,8 +18,6 @@ namespace CamadaDeNegocio
         private string cpf_funcionario;
         private string email_funcionario;
         private string rg_funcionario;
-        private string login_funcionario;
-        private string senha_funcionario;
         private string telefone_funcionario;
         private string celular_funcionario;
         private string cep_funcionario;
@@ -57,16 +55,6 @@ namespace CamadaDeNegocio
         {
             get { return rg_funcionario; }
             set { rg_funcionario = value; }
-        }
-        public string Login_Funcionario
-        {
-            get { return login_funcionario; }
-            set { login_funcionario = value; }
-        }
-        public string Senha_Funcionario
-        {
-            get { return senha_funcionario; }
-            set { senha_funcionario = value; }
         }
         public string Telefone_funcionario
         {
@@ -114,10 +102,7 @@ namespace CamadaDeNegocio
             set { complemento_funcionario = value; }
         }
 
-
-
         //3 - métodos da classe de Negócios (clnFuncionario.cs)
-
 
         //3.1 Buscar dados do funcionario cujo codigo foi especificado
         public void BuscarporCodigo()
@@ -133,8 +118,8 @@ namespace CamadaDeNegocio
                 cd_funcionario = Convert.ToInt16(dados.GetValue(0));
                 nm_funcionario = Convert.ToString(dados.GetValue(1));
                 cpf_funcionario = Convert.ToString(dados.GetValue(2));
-                email_funcionario = Convert.ToString(dados.GetValue(3));
-                rg_funcionario = Convert.ToString(dados.GetValue(4));
+                rg_funcionario = Convert.ToString(dados.GetValue(3));
+                email_funcionario = Convert.ToString(dados.GetValue(4));
             }
         }
 
@@ -164,21 +149,23 @@ namespace CamadaDeNegocio
             csql.Append("nm_funcionario,");
             csql.Append("cpf_funcionario,");
             csql.Append("rg_funcionario,");
-            csql.Append("email_funcionario,");
-            csql.Append("login_funcionario,");
-            csql.Append("senha_funcionario) Values(");
+            csql.Append("email_funcionario) Values(");
             csql.Append(cd_funcionario);
             csql.Append(",'" + nm_funcionario + "',");
             csql.Append("'" + cpf_funcionario + "',");
             csql.Append("'" + rg_funcionario + "',");
-            csql.Append("'" + email_funcionario + "',");
-            csql.Append("'" + login_funcionario + "',");
-            csql.Append("'" + senha_funcionario + "')");
+            csql.Append("'" + email_funcionario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 
             csql = new StringBuilder();
-            csql.Append("Insert into tb_endereco");
+            csql.Append("select cd_funcionario from tb_funcionario where nm_funcionario = '"+nm_funcionario+"'");
+            cd = new ClasseDados();
+            int marreta =  cd.RetornarIdNumerico(csql.ToString()) - 1;
+
+
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_endereco_funcionario");
             csql.Append("(");
             csql.Append("cep,");
             csql.Append("cidade,");
@@ -186,7 +173,7 @@ namespace CamadaDeNegocio
             csql.Append("logradouro,");
             csql.Append("num,");
             csql.Append("complemento,");
-            csql.Append("cd_cliente,");
+            csql.Append("cd_funcionario,");
             csql.Append("estado) Values(");
             csql.Append(cep_funcionario);
             csql.Append(",'" + cidade_funcionario + "',");
@@ -194,7 +181,7 @@ namespace CamadaDeNegocio
             csql.Append("'" + rua_funcionario + "',");
             csql.Append("'" + numero_funcionario + "',");
             csql.Append("'" + complemento_funcionario + "',");
-            csql.Append("'" + cd_funcionario + "',");
+            csql.Append("'" + marreta + "',");
             csql.Append("'" + estado_funcionario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
@@ -237,12 +224,10 @@ namespace CamadaDeNegocio
             csql.Append(nm_funcionario);
             csql.Append("', cpf_funcionario='");
             csql.Append(cpf_funcionario);
+            csql.Append("', rg_funcionario='");
+            csql.Append(rg_funcionario);
             csql.Append("', email_funcionario='");
             csql.Append(email_funcionario);
-            csql.Append("', login_funcionario='");
-            csql.Append(login_funcionario);
-            csql.Append("', senha_funcionario='");
-            csql.Append(senha_funcionario);
             csql.Append("' where cd_funcionario=");
             csql.Append(cd_funcionario);
             ClasseDados cd = new ClasseDados();
@@ -256,7 +241,7 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_funcionario ");
             csql.Append(" where nm_funcionario='");
-            csql.Append(nome + "'");
+            csql.Append(nome+"'");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

@@ -85,7 +85,8 @@ namespace ProjetoSistemaMaquiagem
             serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
             serv.Gravar();
             AtualizarGrid();
-            
+            LimparTxt(groupBox1);
+            LimparTxt(groupBox2);
         }
 
 
@@ -103,10 +104,10 @@ namespace ProjetoSistemaMaquiagem
             ClnServiços servicos = new ClnServiços();
             if (dgv1.RowCount > 0)
             {
-                textBoxNome.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
-                textBoxPreco.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                comboBoxTipo.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                textBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                textBoxPreco.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                //comboBoxTipo.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                //textBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
         }
         //função que é chamada para excluir serviço

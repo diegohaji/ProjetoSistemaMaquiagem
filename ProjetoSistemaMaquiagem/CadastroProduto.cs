@@ -70,6 +70,8 @@ namespace ProjetoSistemaMaquiagem
           //  prod.Dt_Aquisicao = Convert.ToDateTime(maskedTextBoxDtAquisicao.Text);
             prod.Gravar();
             AtualizarGrid();
+            LimparTxt(groupBox1);
+            LimparTxt(groupBox2);
         }
         
         //funcao que é chamada quando é cancelado o cadastro
@@ -87,11 +89,11 @@ namespace ProjetoSistemaMaquiagem
             {
                 textBoxCodigo.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                textBoxMarca.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                maskedTextBoxDtAquisicao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                maskedTextBoxDtVencimento.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                textBoxVlProduto.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                textBoxUso.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+               // textBoxMarca.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+               // maskedTextBoxDtAquisicao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+               // maskedTextBoxDtVencimento.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                textBoxVlProduto.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+               // textBoxUso.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
             }
 
         

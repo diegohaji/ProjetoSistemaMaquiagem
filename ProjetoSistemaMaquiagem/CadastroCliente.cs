@@ -124,10 +124,10 @@ namespace ProjetoSistemaMaquiagem
             
             if (dgv1.RowCount > 0)
             {
-                textBoxNome.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
-                textBoxEmail.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                textBoxEmail.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 /*
                 maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();

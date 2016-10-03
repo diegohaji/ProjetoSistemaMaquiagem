@@ -25,13 +25,13 @@ namespace ProjetoSistemaMaquiagem
         {
 
         }
-      
+
         //inutil
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        
+
         //limpa o texto da caixa de texto do grupo 
         public void LimparTxt(Control controles)
         {
@@ -41,56 +41,72 @@ namespace ProjetoSistemaMaquiagem
                 if (ctl is MaskedTextBox) ctl.Text = string.Empty;
             }
         }
-        
+
         //atualiza o grid
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
-           ClnServiços servico = new ClnServiços();
-            servico.Nm_Servico = textBoxPesquisar.Text;
-            ds = servico.BuscarporNome();
-            dgv1.DataSource = ds.Tables[0];
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-            agenda.Horario = (textBoxPesquisar.Text);
-            ds = servico.BuscarporNome();
-            dgv1.DataSource = ds.Tables[1];
-
+            agenda.Servico = textBoxPesquisar.Text;
+            ds = agenda.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
         }
-        
+
         //preenche o combobox com os valores dos serviços
         public void PreencherComboTipo()
         {
             ClnServiços tipo = new ClnServiços();
             DataSet ds = tipo.BuscarporNome();
             comboBoxServico.DataSource = ds.Tables[0];
-            comboBoxServico.DisplayMember = "nm_servico";
-            comboBoxServico.ValueMember = "cd_servico";
+            comboBoxServico.DisplayMember = "Nome";
+            comboBoxServico.ValueMember = "Codigo";
         }
-        
+
         //Funcao load que atualiza o grid quando o formulario de agendar é chamado
         private void AgendamentoHorario(object sender, EventArgs e)
         {
             PreencherComboTipo();
-           // AtualizarGrid();
+            AtualizarGrid();
         }
-    
+
+        //Funcao que verifica se há algum campo em branco
+        private bool verificaText(Control controles)
+        {
+            foreach (Control T in controles.Controls)
+            {
+                if (T is TextBox || T is MaskedTextBox)
+                {
+                    if (T.Text == string.Empty)
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         //funçao que cadastra o agendamento
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             agenda.Servico = comboBoxServico.Text;
-            agenda.NomeServico = textBoxNome.Text;
-            agenda.Horario = (maskedTextBoxHorario.Text);
-            agenda.Gravar();
-            AtualizarGrid();
+            agenda.NomeFuncionario = textBoxNome.Text;
+            agenda.Horario = maskedTextBoxHorario.Text;
+            if (verificaText(groupBox1))
+            {
+                agenda.Gravar();
+                AtualizarGrid();
+                LimparTxt(groupBox1);
+            }
         }
-        
+
         //funcao que é chamada quando é cancelado o cadastro
         private void botaoCancelar_Click(object sender, EventArgs e)
         {
             LimparTxt(groupBox1);
         }
-        
+
         //função do grid
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -98,13 +114,13 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             if (dgv1.RowCount > 0)
             {
-                
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                textBoxNome.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
+
         }
-        
+
         //função que é chamada para excluir algum horario
         private void botaoExcluir_Click(object sender, EventArgs e)
         {
@@ -113,21 +129,21 @@ namespace ProjetoSistemaMaquiagem
             if (resposta == 6)
             {
                 ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-               // agenda.Excluir(textBoxNome.Text);
+                agenda.Excluir(textBoxNome.Text);
             }
             LimparTxt(groupBox1);
             AtualizarGrid();
         }
-      
+
         //funcao de pesquisar
         private void button1_Click(object sender, EventArgs e)
-        {/*
+        {
             DataSet ds = new DataSet();
             ClnCliente cliente = new ClnCliente();
             cliente.Nm_Cliente = textBoxPesquisar.Text;
             ds = cliente.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
-        */
-            }
+
+        }
     }
 }

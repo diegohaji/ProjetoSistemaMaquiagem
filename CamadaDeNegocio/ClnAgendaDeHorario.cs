@@ -13,7 +13,7 @@ namespace CamadaDeNegocio
     {
         private int cd_servico;
         private string servico;
-        private string nome;
+        private string funcionario;
         private string horario;
 
 
@@ -27,10 +27,10 @@ namespace CamadaDeNegocio
             get { return servico; }
             set { servico = value; }
         }
-        public string NomeServico
+        public string NomeFuncionario
         {
-            get { return nome; }
-            set { nome = value; }
+            get { return funcionario; }
+            set { funcionario = value; }
         }
         public string Horario
         {
@@ -50,9 +50,13 @@ namespace CamadaDeNegocio
             csql.Append("Insert into tb_horario_func");
             csql.Append("(");
             csql.Append("cd_funcionario,");
-            csql.Append("horario) Values(");
-            csql.Append(12);
-            csql.Append(",'" + horario + "')");
+            csql.Append("nm_servico,");
+            csql.Append("nm_funcionario,");
+            csql.Append("horarios) Values(");
+            csql.Append(cd_servico);
+            csql.Append(",'" + servico + "',");
+            csql.Append("'" + funcionario + "',");
+            csql.Append("'" + horario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();
@@ -67,8 +71,28 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Update into tb_horario_func");
 
+        }
 
+        //3.5 Método para excluir um servico do 
+        //Banco de dados
+        public void Excluir(string funcionario)
+        {
+            StringBuilder csql = new StringBuilder();
+            csql.Append("Delete From tb_horario_func ");
+            csql.Append(" where nm_funcionario='");
+            csql.Append(funcionario + "'");
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+        }
 
+        public DataSet BuscarporNome()
+        {
+            string csql;
+            csql = "select cd_funcionario as Codigo, nm_funcionario as Funcionario, nm_servico as Servico, horarios as Horario from tb_horario_func";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
 
         }
 

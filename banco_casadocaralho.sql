@@ -21,7 +21,7 @@ create table tb_funcionario(
     primary key(cd_funcionario),
     nm_funcionario varchar(127),
     rg_funcionario varchar(14),
-   cpf_funcionario varchar(14),
+    cpf_funcionario varchar(14),
     email_funcionario varchar(127)
 )engine = innodb;
 
@@ -54,6 +54,8 @@ create table tb_prestacao_servico(
 
 create table tb_horario_func(
 	cd_funcionario int unsigned not null, 
+    nm_funcionario varchar(127),
+    nm_servico varchar(127),
     horarios text,
     foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
     primary key (cd_funcionario)

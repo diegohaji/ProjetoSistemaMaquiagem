@@ -147,13 +147,13 @@ namespace CamadaDeNegocio
             csql.Append("(");
             csql.Append("cd_funcionario,");
             csql.Append("nm_funcionario,");
-            csql.Append("cpf_funcionario,");
             csql.Append("rg_funcionario,");
+            csql.Append("cpf_funcionario,");
             csql.Append("email_funcionario) Values(");
             csql.Append(cd_funcionario);
             csql.Append(",'" + nm_funcionario + "',");
-            csql.Append("'" + cpf_funcionario + "',");
             csql.Append("'" + rg_funcionario + "',");
+            csql.Append("'" + cpf_funcionario + "',");
             csql.Append("'" + email_funcionario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());

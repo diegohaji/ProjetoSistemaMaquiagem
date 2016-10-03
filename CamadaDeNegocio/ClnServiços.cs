@@ -124,8 +124,8 @@ namespace CamadaDeNegocio
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_servico ");
-            csql.Append(" where nm_servico=");
-            csql.Append(servico);
+            csql.Append(" where nm_servico like(%'");
+            csql.Append(servico+ "'%)");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

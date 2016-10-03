@@ -86,12 +86,9 @@ namespace ProjetoSistemaMaquiagem
             prod.Dt_Vencimento = maskedTextBoxDtVencimento.Text;
             prod.Dt_Aquisicao = maskedTextBoxDtAquisicao.Text;
             prod.Uso = textBoxUso.Text;
-            if (verificaText(groupBoxProduto))
-            {
-                prod.Gravar();
-                AtualizarGrid();
-                LimparTxt(groupBoxProduto);
-            }
+            prod.Gravar();
+            AtualizarGrid();
+            LimparTxt(groupBoxProduto);
         }
 
         //funcao que é chamada quando é cancelado o cadastro
@@ -107,7 +104,7 @@ namespace ProjetoSistemaMaquiagem
             ClnProdutos produtos = new ClnProdutos();
             if (dgv1.RowCount > 0)
             {
-                
+
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxMarca.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 textBoxVlProduto.Text = dgv1.CurrentRow.Cells[3].Value.ToString();

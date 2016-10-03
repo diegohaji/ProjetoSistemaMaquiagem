@@ -79,7 +79,6 @@ namespace ProjetoSistemaMaquiagem
             return true;
         }
 
-
         //funçao que cadastra o cliente
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {

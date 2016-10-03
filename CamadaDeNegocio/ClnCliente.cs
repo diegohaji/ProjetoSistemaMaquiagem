@@ -256,18 +256,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_cliente where nm_cliente like('%" + nm_cliente + "%')";
-            DataSet ds;
-            ClasseDados cd = new ClasseDados();
-            ds = cd.RetornarDataSet(csql);
-            return ds;
-        }
-
-        //3.7 busca por cep
-        public DataSet BuscarporCEP()
-        {
-            string csql;
-            csql = "Select * From tb_cliente inner join tb_endereco on tb_cliente.cd_cliente = tb_endereco.cd_cliente where nm_cliente like('%" + nm_cliente + "%')";
+            csql = "Select * From tb_cliente as tc inner join tb_endereco_cliente as tec on tc.cd_cliente = tec.cd_cliente";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

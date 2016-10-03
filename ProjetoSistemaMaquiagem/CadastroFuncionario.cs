@@ -20,12 +20,13 @@ namespace ProjetoSistemaMaquiagem
         {
             InitializeComponent();
         }
-        
+
         //função que carrega o grid quando o formulario é chamado
         private void CadastroFuncionario_Load(object sender, EventArgs e)
         {
 
-            try {
+            try
+            {
                 AtualizarGrid();
             }
             catch (Exception ex)
@@ -33,7 +34,7 @@ namespace ProjetoSistemaMaquiagem
                 MessageBox.Show(ex.ToString(), "Fudeu", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
@@ -43,23 +44,79 @@ namespace ProjetoSistemaMaquiagem
                 if (ctl is MaskedTextBox) ctl.Text = string.Empty;
             }
         }
-        
+
         //atualiza o grid
         private void AtualizarGrid()
         {
-            
+
             DataSet ds = new DataSet();
+           // DataSet ds1 = new DataSet();
             ClnFuncionario funcionario = new ClnFuncionario();
             funcionario.Nm_Funcionario = textBoxPesquisar.Text;
             ds = funcionario.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
-            
+            //ds1 = funcionario.BuscaporEndereco();
+            //dgv1.DataSource =ds1.Tables[0];
+
+        }
+
+        //Funcao que verifica se há algum campo em branco
+        private bool verificaText(Control controles)
+        {
+            foreach (Control T in controles.Controls)
+            {
+                if (T is TextBox || T is MaskedTextBox)
+                {
+                    if (T.Text == string.Empty)
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        //funcao que busca o endereco dado o cep
+        private void maskedTextBoxCEP_Leave(object sender, EventArgs e)
+        {
+
+            try
+            {
+                APICorreios.AtendeClienteClient consulta = new APICorreios.AtendeClienteClient("AtendeClientePort");
+
+                var resultado = consulta.consultaCEP(maskedTextBoxCEP.Text);
+
+                if (resultado != null)
+                {
+                    textBoxRua.Text = resultado.end;
+                    textBoxComplemento.Text = resultado.complemento;
+                    textBoxBairro.Text = resultado.bairro;
+                    textBoxCidade.Text = resultado.cidade;
+                    textBoxEstado.Text = resultado.uf;
+                    //lblInformacoes.Text = "Consulta Realizada Com Sucesso!";
+                }
+                //maskedTextBoxCEP.Clear();
+            }
+            catch (FaultException)
+            {
+                MessageBox.Show("CEP NÃO ENCONTRADO OU INVALIDO.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                maskedTextBoxCEP.Clear();
+                maskedTextBoxCEP.Focus();
+            }
+            catch (EndpointNotFoundException)
+            {
+                MessageBox.Show("Não foi possivel completar a operação\nVerifique sua conexão com a internet.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                maskedTextBoxCEP.Clear();
+            }
+
         }
 
         //funçao que cadastra o cliente
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 ClnFuncionario funcionario = new ClnFuncionario();
                 funcionario.Nm_Funcionario = textBoxNome.Text;
                 funcionario.CPF_Funcionario = maskedTextBoxCPF.Text;
@@ -74,12 +131,15 @@ namespace ProjetoSistemaMaquiagem
                 funcionario.Cidade_funcionario = textBoxCidade.Text;
                 funcionario.Estado_funcionario = textBoxEstado.Text;
                 funcionario.Complemento_funcionario = textBoxComplemento.Text;
-                funcionario.Gravar();
-                AtualizarGrid();
-                LimparTxt(Cadastro);
-                LimparTxt(groupBoxEndereco);
+                if (verificaText(Cadastro) && verificaText(groupBoxEndereco))
+                {
+                    funcionario.Gravar();
+                    AtualizarGrid();
+                    LimparTxt(Cadastro);
+                    LimparTxt(groupBoxEndereco);
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -91,7 +151,7 @@ namespace ProjetoSistemaMaquiagem
             LimparTxt(Cadastro);
             LimparTxt(groupBoxEndereco);
         }
-       
+
         //função do grid
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -103,12 +163,13 @@ namespace ProjetoSistemaMaquiagem
                 maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 textBoxEmail.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-               // maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-               // maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                // maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                // maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+
             }
 
         }
-      
+
         //função que é chamada para excluir algum horario
         private void BotaoExcluir_Click(object sender, EventArgs e)
         {
@@ -148,7 +209,7 @@ namespace ProjetoSistemaMaquiagem
             }
 
         }
-        
+
         //funcao de pesquisa
         private void button1_Click(object sender, EventArgs e)
         {
@@ -158,39 +219,6 @@ namespace ProjetoSistemaMaquiagem
             ds = funcionario.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
         }
-        //funcao que busca o endereco dado o cep
-        private void maskedTextBoxCEP_Leave(object sender, EventArgs e)
-        {
 
-            try
-            {
-                APICorreios.AtendeClienteClient consulta = new APICorreios.AtendeClienteClient("AtendeClientePort");
-
-                var resultado = consulta.consultaCEP(maskedTextBoxCEP.Text);
-
-                if (resultado != null)
-                {
-                    textBoxRua.Text = resultado.end;
-                    textBoxComplemento.Text = resultado.complemento;
-                    textBoxBairro.Text = resultado.bairro;
-                    textBoxCidade.Text = resultado.cidade;
-                    textBoxEstado.Text = resultado.uf;
-                    //lblInformacoes.Text = "Consulta Realizada Com Sucesso!";
-                }
-                //maskedTextBoxCEP.Clear();
-            }
-            catch (FaultException)
-            {
-                MessageBox.Show("CEP NÃO ENCONTRADO OU INVALIDO.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                maskedTextBoxCEP.Clear();
-                maskedTextBoxCEP.Focus();
-            }
-            catch (EndpointNotFoundException)
-            {
-                MessageBox.Show("Não foi possivel completar a operação\nVerifique sua conexão com a internet.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                maskedTextBoxCEP.Clear();
-            }
-
-        }
     }
 }

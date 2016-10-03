@@ -21,25 +21,25 @@ namespace ProjetoSistemaMaquiagem
         {
             InitializeComponent();
         }
-       
+
         //função que carrega o grid quando o formulario é chamado
         private void CadastroCliente_Load(Object sender, EventArgs e)
         {
             AtualizarGrid();
         }
-        
+
         //inutil
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
-        
+
         //inutil
         private void textBoxRua_TextChanged(object sender, EventArgs e)
         {
 
         }
-        
+
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
@@ -49,22 +49,42 @@ namespace ProjetoSistemaMaquiagem
                 if (ctl is MaskedTextBox) ctl.Text = string.Empty;
             }
         }
-        
+
         //atualiza o grid
         private void AtualizarGrid()
         {
+            
             DataSet ds = new DataSet();
             ClnCliente cliente = new ClnCliente();
             cliente.Nm_Cliente = textBoxPesquisar.Text;
             ds = cliente.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
+            
         }
-        
+
+        //Funcao que verifica se há algum campo em branco
+        private bool verificaText(Control controles)
+        {
+            foreach (Control T in controles.Controls)
+            {
+                if (T is TextBox || T is MaskedTextBox)
+                {
+                    if (T.Text == string.Empty)
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+
         //funçao que cadastra o cliente
         private void BotaoConfirmar_Click(object sender, EventArgs e)
         {
-            try {
-                StringBuilder mensagem = new StringBuilder();
+            try
+            {
                 ClnCliente Cliente = new ClnCliente();
                 Cliente.Nm_Cliente = textBoxNome.Text;
                 Cliente.CPF_cliente = maskedTextBoxCPF.Text;
@@ -79,31 +99,18 @@ namespace ProjetoSistemaMaquiagem
                 Cliente.Cidade_cliente = textBoxCidade.Text;
                 Cliente.Estado_cliente = textBoxEstado.Text;
                 Cliente.Complemento_cliente = textBoxComplemento.Text;
-                if (string.IsNullOrEmpty(textBoxNome.Text))
-                {
-                    mensagem.Append("Campo Nome em branco.\n");
-                } else
-                if (string.IsNullOrEmpty(textBoxEmail.Text))
-                {
-                    mensagem.Append("Campo Email em branco.\n");
-                }
-                if (string.IsNullOrEmpty(maskedTextBoxRG.Text))
-                {
-                    mensagem.Append("Campo RG em branco.\n");
-                }
 
-                if (string.IsNullOrWhiteSpace(mensagem.ToString()))
+                if (verificaText(Cadastro) && verificaText(groupBoxEndereco))
                 {
                     Cliente.Gravar();
                     AtualizarGrid();
                     LimparTxt(Cadastro);
                     LimparTxt(groupBoxEndereco);
                 }
-                else
-                {
-                    MessageBox.Show(mensagem.ToString(), "Campo inválido!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }catch(Exception ex) {
+                
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString(), "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -116,13 +123,13 @@ namespace ProjetoSistemaMaquiagem
             LimparTxt(Cadastro);
 
         }
-        
+
         //função do grid
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dgv1.CurrentRow.Selected = true;
             ClnCliente cliente = new ClnCliente();
-            
+
             if (dgv1.RowCount > 0)
             {
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
@@ -143,7 +150,7 @@ namespace ProjetoSistemaMaquiagem
 
             }
         }
-     
+
         //funcao de pesquisa
         private void button1_Click(object sender, EventArgs e)
         {
@@ -153,14 +160,14 @@ namespace ProjetoSistemaMaquiagem
             ds = cliente.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
         }
-        
+
         //função que é chamada para excluir algum horario
         private void BotaoExcluir_Click(object sender, EventArgs e)
         {
 
-            string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text  +" ?";
-            int resposta = Convert.ToInt16(MessageBox.Show(mensagem,"Excluir cadastro",MessageBoxButtons.YesNo,MessageBoxIcon.Question));
-            if(resposta == 6)
+            string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text + " ?";
+            int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+            if (resposta == 6)
             {
                 ClnCliente cliente = new ClnCliente();
                 cliente.Excluir(textBoxNome.Text);
@@ -201,6 +208,10 @@ namespace ProjetoSistemaMaquiagem
                 maskedTextBoxCEP.Clear();
             }
         }
+
+
+
+
     }
 }
 

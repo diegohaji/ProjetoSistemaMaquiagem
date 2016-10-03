@@ -250,13 +250,13 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_funcionario where nm_funcionario like('%" + nm_funcionario + "%')";
+            csql = "Select * From tb_funcionario as tf inner join tb_endereco_funcionario as tef on tf.cd_funcionario=tef.cd_funcionario" ;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
             return ds;
         }
-
+      
     }
 }
 

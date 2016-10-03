@@ -153,14 +153,14 @@ namespace CamadaDeNegocio
             csql.Append("(");
             csql.Append("cd_cliente,");
             csql.Append("nm_cliente,");
-            csql.Append("cpf_cliente,");
             csql.Append("rg_cliente,");
+            csql.Append("cpf_cliente,");
             csql.Append("email_cliente");
             csql.Append(") Values(");
             csql.Append(cd_cliente);
             csql.Append(",'" + nm_cliente + "',");
-            csql.Append("'" + cpf_cliente + "',");
             csql.Append("'" + rg_cliente + "',");
+            csql.Append("'" + cpf_cliente + "',");
             csql.Append("'" + email_cliente + "'");
             csql.Append(")");
             cd = new ClasseDados();
@@ -256,7 +256,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_cliente as tc inner join tb_endereco_cliente as tec on tc.cd_cliente = tec.cd_cliente";
+            csql = "Select tc.cd_cliente as Codigo, tc.nm_cliente as Nome, tc.rg_cliente as RG, tc.cpf_cliente as CPF, tc.email_cliente as Email, tec.cep as CEP, tec.num as Numero, tec.logradouro as Logradouro, tec.bairro as Bairro, tec.cidade as Cidade, tec.estado as Estado, tec.complemento as Complemento From tb_cliente as tc inner join tb_endereco_cliente as tec on tc.cd_cliente = tec.cd_cliente";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

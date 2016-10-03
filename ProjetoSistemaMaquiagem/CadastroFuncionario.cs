@@ -119,9 +119,9 @@ namespace ProjetoSistemaMaquiagem
             {
                 ClnFuncionario funcionario = new ClnFuncionario();
                 funcionario.Nm_Funcionario = textBoxNome.Text;
+                funcionario.RG_Funcionario = maskedTextBoxRG.Text;
                 funcionario.CPF_Funcionario = maskedTextBoxCPF.Text;
                 funcionario.Email_Funcionario = textBoxEmail.Text;
-                funcionario.RG_Funcionario = maskedTextBoxRG.Text;
                 funcionario.Celular_funcionario = maskedTextBoxCelular.Text;
                 funcionario.Telefone_funcionario = maskedTextBoxTelefone.Text;
                 funcionario.CEP_funcionario = maskedTextBoxCEP.Text;
@@ -160,11 +160,19 @@ namespace ProjetoSistemaMaquiagem
             if (dgv1.RowCount > 0)
             {
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 textBoxEmail.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 // maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 // maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                maskedTextBoxCEP.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                textBoxEstado.Text = dgv1.CurrentRow.Cells[10].Value.ToString();
+                textBoxCidade.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
+                textBoxBairro.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
+                textBoxRua.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                textBoxNumero.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                textBoxComplemento.Text = dgv1.CurrentRow.Cells[11].Value.ToString();
+
 
             }
 

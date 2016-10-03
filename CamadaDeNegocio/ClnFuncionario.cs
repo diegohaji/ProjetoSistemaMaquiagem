@@ -117,8 +117,8 @@ namespace CamadaDeNegocio
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
                 cd_funcionario = Convert.ToInt16(dados.GetValue(0));
                 nm_funcionario = Convert.ToString(dados.GetValue(1));
-                cpf_funcionario = Convert.ToString(dados.GetValue(2));
-                rg_funcionario = Convert.ToString(dados.GetValue(3));
+                rg_funcionario = Convert.ToString(dados.GetValue(2));
+                cpf_funcionario = Convert.ToString(dados.GetValue(3));
                 email_funcionario = Convert.ToString(dados.GetValue(4));
             }
         }
@@ -250,7 +250,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_funcionario as tf inner join tb_endereco_funcionario as tef on tf.cd_funcionario=tef.cd_funcionario" ;
+            csql = "Select tf.cd_funcionario as Codigo, tf.nm_funcionario as Nome, tf.rg_funcionario as RG, tf.cpf_funcionario as CPF, tf.email_funcionario as Email, tef.cep as CEP, teF.num as Numero, tef.logradouro as Logradouro, tef.bairro as Bairro, tef.cidade as Cidade, tef.estado as Estado, tef.complemento as Complemento From tb_funcionario as tf inner join tb_endereco_funcionario as tef on tf.cd_funcionario = tef.cd_funcionario";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

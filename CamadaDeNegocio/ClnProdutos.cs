@@ -148,7 +148,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_produto where nm_produto like('%" + nm_produto + "%')";
+            csql = "Select cd_produto as Codigo, nm_produto as Nome, nm_marca as Marca ,vl_produto as Valor, dt_aquisicao as Aquisicao, dt_vencimento as Vencimento  From tb_produto where nm_produto like('%" + nm_produto + "%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

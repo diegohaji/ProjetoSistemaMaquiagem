@@ -54,6 +54,7 @@
             this.buttonContFinanceiro = new System.Windows.Forms.Button();
             this.buttonRelatorio = new System.Windows.Forms.Button();
             this.groupBoxFuncionalidades = new System.Windows.Forms.GroupBox();
+            this.buttonVendas = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
@@ -213,6 +214,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gray;
+            this.tabPage2.Controls.Add(this.buttonVendas);
             this.tabPage2.Controls.Add(this.buttonServPrestado);
             this.tabPage2.Controls.Add(this.buttonLancHorario);
             this.tabPage2.Controls.Add(this.buttonAgendServico);
@@ -225,9 +227,9 @@
             // 
             // buttonServPrestado
             // 
-            this.buttonServPrestado.Location = new System.Drawing.Point(165, 6);
+            this.buttonServPrestado.Location = new System.Drawing.Point(158, 7);
             this.buttonServPrestado.Name = "buttonServPrestado";
-            this.buttonServPrestado.Size = new System.Drawing.Size(132, 70);
+            this.buttonServPrestado.Size = new System.Drawing.Size(139, 70);
             this.buttonServPrestado.TabIndex = 2;
             this.buttonServPrestado.Text = "Serviço Prestado";
             this.buttonServPrestado.UseVisualStyleBackColor = true;
@@ -237,7 +239,7 @@
             // 
             this.buttonLancHorario.Location = new System.Drawing.Point(6, 82);
             this.buttonLancHorario.Name = "buttonLancHorario";
-            this.buttonLancHorario.Size = new System.Drawing.Size(290, 70);
+            this.buttonLancHorario.Size = new System.Drawing.Size(139, 70);
             this.buttonLancHorario.TabIndex = 1;
             this.buttonLancHorario.Text = "Lançamento de horário";
             this.buttonLancHorario.UseVisualStyleBackColor = true;
@@ -338,6 +340,15 @@
             this.groupBoxFuncionalidades.TabStop = false;
             this.groupBoxFuncionalidades.Text = "Funcionalidades";
             // 
+            // buttonVendas
+            // 
+            this.buttonVendas.Location = new System.Drawing.Point(158, 82);
+            this.buttonVendas.Name = "buttonVendas";
+            this.buttonVendas.Size = new System.Drawing.Size(139, 70);
+            this.buttonVendas.TabIndex = 3;
+            this.buttonVendas.Text = "Vendas";
+            this.buttonVendas.UseVisualStyleBackColor = true;
+            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,5 +398,6 @@
         private System.Windows.Forms.Button buttonProduto;
         private System.Windows.Forms.Button buttonEstoque;
         private System.Windows.Forms.GroupBox groupBoxFuncionalidades;
+        private System.Windows.Forms.Button buttonVendas;
     }
 }

@@ -134,7 +134,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select * From tb_servico where nm_servico like('%" + nm_servico + "%')";
+            csql = "Select cd_servico as Codigo, nm_servico as Nome, vl_servico as Valor, duracao as Duracao From tb_servico where nm_servico like('%" + nm_servico + "%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

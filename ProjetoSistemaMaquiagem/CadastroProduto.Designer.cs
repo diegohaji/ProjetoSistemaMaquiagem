@@ -38,11 +38,9 @@
             this.maskedTextBoxDtAquisicao = new System.Windows.Forms.MaskedTextBox();
             this.textBoxMarca = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
             this.botaoCancelar = new System.Windows.Forms.Button();
@@ -70,11 +68,9 @@
             this.groupBoxProduto.Controls.Add(this.maskedTextBoxDtAquisicao);
             this.groupBoxProduto.Controls.Add(this.textBoxMarca);
             this.groupBoxProduto.Controls.Add(this.textBoxNome);
-            this.groupBoxProduto.Controls.Add(this.textBoxCodigo);
             this.groupBoxProduto.Controls.Add(this.label4);
             this.groupBoxProduto.Controls.Add(this.label3);
             this.groupBoxProduto.Controls.Add(this.label2);
-            this.groupBoxProduto.Controls.Add(this.label1);
             this.groupBoxProduto.Location = new System.Drawing.Point(13, 13);
             this.groupBoxProduto.Name = "groupBoxProduto";
             this.groupBoxProduto.Size = new System.Drawing.Size(455, 276);
@@ -83,7 +79,7 @@
             // 
             // textBoxVlProduto
             // 
-            this.textBoxVlProduto.Location = new System.Drawing.Point(337, 121);
+            this.textBoxVlProduto.Location = new System.Drawing.Point(78, 120);
             this.textBoxVlProduto.Name = "textBoxVlProduto";
             this.textBoxVlProduto.Size = new System.Drawing.Size(100, 20);
             this.textBoxVlProduto.TabIndex = 13;
@@ -91,7 +87,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(214, 121);
+            this.label7.Location = new System.Drawing.Point(7, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 12;
@@ -144,25 +140,17 @@
             // 
             // textBoxMarca
             // 
-            this.textBoxMarca.Location = new System.Drawing.Point(78, 121);
+            this.textBoxMarca.Location = new System.Drawing.Point(78, 69);
             this.textBoxMarca.Name = "textBoxMarca";
             this.textBoxMarca.Size = new System.Drawing.Size(100, 20);
             this.textBoxMarca.TabIndex = 6;
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(78, 69);
+            this.textBoxNome.Location = new System.Drawing.Point(78, 17);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(100, 20);
             this.textBoxNome.TabIndex = 5;
-            // 
-            // textBoxCodigo
-            // 
-            this.textBoxCodigo.Enabled = false;
-            this.textBoxCodigo.Location = new System.Drawing.Point(78, 17);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCodigo.TabIndex = 4;
             // 
             // label4
             // 
@@ -177,7 +165,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 121);
+            this.label3.Location = new System.Drawing.Point(7, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 2;
@@ -186,20 +174,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 69);
+            this.label2.Location = new System.Drawing.Point(7, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
             // 
             // botaoConfirmar
             // 
@@ -327,7 +306,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxUso;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -335,7 +313,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDtAquisicao;
         private System.Windows.Forms.TextBox textBoxMarca;
         private System.Windows.Forms.TextBox textBoxNome;
-        private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Button botaoConfirmar;
         private System.Windows.Forms.Button botaoEditar;
         private System.Windows.Forms.Button botaoCancelar;

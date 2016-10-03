@@ -80,7 +80,7 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             agenda.Servico = comboBoxServico.Text;
             agenda.NomeServico = textBoxNome.Text;
-            agenda.Horario = (textBoxHorario.Text);
+            agenda.Horario = (maskedTextBoxHorario.Text);
             agenda.Gravar();
             AtualizarGrid();
         }
@@ -98,10 +98,10 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             if (dgv1.RowCount > 0)
             {
-                textBoxCodigo.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxNome.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                textBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                maskedTextBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
         }
         

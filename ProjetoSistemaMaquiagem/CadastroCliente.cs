@@ -136,17 +136,16 @@ namespace ProjetoSistemaMaquiagem
                 maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 textBoxEmail.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                /*
-                maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                maskedTextBoxCEP.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                textBoxEstado.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                textBoxCidade.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
-                textBoxBairro.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
-                textBoxRua.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
-                textBoxNumero.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
-                textBoxComplemento.Text = dgv1.CurrentRow.Cells[10].Value.ToString();
-                */
+                //maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                //maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                maskedTextBoxCEP.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                textBoxEstado.Text = dgv1.CurrentRow.Cells[10].Value.ToString();
+                textBoxCidade.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
+                textBoxBairro.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
+                textBoxRua.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                textBoxNumero.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                textBoxComplemento.Text = dgv1.CurrentRow.Cells[11].Value.ToString();
+                
 
             }
         }

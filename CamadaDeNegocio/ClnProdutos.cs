@@ -14,9 +14,10 @@ namespace CamadaDeNegocio
         private string nm_produto;
         private double vl_produto;
         private string nm_marca;
-        private DateTime dt_Vencimento;
-        private DateTime dt_Aquisicao;
-        
+        private string dt_vencimento;
+        private string dt_aquisicao;
+        private string uso;
+
         //2 - propriedades, acesso aos campos privados
         public int Cd_Produto
         {
@@ -40,19 +41,23 @@ namespace CamadaDeNegocio
             set { nm_marca = value; }
         }
 
-        public DateTime Dt_Vencimento
+        public string Dt_Vencimento
         {
-            get { return dt_Vencimento; }
-            set { dt_Vencimento = value; }
+            get { return dt_vencimento; }
+            set { dt_vencimento = value; }
         }
 
-        public DateTime Dt_Aquisicao
+        public string Dt_Aquisicao
         {
-            get { return dt_Aquisicao; }
-            set { dt_Aquisicao = value; }
+            get { return dt_aquisicao; }
+            set { dt_aquisicao = value; }
         }
 
-
+        public string Uso
+        {
+            get { return uso; }
+            set { uso = value; }
+        }
 
         //3 - métodos da classe de Negócios (clnservico.cs)
 
@@ -94,10 +99,18 @@ namespace CamadaDeNegocio
             csql.Append("(");
             csql.Append("cd_produto,");
             csql.Append("nm_produto,");
-            csql.Append("vl_produto) Values(");
+            csql.Append("nm_marca,");
+            csql.Append("vl_produto,");
+            csql.Append("dt_aquisicao,");
+            csql.Append("dt_vencimento,");
+            csql.Append("uso) Values(");
             csql.Append(cd_produto);
             csql.Append(",'" + nm_produto + "',");
-            csql.Append("'" + vl_produto + "')");
+            csql.Append("'" + nm_marca + "',");
+            csql.Append("'" + vl_produto + "',");
+            csql.Append("'" + dt_aquisicao + "',");
+            csql.Append("'" + dt_vencimento + "',");
+            csql.Append("'" + uso + "')");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

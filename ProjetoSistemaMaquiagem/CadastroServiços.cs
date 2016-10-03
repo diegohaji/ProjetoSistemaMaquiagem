@@ -19,19 +19,19 @@ namespace ProjetoSistemaMaquiagem
         {
             InitializeComponent();
         }
-      
+
         //inutil
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-        
+
         //inutil
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
-        
+
         //inutil
         private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -49,16 +49,6 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
-        //Preenche o combobox com informaçoes dos serviços
-        public void PreencherComboTipo()
-        {
-            ClnServiços tipo = new ClnServiços();
-            DataSet ds = tipo.BuscarporNome();
-            comboBoxTipo.DataSource = ds.Tables[0];
-            comboBoxTipo.DisplayMember = "nm_servico";
-            comboBoxTipo.ValueMember = "cd_servico";
-        }
-
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
@@ -68,14 +58,30 @@ namespace ProjetoSistemaMaquiagem
                 if (ctl is MaskedTextBox) ctl.Text = string.Empty;
             }
         }
-        
+
         //função que carrega o grid quando o formulario é chamado
         private void CadastroServiços_Load(object sender, EventArgs e)
         {
-            PreencherComboTipo();
             AtualizarGrid();
         }
 
+
+        //Funcao que verifica se há algum campo em branco
+        private bool verificaText(Control controles)
+        {
+            foreach (Control T in controles.Controls)
+            {
+                if (T is TextBox || T is MaskedTextBox)
+                {
+                    if (T.Text == string.Empty)
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
         //funçao que cadastra o serviço
         private void botaoConfirmar_Click(object sender, EventArgs e)
@@ -83,20 +89,22 @@ namespace ProjetoSistemaMaquiagem
             ClnServiços serv = new ClnServiços();
             serv.Nm_Servico = textBoxNome.Text;
             serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
-            serv.Gravar();
-            AtualizarGrid();
-            LimparTxt(groupBox1);
-            LimparTxt(groupBox2);
+            serv.Duracao = maskedTextBoxDuracao.Text;
+            if (verificaText(groupBoxServico))
+            {
+                serv.Gravar();
+                AtualizarGrid();
+                LimparTxt(groupBoxServico);
+            }
         }
-
 
 
         //funcao que é chamada quando é cancelado o cadastro
         private void Cancelar_Click(object sender, EventArgs e)
         {
-           LimparTxt(groupBox1);
+            LimparTxt(groupBoxServico);
         }
-     
+
         //funcao do grid
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -104,10 +112,10 @@ namespace ProjetoSistemaMaquiagem
             ClnServiços servicos = new ClnServiços();
             if (dgv1.RowCount > 0)
             {
+
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxPreco.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                //comboBoxTipo.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                //textBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                maskedTextBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
         }
         //função que é chamada para excluir serviço
@@ -120,9 +128,9 @@ namespace ProjetoSistemaMaquiagem
                 ClnProdutos produto = new ClnProdutos();
                 produto.Excluir(textBoxNome.Text);
             }
-            LimparTxt(groupBox1);
+            LimparTxt(groupBoxServico);
             AtualizarGrid();
-          
+
         }
         //funcao de pesquisa
         private void button1_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace CamadaDeNegocio
         private int cd_servico;
         private string nm_servico;
         private double vl_servico;
-       
+        private string duracao;
 
         //2 - propriedades, acesso aos campos privados
         public int Cd_Servico
@@ -31,8 +31,13 @@ namespace CamadaDeNegocio
             get { return vl_servico; }
             set { vl_servico = value; }
         }
-       
-        
+
+        public string Duracao
+        {
+            get { return duracao; }
+            set { duracao = value; }
+        }
+
 
         //3 - métodos da classe de Negócios (clnservico.cs)
 
@@ -51,7 +56,7 @@ namespace CamadaDeNegocio
                 cd_servico = Convert.ToInt16(dados.GetValue(0));
                 nm_servico = Convert.ToString(dados.GetValue(1));
                 vl_servico = Convert.ToDouble(dados.GetValue(2));
-                                
+                duracao = Convert.ToString(dados.GetValue(3));                
             }
         }
 
@@ -79,10 +84,12 @@ namespace CamadaDeNegocio
             csql.Append("(");
             csql.Append("cd_servico,");
             csql.Append("nm_servico,");
-            csql.Append("vl_servico) Values(");
+            csql.Append("vl_servico,");
+            csql.Append("duracao) Values(");
             csql.Append(cd_servico);
             csql.Append(",'" + nm_servico + "',");
-            csql.Append("'" + vl_servico + "')");
+            csql.Append("'" + vl_servico + "',");
+            csql.Append("'" + duracao + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();

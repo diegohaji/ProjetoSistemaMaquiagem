@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxProduto = new System.Windows.Forms.GroupBox();
             this.textBoxVlProduto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxUso = new System.Windows.Forms.TextBox();
@@ -53,33 +53,33 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxProduto
             // 
-            this.groupBox1.Controls.Add(this.textBoxVlProduto);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBoxUso);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.maskedTextBoxDtVencimento);
-            this.groupBox1.Controls.Add(this.maskedTextBoxDtAquisicao);
-            this.groupBox1.Controls.Add(this.textBoxMarca);
-            this.groupBox1.Controls.Add(this.textBoxNome);
-            this.groupBox1.Controls.Add(this.textBoxCodigo);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 276);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
+            this.groupBoxProduto.Controls.Add(this.textBoxVlProduto);
+            this.groupBoxProduto.Controls.Add(this.label7);
+            this.groupBoxProduto.Controls.Add(this.textBoxUso);
+            this.groupBoxProduto.Controls.Add(this.label6);
+            this.groupBoxProduto.Controls.Add(this.label5);
+            this.groupBoxProduto.Controls.Add(this.maskedTextBoxDtVencimento);
+            this.groupBoxProduto.Controls.Add(this.maskedTextBoxDtAquisicao);
+            this.groupBoxProduto.Controls.Add(this.textBoxMarca);
+            this.groupBoxProduto.Controls.Add(this.textBoxNome);
+            this.groupBoxProduto.Controls.Add(this.textBoxCodigo);
+            this.groupBoxProduto.Controls.Add(this.label4);
+            this.groupBoxProduto.Controls.Add(this.label3);
+            this.groupBoxProduto.Controls.Add(this.label2);
+            this.groupBoxProduto.Controls.Add(this.label1);
+            this.groupBoxProduto.Location = new System.Drawing.Point(13, 13);
+            this.groupBoxProduto.Name = "groupBoxProduto";
+            this.groupBoxProduto.Size = new System.Drawing.Size(455, 276);
+            this.groupBoxProduto.TabIndex = 0;
+            this.groupBoxProduto.TabStop = false;
             // 
             // textBoxVlProduto
             // 
@@ -158,6 +158,7 @@
             // 
             // textBoxCodigo
             // 
+            this.textBoxCodigo.Enabled = false;
             this.textBoxCodigo.Location = new System.Drawing.Point(78, 17);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(100, 20);
@@ -306,12 +307,12 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxProduto);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de produto";
             this.Load += new System.EventHandler(this.CadastroProduto_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxProduto.ResumeLayout(false);
+            this.groupBoxProduto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -322,7 +323,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxProduto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

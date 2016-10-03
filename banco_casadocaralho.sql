@@ -61,8 +61,11 @@ create table tb_horario_func(
 create table tb_produto(
 	cd_produto int unsigned not null auto_increment, 
     primary key(cd_produto),
-    nm_produto varchar(127), 
-    vl_produto double not null
+    nm_produto varchar(127),
+    nm_marca varchar(127),
+    vl_produto double not null,
+    dt_aquisicao varchar(12),
+    dt_vencimento varchar(12)
 )engine = innodb;
 
 create table tb_estoque_produto(
@@ -131,3 +134,4 @@ nome_usuario varchar(127) not null,
 senha_usuario varchar(127) not null,
 primary key(cd_usuario)
 )engine=innodb;
+

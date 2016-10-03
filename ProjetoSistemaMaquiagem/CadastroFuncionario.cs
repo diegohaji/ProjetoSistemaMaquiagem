@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AcessoADados;
 using CamadaDeNegocio;
+using System.ServiceModel;
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -23,6 +24,7 @@ namespace ProjetoSistemaMaquiagem
         //função que carrega o grid quando o formulario é chamado
         private void CadastroFuncionario_Load(object sender, EventArgs e)
         {
+
             try {
                 AtualizarGrid();
             }
@@ -45,12 +47,13 @@ namespace ProjetoSistemaMaquiagem
         //atualiza o grid
         private void AtualizarGrid()
         {
+            
             DataSet ds = new DataSet();
             ClnFuncionario funcionario = new ClnFuncionario();
             funcionario.Nm_Funcionario = textBoxPesquisar.Text;
             ds = funcionario.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
-
+            
         }
 
         //funçao que cadastra o cliente
@@ -154,6 +157,40 @@ namespace ProjetoSistemaMaquiagem
             funcionario.Nm_Funcionario = textBoxPesquisar.Text;
             ds = funcionario.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
+        }
+        //funcao que busca o endereco dado o cep
+        private void maskedTextBoxCEP_Leave(object sender, EventArgs e)
+        {
+
+            try
+            {
+                APICorreios.AtendeClienteClient consulta = new APICorreios.AtendeClienteClient("AtendeClientePort");
+
+                var resultado = consulta.consultaCEP(maskedTextBoxCEP.Text);
+
+                if (resultado != null)
+                {
+                    textBoxRua.Text = resultado.end;
+                    textBoxComplemento.Text = resultado.complemento;
+                    textBoxBairro.Text = resultado.bairro;
+                    textBoxCidade.Text = resultado.cidade;
+                    textBoxEstado.Text = resultado.uf;
+                    //lblInformacoes.Text = "Consulta Realizada Com Sucesso!";
+                }
+                //maskedTextBoxCEP.Clear();
+            }
+            catch (FaultException)
+            {
+                MessageBox.Show("CEP NÃO ENCONTRADO OU INVALIDO.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                maskedTextBoxCEP.Clear();
+                maskedTextBoxCEP.Focus();
+            }
+            catch (EndpointNotFoundException)
+            {
+                MessageBox.Show("Não foi possivel completar a operação\nVerifique sua conexão com a internet.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                maskedTextBoxCEP.Clear();
+            }
+
         }
     }
 }

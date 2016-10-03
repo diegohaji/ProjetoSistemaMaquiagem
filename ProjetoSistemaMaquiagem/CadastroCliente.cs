@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using AcessoADados;
 using CamadaDeNegocio;
 using MySql.Data.MySqlClient;
+using System.ServiceModel;
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -168,7 +169,38 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
         }
 
-       
+        //funcao que busca o endereco dado o cep
+        private void maskedTextBoxCEP_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                APICorreios.AtendeClienteClient consulta = new APICorreios.AtendeClienteClient("AtendeClientePort");
+
+                var resultado = consulta.consultaCEP(maskedTextBoxCEP.Text);
+
+                if (resultado != null)
+                {
+                    textBoxRua.Text = resultado.end;
+                    textBoxComplemento.Text = resultado.complemento;
+                    textBoxBairro.Text = resultado.bairro;
+                    textBoxCidade.Text = resultado.cidade;
+                    textBoxEstado.Text = resultado.uf;
+                    //lblInformacoes.Text = "Consulta Realizada Com Sucesso!";
+                }
+                //maskedTextBoxCEP.Clear();
+            }
+            catch (FaultException)
+            {
+                MessageBox.Show("CEP NÃO ENCONTRADO OU INVALIDO.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                maskedTextBoxCEP.Clear();
+                maskedTextBoxCEP.Focus();
+            }
+            catch (EndpointNotFoundException)
+            {
+                MessageBox.Show("Não foi possivel completar a operação\nVerifique sua conexão com a internet.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                maskedTextBoxCEP.Clear();
+            }
+        }
     }
 }
 

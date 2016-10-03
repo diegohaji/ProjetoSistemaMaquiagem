@@ -337,7 +337,6 @@
             this.groupBoxFuncionalidades.TabIndex = 1;
             this.groupBoxFuncionalidades.TabStop = false;
             this.groupBoxFuncionalidades.Text = "Funcionalidades";
-            this.groupBoxFuncionalidades.Visible = false;
             // 
             // TelaPrincipal
             // 

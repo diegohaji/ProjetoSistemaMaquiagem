@@ -224,6 +224,7 @@
             this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
             this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxCEP.TabIndex = 24;
+            this.maskedTextBoxCEP.Leave += new System.EventHandler(this.maskedTextBoxCEP_Leave);
             // 
             // textBoxComplemento
             // 

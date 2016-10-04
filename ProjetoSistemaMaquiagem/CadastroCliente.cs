@@ -52,8 +52,7 @@ namespace ProjetoSistemaMaquiagem
 
         //atualiza o grid
         private void AtualizarGrid()
-        {
-            
+        {  
             DataSet ds = new DataSet();
             ClnCliente cliente = new ClnCliente();
             cliente.Nm_Cliente = textBoxPesquisar.Text;

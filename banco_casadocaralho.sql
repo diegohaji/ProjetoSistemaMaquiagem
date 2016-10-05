@@ -46,8 +46,10 @@ create table tb_prestacao_servico(
     foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
     foreign key (cd_cliente) references tb_cliente(cd_cliente),
     foreign key (cd_servico) references tb_servico(cd_servico),
+    nm_funcionario varchar(40),
+    nm_servico varchar(40),
     status_prestacao varchar(127),
-    data_prestacao date not null,
+    data_prestacao varchar(14),
     vl_total double not null,
     primary key (cd_funcionario, cd_cliente, cd_servico, data_prestacao, vl_total)
 )engine = innodb;

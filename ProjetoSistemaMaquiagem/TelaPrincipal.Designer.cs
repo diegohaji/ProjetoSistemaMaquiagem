@@ -43,18 +43,16 @@
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonFuncionario = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonVendas = new System.Windows.Forms.Button();
             this.buttonServPrestado = new System.Windows.Forms.Button();
             this.buttonLancHorario = new System.Windows.Forms.Button();
             this.buttonAgendServico = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonEstoque = new System.Windows.Forms.Button();
-            this.buttonVerificarEst = new System.Windows.Forms.Button();
-            this.buttonAlterarEstoque = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonContFinanceiro = new System.Windows.Forms.Button();
             this.buttonRelatorio = new System.Windows.Forms.Button();
             this.groupBoxFuncionalidades = new System.Windows.Forms.GroupBox();
-            this.buttonVendas = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
@@ -225,6 +223,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Serviços";
             // 
+            // buttonVendas
+            // 
+            this.buttonVendas.Location = new System.Drawing.Point(158, 82);
+            this.buttonVendas.Name = "buttonVendas";
+            this.buttonVendas.Size = new System.Drawing.Size(139, 70);
+            this.buttonVendas.TabIndex = 3;
+            this.buttonVendas.Text = "Vendas";
+            this.buttonVendas.UseVisualStyleBackColor = true;
+            // 
             // buttonServPrestado
             // 
             this.buttonServPrestado.Location = new System.Drawing.Point(158, 7);
@@ -259,8 +266,6 @@
             // 
             this.tabPage3.BackColor = System.Drawing.Color.Gray;
             this.tabPage3.Controls.Add(this.buttonEstoque);
-            this.tabPage3.Controls.Add(this.buttonVerificarEst);
-            this.tabPage3.Controls.Add(this.buttonAlterarEstoque);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -270,33 +275,14 @@
             // 
             // buttonEstoque
             // 
+            this.buttonEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
             this.buttonEstoque.Location = new System.Drawing.Point(8, 6);
             this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(136, 70);
+            this.buttonEstoque.Size = new System.Drawing.Size(287, 144);
             this.buttonEstoque.TabIndex = 4;
             this.buttonEstoque.Text = "Estoque";
             this.buttonEstoque.UseVisualStyleBackColor = true;
             this.buttonEstoque.Click += new System.EventHandler(this.buttonEstoque_Click_1);
-            // 
-            // buttonVerificarEst
-            // 
-            this.buttonVerificarEst.Location = new System.Drawing.Point(8, 82);
-            this.buttonVerificarEst.Name = "buttonVerificarEst";
-            this.buttonVerificarEst.Size = new System.Drawing.Size(289, 70);
-            this.buttonVerificarEst.TabIndex = 1;
-            this.buttonVerificarEst.Text = "Verificar";
-            this.buttonVerificarEst.UseVisualStyleBackColor = true;
-            this.buttonVerificarEst.Click += new System.EventHandler(this.buttonVerificarEst_Click);
-            // 
-            // buttonAlterarEstoque
-            // 
-            this.buttonAlterarEstoque.Location = new System.Drawing.Point(160, 6);
-            this.buttonAlterarEstoque.Name = "buttonAlterarEstoque";
-            this.buttonAlterarEstoque.Size = new System.Drawing.Size(137, 70);
-            this.buttonAlterarEstoque.TabIndex = 0;
-            this.buttonAlterarEstoque.Text = "Alterar";
-            this.buttonAlterarEstoque.UseVisualStyleBackColor = true;
-            this.buttonAlterarEstoque.Click += new System.EventHandler(this.buttonAlterarEstoque_Click);
             // 
             // tabPage4
             // 
@@ -340,15 +326,6 @@
             this.groupBoxFuncionalidades.TabStop = false;
             this.groupBoxFuncionalidades.Text = "Funcionalidades";
             // 
-            // buttonVendas
-            // 
-            this.buttonVendas.Location = new System.Drawing.Point(158, 82);
-            this.buttonVendas.Name = "buttonVendas";
-            this.buttonVendas.Size = new System.Drawing.Size(139, 70);
-            this.buttonVendas.TabIndex = 3;
-            this.buttonVendas.Text = "Vendas";
-            this.buttonVendas.UseVisualStyleBackColor = true;
-            // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,8 +368,6 @@
         private System.Windows.Forms.Button buttonAgendServico;
         private System.Windows.Forms.Button buttonServPrestado;
         private System.Windows.Forms.Button buttonLancHorario;
-        private System.Windows.Forms.Button buttonVerificarEst;
-        private System.Windows.Forms.Button buttonAlterarEstoque;
         private System.Windows.Forms.Button buttonRelatorio;
         private System.Windows.Forms.Button buttonContFinanceiro;
         private System.Windows.Forms.Button buttonProduto;

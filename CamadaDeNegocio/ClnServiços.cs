@@ -62,10 +62,10 @@ namespace CamadaDeNegocio
 
         //3.2 Buscar o próximo Id Numerico para 
         //inclusao de um novo servico.
-        public int BuscarId()
+        public int BuscarId(string nome)
         {
             string csql;
-            csql = "Select * From tb_servico order by cd_produto desc limit 1";
+            csql = "Select cd_servico From tb_servico where nm_servico like('%"+ nome +"%')";
             ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }

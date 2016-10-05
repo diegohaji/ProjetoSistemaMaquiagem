@@ -125,10 +125,10 @@ namespace CamadaDeNegocio
 
         //3.2 Buscar o próximo Id Numerico para 
         //inclusao de um novo funcionario.
-        public int BuscarId()
+        public int BuscarId(string nome)
         {
             string csql;
-            csql = "Select * From tb_funcionario order by cd_funcionario desc limit 1";
+            csql = "Select cd_funcionario From tb_funcionario where nm_funcionario like ('%" + nome + "%')";
             ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }

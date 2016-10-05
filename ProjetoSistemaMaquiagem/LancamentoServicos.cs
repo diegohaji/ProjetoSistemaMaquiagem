@@ -144,7 +144,21 @@ namespace ProjetoSistemaMaquiagem
             }
         }
 
+        private void botaoExcluir_Click(object sender, EventArgs e)
+        {
 
-       
+            ClnLancamentoServicos agenda = new ClnLancamentoServicos();
+            string mensagem = "Deseja excluir o cadastro," + comboBoxCliente.Text + " ?";
+            int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+            if (resposta == 6)
+            {
+                ClnCliente cliente = new ClnCliente();
+                agenda.Excluir(cliente.BuscarId(comboBoxCliente.Text));
+            }
+            LimparTxt(groupBox4);
+            AtualizarGrid();
+        }
+
     }
 }
+

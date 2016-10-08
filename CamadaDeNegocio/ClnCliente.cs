@@ -132,7 +132,7 @@ namespace CamadaDeNegocio
         public int BuscarId(string nome)
         {
             string csql;
-            csql = "Select cd_cliente From tb_cliente where nm_cliente like ('%"+ nome +"%')";
+            csql = "Select cd_cliente From tb_cliente where nm_cliente like ('%" + nome + "%')";
             ClasseDados cd = new ClasseDados();
             return cd.RetornarIdNumerico(csql);
         }
@@ -224,12 +224,13 @@ namespace CamadaDeNegocio
         //3.4 Método para atualizar (alterar um registro)
         public void Atualizar()
         {
+
             StringBuilder csql = new StringBuilder();
             csql.Append("Update tb_cliente ");
-            csql.Append("set cd_produto=");
-            csql.Append(cd_cliente);
-            csql.Append(", nm_cliente='");
+            csql.Append("set nm_cliente='");
             csql.Append(nm_cliente);
+            csql.Append("', rg_cliente='");
+            csql.Append(rg_cliente);
             csql.Append("', cpf_cliente='");
             csql.Append(cpf_cliente);
             csql.Append("', email_cliente='");
@@ -237,6 +238,29 @@ namespace CamadaDeNegocio
             csql.Append("' where cd_cliente=");
             csql.Append(cd_cliente);
             ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Update tb_endereco_cliente ");
+            csql.Append("set cep = ");
+            csql.Append(cep_cliente);
+            csql.Append(", cidade ='");
+            csql.Append(cidade_cliente);
+            csql.Append("',bairro = '");
+            csql.Append(bairro_cliente);
+            csql.Append("',logradouro='");
+            csql.Append(rua_cliente);
+            csql.Append("num=");
+            csql.Append(numero_cliente);
+            csql.Append("',complemento='");
+            csql.Append(complemento_cliente);
+            csql.Append("cd_cliente=");
+            csql.Append(cd_cliente - 1);
+            csql.Append("',estado='");
+            csql.Append(estado_cliente);
+            csql.Append("' where cd_cliente = ");
+            csql.Append(cd_cliente);
+            cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
 
@@ -247,7 +271,7 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_cliente ");
             csql.Append(" where nm_cliente='");
-            csql.Append(nome+"'");
+            csql.Append(nome + "'");
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

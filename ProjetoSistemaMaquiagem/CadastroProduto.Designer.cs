@@ -198,6 +198,7 @@
             this.botaoEditar.TabIndex = 2;
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
+            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
             // 
             // botaoCancelar
             // 

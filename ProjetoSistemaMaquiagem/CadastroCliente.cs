@@ -28,18 +28,7 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
         }
 
-        //inutil
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //inutil
-        private void textBoxRua_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+ 
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
@@ -90,7 +79,7 @@ namespace ProjetoSistemaMaquiagem
                 Cliente.RG_Cliente = maskedTextBoxRG.Text;
                 Cliente.Celular_cliente = maskedTextBoxCelular.Text;
                 Cliente.Telefone_cliente = maskedTextBoxTelefone.Text;
-                Cliente.CEP_cliente = maskedTextBoxCEP.Text;
+                Cliente.CEP_cliente = textBoxCEP.Text;
                 Cliente.Rua_cliente = textBoxRua.Text;
                 Cliente.Numero_cliente = textBoxNumero.Text;
                 Cliente.Bairro_cliente = textBoxBairro.Text;
@@ -136,7 +125,7 @@ namespace ProjetoSistemaMaquiagem
                 textBoxEmail.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 //maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 //maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                maskedTextBoxCEP.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                textBoxCEP.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
                 textBoxEstado.Text = dgv1.CurrentRow.Cells[10].Value.ToString();
                 textBoxCidade.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
                 textBoxBairro.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
@@ -174,13 +163,13 @@ namespace ProjetoSistemaMaquiagem
         }
 
         //funcao que busca o endereco dado o cep
-        private void maskedTextBoxCEP_Leave(object sender, EventArgs e)
+        private void textBoxCEP_Leave(object sender, EventArgs e)
         {
             try
             {
                 APICorreios.AtendeClienteClient consulta = new APICorreios.AtendeClienteClient("AtendeClientePort");
 
-                var resultado = consulta.consultaCEP(maskedTextBoxCEP.Text);
+                var resultado = consulta.consultaCEP(textBoxCEP.Text);
 
                 if (resultado != null)
                 {
@@ -191,24 +180,43 @@ namespace ProjetoSistemaMaquiagem
                     textBoxEstado.Text = resultado.uf;
                     //lblInformacoes.Text = "Consulta Realizada Com Sucesso!";
                 }
-                //maskedTextBoxCEP.Clear();
+                //textBoxCEP.Clear();
             }
             catch (FaultException)
             {
                 MessageBox.Show("CEP NÃO ENCONTRADO OU INVALIDO.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                maskedTextBoxCEP.Clear();
-                maskedTextBoxCEP.Focus();
+                textBoxCEP.Clear();
+                textBoxCEP.Focus();
             }
             catch (EndpointNotFoundException)
             {
                 MessageBox.Show("Não foi possivel completar a operação\nVerifique sua conexão com a internet.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                maskedTextBoxCEP.Clear();
+                textBoxCEP.Clear();
             }
         }
 
-
-
-
+        private void BotaoEditar_Click(object sender, EventArgs e)
+        {
+            ClnCliente Cliente = new ClnCliente();
+            Cliente.Nm_Cliente = textBoxNome.Text;
+            Cliente.CPF_cliente = maskedTextBoxCPF.Text;
+            Cliente.Email_cliente = textBoxEmail.Text;
+            Cliente.RG_Cliente = maskedTextBoxRG.Text;
+            Cliente.Celular_cliente = maskedTextBoxCelular.Text;
+            Cliente.Telefone_cliente = maskedTextBoxTelefone.Text;
+            Cliente.CEP_cliente = textBoxCEP.Text;
+            Cliente.Rua_cliente = textBoxRua.Text;
+            Cliente.Numero_cliente = textBoxNumero.Text;
+            Cliente.Bairro_cliente = textBoxBairro.Text;
+            Cliente.Cidade_cliente = textBoxCidade.Text;
+            Cliente.Estado_cliente = textBoxEstado.Text;
+            Cliente.Complemento_cliente = textBoxComplemento.Text;
+            Cliente.Cd_cliente = Cliente.BuscarId(textBoxNome.Text);
+            Cliente.Atualizar();
+            AtualizarGrid();
+            LimparTxt(Cadastro);
+            LimparTxt(groupBoxEndereco);
+        }
     }
 }
 

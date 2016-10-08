@@ -195,27 +195,25 @@ namespace ProjetoSistemaMaquiagem
         //Funcao para editar algum cadastro NAO ESTÁ FUNCIONANDO!!!!
         private void BotaoEditar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ClnFuncionario funcionario = new ClnFuncionario();
-                funcionario.Nm_Funcionario = textBoxNome.Text;
-                funcionario.Email_Funcionario = textBoxEmail.Text;
-                funcionario.RG_Funcionario = maskedTextBoxRG.Text;
-                funcionario.CPF_Funcionario = maskedTextBoxCPF.Text;
-                funcionario.Atualizar();
-                string mensagem = "Registro\nCódigo: " +
-                    funcionario.Cd_Funcionario + "\nAlterado com sucesso";
-                MessageBox.Show(mensagem, "Sucesso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                LimparTxt(Cadastro);
-                AtualizarGrid();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocorreu um erro: " + ex.Message, "Erro");
-            }
 
+            ClnFuncionario funcionario = new ClnFuncionario();
+            funcionario.Nm_Funcionario = textBoxNome.Text;
+            funcionario.RG_Funcionario = maskedTextBoxRG.Text;
+            funcionario.CPF_Funcionario = maskedTextBoxCPF.Text;
+            funcionario.Email_Funcionario = textBoxEmail.Text;
+            funcionario.Celular_funcionario = maskedTextBoxCelular.Text;
+            funcionario.Telefone_funcionario = maskedTextBoxTelefone.Text;
+            funcionario.CEP_funcionario = maskedTextBoxCEP.Text;
+            funcionario.Rua_funcionario = textBoxRua.Text;
+            funcionario.Numero_funcionario = textBoxNumero.Text;
+            funcionario.Bairro_funcionario = textBoxBairro.Text;
+            funcionario.Cidade_funcionario = textBoxCidade.Text;
+            funcionario.Estado_funcionario = textBoxEstado.Text;
+            funcionario.Complemento_funcionario = textBoxComplemento.Text;
+            funcionario.Cd_Funcionario = funcionario.BuscarId(textBoxNome.Text);
+            funcionario.Atualizar();
+            LimparTxt(Cadastro);
+            LimparTxt(groupBoxEndereco);
         }
 
         //funcao de pesquisa

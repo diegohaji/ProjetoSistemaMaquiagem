@@ -139,5 +139,20 @@ namespace ProjetoSistemaMaquiagem
             ds = produto.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
         }
+
+        private void botaoEditar_Click(object sender, EventArgs e)
+        {
+            ClnProdutos prod = new ClnProdutos();
+            prod.Nm_Produto = textBoxNome.Text;
+            prod.Nm_Marca = textBoxMarca.Text;
+            prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
+            prod.Dt_Vencimento = maskedTextBoxDtVencimento.Text;
+            prod.Dt_Aquisicao = maskedTextBoxDtAquisicao.Text;
+            prod.Uso = textBoxUso.Text;
+            prod.Cd_Produto = prod.BuscarporCodigo();
+            prod.Atualizar();
+            AtualizarGrid();
+            LimparTxt(groupBoxProduto);
+        }
     }
 }

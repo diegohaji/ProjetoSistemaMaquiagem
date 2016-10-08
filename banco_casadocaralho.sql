@@ -132,8 +132,6 @@ create table tb_endereco_funcionario(
     on delete cascade
 )engine=innodb;
 
-
-
 create table tb_usuario(
 cd_usuario int unsigned not null auto_increment,
 nome_usuario varchar(127) not null,
@@ -141,7 +139,6 @@ senha_usuario varchar(127) not null,
 dica_senha varchar(127) not null,
 primary key(cd_usuario)
 )engine=innodb;
-
 
 create table tb_agendamento_servico(
 cd_funcionario int unsigned not null,
@@ -153,4 +150,15 @@ foreign key (cd_servico) references tb_servico(cd_servico),
 data_agendamento varchar(14) not null,
 hora_agendamento varchar(14) not null,
 primary key(cd_funcionario, cd_cliente, cd_servico, data_agendamento, hora_agendamento)
+)engine = innodb;
+
+create table tb_pagamento(
+cd_pagamento int unsigned not null auto_increment,
+cd_funcionario int unsigned not null,
+cd_cliente int unsigned not null,
+cd_servico int unsigned not null,
+foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
+foreign key (cd_cliente) references tb_cliente(cd_cliente),
+foreign key (cd_servico) references tb_servico(cd_servico),
+primary key(cd_pagamento)
 )engine = innodb;

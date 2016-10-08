@@ -63,10 +63,10 @@ namespace CamadaDeNegocio
 
 
         //3.1 Buscar dados do produto cujo codigo foi especificado
-        public void BuscarporCodigo()
+        public int BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_produto where cd_produto=" + cd_produto;
+            csql = "Select cd_produto From tb_produto where cd_produto=" + cd_produto;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -74,10 +74,8 @@ namespace CamadaDeNegocio
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
                 cd_produto = Convert.ToInt16(dados.GetValue(0));
-                nm_produto = Convert.ToString(dados.GetValue(1));
-                vl_produto = Convert.ToDouble(dados.GetValue(2));
-
             }
+            return cd_produto;
         }
 
         //3.2 Buscar o próximo Id Numerico para 
@@ -120,12 +118,18 @@ namespace CamadaDeNegocio
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Update tb_produto ");
-            csql.Append("set cd_produto=");
-            csql.Append(cd_produto);
-            csql.Append(", nm_produto='");
+            csql.Append("set nm_produto='");
             csql.Append(nm_produto);
-            csql.Append("', vl_produto='");
+            csql.Append("', nm_marca = ");
+            csql.Append("'" + nm_marca);
+            csql.Append("', vl_produto=");
             csql.Append(vl_produto);
+            csql.Append(" ,dt_aquisicao=");
+            csql.Append("'" + dt_aquisicao + "'");
+            csql.Append(",dt_vencimento=");
+            csql.Append("'" + dt_vencimento + "'");
+            csql.Append(",uso = ");
+            csql.Append("'" + uso);
             csql.Append("' where cd_produto=");
             csql.Append(cd_produto);
             ClasseDados cd = new ClasseDados();

@@ -220,7 +220,6 @@
             // maskedTextBoxCEP
             // 
             this.maskedTextBoxCEP.Location = new System.Drawing.Point(30, 42);
-            this.maskedTextBoxCEP.Mask = "00000-000";
             this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
             this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxCEP.TabIndex = 24;

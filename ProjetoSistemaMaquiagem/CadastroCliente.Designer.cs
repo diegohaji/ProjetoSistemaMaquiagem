@@ -58,7 +58,6 @@
             this.BotaoExcluir = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBoxEndereco = new System.Windows.Forms.GroupBox();
-            this.maskedTextBoxCEP = new System.Windows.Forms.MaskedTextBox();
             this.textBoxComplemento = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -66,6 +65,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBoxCEP = new System.Windows.Forms.TextBox();
             this.Cadastro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBoxEndereco.SuspendLayout();
@@ -237,7 +237,6 @@
             this.textBoxRua.Name = "textBoxRua";
             this.textBoxRua.Size = new System.Drawing.Size(100, 20);
             this.textBoxRua.TabIndex = 16;
-            this.textBoxRua.TextChanged += new System.EventHandler(this.textBoxRua_TextChanged);
             // 
             // label10
             // 
@@ -274,7 +273,6 @@
             this.label7.Size = new System.Drawing.Size(61, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Logradouro";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -303,6 +301,7 @@
             this.BotaoEditar.TabIndex = 2;
             this.BotaoEditar.Text = "Editar";
             this.BotaoEditar.UseVisualStyleBackColor = true;
+            this.BotaoEditar.Click += new System.EventHandler(this.BotaoEditar_Click);
             // 
             // BotaoCancelar
             // 
@@ -335,7 +334,7 @@
             // 
             // groupBoxEndereco
             // 
-            this.groupBoxEndereco.Controls.Add(this.maskedTextBoxCEP);
+            this.groupBoxEndereco.Controls.Add(this.textBoxCEP);
             this.groupBoxEndereco.Controls.Add(this.textBoxComplemento);
             this.groupBoxEndereco.Controls.Add(this.label13);
             this.groupBoxEndereco.Controls.Add(this.label6);
@@ -355,15 +354,6 @@
             this.groupBoxEndereco.TabIndex = 22;
             this.groupBoxEndereco.TabStop = false;
             this.groupBoxEndereco.Text = "Endereço";
-            // 
-            // maskedTextBoxCEP
-            // 
-            this.maskedTextBoxCEP.Location = new System.Drawing.Point(30, 42);
-            this.maskedTextBoxCEP.Mask = "00000-000";
-            this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
-            this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCEP.TabIndex = 24;
-            this.maskedTextBoxCEP.Leave += new System.EventHandler(this.maskedTextBoxCEP_Leave);
             // 
             // textBoxComplemento
             // 
@@ -431,11 +421,19 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
+            // textBoxCEP
+            // 
+            this.textBoxCEP.Location = new System.Drawing.Point(30, 43);
+            this.textBoxCEP.Name = "textBoxCEP";
+            this.textBoxCEP.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCEP.TabIndex = 24;
+            this.textBoxCEP.Leave += new System.EventHandler(this.textBoxCEP_Leave);
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 513);
+            this.ClientSize = new System.Drawing.Size(1012, 513);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxEndereco);
@@ -495,6 +493,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCEP;
+        private System.Windows.Forms.TextBox textBoxCEP;
     }
 }

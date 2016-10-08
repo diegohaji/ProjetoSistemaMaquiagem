@@ -6,6 +6,7 @@ create table tb_cliente(
     rg_cliente varchar(14),
     cpf_cliente varchar(14), 
     email_cliente varchar(127)
+    
 ) engine = innodb;
 
 create table tb_servico(
@@ -28,14 +29,14 @@ create table tb_funcionario(
 create table tb_fones_cliente(
 	fone varchar(15) not null,
     cd_cliente int unsigned not null,
-    foreign key (cd_cliente) references tb_cliente(cd_cliente),
+    foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
     primary key (cd_cliente, fone)
 ) engine = innodb;
 
 create table tb_fones_funcionario(
 	fone varchar(15) not null,
     cd_funcionario int unsigned not null,
-    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
+    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario) on delete cascade,
     primary key (cd_funcionario, fone)
 ) engine = innodb;
 
@@ -43,9 +44,9 @@ create table tb_prestacao_servico(
 	cd_funcionario int unsigned not null,
     cd_cliente int unsigned not null,
     cd_servico int unsigned not null,
-    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
-    foreign key (cd_cliente) references tb_cliente(cd_cliente),
-    foreign key (cd_servico) references tb_servico(cd_servico),
+    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
+    foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
+    foreign key (cd_servico) references tb_servico(cd_servico) on delete cascade,
     nm_funcionario varchar(40),
     nm_servico varchar(40),
     status_prestacao varchar(127),
@@ -59,7 +60,7 @@ create table tb_horario_func(
     nm_funcionario varchar(127),
     nm_servico varchar(127),
     horarios text,
-    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
+    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
     primary key (cd_funcionario)
 )engine = innodb;
 
@@ -79,7 +80,7 @@ create table tb_estoque_produto(
     primary key (cd_estoque),
     cd_produto int unsigned not null,
     tipo varchar(127),
-    foreign key(cd_produto) references tb_produto(cd_produto),
+    foreign key(cd_produto) references tb_produto(cd_produto) on delete cascade,
     qte_minima int not null,
     qte_atual int not null
 ) engine = innodb;
@@ -88,9 +89,9 @@ create table tb_venda(
 	cd_venda int unsigned not null auto_increment,
     primary key (cd_venda),
     cd_cliente int unsigned not null,
-    foreign key (cd_cliente) references tb_cliente(cd_cliente),
+    foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
     cd_funcionario int unsigned not null, 
-    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
+    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
     vl_total double,
     desconto double,
     dt_venda double
@@ -98,14 +99,14 @@ create table tb_venda(
 
 create table tb_produtos_venda(
 	cd_venda int unsigned not null,
-    foreign key(cd_venda) references tb_venda(cd_venda),
+    foreign key(cd_venda) references tb_venda(cd_venda)on delete cascade,
     cd_produto int unsigned not null,
-    foreign key(cd_produto) references tb_produto(cd_produto),
+    foreign key(cd_produto) references tb_produto(cd_produto)on delete cascade,
     primary key(cd_venda, cd_produto)
 ) engine = innodb;
 
 create table tb_endereco_cliente(
-	cep varchar(10) not null,	
+	cep varchar(9) not null,	
     estado varchar(127) not null,
 	cidade varchar(127) not null,
 	bairro varchar(127) not null,
@@ -119,7 +120,7 @@ create table tb_endereco_cliente(
 )engine=innodb;
 
 create table tb_endereco_funcionario(
-	cep varchar(10) not null,	
+	cep varchar(9) not null,	
     estado varchar(127) not null,
 	cidade varchar(127) not null,
 	bairro varchar(127) not null,
@@ -144,9 +145,9 @@ create table tb_agendamento_servico(
 cd_funcionario int unsigned not null,
 cd_cliente int unsigned not null,
 cd_servico int unsigned not null,
-foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
-foreign key (cd_cliente) references tb_cliente(cd_cliente),
-foreign key (cd_servico) references tb_servico(cd_servico),
+foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
+foreign key (cd_cliente) references tb_cliente(cd_cliente)on delete cascade,
+foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,
 data_agendamento varchar(14) not null,
 hora_agendamento varchar(14) not null,
 primary key(cd_funcionario, cd_cliente, cd_servico, data_agendamento, hora_agendamento)
@@ -157,8 +158,8 @@ cd_pagamento int unsigned not null auto_increment,
 cd_funcionario int unsigned not null,
 cd_cliente int unsigned not null,
 cd_servico int unsigned not null,
-foreign key (cd_funcionario) references tb_funcionario(cd_funcionario),
-foreign key (cd_cliente) references tb_cliente(cd_cliente),
-foreign key (cd_servico) references tb_servico(cd_servico),
+foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
+foreign key (cd_cliente) references tb_cliente(cd_cliente)on delete cascade,
+foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,
 primary key(cd_pagamento)
 )engine = innodb;

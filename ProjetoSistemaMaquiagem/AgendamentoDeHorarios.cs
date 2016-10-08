@@ -20,17 +20,6 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
-        //inutil
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //inutil
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //limpa o texto da caixa de texto do grupo 
         public void LimparTxt(Control controles)
@@ -52,6 +41,17 @@ namespace ProjetoSistemaMaquiagem
             dgv1.DataSource = ds.Tables[0];
         }
 
+
+        //preenche o combobox com os valores dos funcionarios
+        public void PreencherComboFuncionario()
+        {
+            ClnFuncionario tipo = new ClnFuncionario();
+            DataSet ds = tipo.BuscarporNome();
+            comboBoxFuncionario.DataSource = ds.Tables[0];
+            comboBoxFuncionario.DisplayMember = "Nome";
+            comboBoxFuncionario.ValueMember = "Codigo";
+        }
+
         //preenche o combobox com os valores dos serviços
         public void PreencherComboTipo()
         {
@@ -66,6 +66,7 @@ namespace ProjetoSistemaMaquiagem
         private void AgendamentoHorario(object sender, EventArgs e)
         {
             PreencherComboTipo();
+            PreencherComboFuncionario();
             AtualizarGrid();
         }
 
@@ -91,7 +92,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             agenda.Servico = comboBoxServico.Text;
-            agenda.NomeFuncionario = textBoxNome.Text;
+            agenda.NomeFuncionario = comboBoxFuncionario.Text;
             agenda.Horario = maskedTextBoxHorario.Text;
             if (verificaText(groupBox1))
             {
@@ -114,7 +115,7 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             if (dgv1.RowCount > 0)
             {
-                textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
@@ -124,12 +125,12 @@ namespace ProjetoSistemaMaquiagem
         //função que é chamada para excluir algum horario
         private void botaoExcluir_Click(object sender, EventArgs e)
         {
-            string mensagem = "Deseja excluir o cadastro," + textBoxNome.Text + " ?";
+            string mensagem = "Deseja excluir o cadastro," + comboBoxFuncionario.Text + " ?";
             int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
             if (resposta == 6)
             {
                 ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-                agenda.Excluir(textBoxNome.Text);
+                agenda.Excluir(comboBoxFuncionario.Text);
             }
             LimparTxt(groupBox1);
             AtualizarGrid();
@@ -144,6 +145,20 @@ namespace ProjetoSistemaMaquiagem
             ds = cliente.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
 
+        }
+
+        private void botaoEditar_Click(object sender, EventArgs e)
+        {
+
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            agenda.Servico = comboBoxServico.Text;
+            agenda.NomeFuncionario = comboBoxFuncionario.Text;
+            agenda.Horario = maskedTextBoxHorario.Text;
+            ClnFuncionario func = new ClnFuncionario();
+            agenda.Cd_funcionario = func.BuscarId(comboBoxFuncionario.Text);
+            agenda.Atualizar();
+            AtualizarGrid();
+            LimparTxt(groupBox1);
         }
     }
 }

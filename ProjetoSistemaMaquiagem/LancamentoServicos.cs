@@ -18,16 +18,7 @@ namespace ProjetoSistemaMaquiagem
         {
             InitializeComponent();
         }
-        //inutil
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-        //inutil
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         //load
         private void LancamentoServico_Load(object sender, EventArgs e)
@@ -35,6 +26,7 @@ namespace ProjetoSistemaMaquiagem
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboCliente();
+            PreencherComboStatus();
             AtualizarGrid();
         }
 
@@ -65,6 +57,16 @@ namespace ProjetoSistemaMaquiagem
             comboBoxCliente.DataSource = ds.Tables[0];
             comboBoxCliente.DisplayMember = "Nome";
             comboBoxCliente.ValueMember = "Codigo";
+        }
+
+        //preenche o combobox com o valor do status 
+        public void PreencherComboStatus()
+        {
+            List<string> status = new List<string>();
+            status.Add("Finalizado");
+            status.Add("Pendente");
+            status.Add("Cancelado");
+            comboBoxStatus.DataSource = status;
         }
 
         //atualiza o grid
@@ -159,6 +161,24 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
         }
 
+        private void botaoEditar_Click(object sender, EventArgs e)
+        {
+            ClnLancamentoServicos lancamento = new ClnLancamentoServicos();
+            lancamento.Nm_funcionario = comboBoxFuncionario.Text;
+            lancamento.Nm_servico = comboBoxServico.Text;
+            lancamento.Status_prestacao = comboBoxStatus.Text;
+            lancamento.Dt_prestacao = maskedTextBoxData.Text;
+            lancamento.Vl_total = Convert.ToDouble(textBoxValor.Text);
+            ClnCliente cliente = new ClnCliente();
+            lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
+            ClnFuncionario funcionario = new ClnFuncionario();
+            lancamento.Cd_funcionario = funcionario.BuscarId(comboBoxFuncionario.Text);
+            ClnServiços servico = new ClnServiços();
+            lancamento.Cd_servico = servico.BuscarId(comboBoxServico.Text);
+            lancamento.Atualizar();
+            AtualizarGrid();
+            LimparTxt(groupBox4);
+        }
     }
 }
 

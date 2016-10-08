@@ -164,6 +164,42 @@ namespace CamadaDeNegocio
 
         }
 
+        public void Atualizar()
+        {
+            StringBuilder csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("update tb_prestacao_servico ");
+            csql.Append("set status_prestacao = '");
+            csql.Append(status_prestacao);
+            csql.Append("', nm_funcionario = '");
+            csql.Append(nm_funcionario);
+            csql.Append("', nm_servico = '");
+            csql.Append(nm_servico);
+            csql.Append("', data_prestacao ='");
+            csql.Append(dt_prestacao);
+            csql.Append("', vl_total = ");
+            csql.Append(vl_total);
+            csql.Append(" where cd_funcionario = ");
+            csql.Append((cd_funcionario - 1));
+            csql.Append("&& cd_cliente = ");
+            csql.Append((cd_cliente - 1));
+            csql.Append(" && cd_servico = ");
+            csql.Append(cd_servico - 1);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(1);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+
+        }
+
         //3.5 Método para excluir do Banco de dados
         public void Excluir(int cod)
         {

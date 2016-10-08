@@ -11,16 +11,16 @@ namespace CamadaDeNegocio
 {
   public class ClnAgendaDeHorario
     {
-        private int cd_servico;
+        private int cd_funcionario;
         private string servico;
         private string funcionario;
         private string horario;
 
 
-        public int Cd_servico
+        public int Cd_funcionario
         {
-            get { return cd_servico; }
-            set { cd_servico = value; }
+            get { return cd_funcionario; }
+            set { cd_funcionario = value; }
         }
         public string Servico
         {
@@ -53,7 +53,7 @@ namespace CamadaDeNegocio
             csql.Append("nm_servico,");
             csql.Append("nm_funcionario,");
             csql.Append("horarios) Values(");
-            csql.Append(cd_servico);
+            csql.Append(cd_funcionario+1);
             csql.Append(",'" + servico + "',");
             csql.Append("'" + funcionario + "',");
             csql.Append("'" + horario + "')");
@@ -69,8 +69,17 @@ namespace CamadaDeNegocio
     
         public void Atualizar() {
             StringBuilder csql = new StringBuilder();
-            csql.Append("Update into tb_horario_func");
-
+            csql.Append("Update tb_horario_func ");
+            csql.Append("set nm_funcionario = '");
+            csql.Append(funcionario);
+            csql.Append("', nm_servico = '");
+            csql.Append(servico);
+            csql.Append("', horarios = '");
+            csql.Append(horario);
+            csql.Append("' where cd_funcionario = ");
+            csql.Append((cd_funcionario-1));
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
         }
 
         //3.5 Método para excluir um servico do 

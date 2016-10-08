@@ -91,6 +91,7 @@ namespace ProjetoSistemaMaquiagem
         private void botaoConfirmar_Click_1(object sender, EventArgs e)
         {
             ClnEstoque estoque = new ClnEstoque();
+            estoque.Cd_Produto = estoque.BuscarporCodigo();
             estoque.Nm_Produto = comboBoxProduto.Text;
             estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
             estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
@@ -100,6 +101,17 @@ namespace ProjetoSistemaMaquiagem
                 AtualizarGrid();
                 LimparTxt(groupBox1);
             }
+        }
+
+        private void botaoEditar_Click(object sender, EventArgs e)
+        {
+            ClnEstoque estoque = new ClnEstoque();
+            estoque.Nm_Produto = comboBoxProduto.Text;
+            estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
+            estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
+            estoque.Atualizar();
+            AtualizarGrid();
+            LimparTxt(groupBox1);
         }
 
         //Funcao do grid
@@ -114,7 +126,6 @@ namespace ProjetoSistemaMaquiagem
                 textBoxQtdAtual.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             }
         }
-
 
     }
 }

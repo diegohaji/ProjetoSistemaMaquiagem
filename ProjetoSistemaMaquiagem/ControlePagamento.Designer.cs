@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
@@ -44,9 +44,17 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 108);
+            this.groupBox1.Size = new System.Drawing.Size(490, 57);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBoxFuncionario
+            // 
+            this.comboBoxFuncionario.FormattingEnabled = true;
+            this.comboBoxFuncionario.Location = new System.Drawing.Point(74, 18);
+            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
+            this.comboBoxFuncionario.Size = new System.Drawing.Size(230, 21);
+            this.comboBoxFuncionario.TabIndex = 4;
             // 
             // button1
             // 
@@ -58,14 +66,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dgv1
-            // 
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(13, 136);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(490, 192);
-            this.dgv1.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -75,19 +75,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Funcionario";
             // 
-            // comboBoxFuncionario
+            // dgv1
             // 
-            this.comboBoxFuncionario.FormattingEnabled = true;
-            this.comboBoxFuncionario.Location = new System.Drawing.Point(74, 18);
-            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
-            this.comboBoxFuncionario.Size = new System.Drawing.Size(230, 21);
-            this.comboBoxFuncionario.TabIndex = 4;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Location = new System.Drawing.Point(13, 86);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(490, 192);
+            this.dgv1.TabIndex = 2;
             // 
             // ControlePagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 337);
+            this.ClientSize = new System.Drawing.Size(515, 298);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv1);
             this.Name = "ControlePagamento";

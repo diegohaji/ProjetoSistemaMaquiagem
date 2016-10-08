@@ -11,6 +11,7 @@ namespace CamadaDeNegocio
     {
         private string usuario;
         private string senha;
+        private string dica;
 
         public string Usuario
         {
@@ -23,6 +24,19 @@ namespace CamadaDeNegocio
             set { senha = value; }
         }
 
+        public string Dica
+        {
+            get
+            {
+                return dica;
+            }
+
+            set
+            {
+                dica = value;
+            }
+        }
+
         //grava o usuario no banco de dados
         public void Gravar()
         {
@@ -32,20 +46,22 @@ namespace CamadaDeNegocio
             csql.Append("(");
             csql.Append("cd_usuario,");
             csql.Append("nome_usuario,");
-            csql.Append("senha_usuario) Values(");
+            csql.Append("senha_usuario,");
+            csql.Append("dica_senha) Values(");
             ClnFuncionario funcionario = new ClnFuncionario();
             csql.Append("''");
             csql.Append(",'" + usuario + "'");
-            csql.Append(",'" + senha + "')");
+            csql.Append(",'" + senha + "'");
+            csql.Append(",'" + dica + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());            
         }
 
         //busca o usuario para atualizar no banco de dados
-        public bool BuscarUsuario(string usuario)
+        public bool BuscarUsuario(string usuario, string senha)
         {
             string csql;
-            csql = "Select nome_usuario From tb_usuario where nome_usuario='" + usuario + "'";
+            csql = "Select nome_usuario, senha_usuario From tb_usuario where nome_usuario='" + usuario + "'";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -53,9 +69,9 @@ namespace CamadaDeNegocio
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
                 this.usuario = Convert.ToString(dados.GetValue(0));
-
+                this.senha = Convert.ToString(dados.GetValue(1));
             }
-            if (usuario.Equals(this.usuario))
+            if (usuario.Equals(this.usuario) && senha.Equals(this.senha))
             {
                 return true;
             }
@@ -90,6 +106,24 @@ namespace CamadaDeNegocio
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }
-    
+
+
+        //3.6 Método para buscar a dica de senha
+        public string BuscarDica(string nome)
+        {
+            string csql;
+            csql = "Select dica_senha as Dica from tb_usuario where nome_usuario like ('%"+ nome +"%')";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Array dados = ds.Tables[0].Rows[0].ItemArray;
+                dica = Convert.ToString(dados.GetValue(0));
+            }
+            return dica;
+        }
+
+
     }
 }

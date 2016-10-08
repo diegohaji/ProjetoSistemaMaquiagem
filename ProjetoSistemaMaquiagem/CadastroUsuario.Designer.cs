@@ -36,11 +36,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxDica = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBoxDica);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBoxConfirmarSenha);
             this.groupBox1.Controls.Add(this.textBoxSenha);
             this.groupBox1.Controls.Add(this.textBoxUsuario);
@@ -49,7 +53,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(4, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(152, 183);
+            this.groupBox1.Size = new System.Drawing.Size(147, 235);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Usuario";
@@ -107,7 +111,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 191);
+            this.button1.Location = new System.Drawing.Point(9, 243);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 23);
             this.button1.TabIndex = 1;
@@ -115,11 +119,27 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Dica de senha";
+            // 
+            // textBoxDica
+            // 
+            this.textBoxDica.Location = new System.Drawing.Point(8, 205);
+            this.textBoxDica.Name = "textBoxDica";
+            this.textBoxDica.Size = new System.Drawing.Size(130, 20);
+            this.textBoxDica.TabIndex = 7;
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(163, 222);
+            this.ClientSize = new System.Drawing.Size(159, 273);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "CadastroUsuario";
@@ -140,5 +160,7 @@
         private System.Windows.Forms.TextBox textBoxSenha;
         private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxDica;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -21,54 +21,12 @@ namespace ProjetoSistemaMaquiagem
         {
             InitializeComponent();
         }
-      
-        //inutil
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-       
-        //inutil
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-      
-        //inutil
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-       
-        //inutil
-        private void textBoxNovaSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-       
-        //inutil
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-       
-        //inutil
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-       
-        //inutil
-        private void textBoxConfirmarNovaSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-       
         //funcao que cria a nova senha do usuario
         private void button1_Click(object sender, EventArgs e)
         {
             ClnUsuario usuario = new ClnUsuario();
-            if (usuario.BuscarUsuario(textBoxUsuario.Text) && textBoxNovaSenha.Text.Equals(textBoxConfirmarNovaSenha.Text))
+            if (usuario.BuscarUsuario(textBoxUsuario.Text, textBoxSenhaAtual.Text))
             {
                 usuario.NovaSenha(textBoxNovaSenha.Text);
                 MessageBox.Show("Senha alterada com sucesso.", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -79,5 +37,13 @@ namespace ProjetoSistemaMaquiagem
                 MessageBox.Show("Usuário inexistente!\nCadastre um novo usuário\npara acessar o sistema.", "Usuario Inexistente.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void buttonConfirmar_Click(object sender, EventArgs e)
+        {
+            ClnUsuario usuario = new ClnUsuario();
+            textBoxLembrarSenha.Text = (usuario.BuscarDica(textBoxLembrarUsuario.Text));
+
+        }
+
     }
 }

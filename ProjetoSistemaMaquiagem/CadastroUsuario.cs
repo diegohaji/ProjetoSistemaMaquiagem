@@ -24,6 +24,7 @@ namespace ProjetoSistemaMaquiagem
             ClnUsuario usuario = new ClnUsuario();
             usuario.Usuario = textBoxUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
+            usuario.Dica = textBoxDica.Text;
             usuario.Gravar();
             this.Close();
         }

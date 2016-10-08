@@ -1,4 +1,3 @@
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\obj\Debug\AcessoADados.csprojResolveAssemblyReference.cache
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\bin\Debug\AcessoADados.dll.config
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\bin\Debug\AcessoADados.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\bin\Debug\AcessoADados.pdb

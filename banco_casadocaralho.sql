@@ -138,6 +138,7 @@ create table tb_usuario(
 cd_usuario int unsigned not null auto_increment,
 nome_usuario varchar(127) not null,
 senha_usuario varchar(127) not null,
+dica_senha varchar(127) not null,
 primary key(cd_usuario)
 )engine=innodb;
 

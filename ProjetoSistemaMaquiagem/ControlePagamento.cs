@@ -75,7 +75,10 @@ namespace ProjetoSistemaMaquiagem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            ClnPagamento pagamento = new ClnPagamento();
+            DataSet ds =  pagamento.BuscarporNome(comboBoxFuncionario.Text);
+            dgv1.DataSource = ds.Tables[0];
+            //AtualizarGrid();
         }
 
         

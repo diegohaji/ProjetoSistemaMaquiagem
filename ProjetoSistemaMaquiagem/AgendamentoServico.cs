@@ -83,27 +83,38 @@ namespace ProjetoSistemaMaquiagem
         {
             foreach (Control T in controles.Controls)
             {
-                if (T is TextBox || T is MaskedTextBox)
+                if (T is TextBox)
                 {
-                    if (T.Text == string.Empty)
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
                     {
                         MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
+
+                    }
+                }
+                    if (T is ComboBox)
+                    {
+                        if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
+                        {
+                            MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return false;
+
+                        }
+                    }
+                if (T is MaskedTextBox)
+                {
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+
                     }
                 }
             }
             return true;
         }
 
-        //funcao de pesquisa
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DataSet ds = new DataSet();
-            ClnAgendaDeServico agenda = new ClnAgendaDeServico();
-            agenda.Nm_pesquisa = textBoxPesquisar.Text;
-            ds = agenda.BuscarporNome();
-            dgv1.DataSource = ds.Tables[0];
-        }
+     
 
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
@@ -128,9 +139,11 @@ namespace ProjetoSistemaMaquiagem
             agenda.Cd_funcionario = funcionario.BuscarId(comboBoxFuncionario.Text);
             ClnServiços servico = new ClnServiços();
             agenda.Cd_servico = servico.BuscarId(comboBoxServico.Text);
+            if (verificaText(groupBox1)) { 
             agenda.Gravar();
             AtualizarGrid();
             LimparTxt(groupBox1);
+        }
         }
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -176,6 +189,16 @@ namespace ProjetoSistemaMaquiagem
             agenda.Atualizar();
             AtualizarGrid();
             LimparTxt(groupBox1);
+        }
+
+        //funcao de pesquisa
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            ClnAgendaDeServico agenda = new ClnAgendaDeServico();
+            agenda.Nm_pesquisa = textBoxPesquisar.Text;
+            ds = agenda.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
         }
     }
 

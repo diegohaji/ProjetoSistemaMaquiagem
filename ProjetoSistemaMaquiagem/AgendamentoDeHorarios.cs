@@ -66,17 +66,37 @@ namespace ProjetoSistemaMaquiagem
         {
             foreach (Control T in controles.Controls)
             {
-                if (T is TextBox || T is MaskedTextBox ||T is ComboBox)
+                if (T is TextBox)
                 {
                     if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
                     {
                         MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
+
+                    }
+                }
+                if (T is ComboBox)
+                {
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+
+                    }
+                }
+                if (T is MaskedTextBox)
+                {
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+
                     }
                 }
             }
             return true;
         }
+
 
         //atualiza o grid
         private void AtualizarGrid()

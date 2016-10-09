@@ -54,15 +54,35 @@ namespace ProjetoSistemaMaquiagem
             {
                 if (T is TextBox)
                 {
-                    if (T.Text == string.Empty)
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
                     {
                         MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
+
+                    }
+                }
+                if (T is ComboBox)
+                {
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+
+                    }
+                }
+                if (T is MaskedTextBox)
+                {
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
+                    {
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+
                     }
                 }
             }
             return true;
         }
+
 
         //funçao que cadastra o produto
         private void botaoConfirmar_Click(object sender, EventArgs e)
@@ -72,11 +92,14 @@ namespace ProjetoSistemaMaquiagem
             prod.Nm_Marca = textBoxMarca.Text;
             prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
             prod.Dt_Vencimento = dateTimePickerVencimento.Value.ToShortDateString();
-            prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString() ;
+            prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString();
             prod.Uso = textBoxUso.Text;
-            prod.Gravar();
-            AtualizarGrid();
-            LimparTxt(groupBoxProduto);
+            if (verificaText(groupBoxProduto))
+            {
+                prod.Gravar();
+                AtualizarGrid();
+                LimparTxt(groupBoxProduto);
+            }
         }
 
         //funcao que é chamada quando é cancelado o cadastro

@@ -91,10 +91,19 @@ namespace ProjetoSistemaMaquiagem
         private void botaoConfirmar_Click_1(object sender, EventArgs e)
         {
             ClnEstoque estoque = new ClnEstoque();
-            
             estoque.Nm_Produto = comboBoxProduto.Text;
             estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
             estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
+            while(estoque.Qtd_Atual < 0)
+            {
+                if(estoque.Qtd_Atual <0)
+                {
+                    MessageBox.Show("Valor de quantidade\ninválido. Insira\num valor maior\nque 0! ","Valor inválido!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    
+                    textBoxQtdAtual.Focus();
+                    estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
+                }
+            }
             if (verificaText(groupBox1))
             {
                 estoque.Gravar();

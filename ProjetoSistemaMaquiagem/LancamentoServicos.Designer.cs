@@ -37,7 +37,6 @@
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBoxData = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxServico = new System.Windows.Forms.ComboBox();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
@@ -52,6 +51,7 @@
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,12 +67,13 @@
             this.groupBox1.Controls.Add(this.dgv1);
             this.groupBox1.Location = new System.Drawing.Point(13, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 559);
+            this.groupBox1.Size = new System.Drawing.Size(465, 552);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.dateTimePicker1);
             this.groupBox4.Controls.Add(this.comboBoxCliente);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.textBoxValor);
@@ -80,14 +81,13 @@
             this.groupBox4.Controls.Add(this.comboBoxStatus);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.maskedTextBoxData);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.comboBoxServico);
             this.groupBox4.Controls.Add(this.comboBoxFuncionario);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(10, 9);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(449, 139);
+            this.groupBox4.Size = new System.Drawing.Size(449, 121);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             // 
@@ -110,7 +110,7 @@
             // 
             // textBoxValor
             // 
-            this.textBoxValor.Location = new System.Drawing.Point(328, 94);
+            this.textBoxValor.Location = new System.Drawing.Point(348, 83);
             this.textBoxValor.Name = "textBoxValor";
             this.textBoxValor.Size = new System.Drawing.Size(76, 20);
             this.textBoxValor.TabIndex = 37;
@@ -118,7 +118,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(325, 76);
+            this.label5.Location = new System.Drawing.Point(345, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 36;
@@ -127,7 +127,7 @@
             // comboBoxStatus
             // 
             this.comboBoxStatus.FormattingEnabled = true;
-            this.comboBoxStatus.Location = new System.Drawing.Point(151, 93);
+            this.comboBoxStatus.Location = new System.Drawing.Point(215, 82);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
             this.comboBoxStatus.TabIndex = 35;
@@ -135,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(149, 76);
+            this.label4.Location = new System.Drawing.Point(212, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 34;
@@ -144,20 +144,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 76);
+            this.label3.Location = new System.Drawing.Point(8, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 33;
             this.label3.Text = "Data";
-            // 
-            // maskedTextBoxData
-            // 
-            this.maskedTextBoxData.Location = new System.Drawing.Point(14, 92);
-            this.maskedTextBoxData.Mask = "00/00/0000";
-            this.maskedTextBoxData.Name = "maskedTextBoxData";
-            this.maskedTextBoxData.Size = new System.Drawing.Size(73, 20);
-            this.maskedTextBoxData.TabIndex = 32;
-            this.maskedTextBoxData.ValidatingType = typeof(System.DateTime);
             // 
             // label1
             // 
@@ -198,7 +189,7 @@
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(0, 222);
+            this.groupBox3.Location = new System.Drawing.Point(6, 213);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(465, 70);
             this.groupBox3.TabIndex = 29;
@@ -236,7 +227,7 @@
             this.groupBox2.Controls.Add(this.botaoEditar);
             this.groupBox2.Controls.Add(this.botaoExcluir);
             this.groupBox2.Controls.Add(this.Cancelar);
-            this.groupBox2.Location = new System.Drawing.Point(0, 145);
+            this.groupBox2.Location = new System.Drawing.Point(6, 136);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(465, 71);
             this.groupBox2.TabIndex = 28;
@@ -285,16 +276,23 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(10, 298);
+            this.dgv1.Location = new System.Drawing.Point(12, 289);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(449, 245);
             this.dgv1.TabIndex = 5;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(8, 83);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 40;
             // 
             // LancamentoServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 610);
+            this.ClientSize = new System.Drawing.Size(490, 561);
             this.Controls.Add(this.groupBox1);
             this.Name = "LancamentoServicos";
             this.Text = "Lancamento de servicos";
@@ -333,8 +331,8 @@
         private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxData;
         private System.Windows.Forms.ComboBox comboBoxCliente;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

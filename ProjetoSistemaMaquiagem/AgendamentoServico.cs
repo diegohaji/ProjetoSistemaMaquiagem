@@ -116,7 +116,7 @@ namespace ProjetoSistemaMaquiagem
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
-            agenda.Dt_agendamento = maskedTextBoxData.Text;
+            agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
             agenda.Hora_agendamento = maskedTextBoxHora.Text;
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             ClnCliente cliente = new ClnCliente();
@@ -139,7 +139,7 @@ namespace ProjetoSistemaMaquiagem
                 comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                maskedTextBoxData.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                //maskedTextBoxData.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
                 maskedTextBoxHora.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
             }
         }
@@ -161,7 +161,7 @@ namespace ProjetoSistemaMaquiagem
         private void botaoEditar_Click(object sender, EventArgs e)
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
-            agenda.Dt_agendamento = maskedTextBoxData.Text;
+            agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
             agenda.Hora_agendamento = maskedTextBoxHora.Text;
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             ClnCliente cliente = new ClnCliente();

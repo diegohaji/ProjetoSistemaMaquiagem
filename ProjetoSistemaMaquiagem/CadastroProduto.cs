@@ -21,18 +21,6 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
-        //inutil
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //inutil
-        private void maskedTextBoxDtAquisicao_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
         //função que carrega o grid quando o formulario é chamado
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
@@ -64,7 +52,7 @@ namespace ProjetoSistemaMaquiagem
         {
             foreach (Control T in controles.Controls)
             {
-                if (T is TextBox || T is MaskedTextBox)
+                if (T is TextBox)
                 {
                     if (T.Text == string.Empty)
                     {
@@ -83,8 +71,8 @@ namespace ProjetoSistemaMaquiagem
             prod.Nm_Produto = textBoxNome.Text;
             prod.Nm_Marca = textBoxMarca.Text;
             prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
-            prod.Dt_Vencimento = maskedTextBoxDtVencimento.Text;
-            prod.Dt_Aquisicao = maskedTextBoxDtAquisicao.Text;
+            prod.Dt_Vencimento = dateTimePickerVencimento.Value.ToShortDateString();
+            prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString() ;
             prod.Uso = textBoxUso.Text;
             prod.Gravar();
             AtualizarGrid();
@@ -108,8 +96,8 @@ namespace ProjetoSistemaMaquiagem
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxMarca.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 textBoxVlProduto.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                maskedTextBoxDtAquisicao.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                maskedTextBoxDtVencimento.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                //dateTimePickerAquisicao.Value = DateTime.Parse(dgv1.CurrentRow.Cells[4].Value.ToString());
+                //dateTimePickerVencimento.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
                 textBoxUso.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
             }
 
@@ -146,13 +134,15 @@ namespace ProjetoSistemaMaquiagem
             prod.Nm_Produto = textBoxNome.Text;
             prod.Nm_Marca = textBoxMarca.Text;
             prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
-            prod.Dt_Vencimento = maskedTextBoxDtVencimento.Text;
-            prod.Dt_Aquisicao = maskedTextBoxDtAquisicao.Text;
+            prod.Dt_Vencimento = dateTimePickerVencimento.Value.ToShortDateString();
+            prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString();
             prod.Uso = textBoxUso.Text;
             prod.Cd_Produto = prod.BuscarporCodigo();
             prod.Atualizar();
             AtualizarGrid();
             LimparTxt(groupBoxProduto);
         }
+
+        
     }
 }

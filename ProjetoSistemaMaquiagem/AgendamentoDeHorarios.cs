@@ -75,9 +75,9 @@ namespace ProjetoSistemaMaquiagem
         {
             foreach (Control T in controles.Controls)
             {
-                if (T is TextBox || T is MaskedTextBox)
+                if (T is TextBox || T is MaskedTextBox ||T is ComboBox)
                 {
-                    if (T.Text == string.Empty)
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
                     {
                         MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;

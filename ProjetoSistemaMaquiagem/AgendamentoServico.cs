@@ -28,9 +28,9 @@ namespace ProjetoSistemaMaquiagem
         //load
         private void AgendamentoServico_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "HH:mm";
-            dateTimePicker1.ShowUpDown = true;
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "HH:mm";
+            dateTimePicker2.ShowUpDown = true;
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboCliente();

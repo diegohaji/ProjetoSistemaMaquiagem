@@ -103,7 +103,6 @@ namespace CamadaDeNegocio
         public void Atualizar()
         {
             StringBuilder csql = new StringBuilder();
-
             csql.Append("Update tb_servico ");
             csql.Append("set nm_servico='");
             csql.Append(nm_servico);
@@ -112,7 +111,7 @@ namespace CamadaDeNegocio
             csql.Append("', duracao = '");
             csql.Append(duracao);
             csql.Append("' where cd_servico=");
-            csql.Append(cd_servico);
+            csql.Append(cd_servico-1);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 

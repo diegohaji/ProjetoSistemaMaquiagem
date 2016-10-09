@@ -134,7 +134,6 @@ namespace CamadaDeNegocio
             csql.Append(cd_estoque);
             csql.Append(" && cd_produto = ");
             csql.Append(cd_produto);
-            Console.WriteLine("cd_estoque = " + cd_estoque + " cd_produto = " + cd_produto);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();

@@ -49,7 +49,7 @@ namespace CamadaDeNegocio
 
 
         //3.1 Buscar dados do cliente cujo codigo foi especificado
-        public int BuscarporCodigo()
+        public int BuscarporCodigoProduto()
         {
             string csql;
             csql = "Select cd_produto From tb_produto where nm_produto like('%" + this.nm_produto + "%')";
@@ -65,6 +65,22 @@ namespace CamadaDeNegocio
             return cd_produto;
         }
 
+        public int BuscarporCodigoEstoque()
+        {
+            string csql;
+            csql = "Select cd_estoque From tb_estoque_produto where tipo like('%" + nm_produto + "%')";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Array dados = ds.Tables[0].Rows[0].ItemArray;
+                cd_estoque = Convert.ToInt16(dados.GetValue(0));
+
+            }
+            return cd_estoque;
+        }
+
 
 
         //inserir no banco de dados
@@ -75,8 +91,7 @@ namespace CamadaDeNegocio
             csql.Append(0);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-            csql = new StringBuilder();
-            BuscarporCodigo();
+            BuscarporCodigoProduto();
             csql = new StringBuilder();
             csql.Append("Insert into tb_estoque_produto");
             csql.Append("(");
@@ -111,14 +126,15 @@ namespace CamadaDeNegocio
             csql.Append("set ");
             csql.Append(" tipo = '");
             csql.Append(nm_produto);
-            csql.Append("', qte_minima = '");
+            csql.Append("', qte_minima = ");
             csql.Append(qtd_minimo);
-            csql.Append("', qte_atual = '");
+            csql.Append(", qte_atual = ");
             csql.Append(qtd_atual);
             csql.Append(" where cd_estoque = ");
             csql.Append(cd_estoque);
             csql.Append(" && cd_produto = ");
             csql.Append(cd_produto);
+            Console.WriteLine("cd_estoque = " + cd_estoque + " cd_produto = " + cd_produto);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();

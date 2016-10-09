@@ -91,7 +91,7 @@ namespace ProjetoSistemaMaquiagem
         private void botaoConfirmar_Click_1(object sender, EventArgs e)
         {
             ClnEstoque estoque = new ClnEstoque();
-            estoque.Cd_Produto = estoque.BuscarporCodigo();
+            
             estoque.Nm_Produto = comboBoxProduto.Text;
             estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
             estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
@@ -109,6 +109,8 @@ namespace ProjetoSistemaMaquiagem
             estoque.Nm_Produto = comboBoxProduto.Text;
             estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
             estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
+            estoque.Cd_Produto = estoque.BuscarporCodigoProduto();
+            estoque.Cd_Estoque = estoque.BuscarporCodigoEstoque();
             estoque.Atualizar();
             AtualizarGrid();
             LimparTxt(groupBox1);

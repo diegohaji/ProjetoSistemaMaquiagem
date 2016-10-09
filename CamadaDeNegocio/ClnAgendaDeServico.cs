@@ -159,5 +159,32 @@ namespace CamadaDeNegocio
             return ds;
         }
 
-    }
+        public void Atualizar()
+        {
+            StringBuilder csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(0);
+            ClasseDados cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("update tb_agendamento_servico ");
+            csql.Append("set data_agendamento = '");
+            csql.Append(data_agendamento);
+            csql.Append("', hora_agendamento = '");
+            csql.Append(hora_agendamento);
+            csql.Append("' where cd_funcionario = ");
+            csql.Append((cd_funcionario - 1));
+            csql.Append("&& cd_cliente = ");
+            csql.Append((cd_cliente - 1));
+            csql.Append(" && cd_servico = ");
+            csql.Append(cd_servico - 1);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            csql = new StringBuilder();
+            csql.Append("SET FOREIGN_KEY_CHECKS = ");
+            csql.Append(1);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+        }
+        }
 }

@@ -96,7 +96,7 @@
             this.maskedTextBoxData.Location = new System.Drawing.Point(261, 86);
             this.maskedTextBoxData.Mask = "00/00/0000";
             this.maskedTextBoxData.Name = "maskedTextBoxData";
-            this.maskedTextBoxData.Size = new System.Drawing.Size(59, 20);
+            this.maskedTextBoxData.Size = new System.Drawing.Size(75, 20);
             this.maskedTextBoxData.TabIndex = 8;
             this.maskedTextBoxData.ValidatingType = typeof(System.DateTime);
             // 

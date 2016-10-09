@@ -160,7 +160,19 @@ namespace ProjetoSistemaMaquiagem
 
         private void botaoEditar_Click(object sender, EventArgs e)
         {
-
+            ClnAgendaDeServico agenda = new ClnAgendaDeServico();
+            agenda.Dt_agendamento = maskedTextBoxData.Text;
+            agenda.Hora_agendamento = maskedTextBoxHora.Text;
+            agenda.Nm_pesquisa = comboBoxCliente.Text;
+            ClnCliente cliente = new ClnCliente();
+            agenda.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
+            ClnFuncionario funcionario = new ClnFuncionario();
+            agenda.Cd_funcionario = funcionario.BuscarId(comboBoxFuncionario.Text);
+            ClnServiços servico = new ClnServiços();
+            agenda.Cd_servico = servico.BuscarId(comboBoxServico.Text);
+            agenda.Atualizar();
+            AtualizarGrid();
+            LimparTxt(groupBox1);
         }
     }
 

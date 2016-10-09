@@ -105,12 +105,12 @@ namespace CamadaDeNegocio
             StringBuilder csql = new StringBuilder();
 
             csql.Append("Update tb_servico ");
-            csql.Append("set cd_servico=");
-            csql.Append(cd_servico);
-            csql.Append(", nm_servico='");
+            csql.Append("set nm_servico='");
             csql.Append(nm_servico);
             csql.Append("', vl_servico='");
             csql.Append(vl_servico);
+            csql.Append("', duracao = '");
+            csql.Append(duracao);
             csql.Append("' where cd_servico=");
             csql.Append(cd_servico);
             ClasseDados cd = new ClasseDados();

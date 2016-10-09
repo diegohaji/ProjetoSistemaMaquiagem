@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxServico = new System.Windows.Forms.GroupBox();
-            this.maskedTextBoxDuracao = new System.Windows.Forms.MaskedTextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             // 
             // groupBoxServico
             // 
-            this.groupBoxServico.Controls.Add(this.maskedTextBoxDuracao);
+            this.groupBoxServico.Controls.Add(this.dateTimePicker1);
             this.groupBoxServico.Controls.Add(this.textBoxNome);
             this.groupBoxServico.Controls.Add(this.textBoxPreco);
             this.groupBoxServico.Controls.Add(this.label4);
@@ -61,18 +61,16 @@
             this.groupBoxServico.Controls.Add(this.label1);
             this.groupBoxServico.Location = new System.Drawing.Point(13, 13);
             this.groupBoxServico.Name = "groupBoxServico";
-            this.groupBoxServico.Size = new System.Drawing.Size(418, 77);
+            this.groupBoxServico.Size = new System.Drawing.Size(418, 73);
             this.groupBoxServico.TabIndex = 0;
             this.groupBoxServico.TabStop = false;
             // 
-            // maskedTextBoxDuracao
+            // dateTimePicker1
             // 
-            this.maskedTextBoxDuracao.Location = new System.Drawing.Point(339, 33);
-            this.maskedTextBoxDuracao.Mask = "00:00";
-            this.maskedTextBoxDuracao.Name = "maskedTextBoxDuracao";
-            this.maskedTextBoxDuracao.Size = new System.Drawing.Size(34, 20);
-            this.maskedTextBoxDuracao.TabIndex = 8;
-            this.maskedTextBoxDuracao.ValidatingType = typeof(System.DateTime);
+            this.dateTimePicker1.Location = new System.Drawing.Point(326, 32);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(67, 20);
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // textBoxNome
             // 
@@ -83,7 +81,7 @@
             // 
             // textBoxPreco
             // 
-            this.textBoxPreco.Location = new System.Drawing.Point(226, 32);
+            this.textBoxPreco.Location = new System.Drawing.Point(217, 32);
             this.textBoxPreco.Name = "textBoxPreco";
             this.textBoxPreco.Size = new System.Drawing.Size(75, 20);
             this.textBoxPreco.TabIndex = 6;
@@ -91,17 +89,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(336, 16);
+            this.label4.Location = new System.Drawing.Point(323, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Duração";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(223, 16);
+            this.label3.Location = new System.Drawing.Point(214, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
@@ -134,6 +131,7 @@
             this.botaoEditar.TabIndex = 2;
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
+            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
             // 
             // Cancelar
             // 
@@ -158,7 +156,7 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(14, 249);
+            this.dgv1.Location = new System.Drawing.Point(15, 245);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(419, 173);
             this.dgv1.TabIndex = 5;
@@ -170,7 +168,7 @@
             this.groupBox2.Controls.Add(this.botaoEditar);
             this.groupBox2.Controls.Add(this.botaoExcluir);
             this.groupBox2.Controls.Add(this.Cancelar);
-            this.groupBox2.Location = new System.Drawing.Point(14, 96);
+            this.groupBox2.Location = new System.Drawing.Point(14, 92);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(419, 71);
             this.groupBox2.TabIndex = 6;
@@ -181,7 +179,7 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(14, 173);
+            this.groupBox3.Location = new System.Drawing.Point(14, 169);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(420, 70);
             this.groupBox3.TabIndex = 27;
@@ -218,7 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 436);
+            this.ClientSize = new System.Drawing.Size(446, 429);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv1);
@@ -254,6 +252,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxDuracao;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

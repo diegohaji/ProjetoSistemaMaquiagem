@@ -20,6 +20,16 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
+        //Funcao load que atualiza o grid quando o formulario de agendar é chamado
+        private void AgendamentoHorario(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.ShowUpDown = true;
+            PreencherComboTipo();
+            PreencherComboFuncionario();
+            AtualizarGrid();
+        }
 
         //limpa o texto da caixa de texto do grupo 
         public void LimparTxt(Control controles)
@@ -30,17 +40,6 @@ namespace ProjetoSistemaMaquiagem
                 if (ctl is MaskedTextBox) ctl.Text = string.Empty;
             }
         }
-
-        //atualiza o grid
-        private void AtualizarGrid()
-        {
-            DataSet ds = new DataSet();
-            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-            agenda.Servico = textBoxPesquisar.Text;
-            ds = agenda.BuscarporNome();
-            dgv1.DataSource = ds.Tables[0];
-        }
-
 
         //preenche o combobox com os valores dos funcionarios
         public void PreencherComboFuncionario()
@@ -62,14 +61,6 @@ namespace ProjetoSistemaMaquiagem
             comboBoxServico.ValueMember = "Codigo";
         }
 
-        //Funcao load que atualiza o grid quando o formulario de agendar é chamado
-        private void AgendamentoHorario(object sender, EventArgs e)
-        {
-            PreencherComboTipo();
-            PreencherComboFuncionario();
-            AtualizarGrid();
-        }
-
         //Funcao que verifica se há algum campo em branco
         private bool verificaText(Control controles)
         {
@@ -87,13 +78,23 @@ namespace ProjetoSistemaMaquiagem
             return true;
         }
 
+        //atualiza o grid
+        private void AtualizarGrid()
+        {
+            DataSet ds = new DataSet();
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            agenda.Servico = textBoxPesquisar.Text;
+            ds = agenda.BuscarporNome();
+            dgv1.DataSource = ds.Tables[0];
+        }
+
         //funçao que cadastra o agendamento
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             agenda.Servico = comboBoxServico.Text;
             agenda.NomeFuncionario = comboBoxFuncionario.Text;
-            agenda.Horario = maskedTextBoxHorario.Text;
+            agenda.Horario = dateTimePicker1.Value.ToShortTimeString();
             if (verificaText(groupBox1))
             {
                 agenda.Gravar();
@@ -117,7 +118,7 @@ namespace ProjetoSistemaMaquiagem
             {
                 comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                maskedTextBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                //maskedTextBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
 
         }
@@ -153,7 +154,7 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             agenda.Servico = comboBoxServico.Text;
             agenda.NomeFuncionario = comboBoxFuncionario.Text;
-            agenda.Horario = maskedTextBoxHorario.Text;
+            agenda.Horario = dateTimePicker1.Value.ToShortTimeString();
             ClnFuncionario func = new ClnFuncionario();
             agenda.Cd_funcionario = func.BuscarId(comboBoxFuncionario.Text);
             agenda.Atualizar();

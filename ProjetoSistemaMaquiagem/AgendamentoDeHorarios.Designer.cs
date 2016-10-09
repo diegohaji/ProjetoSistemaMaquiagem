@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
-            this.maskedTextBoxHorario = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxServico = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -53,8 +53,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.comboBoxFuncionario);
-            this.groupBox1.Controls.Add(this.maskedTextBoxHorario);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBoxServico);
             this.groupBox1.Controls.Add(this.label3);
@@ -72,15 +72,6 @@
             this.comboBoxFuncionario.Name = "comboBoxFuncionario";
             this.comboBoxFuncionario.Size = new System.Drawing.Size(176, 21);
             this.comboBoxFuncionario.TabIndex = 8;
-            // 
-            // maskedTextBoxHorario
-            // 
-            this.maskedTextBoxHorario.Location = new System.Drawing.Point(20, 104);
-            this.maskedTextBoxHorario.Mask = "00:00";
-            this.maskedTextBoxHorario.Name = "maskedTextBoxHorario";
-            this.maskedTextBoxHorario.Size = new System.Drawing.Size(38, 20);
-            this.maskedTextBoxHorario.TabIndex = 7;
-            this.maskedTextBoxHorario.ValidatingType = typeof(System.DateTime);
             // 
             // label4
             // 
@@ -216,6 +207,13 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(20, 104);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(68, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            // 
             // AgendamentoDeHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,7 +253,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBoxServico;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxHorario;
         private System.Windows.Forms.ComboBox comboBoxFuncionario;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

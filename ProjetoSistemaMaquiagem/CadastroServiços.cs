@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using AcessoADados;
 using CamadaDeNegocio;
 
+
 namespace ProjetoSistemaMaquiagem
 {
     public partial class CadastroServiços : Form
@@ -18,24 +19,6 @@ namespace ProjetoSistemaMaquiagem
         public CadastroServiços()
         {
             InitializeComponent();
-        }
-
-        //inutil
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //inutil
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //inutil
-        private void comboBoxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         //Atualiza o grid
@@ -62,6 +45,9 @@ namespace ProjetoSistemaMaquiagem
         //função que carrega o grid quando o formulario é chamado
         private void CadastroServiços_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.ShowUpDown = true;
             AtualizarGrid();
         }
 
@@ -87,9 +73,10 @@ namespace ProjetoSistemaMaquiagem
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {
             ClnServiços serv = new ClnServiços();
+            
             serv.Nm_Servico = textBoxNome.Text;
             serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
-            serv.Duracao = maskedTextBoxDuracao.Text;
+            serv.Duracao = dateTimePicker1.Value.ToShortTimeString();
             if (verificaText(groupBoxServico))
             {
                 serv.Gravar();
@@ -115,7 +102,7 @@ namespace ProjetoSistemaMaquiagem
 
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxPreco.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                maskedTextBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                //maskedTextBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
         }
         //função que é chamada para excluir serviço
@@ -141,5 +128,21 @@ namespace ProjetoSistemaMaquiagem
             ds = servico.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
         }
+
+        private void botaoEditar_Click(object sender, EventArgs e)
+        {
+            ClnServiços serv = new ClnServiços();
+            serv.Nm_Servico = textBoxNome.Text;
+            serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
+            serv.Duracao = dateTimePicker1.Value.ToShortTimeString();
+            serv.Cd_Servico = serv.BuscarId(textBoxNome.Text);
+            if (verificaText(groupBoxServico))
+            {
+                serv.Atualizar();
+                AtualizarGrid();
+                LimparTxt(groupBoxServico);
+            }
+        
+    }
     }
 }

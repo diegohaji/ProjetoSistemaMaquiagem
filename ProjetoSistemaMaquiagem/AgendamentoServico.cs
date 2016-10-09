@@ -28,6 +28,9 @@ namespace ProjetoSistemaMaquiagem
         //load
         private void AgendamentoServico_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH:mm";
+            dateTimePicker1.ShowUpDown = true;
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboCliente();
@@ -117,7 +120,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-            agenda.Hora_agendamento = maskedTextBoxHora.Text;
+            agenda.Hora_agendamento = dateTimePicker1.Value.ToShortTimeString();
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             ClnCliente cliente = new ClnCliente();
             agenda.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
@@ -140,7 +143,7 @@ namespace ProjetoSistemaMaquiagem
                 comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
                 //maskedTextBoxData.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
-                maskedTextBoxHora.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                //maskedTextBoxHora.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
             }
         }
 
@@ -162,7 +165,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-            agenda.Hora_agendamento = maskedTextBoxHora.Text;
+            agenda.Hora_agendamento = dateTimePicker1.Value.ToShortTimeString();
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             ClnCliente cliente = new ClnCliente();
             agenda.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);

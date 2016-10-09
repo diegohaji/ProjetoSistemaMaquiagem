@@ -83,7 +83,6 @@ namespace ProjetoSistemaMaquiagem
             return true;
         }
 
-
         //funçao que cadastra o produto
         private void botaoConfirmar_Click(object sender, EventArgs e)
         {

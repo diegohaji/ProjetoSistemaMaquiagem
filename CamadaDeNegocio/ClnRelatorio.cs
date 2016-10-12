@@ -89,7 +89,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNomeFuncionario()
         {
             string csql;
-            csql = "select tf.cd_funcionario as Codigo_Funcionario, tc.nm_funcionario as Nome, ts.nm_servico as Servico, tps.status_prestacao as Status, tps.vl_total as Valor, tps.data_prestacao as Data from tb_funcionario as tc inner join tb_prestacao_servico as tps on tf.cd_funcionario = tps.cd_funcionario inner join tb_servico as ts on tps.cd_servico = ts.cd_servico where tf.nm_funcionario like('%"+nome_funcionario+"%') ";
+            csql = "select tf.cd_funcionario as Codigo_Funcionario, tf.nm_funcionario as Nome, ts.nm_servico as Servico, tps.status_prestacao as Status, tps.vl_total as Valor, tps.data_prestacao as Data from tb_funcionario as tf inner join tb_prestacao_servico as tps on tf.cd_funcionario = tps.cd_funcionario inner join tb_servico as ts on tps.cd_servico = ts.cd_servico where tf.nm_funcionario like('%"+nome_funcionario+"%') ";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

@@ -63,16 +63,25 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnRelatorio relatorio = new ClnRelatorio();
             relatorio.Nome_funcionario = comboBoxFuncionario.Text;
-            relatorio.BuscarporNomeFuncionario();
-            AtualizarGrid();
+
+            
+            //AtualizarGrid();
+
+            DataSet ds = new DataSet();
+            ds = relatorio.BuscarporNomeFuncionario();
+            dgv1.DataSource = ds.Tables[0];
+
         }
 
         private void buttonPesquisarCliente_Click(object sender, EventArgs e)
         {
             ClnRelatorio relatorio = new ClnRelatorio();
             relatorio.Nome_cliente = comboBoxCliente.Text;
-            relatorio.BuscarporNomeCliente();
-            AtualizarGrid();
+            
+            //AtualizarGrid();
+            DataSet ds = new DataSet();
+            ds = relatorio.BuscarporNomeCliente();
+            dgv1.DataSource = ds.Tables[0];
         }
 
         private void PesquisarPeriodo_Click(object sender, EventArgs e)
@@ -80,8 +89,11 @@ namespace ProjetoSistemaMaquiagem
             ClnRelatorio relatorio = new ClnRelatorio();
             relatorio.Data_final = dateTimePickerFinal.Value.ToShortDateString();
             relatorio.Data_inicial = dateTimePickerInicial.Value.ToShortDateString();
-            relatorio.BuscarporData();
-            AtualizarGrid();
+            
+            //AtualizarGrid();
+            DataSet ds = new DataSet();
+            ds = relatorio.BuscarporData();
+            dgv1.DataSource = ds.Tables[0];
         }
     }
 }

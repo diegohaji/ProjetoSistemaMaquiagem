@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxCadastro = new System.Windows.Forms.GroupBox();
+            this.textBoxDica = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBoxConfirmarSenha = new System.Windows.Forms.TextBox();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
@@ -36,27 +38,41 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxDica = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxCadastro
             // 
-            this.groupBox1.Controls.Add(this.textBoxDica);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxConfirmarSenha);
-            this.groupBox1.Controls.Add(this.textBoxSenha);
-            this.groupBox1.Controls.Add(this.textBoxUsuario);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(4, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(147, 235);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cadastro de Usuario";
+            this.groupBoxCadastro.Controls.Add(this.textBoxDica);
+            this.groupBoxCadastro.Controls.Add(this.label4);
+            this.groupBoxCadastro.Controls.Add(this.textBoxConfirmarSenha);
+            this.groupBoxCadastro.Controls.Add(this.textBoxSenha);
+            this.groupBoxCadastro.Controls.Add(this.textBoxUsuario);
+            this.groupBoxCadastro.Controls.Add(this.label3);
+            this.groupBoxCadastro.Controls.Add(this.label2);
+            this.groupBoxCadastro.Controls.Add(this.label1);
+            this.groupBoxCadastro.Location = new System.Drawing.Point(4, 2);
+            this.groupBoxCadastro.Name = "groupBoxCadastro";
+            this.groupBoxCadastro.Size = new System.Drawing.Size(147, 235);
+            this.groupBoxCadastro.TabIndex = 0;
+            this.groupBoxCadastro.TabStop = false;
+            this.groupBoxCadastro.Text = "Cadastro de Usuario";
+            // 
+            // textBoxDica
+            // 
+            this.textBoxDica.Location = new System.Drawing.Point(8, 205);
+            this.textBoxDica.Name = "textBoxDica";
+            this.textBoxDica.Size = new System.Drawing.Size(130, 20);
+            this.textBoxDica.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Dica de senha";
             // 
             // textBoxConfirmarSenha
             // 
@@ -119,40 +135,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 188);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Dica de senha";
-            // 
-            // textBoxDica
-            // 
-            this.textBoxDica.Location = new System.Drawing.Point(8, 205);
-            this.textBoxDica.Name = "textBoxDica";
-            this.textBoxDica.Size = new System.Drawing.Size(130, 20);
-            this.textBoxDica.TabIndex = 7;
-            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(159, 273);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxCadastro);
             this.Name = "CadastroUsuario";
             this.Text = "CadastroUsuario";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxCadastro.ResumeLayout(false);
+            this.groupBoxCadastro.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxCadastro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

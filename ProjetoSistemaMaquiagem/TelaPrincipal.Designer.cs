@@ -43,7 +43,6 @@
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonFuncionario = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonVendas = new System.Windows.Forms.Button();
             this.buttonServPrestado = new System.Windows.Forms.Button();
             this.buttonLancHorario = new System.Windows.Forms.Button();
             this.buttonAgendServico = new System.Windows.Forms.Button();
@@ -212,7 +211,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gray;
-            this.tabPage2.Controls.Add(this.buttonVendas);
             this.tabPage2.Controls.Add(this.buttonServPrestado);
             this.tabPage2.Controls.Add(this.buttonLancHorario);
             this.tabPage2.Controls.Add(this.buttonAgendServico);
@@ -223,42 +221,33 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Serviços";
             // 
-            // buttonVendas
-            // 
-            this.buttonVendas.Location = new System.Drawing.Point(158, 82);
-            this.buttonVendas.Name = "buttonVendas";
-            this.buttonVendas.Size = new System.Drawing.Size(139, 70);
-            this.buttonVendas.TabIndex = 3;
-            this.buttonVendas.Text = "Vendas";
-            this.buttonVendas.UseVisualStyleBackColor = true;
-            // 
             // buttonServPrestado
             // 
-            this.buttonServPrestado.Location = new System.Drawing.Point(158, 7);
+            this.buttonServPrestado.Location = new System.Drawing.Point(6, 80);
             this.buttonServPrestado.Name = "buttonServPrestado";
-            this.buttonServPrestado.Size = new System.Drawing.Size(139, 70);
+            this.buttonServPrestado.Size = new System.Drawing.Size(289, 70);
             this.buttonServPrestado.TabIndex = 2;
-            this.buttonServPrestado.Text = "Serviço Prestado";
+            this.buttonServPrestado.Text = "Serviços Prestados - funcionario";
             this.buttonServPrestado.UseVisualStyleBackColor = true;
             this.buttonServPrestado.Click += new System.EventHandler(this.buttonServPrestado_Click);
             // 
             // buttonLancHorario
             // 
-            this.buttonLancHorario.Location = new System.Drawing.Point(6, 82);
+            this.buttonLancHorario.Location = new System.Drawing.Point(6, 4);
             this.buttonLancHorario.Name = "buttonLancHorario";
             this.buttonLancHorario.Size = new System.Drawing.Size(139, 70);
             this.buttonLancHorario.TabIndex = 1;
-            this.buttonLancHorario.Text = "Lançamento de horário";
+            this.buttonLancHorario.Text = "Lançamento de horário - funcionario";
             this.buttonLancHorario.UseVisualStyleBackColor = true;
             this.buttonLancHorario.Click += new System.EventHandler(this.buttonLancHorario_Click);
             // 
             // buttonAgendServico
             // 
-            this.buttonAgendServico.Location = new System.Drawing.Point(7, 7);
+            this.buttonAgendServico.Location = new System.Drawing.Point(156, 4);
             this.buttonAgendServico.Name = "buttonAgendServico";
             this.buttonAgendServico.Size = new System.Drawing.Size(138, 70);
             this.buttonAgendServico.TabIndex = 0;
-            this.buttonAgendServico.Text = "Agendamento de serviço";
+            this.buttonAgendServico.Text = "Agendamento de serviço - cliente";
             this.buttonAgendServico.UseVisualStyleBackColor = true;
             this.buttonAgendServico.Click += new System.EventHandler(this.buttonAgendServico_Click);
             // 
@@ -374,6 +363,5 @@
         private System.Windows.Forms.Button buttonProduto;
         private System.Windows.Forms.Button buttonEstoque;
         private System.Windows.Forms.GroupBox groupBoxFuncionalidades;
-        private System.Windows.Forms.Button buttonVendas;
     }
 }

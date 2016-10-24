@@ -12,7 +12,7 @@ namespace CamadaDeNegocio
         //1 - Campos privados da classe
         private int cd_produto;
         private string nm_produto;
-        private double vl_produto;
+        private string vl_produto;
         private string nm_marca;
         private string dt_vencimento;
         private string dt_aquisicao;
@@ -29,7 +29,7 @@ namespace CamadaDeNegocio
             get { return nm_produto; }
             set { nm_produto = value; }
         }
-        public double VL_Produto
+        public string VL_Produto
         {
             get { return vl_produto; }
             set { vl_produto = value; }
@@ -105,7 +105,7 @@ namespace CamadaDeNegocio
             csql.Append(cd_produto);
             csql.Append(",'" + nm_produto + "',");
             csql.Append("'" + nm_marca + "',");
-            csql.Append("'" + vl_produto + "',");
+            csql.Append("'" + Convert.ToDouble(vl_produto) + "',");
             csql.Append("'" + dt_aquisicao + "',");
             csql.Append("'" + dt_vencimento + "',");
             csql.Append("'" + uso + "')");
@@ -123,7 +123,7 @@ namespace CamadaDeNegocio
             csql.Append("', nm_marca = ");
             csql.Append("'" + nm_marca);
             csql.Append("', vl_produto=");
-            csql.Append(vl_produto);
+            csql.Append(Convert.ToDouble(vl_produto));
             csql.Append(" ,dt_aquisicao=");
             csql.Append("'" + dt_aquisicao + "'");
             csql.Append(",dt_vencimento=");

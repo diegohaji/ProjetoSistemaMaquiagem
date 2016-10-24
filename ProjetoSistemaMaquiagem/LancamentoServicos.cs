@@ -150,7 +150,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Nm_servico = comboBoxServico.Text;
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
-            lancamento.Vl_total = Convert.ToDouble(textBoxValor.Text);
+            lancamento.Vl_total = textBoxValor.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();
@@ -187,7 +187,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Nm_servico = comboBoxServico.Text;
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
-            lancamento.Vl_total = Convert.ToDouble(textBoxValor.Text);
+            lancamento.Vl_total = textBoxValor.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();

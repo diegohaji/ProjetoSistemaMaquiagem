@@ -12,8 +12,8 @@ namespace CamadaDeNegocio
     {
         private int cd_estoque;
         private int cd_produto;
-        private int qtd_minimo;
-        private int qtd_atual;
+        private string qtd_minimo;
+        private string qtd_atual;
         private string nm_produto;
 
 
@@ -29,13 +29,13 @@ namespace CamadaDeNegocio
             set { cd_produto = value; }
         }
 
-        public int Qtd_Minimo
+        public string Qtd_Minimo
         {
             get { return qtd_minimo; }
             set { qtd_minimo = value; }
         }
 
-        public int Qtd_Atual
+        public string Qtd_Atual
         {
             get { return qtd_atual; }
             set { qtd_atual = value; }
@@ -103,8 +103,8 @@ namespace CamadaDeNegocio
             csql.Append(cd_estoque);
             csql.Append(",'" + (cd_produto) + "',");
             csql.Append("'" + nm_produto + "',");
-            csql.Append("'" + qtd_minimo + "',");
-            csql.Append("'" + qtd_atual + "')");
+            csql.Append("'" + Convert.ToInt16(qtd_minimo) + "',");
+            csql.Append("'" + Convert.ToInt16(qtd_atual) + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();
@@ -127,9 +127,9 @@ namespace CamadaDeNegocio
             csql.Append(" tipo = '");
             csql.Append(nm_produto);
             csql.Append("', qte_minima = ");
-            csql.Append(qtd_minimo);
+            csql.Append(Convert.ToInt16(qtd_minimo));
             csql.Append(", qte_atual = ");
-            csql.Append(qtd_atual);
+            csql.Append(Convert.ToInt16(qtd_atual));
             csql.Append(" where cd_estoque = ");
             csql.Append(cd_estoque);
             csql.Append(" && cd_produto = ");

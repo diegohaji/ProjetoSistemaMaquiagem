@@ -89,7 +89,7 @@ namespace ProjetoSistemaMaquiagem
             ClnProdutos prod = new ClnProdutos();
             prod.Nm_Produto = textBoxNome.Text;
             prod.Nm_Marca = textBoxMarca.Text;
-            prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
+            prod.VL_Produto = textBoxVlProduto.Text;
             prod.Dt_Vencimento = dateTimePickerVencimento.Value.ToShortDateString();
             prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString();
             prod.Uso = textBoxUso.Text;
@@ -155,7 +155,7 @@ namespace ProjetoSistemaMaquiagem
             ClnProdutos prod = new ClnProdutos();
             prod.Nm_Produto = textBoxNome.Text;
             prod.Nm_Marca = textBoxMarca.Text;
-            prod.VL_Produto = Convert.ToDouble(textBoxVlProduto.Text);
+            prod.VL_Produto = textBoxVlProduto.Text;
             prod.Dt_Vencimento = dateTimePickerVencimento.Value.ToShortDateString();
             prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString();
             prod.Uso = textBoxUso.Text;

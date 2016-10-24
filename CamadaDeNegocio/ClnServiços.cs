@@ -12,7 +12,7 @@ namespace CamadaDeNegocio
         //1 - Campos privados da classe
         private int cd_servico;
         private string nm_servico;
-        private double vl_servico;
+        private string vl_servico;
         private string duracao;
 
         //2 - propriedades, acesso aos campos privados
@@ -26,7 +26,7 @@ namespace CamadaDeNegocio
             get { return nm_servico; }
             set { nm_servico = value; }
         }
-        public double VL_Servico
+        public string VL_Servico
         {
             get { return vl_servico; }
             set { vl_servico = value; }
@@ -55,7 +55,7 @@ namespace CamadaDeNegocio
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
                 cd_servico = Convert.ToInt16(dados.GetValue(0));
                 nm_servico = Convert.ToString(dados.GetValue(1));
-                vl_servico = Convert.ToDouble(dados.GetValue(2));
+                vl_servico = Convert.ToString(dados.GetValue(2));
                 duracao = Convert.ToString(dados.GetValue(3));                
             }
         }
@@ -88,7 +88,7 @@ namespace CamadaDeNegocio
             csql.Append("duracao) Values(");
             csql.Append(cd_servico);
             csql.Append(",'" + nm_servico + "',");
-            csql.Append("'" + vl_servico + "',");
+            csql.Append("'" + Convert.ToDouble(vl_servico) + "',");
             csql.Append("'" + duracao + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
@@ -107,7 +107,7 @@ namespace CamadaDeNegocio
             csql.Append("set nm_servico='");
             csql.Append(nm_servico);
             csql.Append("', vl_servico='");
-            csql.Append(vl_servico);
+            csql.Append( Convert.ToDouble(vl_servico));
             csql.Append("', duracao = '");
             csql.Append(duracao);
             csql.Append("' where cd_servico=");

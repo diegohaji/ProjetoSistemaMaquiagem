@@ -94,7 +94,7 @@ namespace ProjetoSistemaMaquiagem
             ClnServiços serv = new ClnServiços();
             
             serv.Nm_Servico = textBoxNome.Text;
-            serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
+            serv.VL_Servico = textBoxPreco.Text;
             serv.Duracao = dateTimePicker1.Value.ToShortTimeString();
             if (verificaText(groupBoxServico))
             {
@@ -152,7 +152,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnServiços serv = new ClnServiços();
             serv.Nm_Servico = textBoxNome.Text;
-            serv.VL_Servico = Convert.ToDouble(textBoxPreco.Text);
+            serv.VL_Servico = textBoxPreco.Text;
             serv.Duracao = dateTimePicker1.Value.ToShortTimeString();
             serv.Cd_Servico = serv.BuscarId(textBoxNome.Text);
             if (verificaText(groupBoxServico))

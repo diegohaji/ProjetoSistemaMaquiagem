@@ -17,7 +17,7 @@ namespace CamadaDeNegocio
         private string nm_servico;
         private string dt_prestacao;
         private string status_prestacao;
-        private double vl_total;
+        private string vl_total;
         public int Cd_funcionario
         {
             get
@@ -109,7 +109,7 @@ namespace CamadaDeNegocio
             }
         }
 
-        public double Vl_total
+        public string Vl_total
         {
             get
             {
@@ -151,7 +151,7 @@ namespace CamadaDeNegocio
             csql.Append("'" + nm_funcionario + "',");
             csql.Append("'" + nm_servico + "',");
             csql.Append("'" + dt_prestacao + "',");
-            csql.Append("'" + vl_total + "'");
+            csql.Append("'" + Convert.ToDouble(vl_total) + "'");
             csql.Append(")");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
@@ -182,7 +182,7 @@ namespace CamadaDeNegocio
             csql.Append("', data_prestacao ='");
             csql.Append(dt_prestacao);
             csql.Append("', vl_total = ");
-            csql.Append(vl_total);
+            csql.Append(Convert.ToDouble(vl_total));
             csql.Append(" where cd_funcionario = ");
             csql.Append((cd_funcionario - 1));
             csql.Append("&& cd_cliente = ");

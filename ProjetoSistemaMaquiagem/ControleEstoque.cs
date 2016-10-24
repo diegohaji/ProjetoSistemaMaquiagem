@@ -92,8 +92,8 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnEstoque estoque = new ClnEstoque();
             estoque.Nm_Produto = comboBoxProduto.Text;
-            estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
-            estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
+            estoque.Qtd_Minimo = textBoxQtdMinima.Text;
+            estoque.Qtd_Atual = textBoxQtdAtual.Text;
           
             if (verificaText(groupBox1))
             {
@@ -107,8 +107,8 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnEstoque estoque = new ClnEstoque();
             estoque.Nm_Produto = comboBoxProduto.Text;
-            estoque.Qtd_Minimo = Convert.ToInt32(textBoxQtdMinima.Text);
-            estoque.Qtd_Atual = Convert.ToInt32(textBoxQtdAtual.Text);
+            estoque.Qtd_Minimo = textBoxQtdMinima.Text;
+            estoque.Qtd_Atual = textBoxQtdAtual.Text;
             estoque.Cd_Produto = estoque.BuscarporCodigoProduto();
             estoque.Cd_Estoque = estoque.BuscarporCodigoEstoque();
             estoque.Atualizar();

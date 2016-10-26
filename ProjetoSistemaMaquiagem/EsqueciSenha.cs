@@ -80,8 +80,12 @@ namespace ProjetoSistemaMaquiagem
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             ClnUsuario usuario = new ClnUsuario();
-            if (verificaText(groupBox2)) {
+            if (!string.IsNullOrEmpty(textBoxLembrarUsuario.Text)) {
                 textBoxLembrarSenha.Text = (usuario.BuscarDica(textBoxLembrarUsuario.Text));
+            }
+            else
+            {
+                MessageBox.Show("Campo Usuario em branco!\nFavor Verificar.","Campo em Branco", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 

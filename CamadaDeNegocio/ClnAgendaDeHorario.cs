@@ -66,11 +66,13 @@ namespace CamadaDeNegocio
             csql.Append("cd_funcionario,");
             csql.Append("nm_servico,");
             csql.Append("nm_funcionario,");
-            csql.Append("horarios) Values(");
+            csql.Append("horarioinicial,");
+            csql.Append("horariofinal) Values(");
             csql.Append(cd_funcionario+1);
             csql.Append(",'" + servico + "',");
             csql.Append("'" + funcionario + "',");
-            csql.Append("'" + horarioinicial + "')");
+            csql.Append("'" + horarioinicial + "',");
+            csql.Append("'" + horariofinal + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();
@@ -88,8 +90,10 @@ namespace CamadaDeNegocio
             csql.Append(funcionario);
             csql.Append("', nm_servico = '");
             csql.Append(servico);
-            csql.Append("', horarios = '");
+            csql.Append("', horarioinicial = '");
             csql.Append(horarioinicial);
+            csql.Append("', horariofinal = '");
+            csql.Append(horariofinal);
             csql.Append("' where cd_funcionario = ");
             csql.Append((cd_funcionario-1));
             ClasseDados cd = new ClasseDados();
@@ -111,7 +115,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "select cd_funcionario as Codigo, nm_funcionario as Funcionario, nm_servico as Servico, horarios as Horario from tb_horario_func";
+            csql = "select cd_funcionario as Codigo, nm_funcionario as Funcionario, nm_servico as Servico, horarioinicial as Horarioinicial, horariofinal as Horariofinal from tb_horario_func";
             DataSet ds = new DataSet();
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

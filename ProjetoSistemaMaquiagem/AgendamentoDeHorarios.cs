@@ -118,6 +118,7 @@ namespace ProjetoSistemaMaquiagem
             agenda.Servico = comboBoxServico.Text;
             agenda.NomeFuncionario = comboBoxFuncionario.Text;
             agenda.Horario = dateTimePicker1.Value.ToShortTimeString();
+            agenda.Horariofinal = dateTimePicker2.Value.ToShortTimeString();
             if (verificaText(groupBox1))
             {
                 agenda.Gravar();
@@ -141,7 +142,8 @@ namespace ProjetoSistemaMaquiagem
             {
                 comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                //maskedTextBoxHorario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+               dateTimePicker1.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker2.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
             }
 
         }
@@ -178,6 +180,7 @@ namespace ProjetoSistemaMaquiagem
             agenda.Servico = comboBoxServico.Text;
             agenda.NomeFuncionario = comboBoxFuncionario.Text;
             agenda.Horario = dateTimePicker1.Value.ToShortTimeString();
+            agenda.Horariofinal = dateTimePicker2.Value.ToShortTimeString();
             ClnFuncionario func = new ClnFuncionario();
             agenda.Cd_funcionario = func.BuscarId(comboBoxFuncionario.Text);
             agenda.Atualizar();

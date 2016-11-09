@@ -150,7 +150,10 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Nm_servico = comboBoxServico.Text;
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
-            lancamento.Vl_total = textBoxValor.Text;
+            lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
+            DataSet ds = new DataSet();
+            ds = lancamento.BuscarOValor();
+            lancamento.Vl_total = ds.Tables[0].ToString();
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();
@@ -187,6 +190,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Nm_servico = comboBoxServico.Text;
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
+            lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
             lancamento.Vl_total = textBoxValor.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
@@ -198,6 +202,26 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
             LimparTxt(groupBox4);
         }
+
+        //função do grid
+        private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv1.CurrentRow.Selected = true;
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            if (dgv1.RowCount > 0)
+            {
+                
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                comboBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxStatus.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker1.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                dateTimePicker2.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                textBoxValor.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+            }
+
+        }
+
     }
 }
 

@@ -51,6 +51,7 @@ create table tb_prestacao_servico(
     nm_servico varchar(40),
     status_prestacao varchar(127),
     data_prestacao varchar(14),
+    data_pagamento varchar(14),
     vl_total double not null,
     primary key (cd_funcionario, cd_cliente, cd_servico, data_prestacao, vl_total)
 )engine = innodb;
@@ -59,9 +60,10 @@ create table tb_horario_func(
 	cd_funcionario int unsigned not null, 
     nm_funcionario varchar(127),
     nm_servico varchar(127),
-    horarios text,
+    horarioinicial varchar(14),
+    horariofinal varchar(14),
     foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
-    primary key (cd_funcionario)
+    primary key (cd_funcionario,nm_funcionario,nm_servico,horarioinicial,horariofinal)
 )engine = innodb;
 
 create table tb_produto(

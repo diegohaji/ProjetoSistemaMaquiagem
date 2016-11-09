@@ -16,6 +16,7 @@ namespace CamadaDeNegocio
         private string nm_funcionario;
         private string nm_servico;
         private string dt_prestacao;
+        private string dt_pagamento;
         private string status_prestacao;
         private string vl_total;
         public int Cd_funcionario
@@ -122,6 +123,19 @@ namespace CamadaDeNegocio
             }
         }
 
+        public string Dt_pagamento
+        {
+            get
+            {
+                return dt_pagamento;
+            }
+
+            set
+            {
+                dt_pagamento = value;
+            }
+        }
+
         //Gravar
         public void Gravar()
         {
@@ -142,6 +156,7 @@ namespace CamadaDeNegocio
             csql.Append("nm_funcionario,");
             csql.Append("nm_servico,");
             csql.Append("data_prestacao,");
+            csql.Append("data_pagamento,");
             csql.Append("vl_total");
             csql.Append(") Values(");
             csql.Append((cd_funcionario -1));
@@ -151,6 +166,7 @@ namespace CamadaDeNegocio
             csql.Append("'" + nm_funcionario + "',");
             csql.Append("'" + nm_servico + "',");
             csql.Append("'" + dt_prestacao + "',");
+            csql.Append("'" + dt_pagamento + "',");
             csql.Append("'" + Convert.ToDouble(vl_total) + "'");
             csql.Append(")");
             cd = new ClasseDados();
@@ -181,6 +197,8 @@ namespace CamadaDeNegocio
             csql.Append(nm_servico);
             csql.Append("', data_prestacao ='");
             csql.Append(dt_prestacao);
+            csql.Append("', data_pagamento ='");
+            csql.Append(dt_pagamento);
             csql.Append("', vl_total = ");
             csql.Append(Convert.ToDouble(vl_total));
             csql.Append(" where cd_funcionario = ");
@@ -215,8 +233,21 @@ namespace CamadaDeNegocio
         //3.6 Método para buscar os dados do cliente de acordo com o nome
         public DataSet BuscarporNome()
         {
+            //tps.cd_funcionario as Codigo_Funcionario, tps.cd_cliente as Codigo_Cliente,tps.cd_servico as Codigo_Servico,
             string csql;
-            csql = "select tps.cd_funcionario as Codigo_Funcionario, tps.cd_cliente as Codigo_Cliente,tps.cd_servico as Codigo_Servico,tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, tps.status_prestacao as Status,tps.data_prestacao as Data,tps.vl_total as Valor_Total from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico=ts.cd_servico";
+            csql = "select tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, tps.status_prestacao as Status,tps.data_prestacao as Data_Prestacao, tps.data_pagamento as Data_Pagamento,tps.vl_total as Valor_Total from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico=ts.cd_servico";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+        }
+       
+        //3.7 Método para buscar os dados do cliente de acordo com o nome
+        public DataSet BuscarOValor()
+        {
+            //tps.cd_funcionario as Codigo_Funcionario, tps.cd_cliente as Codigo_Cliente,tps.cd_servico as Codigo_Servico,
+            string csql;
+            csql = "select vl_servico from tb_servico as ts inner join tb_prestacao_servico as tps on ts.cd_servico = tps.cd_servico";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

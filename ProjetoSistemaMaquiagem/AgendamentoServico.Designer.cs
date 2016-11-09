@@ -84,7 +84,7 @@
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(217, 87);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(213, 20);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // label5

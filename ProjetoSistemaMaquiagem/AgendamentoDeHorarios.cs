@@ -26,6 +26,9 @@ namespace ProjetoSistemaMaquiagem
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "HH:mm";
             dateTimePicker1.ShowUpDown = true;
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.CustomFormat = "HH:mm";
+            dateTimePicker2.ShowUpDown = true;
             PreencherComboTipo();
             PreencherComboFuncionario();
             AtualizarGrid();

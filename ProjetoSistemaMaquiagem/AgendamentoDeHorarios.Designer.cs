@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxServico = new System.Windows.Forms.ComboBox();
@@ -44,7 +45,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -53,6 +55,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.comboBoxFuncionario);
             this.groupBox1.Controls.Add(this.label4);
@@ -65,22 +69,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(13, 103);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(75, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            // 
             // comboBoxFuncionario
             // 
             this.comboBoxFuncionario.FormattingEnabled = true;
-            this.comboBoxFuncionario.Location = new System.Drawing.Point(20, 37);
+            this.comboBoxFuncionario.Location = new System.Drawing.Point(13, 37);
             this.comboBoxFuncionario.Name = "comboBoxFuncionario";
-            this.comboBoxFuncionario.Size = new System.Drawing.Size(176, 21);
+            this.comboBoxFuncionario.Size = new System.Drawing.Size(183, 21);
             this.comboBoxFuncionario.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 87);
+            this.label4.Location = new System.Drawing.Point(11, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Horario";
+            this.label4.Text = "Horario inicial";
             // 
             // comboBoxServico
             // 
@@ -102,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 23);
+            this.label1.Location = new System.Drawing.Point(10, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 0;
@@ -207,12 +218,21 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
-            // dateTimePicker1
+            // label2
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(20, 104);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(68, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(232, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Horario final";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(235, 104);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(75, 20);
+            this.dateTimePicker2.TabIndex = 11;
             // 
             // AgendamentoDeHorarios
             // 
@@ -255,5 +275,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxFuncionario;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label2;
     }
 }

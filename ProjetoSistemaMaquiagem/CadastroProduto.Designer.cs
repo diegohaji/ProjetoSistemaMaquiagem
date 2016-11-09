@@ -73,17 +73,17 @@
             this.groupBoxProduto.Controls.Add(this.label2);
             this.groupBoxProduto.Location = new System.Drawing.Point(13, 13);
             this.groupBoxProduto.Name = "groupBoxProduto";
-            this.groupBoxProduto.Size = new System.Drawing.Size(455, 180);
+            this.groupBoxProduto.Size = new System.Drawing.Size(497, 180);
             this.groupBoxProduto.TabIndex = 0;
             this.groupBoxProduto.TabStop = false;
             // 
             // dateTimePickerVencimento
             // 
-            this.dateTimePickerVencimento.Location = new System.Drawing.Point(237, 83);
+            this.dateTimePickerVencimento.Location = new System.Drawing.Point(257, 83);
             this.dateTimePickerVencimento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerVencimento.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerVencimento.Name = "dateTimePickerVencimento";
-            this.dateTimePickerVencimento.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerVencimento.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerVencimento.TabIndex = 15;
             // 
             // dateTimePickerAquisicao
@@ -92,14 +92,14 @@
             this.dateTimePickerAquisicao.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerAquisicao.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerAquisicao.Name = "dateTimePickerAquisicao";
-            this.dateTimePickerAquisicao.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerAquisicao.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerAquisicao.TabIndex = 14;
             // 
             // textBoxVlProduto
             // 
             this.textBoxVlProduto.Location = new System.Drawing.Point(10, 139);
             this.textBoxVlProduto.Name = "textBoxVlProduto";
-            this.textBoxVlProduto.Size = new System.Drawing.Size(200, 20);
+            this.textBoxVlProduto.Size = new System.Drawing.Size(212, 20);
             this.textBoxVlProduto.TabIndex = 13;
             // 
             // label7
@@ -113,15 +113,15 @@
             // 
             // textBoxUso
             // 
-            this.textBoxUso.Location = new System.Drawing.Point(237, 139);
+            this.textBoxUso.Location = new System.Drawing.Point(257, 139);
             this.textBoxUso.Name = "textBoxUso";
-            this.textBoxUso.Size = new System.Drawing.Size(200, 20);
+            this.textBoxUso.Size = new System.Drawing.Size(212, 20);
             this.textBoxUso.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(234, 123);
+            this.label6.Location = new System.Drawing.Point(254, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 10;
@@ -130,7 +130,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(234, 67);
+            this.label5.Location = new System.Drawing.Point(254, 67);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 9;
@@ -138,16 +138,16 @@
             // 
             // textBoxMarca
             // 
-            this.textBoxMarca.Location = new System.Drawing.Point(237, 32);
+            this.textBoxMarca.Location = new System.Drawing.Point(257, 32);
             this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(200, 20);
+            this.textBoxMarca.Size = new System.Drawing.Size(212, 20);
             this.textBoxMarca.TabIndex = 6;
             // 
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(10, 32);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(200, 20);
+            this.textBoxNome.Size = new System.Drawing.Size(212, 20);
             this.textBoxNome.TabIndex = 5;
             // 
             // label4
@@ -162,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(234, 16);
+            this.label3.Location = new System.Drawing.Point(254, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 2;
@@ -220,7 +220,7 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(487, 13);
+            this.dgv1.Location = new System.Drawing.Point(516, 13);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(455, 353);
             this.dgv1.TabIndex = 5;
@@ -234,7 +234,7 @@
             this.groupBox2.Controls.Add(this.botaoCancelar);
             this.groupBox2.Location = new System.Drawing.Point(14, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(454, 71);
+            this.groupBox2.Size = new System.Drawing.Size(496, 71);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
@@ -245,14 +245,14 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Location = new System.Drawing.Point(14, 286);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(456, 70);
+            this.groupBox3.Size = new System.Drawing.Size(496, 70);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtrar";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(374, 41);
+            this.button1.Location = new System.Drawing.Point(373, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -280,7 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 377);
+            this.ClientSize = new System.Drawing.Size(983, 377);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv1);

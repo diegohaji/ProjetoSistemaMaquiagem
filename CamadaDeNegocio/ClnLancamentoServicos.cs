@@ -233,21 +233,35 @@ namespace CamadaDeNegocio
         //3.6 Método para buscar os dados do cliente de acordo com o nome
         public DataSet BuscarporNome()
         {
-            //tps.cd_funcionario as Codigo_Funcionario, tps.cd_cliente as Codigo_Cliente,tps.cd_servico as Codigo_Servico,
+            //
             string csql;
-            csql = "select tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, tps.status_prestacao as Status,tps.data_prestacao as Data_Prestacao, tps.data_pagamento as Data_Pagamento,tps.vl_total as Valor_Total from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico=ts.cd_servico";
+            csql = "select tps.cd_funcionario as Codigo_Funcionario, tps.cd_cliente as Codigo_Cliente,tps.cd_servico as Codigo_Servico, tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, tps.status_prestacao as Status,tps.data_prestacao as Data_Prestacao, tps.data_pagamento as Data_Pagamento,tps.vl_total as Valor_Total from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico=ts.cd_servico";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
             return ds;
         }
-       
+
+
+        //3.8 Método para buscar os dados do cliente de acordo com o nome
+        public DataSet BuscarporDivida()
+        {
+            //
+            string csql;
+            csql = "select tas.cd_funcionario as Codigo_Funcionario, tas.cd_cliente as Codigo_Cliente,tas.cd_servico as Codigo_Servico,tf.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,ts.nm_servico as Servico, tas.data_agendamento as Data,tas.status as Status, ts.vl_servico as Valor from tb_agendamento_servico as tas inner join tb_funcionario as tf on tas.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tas.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tas.cd_servico=ts.cd_servico where ts.cd_servico = tas.cd_servico";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+        }
+
+
         //3.7 Método para buscar os dados do cliente de acordo com o nome
         public DataSet BuscarOValor()
         {
             //tps.cd_funcionario as Codigo_Funcionario, tps.cd_cliente as Codigo_Cliente,tps.cd_servico as Codigo_Servico,
             string csql;
-            csql = "select vl_servico from tb_servico as ts inner join tb_prestacao_servico as tps on ts.cd_servico = tps.cd_servico";
+            csql = "select vl_servico as Valor from tb_servico as ts inner join tb_agendamento_servico as tas on ts.cd_servico = tas.cd_servico";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

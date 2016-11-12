@@ -1,4 +1,6 @@
-
+drop database sistemamaquiagem;
+create database sistemamaquiagem;
+use sistemamaquiagem;
 create table tb_cliente(
 	cd_cliente int unsigned not null auto_increment,
     primary key(cd_cliente),
@@ -152,6 +154,9 @@ foreign key (cd_cliente) references tb_cliente(cd_cliente)on delete cascade,
 foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,
 data_agendamento varchar(14) not null,
 hora_agendamento varchar(14) not null,
+produto varchar(50) not null,
+quantidade int not null,
+status varchar(15) not null,
 primary key(cd_funcionario, cd_cliente, cd_servico, data_agendamento, hora_agendamento)
 )engine = innodb;
 

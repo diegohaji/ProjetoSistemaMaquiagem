@@ -34,6 +34,7 @@ namespace ProjetoSistemaMaquiagem
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboCliente();
+            PreencherComboProduto();
             AtualizarGrid();
         }
 
@@ -64,6 +65,15 @@ namespace ProjetoSistemaMaquiagem
             comboBoxCliente.DataSource = ds.Tables[0];
             comboBoxCliente.DisplayMember = "Nome";
             comboBoxCliente.ValueMember = "Codigo";
+        }
+
+        public void PreencherComboProduto()
+        {
+            ClnProdutos tipo = new ClnProdutos();
+            DataSet ds = tipo.BuscarporNome();
+            comboBoxProduto.DataSource = ds.Tables[0];
+            comboBoxProduto.DisplayMember = "Nome";
+            comboBoxProduto.ValueMember = "Codigo";
         }
 
         //atualiza o grid
@@ -114,7 +124,6 @@ namespace ProjetoSistemaMaquiagem
             return true;
         }
 
-     
 
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
@@ -133,6 +142,8 @@ namespace ProjetoSistemaMaquiagem
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
             agenda.Hora_agendamento = dateTimePicker1.Value.ToShortTimeString();
             agenda.Nm_pesquisa = comboBoxCliente.Text;
+            agenda.Produto = comboBoxProduto.Text;
+            agenda.Quantidade = numericUpDownQtd.Value.ToString();
             ClnCliente cliente = new ClnCliente();
             agenda.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();
@@ -145,6 +156,7 @@ namespace ProjetoSistemaMaquiagem
             LimparTxt(groupBox1);
         }
         }
+
 
         private void dgv1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

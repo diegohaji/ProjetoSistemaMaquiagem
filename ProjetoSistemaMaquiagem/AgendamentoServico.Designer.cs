@@ -49,14 +49,27 @@
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxProduto = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDownQtd = new System.Windows.Forms.NumericUpDown();
+            this.buttonMaisProdutos = new System.Windows.Forms.Button();
+            this.buttonMaisQtd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonMaisQtd);
+            this.groupBox1.Controls.Add(this.buttonMaisProdutos);
+            this.groupBox1.Controls.Add(this.numericUpDownQtd);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.comboBoxProduto);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label5);
@@ -69,7 +82,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(483, 130);
+            this.groupBox1.Size = new System.Drawing.Size(483, 182);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -162,7 +175,7 @@
             this.groupBox2.Controls.Add(this.botaoEditar);
             this.groupBox2.Controls.Add(this.botaoExcluir);
             this.groupBox2.Controls.Add(this.Cancelar);
-            this.groupBox2.Location = new System.Drawing.Point(13, 149);
+            this.groupBox2.Location = new System.Drawing.Point(13, 201);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(483, 71);
             this.groupBox2.TabIndex = 29;
@@ -212,7 +225,7 @@
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(13, 226);
+            this.groupBox3.Location = new System.Drawing.Point(13, 278);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(483, 70);
             this.groupBox3.TabIndex = 30;
@@ -247,17 +260,74 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(13, 303);
+            this.dgv1.Location = new System.Drawing.Point(13, 354);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(483, 196);
             this.dgv1.TabIndex = 31;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Produto";
+            // 
+            // comboBoxProduto
+            // 
+            this.comboBoxProduto.FormattingEnabled = true;
+            this.comboBoxProduto.Location = new System.Drawing.Point(26, 140);
+            this.comboBoxProduto.Name = "comboBoxProduto";
+            this.comboBoxProduto.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxProduto.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(214, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Quantidade";
+            // 
+            // numericUpDownQtd
+            // 
+            this.numericUpDownQtd.Location = new System.Drawing.Point(217, 141);
+            this.numericUpDownQtd.Name = "numericUpDownQtd";
+            this.numericUpDownQtd.Size = new System.Drawing.Size(159, 20);
+            this.numericUpDownQtd.TabIndex = 16;
+            // 
+            // buttonMaisProdutos
+            // 
+            this.buttonMaisProdutos.Enabled = false;
+            this.buttonMaisProdutos.Location = new System.Drawing.Point(161, 138);
+            this.buttonMaisProdutos.Name = "buttonMaisProdutos";
+            this.buttonMaisProdutos.Size = new System.Drawing.Size(28, 23);
+            this.buttonMaisProdutos.TabIndex = 17;
+            this.buttonMaisProdutos.Text = "+";
+            this.buttonMaisProdutos.UseVisualStyleBackColor = true;
+            this.buttonMaisProdutos.Visible = false;
+            // 
+            // buttonMaisQtd
+            // 
+            this.buttonMaisQtd.Enabled = false;
+            this.buttonMaisQtd.Location = new System.Drawing.Point(382, 138);
+            this.buttonMaisQtd.Name = "buttonMaisQtd";
+            this.buttonMaisQtd.Size = new System.Drawing.Size(28, 23);
+            this.buttonMaisQtd.TabIndex = 18;
+            this.buttonMaisQtd.Text = "+";
+            this.buttonMaisQtd.UseVisualStyleBackColor = true;
+            this.buttonMaisQtd.Visible = false;
+            // 
             // AgendamentoServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 511);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(508, 555);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -271,6 +341,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,5 +369,11 @@
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Button buttonMaisQtd;
+        private System.Windows.Forms.Button buttonMaisProdutos;
+        private System.Windows.Forms.NumericUpDown numericUpDownQtd;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxProduto;
+        private System.Windows.Forms.Label label6;
     }
 }

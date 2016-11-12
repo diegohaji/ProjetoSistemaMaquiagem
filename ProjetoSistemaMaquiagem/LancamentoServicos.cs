@@ -27,6 +27,7 @@ namespace ProjetoSistemaMaquiagem
             PreencherComboServico();
             PreencherComboCliente();
             PreencherComboStatus();
+            PreencherValor();
             AtualizarGrid();
         }
 
@@ -69,13 +70,21 @@ namespace ProjetoSistemaMaquiagem
             comboBoxStatus.DataSource = status;
         }
 
+        public void PreencherValor()
+        {
+            ClnLancamentoServicos lancamento = new ClnLancamentoServicos();
+            DataSet ds = new DataSet();
+            ds = lancamento.BuscarOValor();
+            lancamento.Vl_total = ds.Tables[0].ToString();
+        }
+
         //atualiza o grid
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
             ClnLancamentoServicos lancaservico = new ClnLancamentoServicos();
             lancaservico.Nm_servico = textBoxPesquisar.Text;
-            ds = lancaservico.BuscarporNome();
+            ds = lancaservico.BuscarporDivida();
             dgv1.DataSource = ds.Tables[0];
 
         }
@@ -151,9 +160,8 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
             lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
-            DataSet ds = new DataSet();
-            ds = lancamento.BuscarOValor();
-            lancamento.Vl_total = ds.Tables[0].ToString();
+            lancamento.Vl_total = textBoxValor.Text;
+            MessageBox.Show(lancamento.Vl_total, "valor", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();
@@ -211,13 +219,13 @@ namespace ProjetoSistemaMaquiagem
             if (dgv1.RowCount > 0)
             {
                 
-                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
-                comboBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                comboBoxStatus.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePicker1.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                dateTimePicker2.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                textBoxValor.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                comboBoxStatus.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                //dateTimePicker1.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                //dateTimePicker2.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
+                textBoxValor.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
             }
 
         }

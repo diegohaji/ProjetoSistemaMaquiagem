@@ -30,6 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,6 +94,22 @@
             this.groupBox4.Size = new System.Drawing.Size(449, 205);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(9, 181);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(225, 20);
+            this.dateTimePicker2.TabIndex = 42;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 165);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 13);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Data do pagamento";
             // 
             // dateTimePicker1
             // 
@@ -296,22 +312,7 @@
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(449, 161);
             this.dgv1.TabIndex = 5;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(9, 181);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(225, 20);
-            this.dateTimePicker2.TabIndex = 42;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 165);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 13);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "Data do pagamento";
+            this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // LancamentoServicos
             // 
@@ -320,7 +321,7 @@
             this.ClientSize = new System.Drawing.Size(490, 561);
             this.Controls.Add(this.groupBox1);
             this.Name = "LancamentoServicos";
-            this.Text = "Lancamento de servicos";
+            this.Text = "Pagamento de servicos";
             this.Load += new System.EventHandler(this.LancamentoServico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

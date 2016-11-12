@@ -17,6 +17,9 @@ namespace CamadaDeNegocio
         private string data_agendamento;
         private string hora_agendamento;
         private string nm_pesquisa;
+        private string produto;
+        private string quantidade;
+        private string status;
 
         public int Cd_funcionario
         {
@@ -96,6 +99,45 @@ namespace CamadaDeNegocio
             }
         }
 
+        public string Produto
+        {
+            get
+            {
+                return produto;
+            }
+
+            set
+            {
+                produto = value;
+            }
+        }
+
+        public string Quantidade
+        {
+            get
+            {
+                return quantidade;
+            }
+
+            set
+            {
+                quantidade = value;
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
         //gravar
         public void Gravar()
         {
@@ -105,7 +147,7 @@ namespace CamadaDeNegocio
             csql.Append(0);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-
+            status = "pendente";
             csql = new StringBuilder();
             csql.Append("Insert into tb_agendamento_servico");
             csql.Append("(");
@@ -113,13 +155,19 @@ namespace CamadaDeNegocio
             csql.Append("cd_cliente,");
             csql.Append("cd_servico,");
             csql.Append("data_agendamento,");
-            csql.Append("hora_agendamento");
+            csql.Append("hora_agendamento,");
+            csql.Append("produto,");
+            csql.Append("quantidade,");
+            csql.Append("status");
             csql.Append(") Values(");
             csql.Append((cd_funcionario -1 ));
             csql.Append(",'" + (cd_cliente -1 ) + "',");
             csql.Append("'" + (cd_servico -1 )+ "',");
             csql.Append("'" + data_agendamento + "',");
-            csql.Append("'" + hora_agendamento + "'");
+            csql.Append("'" + hora_agendamento + "',");
+            csql.Append("'" + produto + "',");
+            csql.Append("'" + Convert.ToInt32(quantidade) + "',");
+            csql.Append("'" + status + "'");
             csql.Append(")");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
@@ -152,7 +200,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "select tas.cd_funcionario as Codigo_Funcionario, tas.cd_cliente as Codigo_Cliente,tas.cd_servico as Codigo_Servico,tf.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,ts.nm_servico as Servico, tas.data_agendamento as Data,tas.hora_agendamento as Hora from tb_agendamento_servico as tas inner join tb_funcionario as tf on tas.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tas.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tas.cd_servico=ts.cd_servico";
+            csql = "select tas.cd_funcionario as Codigo_Funcionario, tas.cd_cliente as Codigo_Cliente,tas.cd_servico as Codigo_Servico,tf.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,ts.nm_servico as Servico, tas.data_agendamento as Data,tas.hora_agendamento as Hora, tas.produto as Produto, tas.quantidade as Qtd, tas.status as Status from tb_agendamento_servico as tas inner join tb_funcionario as tf on tas.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tas.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tas.cd_servico=ts.cd_servico";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -166,12 +214,19 @@ namespace CamadaDeNegocio
             csql.Append(0);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+            status = "pendente";
             csql = new StringBuilder();
             csql.Append("update tb_agendamento_servico ");
             csql.Append("set data_agendamento = '");
             csql.Append(data_agendamento);
             csql.Append("', hora_agendamento = '");
             csql.Append(hora_agendamento);
+            csql.Append("', produto = '");
+            csql.Append(produto);
+            csql.Append("', quantidade = '");
+            csql.Append(Convert.ToInt32(quantidade));
+            csql.Append("', status = '");
+            csql.Append(status);
             csql.Append("' where cd_funcionario = ");
             csql.Append((cd_funcionario - 1));
             csql.Append("&& cd_cliente = ");

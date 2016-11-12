@@ -174,6 +174,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
             lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
+            lancamento.Hora_prestacao = dateTimePicker3.Value.ToShortTimeString();
             lancamento.Vl_total = textBoxValor.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
@@ -184,9 +185,12 @@ namespace ProjetoSistemaMaquiagem
             if (verificaText(groupBox4))
             {
                 lancamento.Gravar();
+                ClnAgendaDeServico agenda = new ClnAgendaDeServico();
+                agenda.Excluir(agenda.BuscarporOrdemPagamento());
                 AtualizarGrid();
                 AtualizarGrid2();
                 LimparTxt(groupBox4);
+
             }
         }
 
@@ -214,6 +218,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
             lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
+            lancamento.Hora_prestacao = dateTimePicker3.Value.ToShortTimeString();
             lancamento.Vl_total = textBoxValor.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
@@ -235,19 +240,20 @@ namespace ProjetoSistemaMaquiagem
             if (dgv1.RowCount > 0)
             {
                 
-                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[6].Value.ToString());
-                //comboBoxStatus.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
-                textBoxValor.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxCliente.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[4].Value.ToString());
+                dateTimePicker3.Value = DateTime.ParseExact(dgv1.CurrentRow.Cells[5].Value.ToString(), "HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+                //comboBoxStatus.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                textBoxValor.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
             }
 
         }
 
         private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            /*
             dgv2.CurrentRow.Selected = true;
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             if (dgv1.RowCount > 0)
@@ -261,7 +267,7 @@ namespace ProjetoSistemaMaquiagem
                 dateTimePicker2.Value = Convert.ToDateTime(dgv2.CurrentRow.Cells[9].Value.ToString());
                 textBoxValor.Text = dgv2.CurrentRow.Cells[10].Value.ToString();
             }
-    
+    */
     }
     }
 }

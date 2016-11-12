@@ -151,6 +151,7 @@ namespace CamadaDeNegocio
         //3.6 Método para buscar os dados do produto de acordo com o nome
         public DataSet BuscarporNome()
         {
+            //
             string csql;
             csql = "Select cd_produto as Codigo, nm_produto as Nome, nm_marca as Marca ,vl_produto as Valor, dt_aquisicao as Aquisicao, dt_vencimento as Vencimento, uso as Uso From tb_produto where nm_produto like('%" + nm_produto + "%')";
             DataSet ds;

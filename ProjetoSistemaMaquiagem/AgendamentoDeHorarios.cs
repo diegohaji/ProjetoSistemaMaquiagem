@@ -140,10 +140,10 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
             if (dgv1.RowCount > 0)
             {
-                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-               dateTimePicker1.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                dateTimePicker2.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+               dateTimePicker1.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                dateTimePicker2.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
             }
 
         }

@@ -43,7 +43,7 @@ create table tb_fones_funcionario(
 ) engine = innodb;
 
 create table tb_prestacao_servico(
-	ordem_pagamento int not null auto_increment,
+    numero_pagamento int not null auto_increment,
     cd_funcionario int unsigned not null,
     cd_cliente int unsigned not null,
     cd_servico int unsigned not null,
@@ -54,9 +54,10 @@ create table tb_prestacao_servico(
     nm_servico varchar(40),
     status_prestacao varchar(127),
     data_prestacao varchar(14),
+    hora_prestacao varchar(14),
     data_pagamento varchar(14),
     vl_total double not null,
-    primary key (ordem_pagamento)
+    primary key (numero_pagamento,cd_funcionario, cd_cliente, cd_servico, data_prestacao,data_pagamento,vl_total)
 )engine = innodb;
 
 create table tb_horario_func(
@@ -147,6 +148,7 @@ primary key(cd_usuario)
 )engine=innodb;
 
 create table tb_agendamento_servico(
+ordem_pagamento int not null auto_increment,
 cd_funcionario int unsigned not null,
 cd_cliente int unsigned not null,
 cd_servico int unsigned not null,
@@ -158,7 +160,7 @@ hora_agendamento varchar(14) not null,
 produto varchar(50) not null,
 quantidade int not null,
 status varchar(15) not null,
-primary key(cd_funcionario, cd_cliente, cd_servico, data_agendamento, hora_agendamento)
+primary key(ordem_pagamento,cd_funcionario,cd_cliente,cd_servico,data_agendamento,hora_agendamento,produto,quantidade)
 )engine = innodb;
 
 create table tb_pagamento(

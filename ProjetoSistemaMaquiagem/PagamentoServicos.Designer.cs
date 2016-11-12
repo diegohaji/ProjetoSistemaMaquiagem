@@ -54,6 +54,7 @@
             this.Cancelar = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.dateTimePicker3);
             this.groupBox4.Controls.Add(this.dateTimePicker2);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.dateTimePicker1);
@@ -132,7 +134,7 @@
             // textBoxValor
             // 
             this.textBoxValor.Enabled = false;
-            this.textBoxValor.Location = new System.Drawing.Point(152, 83);
+            this.textBoxValor.Location = new System.Drawing.Point(303, 83);
             this.textBoxValor.Name = "textBoxValor";
             this.textBoxValor.Size = new System.Drawing.Size(120, 20);
             this.textBoxValor.TabIndex = 37;
@@ -140,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(149, 66);
+            this.label5.Location = new System.Drawing.Point(300, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 36;
@@ -315,6 +317,16 @@
             this.dgv2.TabIndex = 6;
             this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
             // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "HH:mm";
+            this.dateTimePicker3.Enabled = false;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(152, 82);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker3.TabIndex = 43;
+            // 
             // PagamentoServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,5 +378,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

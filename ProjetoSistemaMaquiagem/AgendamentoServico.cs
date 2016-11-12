@@ -173,11 +173,13 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeServico agenda = new ClnAgendaDeServico(); ;
             if (dgv1.RowCount > 0)
             {
-                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[6].Value.ToString());
-                dateTimePicker2.Value = DateTime.ParseExact(dgv1.CurrentRow.Cells[7].Value.ToString(),"HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                comboBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[3].Value.ToString());
+                dateTimePicker2.Value = DateTime.ParseExact(dgv1.CurrentRow.Cells[4].Value.ToString(),"HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+                comboBoxProduto.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                numericUpDownQtd.Value = Convert.ToInt32(dgv1.CurrentRow.Cells[6].Value.ToString());
             }
         }
 

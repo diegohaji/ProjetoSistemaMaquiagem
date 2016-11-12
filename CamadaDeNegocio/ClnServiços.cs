@@ -132,6 +132,7 @@ namespace CamadaDeNegocio
         //3.6 Método para buscar os dados do servico de acordo com o nome
         public DataSet BuscarporNome()
         {
+            //
             string csql;
             csql = "Select cd_servico as Codigo, nm_servico as Nome, vl_servico as Valor, duracao as Duracao From tb_servico where nm_servico like('%" + nm_servico + "%')";
             DataSet ds;

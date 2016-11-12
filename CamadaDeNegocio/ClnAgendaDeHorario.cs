@@ -114,8 +114,9 @@ namespace CamadaDeNegocio
 
         public DataSet BuscarporNome()
         {
+            //cd_funcionario as Codigo,
             string csql;
-            csql = "select cd_funcionario as Codigo, nm_funcionario as Funcionario, nm_servico as Servico, horarioinicial as Horarioinicial, horariofinal as Horariofinal from tb_horario_func";
+            csql = "select  nm_funcionario as Funcionario, nm_servico as Servico, horarioinicial as Horarioinicial, horariofinal as Horariofinal from tb_horario_func";
             DataSet ds = new DataSet();
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

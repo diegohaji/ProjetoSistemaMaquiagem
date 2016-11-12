@@ -181,6 +181,7 @@ namespace CamadaDeNegocio
         //3.6 Método para buscar os dados do produto de acordo com o nome
         public DataSet BuscarporNome()
         {
+            //
             string csql;
             csql = "Select tep.cd_estoque as Codigo_do_Estoque, tep.cd_produto as Codigo_do_Produto, tep.tipo as Nome ,tep.qte_minima as Qtd_Minima, tep.qte_atual as Qtd_Atual From tb_estoque_produto as tep inner join tb_produto as tp on tep.cd_produto = tp.cd_produto";
             DataSet ds;

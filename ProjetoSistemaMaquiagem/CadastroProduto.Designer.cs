@@ -79,6 +79,8 @@
             // 
             // dateTimePickerVencimento
             // 
+            this.dateTimePickerVencimento.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerVencimento.Location = new System.Drawing.Point(257, 83);
             this.dateTimePickerVencimento.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerVencimento.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
@@ -88,6 +90,8 @@
             // 
             // dateTimePickerAquisicao
             // 
+            this.dateTimePickerAquisicao.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerAquisicao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerAquisicao.Location = new System.Drawing.Point(10, 83);
             this.dateTimePickerAquisicao.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePickerAquisicao.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);

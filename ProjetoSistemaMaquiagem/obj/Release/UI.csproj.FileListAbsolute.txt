@@ -10,7 +10,6 @@ C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\Pro
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.ControleEstoque.resources
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.ControlePagamento.resources
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.EsqueciSenha.resources
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.LancamentoServicos.resources
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.RelatorioFinanceiro.resources
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.TelaPrincipal.resources
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.Properties.Resources.resources
@@ -24,3 +23,4 @@ C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\Pro
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\CamadaDeNegocio.pdb
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.exe
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.pdb
+C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\ProjetoSistemaMaquiagem.PagamentoServicos.resources

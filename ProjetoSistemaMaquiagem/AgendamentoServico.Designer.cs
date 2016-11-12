@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonMaisQtd = new System.Windows.Forms.Button();
+            this.buttonMaisProdutos = new System.Windows.Forms.Button();
+            this.numericUpDownQtd = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxProduto = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,17 +55,11 @@
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxProduto = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDownQtd = new System.Windows.Forms.NumericUpDown();
-            this.buttonMaisProdutos = new System.Windows.Forms.Button();
-            this.buttonMaisQtd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -86,8 +86,65 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // buttonMaisQtd
+            // 
+            this.buttonMaisQtd.Enabled = false;
+            this.buttonMaisQtd.Location = new System.Drawing.Point(382, 138);
+            this.buttonMaisQtd.Name = "buttonMaisQtd";
+            this.buttonMaisQtd.Size = new System.Drawing.Size(28, 23);
+            this.buttonMaisQtd.TabIndex = 18;
+            this.buttonMaisQtd.Text = "+";
+            this.buttonMaisQtd.UseVisualStyleBackColor = true;
+            this.buttonMaisQtd.Visible = false;
+            // 
+            // buttonMaisProdutos
+            // 
+            this.buttonMaisProdutos.Enabled = false;
+            this.buttonMaisProdutos.Location = new System.Drawing.Point(161, 138);
+            this.buttonMaisProdutos.Name = "buttonMaisProdutos";
+            this.buttonMaisProdutos.Size = new System.Drawing.Size(28, 23);
+            this.buttonMaisProdutos.TabIndex = 17;
+            this.buttonMaisProdutos.Text = "+";
+            this.buttonMaisProdutos.UseVisualStyleBackColor = true;
+            this.buttonMaisProdutos.Visible = false;
+            // 
+            // numericUpDownQtd
+            // 
+            this.numericUpDownQtd.Location = new System.Drawing.Point(217, 141);
+            this.numericUpDownQtd.Name = "numericUpDownQtd";
+            this.numericUpDownQtd.Size = new System.Drawing.Size(159, 20);
+            this.numericUpDownQtd.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(214, 123);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Quantidade";
+            // 
+            // comboBoxProduto
+            // 
+            this.comboBoxProduto.FormattingEnabled = true;
+            this.comboBoxProduto.Location = new System.Drawing.Point(26, 140);
+            this.comboBoxProduto.Name = "comboBoxProduto";
+            this.comboBoxProduto.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxProduto.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Produto";
+            // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.CustomFormat = "HH:mm";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(403, 33);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(65, 20);
@@ -95,6 +152,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(217, 87);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(213, 20);
@@ -266,61 +325,6 @@
             this.dgv1.TabIndex = 31;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Produto";
-            // 
-            // comboBoxProduto
-            // 
-            this.comboBoxProduto.FormattingEnabled = true;
-            this.comboBoxProduto.Location = new System.Drawing.Point(26, 140);
-            this.comboBoxProduto.Name = "comboBoxProduto";
-            this.comboBoxProduto.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxProduto.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(214, 123);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Quantidade";
-            // 
-            // numericUpDownQtd
-            // 
-            this.numericUpDownQtd.Location = new System.Drawing.Point(217, 141);
-            this.numericUpDownQtd.Name = "numericUpDownQtd";
-            this.numericUpDownQtd.Size = new System.Drawing.Size(159, 20);
-            this.numericUpDownQtd.TabIndex = 16;
-            // 
-            // buttonMaisProdutos
-            // 
-            this.buttonMaisProdutos.Enabled = false;
-            this.buttonMaisProdutos.Location = new System.Drawing.Point(161, 138);
-            this.buttonMaisProdutos.Name = "buttonMaisProdutos";
-            this.buttonMaisProdutos.Size = new System.Drawing.Size(28, 23);
-            this.buttonMaisProdutos.TabIndex = 17;
-            this.buttonMaisProdutos.Text = "+";
-            this.buttonMaisProdutos.UseVisualStyleBackColor = true;
-            this.buttonMaisProdutos.Visible = false;
-            // 
-            // buttonMaisQtd
-            // 
-            this.buttonMaisQtd.Enabled = false;
-            this.buttonMaisQtd.Location = new System.Drawing.Point(382, 138);
-            this.buttonMaisQtd.Name = "buttonMaisQtd";
-            this.buttonMaisQtd.Size = new System.Drawing.Size(28, 23);
-            this.buttonMaisQtd.TabIndex = 18;
-            this.buttonMaisQtd.Text = "+";
-            this.buttonMaisQtd.UseVisualStyleBackColor = true;
-            this.buttonMaisQtd.Visible = false;
-            // 
             // AgendamentoServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,11 +341,11 @@
             this.Load += new System.EventHandler(this.AgendamentoServico_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).EndInit();
             this.ResumeLayout(false);
 
         }

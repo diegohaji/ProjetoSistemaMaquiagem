@@ -57,7 +57,7 @@ namespace ProjetoSistemaMaquiagem
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
-            ClnLancamentoServicos lancaservico = new ClnLancamentoServicos();
+            ClnPagamentoServicos lancaservico = new ClnPagamentoServicos();
             ds = lancaservico.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
         }

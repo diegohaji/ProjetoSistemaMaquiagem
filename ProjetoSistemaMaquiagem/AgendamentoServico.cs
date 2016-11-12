@@ -47,6 +47,7 @@ namespace ProjetoSistemaMaquiagem
             comboBoxFuncionario.DisplayMember = "Nome";
             comboBoxFuncionario.ValueMember = "Codigo";
         }
+    
         //preenche o combobox com os valores dos funcionarios
         public void PreencherComboServico()
         {
@@ -77,7 +78,6 @@ namespace ProjetoSistemaMaquiagem
         }
 
         //atualiza o grid
-
         private void AtualizarGrid()
         {
             DataSet ds = new DataSet();
@@ -124,7 +124,6 @@ namespace ProjetoSistemaMaquiagem
             return true;
         }
 
-
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
@@ -140,7 +139,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-            agenda.Hora_agendamento = dateTimePicker1.Value.ToShortTimeString();
+            agenda.Hora_agendamento = dateTimePicker2.Value.ToShortTimeString();
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             agenda.Produto = comboBoxProduto.Text;
             agenda.Quantidade = numericUpDownQtd.Value.ToString();
@@ -177,8 +176,8 @@ namespace ProjetoSistemaMaquiagem
                 comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                //maskedTextBoxData.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
-                //maskedTextBoxHora.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[6].Value.ToString());
+                dateTimePicker2.Value = DateTime.ParseExact(dgv1.CurrentRow.Cells[7].Value.ToString(),"HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
             }
         }
 

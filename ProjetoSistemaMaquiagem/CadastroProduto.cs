@@ -126,8 +126,8 @@ namespace ProjetoSistemaMaquiagem
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxMarca.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 textBoxVlProduto.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                //dateTimePickerAquisicao.Value = DateTime.Parse(dgv1.CurrentRow.Cells[4].Value.ToString());
-                //dateTimePickerVencimento.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                dateTimePickerAquisicao.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[4].Value.ToString());
+                dateTimePickerVencimento.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[5].Value.ToString());
                 textBoxUso.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
             }
 

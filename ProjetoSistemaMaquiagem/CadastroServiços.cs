@@ -121,7 +121,7 @@ namespace ProjetoSistemaMaquiagem
 
                 textBoxNome.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxPreco.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                //maskedTextBoxDuracao.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                dateTimePicker1.Value = DateTime.ParseExact(dgv1.CurrentRow.Cells[3].Value.ToString(),"HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
             }
         }
         //função que é chamada para excluir serviço

@@ -132,11 +132,11 @@
     <Compile Include="EsqueciSenha.Designer.cs">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </Compile>
-    <Compile Include="LancamentoServicos.cs">
+    <Compile Include="PagamentoServicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LancamentoServicos.Designer.cs">
-      <DependentUpon>LancamentoServicos.cs</DependentUpon>
+    <Compile Include="PagamentoServicos.Designer.cs">
+      <DependentUpon>PagamentoServicos.cs</DependentUpon>
     </Compile>
     <Compile Include="RelatorioFinanceiro.cs">
       <SubType>Form</SubType>
@@ -187,8 +187,8 @@
     <EmbeddedResource Include="EsqueciSenha.resx">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LancamentoServicos.resx">
-      <DependentUpon>LancamentoServicos.cs</DependentUpon>
+    <EmbeddedResource Include="PagamentoServicos.resx">
+      <DependentUpon>PagamentoServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RelatorioFinanceiro.resx">
       <DependentUpon>RelatorioFinanceiro.cs</DependentUpon>

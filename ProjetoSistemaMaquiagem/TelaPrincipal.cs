@@ -56,7 +56,7 @@ namespace ProjetoSistemaMaquiagem
 
         private void buttonServPrestado_Click(object sender, EventArgs e)
         {
-            LancamentoServicos ls = new LancamentoServicos();
+            PagamentoServicos ls = new PagamentoServicos();
             ls.Show(); 
         }
 

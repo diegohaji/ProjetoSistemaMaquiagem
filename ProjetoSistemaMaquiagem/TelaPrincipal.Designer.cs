@@ -227,7 +227,7 @@
             this.buttonServPrestado.Name = "buttonServPrestado";
             this.buttonServPrestado.Size = new System.Drawing.Size(289, 70);
             this.buttonServPrestado.TabIndex = 2;
-            this.buttonServPrestado.Text = "Serviços Prestados - funcionario";
+            this.buttonServPrestado.Text = "Pagamento de Serviços";
             this.buttonServPrestado.UseVisualStyleBackColor = true;
             this.buttonServPrestado.Click += new System.EventHandler(this.buttonServPrestado_Click);
             // 

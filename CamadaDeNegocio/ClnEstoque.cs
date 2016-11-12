@@ -81,6 +81,37 @@ namespace CamadaDeNegocio
             return cd_estoque;
         }
 
+        public String BuscarporQtdAtual(string nm_produto)
+        {
+            string csql;
+            csql = "Select qte_atual From tb_estoque_produto where tipo like('%" + nm_produto + "%')";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Array dados = ds.Tables[0].Rows[0].ItemArray;
+                qtd_atual = Convert.ToString(dados.GetValue(0));
+
+            }
+            return qtd_atual;
+        }
+
+        public String BuscarporQtdMinima(string nm_produto)
+        {
+            string csql;
+            csql = "Select qte_minima From tb_estoque_produto where tipo like('%" + nm_produto + "%')";
+            DataSet ds;
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                Array dados = ds.Tables[0].Rows[0].ItemArray;
+                qtd_minimo = Convert.ToString(dados.GetValue(0));
+
+            }
+            return qtd_minimo;
+        }
 
 
         //inserir no banco de dados

@@ -93,12 +93,20 @@ namespace ProjetoSistemaMaquiagem
             prod.Dt_Vencimento = dateTimePickerVencimento.Value.ToShortDateString();
             prod.Dt_Aquisicao = dateTimePickerAquisicao.Value.ToShortDateString();
             prod.Uso = textBoxUso.Text;
+            
             if (verificaText(groupBoxProduto))
             {
                 prod.Gravar();
                 AtualizarGrid();
                 LimparTxt(groupBoxProduto);
+                ClnEstoque estoque = new ClnEstoque();
+                estoque.Nm_Produto = prod.Nm_Produto;
+                estoque.Qtd_Atual = Convert.ToString(1);
+                estoque.Qtd_Minimo = Convert.ToString(1);
+                estoque.Gravar();
             }
+            
+
         }
 
         //funcao que é chamada quando é cancelado o cadastro

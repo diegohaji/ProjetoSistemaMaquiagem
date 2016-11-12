@@ -154,7 +154,17 @@ namespace ProjetoSistemaMaquiagem
             agenda.Gravar();
             AtualizarGrid();
             LimparTxt(groupBox1);
-        }
+            ClnEstoque estoque = new ClnEstoque();
+                estoque.Nm_Produto = agenda.Produto;
+                estoque.Qtd_Atual = Convert.ToString(Convert.ToInt32(estoque.BuscarporQtdAtual(agenda.Produto)) - Convert.ToInt32(agenda.Quantidade));
+                estoque.Qtd_Minimo = estoque.BuscarporQtdMinima(agenda.Produto);
+                estoque.Cd_Produto = estoque.BuscarporCodigoProduto();
+                estoque.Cd_Estoque = estoque.BuscarporCodigoEstoque();
+                estoque.Atualizar();
+            }
+            
+
+
         }
 
 

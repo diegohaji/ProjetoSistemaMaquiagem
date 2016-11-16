@@ -46,7 +46,6 @@
             this.buttonServPrestado = new System.Windows.Forms.Button();
             this.buttonLancHorario = new System.Windows.Forms.Button();
             this.buttonAgendServico = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.buttonEstoque = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonContFinanceiro = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPageCadastro.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBoxFuncionalidades.SuspendLayout();
             this.SuspendLayout();
@@ -146,7 +144,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPageCadastro);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(10, 19);
             this.tabControl1.Name = "tabControl1";
@@ -211,6 +208,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Gray;
+            this.tabPage2.Controls.Add(this.buttonEstoque);
             this.tabPage2.Controls.Add(this.buttonServPrestado);
             this.tabPage2.Controls.Add(this.buttonLancHorario);
             this.tabPage2.Controls.Add(this.buttonAgendServico);
@@ -225,7 +223,7 @@
             // 
             this.buttonServPrestado.Location = new System.Drawing.Point(6, 80);
             this.buttonServPrestado.Name = "buttonServPrestado";
-            this.buttonServPrestado.Size = new System.Drawing.Size(289, 70);
+            this.buttonServPrestado.Size = new System.Drawing.Size(139, 70);
             this.buttonServPrestado.TabIndex = 2;
             this.buttonServPrestado.Text = "Pagamento de Serviços";
             this.buttonServPrestado.UseVisualStyleBackColor = true;
@@ -251,23 +249,12 @@
             this.buttonAgendServico.UseVisualStyleBackColor = true;
             this.buttonAgendServico.Click += new System.EventHandler(this.buttonAgendServico_Click);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.Gray;
-            this.tabPage3.Controls.Add(this.buttonEstoque);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(301, 155);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Estoque";
-            // 
             // buttonEstoque
             // 
-            this.buttonEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
-            this.buttonEstoque.Location = new System.Drawing.Point(8, 6);
+            this.buttonEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonEstoque.Location = new System.Drawing.Point(156, 80);
             this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(287, 144);
+            this.buttonEstoque.Size = new System.Drawing.Size(138, 72);
             this.buttonEstoque.TabIndex = 4;
             this.buttonEstoque.Text = "Estoque";
             this.buttonEstoque.UseVisualStyleBackColor = true;
@@ -329,7 +316,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageCadastro.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBoxFuncionalidades.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -339,7 +325,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPageCadastro;

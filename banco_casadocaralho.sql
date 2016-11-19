@@ -66,6 +66,7 @@ create table tb_horario_func(
     nm_servico varchar(127),
     horarioinicial varchar(14),
     horariofinal varchar(14),
+    dia varchar(15),
     foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
     primary key (cd_funcionario,nm_funcionario,nm_servico,horarioinicial,horariofinal)
 )engine = innodb;

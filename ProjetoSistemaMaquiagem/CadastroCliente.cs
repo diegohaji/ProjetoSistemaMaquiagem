@@ -217,6 +217,11 @@ namespace ProjetoSistemaMaquiagem
             LimparTxt(Cadastro);
             LimparTxt(groupBoxEndereco);
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

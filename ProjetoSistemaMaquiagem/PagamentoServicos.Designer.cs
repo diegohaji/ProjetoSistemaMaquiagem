@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -47,24 +48,23 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.botaoConfirmar);
             this.groupBox4.Controls.Add(this.dateTimePicker3);
+            this.groupBox4.Controls.Add(this.Cancelar);
             this.groupBox4.Controls.Add(this.dateTimePicker2);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.dateTimePicker1);
@@ -81,9 +81,19 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(449, 165);
+            this.groupBox4.Size = new System.Drawing.Size(449, 201);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.CustomFormat = "HH:mm";
+            this.dateTimePicker3.Enabled = false;
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(152, 82);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(120, 20);
+            this.dateTimePicker3.TabIndex = 43;
             // 
             // dateTimePicker2
             // 
@@ -212,12 +222,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.botaoEditar);
             this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.botaoExcluir);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(12, 286);
+            this.groupBox3.Location = new System.Drawing.Point(12, 219);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(449, 70);
+            this.groupBox3.Size = new System.Drawing.Size(449, 137);
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtrar";
@@ -247,21 +259,9 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.botaoConfirmar);
-            this.groupBox2.Controls.Add(this.botaoEditar);
-            this.groupBox2.Controls.Add(this.botaoExcluir);
-            this.groupBox2.Controls.Add(this.Cancelar);
-            this.groupBox2.Location = new System.Drawing.Point(12, 197);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(449, 71);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            // 
             // botaoConfirmar
             // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(6, 30);
+            this.botaoConfirmar.Location = new System.Drawing.Point(8, 172);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.botaoConfirmar.TabIndex = 1;
@@ -271,7 +271,7 @@
             // 
             // botaoEditar
             // 
-            this.botaoEditar.Location = new System.Drawing.Point(108, 30);
+            this.botaoEditar.Location = new System.Drawing.Point(247, 89);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
             this.botaoEditar.TabIndex = 2;
@@ -281,7 +281,7 @@
             // 
             // botaoExcluir
             // 
-            this.botaoExcluir.Location = new System.Drawing.Point(338, 30);
+            this.botaoExcluir.Location = new System.Drawing.Point(339, 89);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
             this.botaoExcluir.TabIndex = 4;
@@ -291,7 +291,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(225, 32);
+            this.Cancelar.Location = new System.Drawing.Point(111, 172);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 3;
@@ -317,24 +317,13 @@
             this.dgv2.TabIndex = 6;
             this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
             // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.CustomFormat = "HH:mm";
-            this.dateTimePicker3.Enabled = false;
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(152, 82);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(120, 20);
-            this.dateTimePicker3.TabIndex = 43;
-            // 
             // PagamentoServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 397);
+            this.ClientSize = new System.Drawing.Size(985, 376);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.dgv2);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgv1);
             this.Name = "PagamentoServicos";
@@ -344,7 +333,6 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).EndInit();
             this.ResumeLayout(false);
@@ -359,7 +347,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button botaoConfirmar;
         private System.Windows.Forms.Button botaoEditar;
         private System.Windows.Forms.Button botaoExcluir;

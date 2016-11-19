@@ -56,7 +56,6 @@
             this.textBoxNumero = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BotaoConfirmar = new System.Windows.Forms.Button();
             this.BotaoEditar = new System.Windows.Forms.Button();
             this.BotaoCancelar = new System.Windows.Forms.Button();
@@ -68,7 +67,6 @@
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.Cadastro.SuspendLayout();
             this.groupBoxEndereco.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
@@ -221,7 +219,7 @@
             // 
             this.maskedTextBoxCEP.Location = new System.Drawing.Point(30, 42);
             this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
-            this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxCEP.Size = new System.Drawing.Size(121, 20);
             this.maskedTextBoxCEP.TabIndex = 24;
             this.maskedTextBoxCEP.Leave += new System.EventHandler(this.maskedTextBoxCEP_Leave);
             // 
@@ -254,14 +252,14 @@
             // 
             this.textBoxRua.Location = new System.Drawing.Point(30, 102);
             this.textBoxRua.Name = "textBoxRua";
-            this.textBoxRua.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRua.Size = new System.Drawing.Size(176, 20);
             this.textBoxRua.TabIndex = 16;
             // 
             // textBoxEstado
             // 
-            this.textBoxEstado.Location = new System.Drawing.Point(243, 43);
+            this.textBoxEstado.Location = new System.Drawing.Point(245, 158);
             this.textBoxEstado.Name = "textBoxEstado";
-            this.textBoxEstado.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEstado.Size = new System.Drawing.Size(174, 20);
             this.textBoxEstado.TabIndex = 21;
             // 
             // label7
@@ -275,22 +273,22 @@
             // 
             // textBoxBairro
             // 
-            this.textBoxBairro.Location = new System.Drawing.Point(30, 163);
+            this.textBoxBairro.Location = new System.Drawing.Point(245, 102);
             this.textBoxBairro.Name = "textBoxBairro";
-            this.textBoxBairro.Size = new System.Drawing.Size(100, 20);
+            this.textBoxBairro.Size = new System.Drawing.Size(174, 20);
             this.textBoxBairro.TabIndex = 19;
             // 
             // textBoxCidade
             // 
-            this.textBoxCidade.Location = new System.Drawing.Point(246, 163);
+            this.textBoxCidade.Location = new System.Drawing.Point(30, 158);
             this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCidade.Size = new System.Drawing.Size(176, 20);
             this.textBoxCidade.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 143);
+            this.label8.Location = new System.Drawing.Point(243, 86);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 12;
@@ -299,7 +297,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(243, 86);
+            this.label11.Location = new System.Drawing.Point(243, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(19, 13);
             this.label11.TabIndex = 17;
@@ -307,15 +305,15 @@
             // 
             // textBoxNumero
             // 
-            this.textBoxNumero.Location = new System.Drawing.Point(246, 102);
+            this.textBoxNumero.Location = new System.Drawing.Point(246, 43);
             this.textBoxNumero.Name = "textBoxNumero";
-            this.textBoxNumero.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNumero.Size = new System.Drawing.Size(54, 20);
             this.textBoxNumero.TabIndex = 18;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(243, 27);
+            this.label10.Location = new System.Drawing.Point(243, 138);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 14;
@@ -324,27 +322,15 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(243, 143);
+            this.label9.Location = new System.Drawing.Point(27, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 13;
             this.label9.Text = "Cidade";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.BotaoConfirmar);
-            this.groupBox2.Controls.Add(this.BotaoEditar);
-            this.groupBox2.Controls.Add(this.BotaoCancelar);
-            this.groupBox2.Controls.Add(this.BotaoExcluir);
-            this.groupBox2.Location = new System.Drawing.Point(12, 446);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(477, 59);
-            this.groupBox2.TabIndex = 24;
-            this.groupBox2.TabStop = false;
-            // 
             // BotaoConfirmar
             // 
-            this.BotaoConfirmar.Location = new System.Drawing.Point(20, 19);
+            this.BotaoConfirmar.Location = new System.Drawing.Point(93, 446);
             this.BotaoConfirmar.Name = "BotaoConfirmar";
             this.BotaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.BotaoConfirmar.TabIndex = 1;
@@ -354,7 +340,7 @@
             // 
             // BotaoEditar
             // 
-            this.BotaoEditar.Location = new System.Drawing.Point(131, 19);
+            this.BotaoEditar.Location = new System.Drawing.Point(282, 87);
             this.BotaoEditar.Name = "BotaoEditar";
             this.BotaoEditar.Size = new System.Drawing.Size(75, 23);
             this.BotaoEditar.TabIndex = 2;
@@ -364,7 +350,7 @@
             // 
             // BotaoCancelar
             // 
-            this.BotaoCancelar.Location = new System.Drawing.Point(259, 19);
+            this.BotaoCancelar.Location = new System.Drawing.Point(12, 446);
             this.BotaoCancelar.Name = "BotaoCancelar";
             this.BotaoCancelar.Size = new System.Drawing.Size(75, 23);
             this.BotaoCancelar.TabIndex = 3;
@@ -374,7 +360,7 @@
             // 
             // BotaoExcluir
             // 
-            this.BotaoExcluir.Location = new System.Drawing.Point(383, 19);
+            this.BotaoExcluir.Location = new System.Drawing.Point(374, 87);
             this.BotaoExcluir.Name = "BotaoExcluir";
             this.BotaoExcluir.Size = new System.Drawing.Size(75, 23);
             this.BotaoExcluir.TabIndex = 4;
@@ -387,9 +373,11 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.BotaoEditar);
+            this.groupBox3.Controls.Add(this.BotaoExcluir);
             this.groupBox3.Location = new System.Drawing.Point(513, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(477, 70);
+            this.groupBox3.Size = new System.Drawing.Size(477, 116);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtrar";
@@ -423,9 +411,9 @@
             // dgv1
             // 
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(513, 100);
+            this.dgv1.Location = new System.Drawing.Point(513, 141);
             this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(477, 405);
+            this.dgv1.Size = new System.Drawing.Size(477, 328);
             this.dgv1.TabIndex = 25;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -433,10 +421,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 510);
+            this.ClientSize = new System.Drawing.Size(1002, 480);
+            this.Controls.Add(this.BotaoConfirmar);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.BotaoCancelar);
             this.Controls.Add(this.dgv1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxEndereco);
             this.Controls.Add(this.Cadastro);
             this.Name = "CadastroFuncionario";
@@ -446,7 +435,6 @@
             this.Cadastro.PerformLayout();
             this.groupBoxEndereco.ResumeLayout(false);
             this.groupBoxEndereco.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
@@ -483,7 +471,6 @@
         private System.Windows.Forms.TextBox textBoxNumero;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BotaoConfirmar;
         private System.Windows.Forms.Button BotaoEditar;
         private System.Windows.Forms.Button BotaoCancelar;

@@ -19,72 +19,124 @@ namespace ProjetoSistemaMaquiagem
         public TelaPrincipal()
         {
             InitializeComponent();
+            
+        }
+        public Form RefToForm1 { get; set; }
+
+        public void ativarControles(bool ativar)
+        {
+            cadastroToolStripMenuItem.Enabled = ativar;
+            serviçosToolStripMenuItem1.Enabled = ativar;
+            controleFinanceiroToolStripMenuItem.Enabled = ativar;
         }
 
-        private void buttonFuncionario_Click(object sender, EventArgs e)
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroFuncionario cf = new CadastroFuncionario();
             cf.Show();
-
         }
 
-        private void buttonServicos_Click(object sender, EventArgs e)
-        {
-            CadastroServiços cs = new CadastroServiços();
-            cs.Show();
-        }
+        
+       
 
-        private void buttonCliente_Click(object sender, EventArgs e)
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroCliente cc = new CadastroCliente();
             cc.Show();
+        }
+
+        private void serviçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroServiços cs = new CadastroServiços();
+            cs.Show();
 
         }
 
-        private void buttonEstoque_Click(object sender, EventArgs e)
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroProduto p = new CadastroProduto();
+            p.Show();
+        }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ControleEstoque ce = new ControleEstoque();
-            ce.Show(); 
+            ce.Show();
         }
 
-        private void buttonAgendServico_Click(object sender, EventArgs e)
+        private void lançamentoDeHorariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AgendamentoDeHorarios ah = new AgendamentoDeHorarios();
+            ah.Show();
+        }
+
+        private void agendamentoDeServiçosClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AgendamentoServico agendserv = new AgendamentoServico();
             agendserv.Show();
-                 
         }
 
-        private void buttonServPrestado_Click(object sender, EventArgs e)
+        private void pagamentoDeServiçosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PagamentoServicos ls = new PagamentoServicos();
-            ls.Show(); 
+            ls.Show();
         }
 
-        private void buttonLancHorario_Click(object sender, EventArgs e)
-        {
-            AgendamentoDeHorarios ah = new AgendamentoDeHorarios();
-            ah.Show(); 
-        }
-
-        private void buttonRelatorio_Click(object sender, EventArgs e)
+        private void gerarRelatórioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RelatorioFinanceiro rf = new RelatorioFinanceiro();
-            rf.Show(); 
+            rf.Show();
         }
 
-        private void buttonContFinanceiro_Click(object sender, EventArgs e)
+        private void controleFinanceiroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ControlePagamento cp = new ControlePagamento();
             cp.Show();
+        }
 
-        }
-        //inutil
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
+        
+        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            this.Close();
         }
-        //inutil
-        private void textBoxSenha_TextChanged(object sender, EventArgs e)
+
+        private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            dgv1.Visible = false;
+            dgv1.Enabled = false;
+            groupBoxLogin.Enabled = true;
+            groupBoxLogin.Visible = true;
+            
+        }
+
+        private void buttonLogar_Click(object sender, EventArgs e)
+        {
+            string usuario = textBoxUsuario.Text;
+            string senha = textBoxSenha.Text;
+            ClnLogin login = new ClnLogin();
+            if (login.validarLogin(usuario, senha))
+            {
+                MessageBox.Show("Logado com sucesso!", "Login válido.", MessageBoxButtons.OK
+                    , MessageBoxIcon.Exclamation);
+                groupBoxLogin.Enabled = false;
+                groupBoxLogin.Visible = false;
+                ativarControles(true);
+                dgv1.Visible = true;
+                dgv1.Enabled = true;
+                textBoxUsuario.Text = null;
+                textBoxSenha.Text = null;
+            }
+
+            else
+            {
+                MessageBox.Show("Login inválido!\nDigite novamente.", "Login inválido.", MessageBoxButtons.OK
+                    , MessageBoxIcon.Warning);
+                textBoxUsuario.Text = null;
+                textBoxSenha.Text = null;
+
+            }
         }
 
         private void buttonCadUsuario_Click(object sender, EventArgs e)
@@ -93,59 +145,18 @@ namespace ProjetoSistemaMaquiagem
             cu.Show();
         }
 
-        private void buttonLogar_Click(object sender, EventArgs e)
-        {
-            string usuario = textBoxUsuario.Text;
-            string senha = textBoxSenha.Text;
-            ClnLogin login = new ClnLogin();
-            if (login.validarLogin(usuario, senha)){
-                MessageBox.Show("Logado com sucesso!", "Login válido.", MessageBoxButtons.OK
-                    , MessageBoxIcon.Exclamation);
-                groupBoxFuncionalidades.Visible = true;
-            }
-
-            else{
-                MessageBox.Show("Login inválido!\nDigite novamente.", "Login inválido.",MessageBoxButtons.OK
-                    ,MessageBoxIcon.Warning);
-                textBoxUsuario.Text = null;
-                textBoxSenha.Text = null;
-
-            }
-                
-        }
-
         private void buttonEsqueciSenha_Click(object sender, EventArgs e)
         {
             EsqueciSenha es = new EsqueciSenha();
             es.Show();
         }
-        //cria a tela do cadastro de produtos
-        private void button1_Click(object sender, EventArgs e)
+
+        private void buttonSair_Click(object sender, EventArgs e)
         {
-            CadastroProduto p = new CadastroProduto();
-            p.Show();
-        }
-
-        private void buttonEstoque_Click_1(object sender, EventArgs e)
-        {
-            ControleEstoque es = new ControleEstoque();
-            es.Show();
-
-         
-        }
-
-        private void buttonAlterarEstoque_Click(object sender, EventArgs e)
-        {
-            ControleEstoque es = new ControleEstoque();
-            es.Show();
-
-        }
-
-        private void buttonVerificarEst_Click(object sender, EventArgs e)
-        {
-            ControleEstoque es = new ControleEstoque();
-            es.Show();
-
+            groupBoxLogin.Enabled = false;
+            groupBoxLogin.Visible = false;
+            dgv1.Visible = true;
+            dgv1.Enabled = true;
         }
     }
 }

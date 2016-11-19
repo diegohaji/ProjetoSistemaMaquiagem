@@ -40,28 +40,28 @@
             this.Cancelar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBoxServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxServico
             // 
+            this.groupBoxServico.Controls.Add(this.botaoConfirmar);
             this.groupBoxServico.Controls.Add(this.dateTimePicker1);
             this.groupBoxServico.Controls.Add(this.textBoxNome);
+            this.groupBoxServico.Controls.Add(this.Cancelar);
             this.groupBoxServico.Controls.Add(this.textBoxPreco);
             this.groupBoxServico.Controls.Add(this.label4);
             this.groupBoxServico.Controls.Add(this.label3);
             this.groupBoxServico.Controls.Add(this.label1);
             this.groupBoxServico.Location = new System.Drawing.Point(13, 13);
             this.groupBoxServico.Name = "groupBoxServico";
-            this.groupBoxServico.Size = new System.Drawing.Size(418, 73);
+            this.groupBoxServico.Size = new System.Drawing.Size(418, 111);
             this.groupBoxServico.TabIndex = 0;
             this.groupBoxServico.TabStop = false;
             // 
@@ -117,7 +117,7 @@
             // 
             // botaoConfirmar
             // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(6, 30);
+            this.botaoConfirmar.Location = new System.Drawing.Point(20, 82);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.botaoConfirmar.TabIndex = 1;
@@ -127,7 +127,7 @@
             // 
             // botaoEditar
             // 
-            this.botaoEditar.Location = new System.Drawing.Point(108, 30);
+            this.botaoEditar.Location = new System.Drawing.Point(247, 80);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
             this.botaoEditar.TabIndex = 2;
@@ -137,7 +137,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(225, 30);
+            this.Cancelar.Location = new System.Drawing.Point(108, 82);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 3;
@@ -147,7 +147,7 @@
             // 
             // botaoExcluir
             // 
-            this.botaoExcluir.Location = new System.Drawing.Point(338, 30);
+            this.botaoExcluir.Location = new System.Drawing.Point(339, 80);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
             this.botaoExcluir.TabIndex = 4;
@@ -164,26 +164,16 @@
             this.dgv1.TabIndex = 5;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.botaoConfirmar);
-            this.groupBox2.Controls.Add(this.botaoEditar);
-            this.groupBox2.Controls.Add(this.botaoExcluir);
-            this.groupBox2.Controls.Add(this.Cancelar);
-            this.groupBox2.Location = new System.Drawing.Point(14, 92);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(419, 71);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.botaoExcluir);
+            this.groupBox3.Controls.Add(this.botaoEditar);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(14, 169);
+            this.groupBox3.Location = new System.Drawing.Point(14, 130);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(420, 70);
+            this.groupBox3.Size = new System.Drawing.Size(420, 109);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtrar";
@@ -220,7 +210,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 429);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBoxServico);
             this.Name = "CadastroServiços";
@@ -229,7 +218,6 @@
             this.groupBoxServico.ResumeLayout(false);
             this.groupBoxServico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -249,7 +237,6 @@
         private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Button botaoExcluir;
         private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxPesquisar;

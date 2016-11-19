@@ -16,7 +16,7 @@ namespace CamadaDeNegocio
         private string funcionario;
         private string horarioinicial;
         private string horariofinal;
-
+        private string dia;
 
         public int Cd_funcionario
         {
@@ -52,6 +52,19 @@ namespace CamadaDeNegocio
             }
         }
 
+        public string Dia
+        {
+            get
+            {
+                return dia;
+            }
+
+            set
+            {
+                dia = value;
+            }
+        }
+
         //grava o serviço e o horario no banco de dados
         public void Gravar()
         {
@@ -66,11 +79,13 @@ namespace CamadaDeNegocio
             csql.Append("cd_funcionario,");
             csql.Append("nm_servico,");
             csql.Append("nm_funcionario,");
+            csql.Append("dia,");
             csql.Append("horarioinicial,");
             csql.Append("horariofinal) Values(");
             csql.Append(cd_funcionario+1);
             csql.Append(",'" + servico + "',");
             csql.Append("'" + funcionario + "',");
+            csql.Append("'" + dia + "',");
             csql.Append("'" + horarioinicial + "',");
             csql.Append("'" + horariofinal + "')");
             cd = new ClasseDados();
@@ -90,6 +105,8 @@ namespace CamadaDeNegocio
             csql.Append(funcionario);
             csql.Append("', nm_servico = '");
             csql.Append(servico);
+            csql.Append("', dia = '");
+            csql.Append(dia);
             csql.Append("', horarioinicial = '");
             csql.Append(horarioinicial);
             csql.Append("', horariofinal = '");
@@ -116,7 +133,7 @@ namespace CamadaDeNegocio
         {
             //cd_funcionario as Codigo,
             string csql;
-            csql = "select  nm_funcionario as Funcionario, nm_servico as Servico, horarioinicial as Horarioinicial, horariofinal as Horariofinal from tb_horario_func";
+            csql = "select  nm_funcionario as Funcionario, nm_servico as Servico,dia as Dia , horarioinicial as Horarioinicial, horariofinal as Horariofinal from tb_horario_func";
             DataSet ds = new DataSet();
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

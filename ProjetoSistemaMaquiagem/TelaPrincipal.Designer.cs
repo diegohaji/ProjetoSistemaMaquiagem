@@ -28,7 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviçosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lançamentoDeHorariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agendamentoDeServiçosClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagamentoDeServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.estoqueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controleFinanceiroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.controleFinanceiroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBoxLogin = new System.Windows.Forms.GroupBox();
             this.buttonCadUsuario = new System.Windows.Forms.Button();
             this.buttonEsqueciSenha = new System.Windows.Forms.Button();
             this.buttonLogar = new System.Windows.Forms.Button();
@@ -36,44 +53,172 @@
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageCadastro = new System.Windows.Forms.TabPage();
-            this.buttonProduto = new System.Windows.Forms.Button();
-            this.buttonServicos = new System.Windows.Forms.Button();
-            this.buttonCliente = new System.Windows.Forms.Button();
-            this.buttonFuncionario = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonServPrestado = new System.Windows.Forms.Button();
-            this.buttonLancHorario = new System.Windows.Forms.Button();
-            this.buttonAgendServico = new System.Windows.Forms.Button();
-            this.buttonEstoque = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.buttonContFinanceiro = new System.Windows.Forms.Button();
-            this.buttonRelatorio = new System.Windows.Forms.Button();
-            this.groupBoxFuncionalidades = new System.Windows.Forms.GroupBox();
-            this.groupBox1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPageCadastro.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBoxFuncionalidades.SuspendLayout();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.buttonSair = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
+            this.groupBoxLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // menuStrip1
             // 
-            this.groupBox1.Controls.Add(this.buttonCadUsuario);
-            this.groupBox1.Controls.Add(this.buttonEsqueciSenha);
-            this.groupBox1.Controls.Add(this.buttonLogar);
-            this.groupBox1.Controls.Add(this.textBoxSenha);
-            this.groupBox1.Controls.Add(this.textBoxUsuario);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(139, 206);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Login";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginToolStripMenuItem,
+            this.cadastroToolStripMenuItem,
+            this.serviçosToolStripMenuItem1,
+            this.controleFinanceiroToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(750, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginToolStripMenuItem1,
+            this.sairToolStripMenuItem});
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // loginToolStripMenuItem1
+            // 
+            this.loginToolStripMenuItem1.Name = "loginToolStripMenuItem1";
+            this.loginToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem1.Text = "Login";
+            this.loginToolStripMenuItem1.Click += new System.EventHandler(this.loginToolStripMenuItem1_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.funcionarioToolStripMenuItem,
+            this.clienteToolStripMenuItem,
+            this.serviçosToolStripMenuItem,
+            this.produtoToolStripMenuItem});
+            this.cadastroToolStripMenuItem.Enabled = false;
+            this.cadastroToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            // 
+            // funcionarioToolStripMenuItem
+            // 
+            this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
+            this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.funcionarioToolStripMenuItem.Text = "Funcionario";
+            this.funcionarioToolStripMenuItem.Click += new System.EventHandler(this.funcionarioToolStripMenuItem_Click);
+            // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
+            // 
+            // serviçosToolStripMenuItem
+            // 
+            this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.serviçosToolStripMenuItem.Text = "Serviços";
+            this.serviçosToolStripMenuItem.Click += new System.EventHandler(this.serviçosToolStripMenuItem_Click);
+            // 
+            // produtoToolStripMenuItem
+            // 
+            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.produtoToolStripMenuItem.Text = "Produto";
+            this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
+            // 
+            // serviçosToolStripMenuItem1
+            // 
+            this.serviçosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lançamentoDeHorariosToolStripMenuItem,
+            this.agendamentoDeServiçosClienteToolStripMenuItem,
+            this.pagamentoDeServiçosToolStripMenuItem,
+            this.estoqueToolStripMenuItem});
+            this.serviçosToolStripMenuItem1.Enabled = false;
+            this.serviçosToolStripMenuItem1.Name = "serviçosToolStripMenuItem1";
+            this.serviçosToolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
+            this.serviçosToolStripMenuItem1.Text = "Serviços";
+            // 
+            // lançamentoDeHorariosToolStripMenuItem
+            // 
+            this.lançamentoDeHorariosToolStripMenuItem.Name = "lançamentoDeHorariosToolStripMenuItem";
+            this.lançamentoDeHorariosToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.lançamentoDeHorariosToolStripMenuItem.Text = "Lançamento de horarios - funcionario";
+            this.lançamentoDeHorariosToolStripMenuItem.Click += new System.EventHandler(this.lançamentoDeHorariosToolStripMenuItem_Click);
+            // 
+            // agendamentoDeServiçosClienteToolStripMenuItem
+            // 
+            this.agendamentoDeServiçosClienteToolStripMenuItem.Name = "agendamentoDeServiçosClienteToolStripMenuItem";
+            this.agendamentoDeServiçosClienteToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.agendamentoDeServiçosClienteToolStripMenuItem.Text = "Agendamento de serviços - cliente";
+            this.agendamentoDeServiçosClienteToolStripMenuItem.Click += new System.EventHandler(this.agendamentoDeServiçosClienteToolStripMenuItem_Click);
+            // 
+            // pagamentoDeServiçosToolStripMenuItem
+            // 
+            this.pagamentoDeServiçosToolStripMenuItem.Name = "pagamentoDeServiçosToolStripMenuItem";
+            this.pagamentoDeServiçosToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.pagamentoDeServiçosToolStripMenuItem.Text = "Pagamento de serviços";
+            this.pagamentoDeServiçosToolStripMenuItem.Click += new System.EventHandler(this.pagamentoDeServiçosToolStripMenuItem_Click);
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            this.estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            this.estoqueToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.estoqueToolStripMenuItem.Text = "Estoque";
+            this.estoqueToolStripMenuItem.Click += new System.EventHandler(this.estoqueToolStripMenuItem_Click);
+            // 
+            // controleFinanceiroToolStripMenuItem
+            // 
+            this.controleFinanceiroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gerarRelatórioToolStripMenuItem,
+            this.controleFinanceiroToolStripMenuItem1});
+            this.controleFinanceiroToolStripMenuItem.Enabled = false;
+            this.controleFinanceiroToolStripMenuItem.Name = "controleFinanceiroToolStripMenuItem";
+            this.controleFinanceiroToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
+            this.controleFinanceiroToolStripMenuItem.Text = "Controle financeiro";
+            // 
+            // gerarRelatórioToolStripMenuItem
+            // 
+            this.gerarRelatórioToolStripMenuItem.Name = "gerarRelatórioToolStripMenuItem";
+            this.gerarRelatórioToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.gerarRelatórioToolStripMenuItem.Text = "Gerar relatório";
+            this.gerarRelatórioToolStripMenuItem.Click += new System.EventHandler(this.gerarRelatórioToolStripMenuItem_Click);
+            // 
+            // controleFinanceiroToolStripMenuItem1
+            // 
+            this.controleFinanceiroToolStripMenuItem1.Name = "controleFinanceiroToolStripMenuItem1";
+            this.controleFinanceiroToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
+            this.controleFinanceiroToolStripMenuItem1.Text = "Controle financeiro";
+            this.controleFinanceiroToolStripMenuItem1.Click += new System.EventHandler(this.controleFinanceiroToolStripMenuItem1_Click);
+            // 
+            // groupBoxLogin
+            // 
+            this.groupBoxLogin.Controls.Add(this.buttonSair);
+            this.groupBoxLogin.Controls.Add(this.buttonCadUsuario);
+            this.groupBoxLogin.Controls.Add(this.buttonEsqueciSenha);
+            this.groupBoxLogin.Controls.Add(this.buttonLogar);
+            this.groupBoxLogin.Controls.Add(this.textBoxSenha);
+            this.groupBoxLogin.Controls.Add(this.textBoxUsuario);
+            this.groupBoxLogin.Controls.Add(this.label2);
+            this.groupBoxLogin.Controls.Add(this.label1);
+            this.groupBoxLogin.Enabled = false;
+            this.groupBoxLogin.Location = new System.Drawing.Point(12, 27);
+            this.groupBoxLogin.Name = "groupBoxLogin";
+            this.groupBoxLogin.Size = new System.Drawing.Size(139, 237);
+            this.groupBoxLogin.TabIndex = 3;
+            this.groupBoxLogin.TabStop = false;
+            this.groupBoxLogin.Text = "Login";
+            this.groupBoxLogin.Visible = false;
             // 
             // buttonCadUsuario
             // 
@@ -112,7 +257,6 @@
             this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(111, 20);
             this.textBoxSenha.TabIndex = 4;
-            this.textBoxSenha.TextChanged += new System.EventHandler(this.textBoxSenha_TextChanged);
             // 
             // textBoxUsuario
             // 
@@ -120,7 +264,6 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(111, 20);
             this.textBoxUsuario.TabIndex = 3;
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // label2
             // 
@@ -140,195 +283,67 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuário";
             // 
-            // tabControl1
+            // dgv1
             // 
-            this.tabControl1.Controls.Add(this.tabPageCadastro);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(10, 19);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(309, 181);
-            this.tabControl1.TabIndex = 0;
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Enabled = false;
+            this.dgv1.Location = new System.Drawing.Point(12, 27);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.Size = new System.Drawing.Size(726, 340);
+            this.dgv1.TabIndex = 4;
+            this.dgv1.Visible = false;
             // 
-            // tabPageCadastro
+            // buttonSair
             // 
-            this.tabPageCadastro.BackColor = System.Drawing.Color.Gray;
-            this.tabPageCadastro.Controls.Add(this.buttonProduto);
-            this.tabPageCadastro.Controls.Add(this.buttonServicos);
-            this.tabPageCadastro.Controls.Add(this.buttonCliente);
-            this.tabPageCadastro.Controls.Add(this.buttonFuncionario);
-            this.tabPageCadastro.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCadastro.Name = "tabPageCadastro";
-            this.tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCadastro.Size = new System.Drawing.Size(301, 155);
-            this.tabPageCadastro.TabIndex = 0;
-            this.tabPageCadastro.Text = "Cadastro";
-            // 
-            // buttonProduto
-            // 
-            this.buttonProduto.Location = new System.Drawing.Point(163, 83);
-            this.buttonProduto.Name = "buttonProduto";
-            this.buttonProduto.Size = new System.Drawing.Size(138, 67);
-            this.buttonProduto.TabIndex = 3;
-            this.buttonProduto.Text = "Produto";
-            this.buttonProduto.UseVisualStyleBackColor = true;
-            this.buttonProduto.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonServicos
-            // 
-            this.buttonServicos.Location = new System.Drawing.Point(163, 6);
-            this.buttonServicos.Name = "buttonServicos";
-            this.buttonServicos.Size = new System.Drawing.Size(138, 67);
-            this.buttonServicos.TabIndex = 2;
-            this.buttonServicos.Text = "Serviços";
-            this.buttonServicos.UseVisualStyleBackColor = true;
-            this.buttonServicos.Click += new System.EventHandler(this.buttonServicos_Click);
-            // 
-            // buttonCliente
-            // 
-            this.buttonCliente.Location = new System.Drawing.Point(6, 83);
-            this.buttonCliente.Name = "buttonCliente";
-            this.buttonCliente.Size = new System.Drawing.Size(138, 67);
-            this.buttonCliente.TabIndex = 1;
-            this.buttonCliente.Text = "Cliente";
-            this.buttonCliente.UseVisualStyleBackColor = true;
-            this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
-            // 
-            // buttonFuncionario
-            // 
-            this.buttonFuncionario.Location = new System.Drawing.Point(6, 6);
-            this.buttonFuncionario.Name = "buttonFuncionario";
-            this.buttonFuncionario.Size = new System.Drawing.Size(138, 67);
-            this.buttonFuncionario.TabIndex = 0;
-            this.buttonFuncionario.Text = "Funcionario";
-            this.buttonFuncionario.UseVisualStyleBackColor = true;
-            this.buttonFuncionario.Click += new System.EventHandler(this.buttonFuncionario_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.Gray;
-            this.tabPage2.Controls.Add(this.buttonEstoque);
-            this.tabPage2.Controls.Add(this.buttonServPrestado);
-            this.tabPage2.Controls.Add(this.buttonLancHorario);
-            this.tabPage2.Controls.Add(this.buttonAgendServico);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(301, 155);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Serviços";
-            // 
-            // buttonServPrestado
-            // 
-            this.buttonServPrestado.Location = new System.Drawing.Point(6, 80);
-            this.buttonServPrestado.Name = "buttonServPrestado";
-            this.buttonServPrestado.Size = new System.Drawing.Size(139, 70);
-            this.buttonServPrestado.TabIndex = 2;
-            this.buttonServPrestado.Text = "Pagamento de Serviços";
-            this.buttonServPrestado.UseVisualStyleBackColor = true;
-            this.buttonServPrestado.Click += new System.EventHandler(this.buttonServPrestado_Click);
-            // 
-            // buttonLancHorario
-            // 
-            this.buttonLancHorario.Location = new System.Drawing.Point(6, 4);
-            this.buttonLancHorario.Name = "buttonLancHorario";
-            this.buttonLancHorario.Size = new System.Drawing.Size(139, 70);
-            this.buttonLancHorario.TabIndex = 1;
-            this.buttonLancHorario.Text = "Lançamento de horário - funcionario";
-            this.buttonLancHorario.UseVisualStyleBackColor = true;
-            this.buttonLancHorario.Click += new System.EventHandler(this.buttonLancHorario_Click);
-            // 
-            // buttonAgendServico
-            // 
-            this.buttonAgendServico.Location = new System.Drawing.Point(156, 4);
-            this.buttonAgendServico.Name = "buttonAgendServico";
-            this.buttonAgendServico.Size = new System.Drawing.Size(138, 70);
-            this.buttonAgendServico.TabIndex = 0;
-            this.buttonAgendServico.Text = "Agendamento de serviço - cliente";
-            this.buttonAgendServico.UseVisualStyleBackColor = true;
-            this.buttonAgendServico.Click += new System.EventHandler(this.buttonAgendServico_Click);
-            // 
-            // buttonEstoque
-            // 
-            this.buttonEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonEstoque.Location = new System.Drawing.Point(156, 80);
-            this.buttonEstoque.Name = "buttonEstoque";
-            this.buttonEstoque.Size = new System.Drawing.Size(138, 72);
-            this.buttonEstoque.TabIndex = 4;
-            this.buttonEstoque.Text = "Estoque";
-            this.buttonEstoque.UseVisualStyleBackColor = true;
-            this.buttonEstoque.Click += new System.EventHandler(this.buttonEstoque_Click_1);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.Gray;
-            this.tabPage4.Controls.Add(this.buttonContFinanceiro);
-            this.tabPage4.Controls.Add(this.buttonRelatorio);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(301, 155);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "ControleFinanceiro";
-            // 
-            // buttonContFinanceiro
-            // 
-            this.buttonContFinanceiro.Location = new System.Drawing.Point(6, 82);
-            this.buttonContFinanceiro.Name = "buttonContFinanceiro";
-            this.buttonContFinanceiro.Size = new System.Drawing.Size(290, 70);
-            this.buttonContFinanceiro.TabIndex = 1;
-            this.buttonContFinanceiro.Text = "Controle Financeiro";
-            this.buttonContFinanceiro.UseVisualStyleBackColor = true;
-            this.buttonContFinanceiro.Click += new System.EventHandler(this.buttonContFinanceiro_Click);
-            // 
-            // buttonRelatorio
-            // 
-            this.buttonRelatorio.Location = new System.Drawing.Point(7, 7);
-            this.buttonRelatorio.Name = "buttonRelatorio";
-            this.buttonRelatorio.Size = new System.Drawing.Size(290, 70);
-            this.buttonRelatorio.TabIndex = 0;
-            this.buttonRelatorio.Text = "Gerar Relatório";
-            this.buttonRelatorio.UseVisualStyleBackColor = true;
-            this.buttonRelatorio.Click += new System.EventHandler(this.buttonRelatorio_Click);
-            // 
-            // groupBoxFuncionalidades
-            // 
-            this.groupBoxFuncionalidades.Controls.Add(this.tabControl1);
-            this.groupBoxFuncionalidades.Location = new System.Drawing.Point(158, 13);
-            this.groupBoxFuncionalidades.Name = "groupBoxFuncionalidades";
-            this.groupBoxFuncionalidades.Size = new System.Drawing.Size(329, 206);
-            this.groupBoxFuncionalidades.TabIndex = 1;
-            this.groupBoxFuncionalidades.TabStop = false;
-            this.groupBoxFuncionalidades.Text = "Funcionalidades";
+            this.buttonSair.Location = new System.Drawing.Point(9, 197);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(111, 23);
+            this.buttonSair.TabIndex = 8;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 226);
-            this.Controls.Add(this.groupBoxFuncionalidades);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(750, 379);
+            this.Controls.Add(this.dgv1);
+            this.Controls.Add(this.groupBoxLogin);
+            this.Controls.Add(this.menuStrip1);
+            this.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "TelaPrincipal";
             this.Text = "Menu principal";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPageCadastro.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.groupBoxFuncionalidades.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBoxLogin.ResumeLayout(false);
+            this.groupBoxLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPageCadastro;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem funcionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem lançamentoDeHorariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agendamentoDeServiçosClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagamentoDeServiçosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controleFinanceiroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerarRelatórioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem controleFinanceiroToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBoxLogin;
         private System.Windows.Forms.Button buttonCadUsuario;
         private System.Windows.Forms.Button buttonEsqueciSenha;
         private System.Windows.Forms.Button buttonLogar;
@@ -336,16 +351,7 @@
         private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonServicos;
-        private System.Windows.Forms.Button buttonCliente;
-        private System.Windows.Forms.Button buttonFuncionario;
-        private System.Windows.Forms.Button buttonAgendServico;
-        private System.Windows.Forms.Button buttonServPrestado;
-        private System.Windows.Forms.Button buttonLancHorario;
-        private System.Windows.Forms.Button buttonRelatorio;
-        private System.Windows.Forms.Button buttonContFinanceiro;
-        private System.Windows.Forms.Button buttonProduto;
-        private System.Windows.Forms.Button buttonEstoque;
-        private System.Windows.Forms.GroupBox groupBoxFuncionalidades;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.Button buttonSair;
     }
 }

@@ -298,7 +298,7 @@ namespace CamadaDeNegocio
         {
             //tas.cd_funcionario as Codigo_Funcionario, tas.cd_cliente as Codigo_Cliente,tas.cd_servico as Codigo_Servico,
             string csql;
-            csql = "select tas.ordem_pagamento as Ordem_de_Pagamento , tf.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,ts.nm_servico as Servico, tas.data_agendamento as Data,tas.hora_agendamento as Hora_agendada,tas.status as Status, ts.vl_servico as Valor, tps.forma_pagamento as Forma_Pagamento from tb_agendamento_servico as tas inner join tb_funcionario as tf on tas.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tas.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tas.cd_servico=ts.cd_servico inner join tb_prestacao_servico as tps  where ts.cd_servico = tas.cd_servico";
+            csql = "select tas.ordem_pagamento as Ordem_de_Pagamento , tf.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,ts.nm_servico as Servico, tas.data_agendamento as Data,tas.hora_agendamento as Hora_agendada,tas.status as Status, ts.vl_servico as Valor from tb_agendamento_servico as tas inner join tb_funcionario as tf on tas.cd_funcionario=tf.cd_funcionario inner join tb_cliente as tc on tas.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tas.cd_servico=ts.cd_servico where ts.cd_servico = tas.cd_servico";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

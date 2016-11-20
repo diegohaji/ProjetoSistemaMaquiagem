@@ -30,7 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.botaoConfirmar = new System.Windows.Forms.Button();
+            this.botaoCancelar = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -40,14 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
-            this.botaoCancelar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.comboBoxDia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -55,9 +55,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxDia);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.botaoConfirmar);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
             this.groupBox1.Controls.Add(this.botaoCancelar);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.label2);
@@ -82,14 +82,25 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Dia da semana";
             // 
-            // dateTimePicker3
+            // botaoConfirmar
             // 
-            this.dateTimePicker3.CustomFormat = "dddd";
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(13, 103);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(183, 20);
-            this.dateTimePicker3.TabIndex = 12;
+            this.botaoConfirmar.Location = new System.Drawing.Point(13, 139);
+            this.botaoConfirmar.Name = "botaoConfirmar";
+            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.botaoConfirmar.TabIndex = 7;
+            this.botaoConfirmar.Text = "Confirmar";
+            this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
+            // 
+            // botaoCancelar
+            // 
+            this.botaoCancelar.Location = new System.Drawing.Point(121, 139);
+            this.botaoCancelar.Name = "botaoCancelar";
+            this.botaoCancelar.Size = new System.Drawing.Size(75, 23);
+            this.botaoCancelar.TabIndex = 9;
+            this.botaoCancelar.Text = "Cancelar";
+            this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // dateTimePicker2
             // 
@@ -170,16 +181,6 @@
             this.dgv1.TabIndex = 6;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
-            // botaoConfirmar
-            // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(13, 139);
-            this.botaoConfirmar.Name = "botaoConfirmar";
-            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.botaoConfirmar.TabIndex = 7;
-            this.botaoConfirmar.Text = "Confirmar";
-            this.botaoConfirmar.UseVisualStyleBackColor = true;
-            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
-            // 
             // botaoEditar
             // 
             this.botaoEditar.Location = new System.Drawing.Point(251, 70);
@@ -189,16 +190,6 @@
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
             this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
-            // 
-            // botaoCancelar
-            // 
-            this.botaoCancelar.Location = new System.Drawing.Point(121, 139);
-            this.botaoCancelar.Name = "botaoCancelar";
-            this.botaoCancelar.Size = new System.Drawing.Size(75, 23);
-            this.botaoCancelar.TabIndex = 9;
-            this.botaoCancelar.Text = "Cancelar";
-            this.botaoCancelar.UseVisualStyleBackColor = true;
-            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // botaoExcluir
             // 
@@ -250,6 +241,14 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
+            // comboBoxDia
+            // 
+            this.comboBoxDia.FormattingEnabled = true;
+            this.comboBoxDia.Location = new System.Drawing.Point(13, 103);
+            this.comboBoxDia.Name = "comboBoxDia";
+            this.comboBoxDia.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDia.TabIndex = 14;
+            // 
             // AgendamentoDeHorarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,6 +290,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.ComboBox comboBoxDia;
     }
 }

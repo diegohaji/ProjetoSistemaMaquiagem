@@ -185,6 +185,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
             lancamento.Hora_prestacao = dateTimePicker3.Value.ToShortTimeString();
             lancamento.Vl_total = textBoxValor.Text;
+            lancamento.Formapagamento = comboBoxFormaPagamento.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();
@@ -229,6 +230,7 @@ namespace ProjetoSistemaMaquiagem
             lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
             lancamento.Hora_prestacao = dateTimePicker3.Value.ToShortTimeString();
             lancamento.Vl_total = textBoxValor.Text;
+            lancamento.Formapagamento = comboBoxFormaPagamento.Text;
             ClnCliente cliente = new ClnCliente();
             lancamento.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
             ClnFuncionario funcionario = new ClnFuncionario();

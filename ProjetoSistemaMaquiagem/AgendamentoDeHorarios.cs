@@ -31,6 +31,7 @@ namespace ProjetoSistemaMaquiagem
             dateTimePicker2.ShowUpDown = true;
             PreencherComboTipo();
             PreencherComboFuncionario();
+            PreencherComboDia();
             AtualizarGrid();
         }
 
@@ -62,6 +63,20 @@ namespace ProjetoSistemaMaquiagem
             comboBoxServico.DataSource = ds.Tables[0];
             comboBoxServico.DisplayMember = "Nome";
             comboBoxServico.ValueMember = "Codigo";
+        }
+
+        public void PreencherComboDia()
+        {
+            List<String> dia = new List<string>();
+            dia.Add("Domingo");
+            dia.Add("Segunda");
+            dia.Add("Terca");
+            dia.Add("Quarta");
+            dia.Add("Quinta");
+            dia.Add("Sexta");
+            dia.Add("Sabado");
+            comboBoxDia.DataSource = dia;
+
         }
 
         //Funcao que verifica se há algum campo em branco
@@ -119,7 +134,7 @@ namespace ProjetoSistemaMaquiagem
             agenda.NomeFuncionario = comboBoxFuncionario.Text;
             agenda.Horario = dateTimePicker1.Value.ToShortTimeString();
             agenda.Horariofinal = dateTimePicker2.Value.ToShortTimeString();
-            agenda.Dia = dateTimePicker3.Value.DayOfWeek.ToString();
+            agenda.Dia = comboBoxDia.Text;
             if (verificaText(groupBox1))
             {
                 agenda.Gravar();
@@ -143,7 +158,7 @@ namespace ProjetoSistemaMaquiagem
             {
                 comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                dateTimePicker3.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxDia.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 dateTimePicker1.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 dateTimePicker2.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
             }
@@ -183,7 +198,7 @@ namespace ProjetoSistemaMaquiagem
             agenda.NomeFuncionario = comboBoxFuncionario.Text;
             agenda.Horario = dateTimePicker1.Value.ToShortTimeString();
             agenda.Horariofinal = dateTimePicker2.Value.ToShortTimeString();
-            agenda.Dia = dateTimePicker3.Value.DayOfWeek.ToString();
+            agenda.Dia = comboBoxDia.Text;
             ClnFuncionario func = new ClnFuncionario();
             agenda.Cd_funcionario = func.BuscarId(comboBoxFuncionario.Text);
             agenda.Atualizar();

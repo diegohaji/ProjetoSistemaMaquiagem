@@ -45,7 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
@@ -57,14 +56,15 @@
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.botaoConfirmar);
             this.groupBox1.Controls.Add(this.buttonMaisQtd);
+            this.groupBox1.Controls.Add(this.Cancelar);
             this.groupBox1.Controls.Add(this.buttonMaisProdutos);
             this.groupBox1.Controls.Add(this.numericUpDownQtd);
             this.groupBox1.Controls.Add(this.label7);
@@ -82,7 +82,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(483, 182);
+            this.groupBox1.Size = new System.Drawing.Size(483, 213);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -228,21 +228,9 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.botaoConfirmar);
-            this.groupBox2.Controls.Add(this.botaoEditar);
-            this.groupBox2.Controls.Add(this.botaoExcluir);
-            this.groupBox2.Controls.Add(this.Cancelar);
-            this.groupBox2.Location = new System.Drawing.Point(13, 201);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(483, 71);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            // 
             // botaoConfirmar
             // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(26, 30);
+            this.botaoConfirmar.Location = new System.Drawing.Point(26, 184);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.botaoConfirmar.TabIndex = 1;
@@ -252,7 +240,7 @@
             // 
             // botaoEditar
             // 
-            this.botaoEditar.Location = new System.Drawing.Point(141, 30);
+            this.botaoEditar.Location = new System.Drawing.Point(259, 87);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
             this.botaoEditar.TabIndex = 2;
@@ -262,7 +250,7 @@
             // 
             // botaoExcluir
             // 
-            this.botaoExcluir.Location = new System.Drawing.Point(384, 30);
+            this.botaoExcluir.Location = new System.Drawing.Point(355, 87);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
             this.botaoExcluir.TabIndex = 4;
@@ -272,7 +260,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(261, 30);
+            this.Cancelar.Location = new System.Drawing.Point(114, 184);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 3;
@@ -281,19 +269,21 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.botaoExcluir);
+            this.groupBox3.Controls.Add(this.botaoEditar);
             this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.textBoxPesquisar);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Location = new System.Drawing.Point(13, 278);
+            this.groupBox3.Location = new System.Drawing.Point(13, 232);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(483, 70);
+            this.groupBox3.Size = new System.Drawing.Size(483, 116);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtrar";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(339, 41);
+            this.button2.Location = new System.Drawing.Point(355, 41);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -304,7 +294,7 @@
             // 
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
-            this.textBoxPesquisar.Size = new System.Drawing.Size(301, 20);
+            this.textBoxPesquisar.Size = new System.Drawing.Size(313, 20);
             this.textBoxPesquisar.TabIndex = 1;
             // 
             // label14
@@ -334,7 +324,6 @@
             this.ClientSize = new System.Drawing.Size(508, 555);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "AgendamentoServico";
             this.Text = "Agendamento de servico";
@@ -342,7 +331,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).EndInit();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
@@ -361,7 +349,6 @@
         private System.Windows.Forms.ComboBox comboBoxFuncionario;
         private System.Windows.Forms.ComboBox comboBoxServico;
         private System.Windows.Forms.ComboBox comboBoxCliente;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button botaoConfirmar;
         private System.Windows.Forms.Button botaoEditar;
         private System.Windows.Forms.Button botaoExcluir;

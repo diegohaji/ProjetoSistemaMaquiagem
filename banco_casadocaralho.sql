@@ -175,4 +175,3 @@ foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,
 primary key(cd_pagamento)
 )engine = innodb;
 
-

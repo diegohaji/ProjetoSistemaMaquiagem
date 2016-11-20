@@ -19,11 +19,7 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
-        //inutil
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //load
         private void AgendamentoServico_Load(object sender, EventArgs e)

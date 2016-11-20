@@ -19,9 +19,18 @@ namespace ProjetoSistemaMaquiagem
         public TelaPrincipal()
         {
             InitializeComponent();
-            
+            AtualizarGrid();
         }
-        public Form RefToForm1 { get; set; }
+
+        //atualiza o grid
+        private void AtualizarGrid()
+        {
+            DataSet ds = new DataSet();
+            ClnAgendaDeServico agenda = new ClnAgendaDeServico();
+            ds = agenda.BuscarporNomePrincipal();
+            dgv1.DataSource = ds.Tables[0];
+
+        }
 
         public void ativarControles(bool ativar)
         {
@@ -30,17 +39,13 @@ namespace ProjetoSistemaMaquiagem
             controleFinanceiroToolStripMenuItem.Enabled = ativar;
         }
 
-
         private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroFuncionario cf = new CadastroFuncionario();
             cf.Show();
+            
         }
-
         
-       
-
-
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CadastroCliente cc = new CadastroCliente();
@@ -76,12 +81,14 @@ namespace ProjetoSistemaMaquiagem
         {
             AgendamentoServico agendserv = new AgendamentoServico();
             agendserv.Show();
+            AtualizarGrid();
         }
 
         private void pagamentoDeServiçosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PagamentoServicos ls = new PagamentoServicos();
             ls.Show();
+            AtualizarGrid();
         }
 
         private void gerarRelatórioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,7 +102,6 @@ namespace ProjetoSistemaMaquiagem
             ControlePagamento cp = new ControlePagamento();
             cp.Show();
         }
-
         
         private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -157,6 +163,10 @@ namespace ProjetoSistemaMaquiagem
             groupBoxLogin.Visible = false;
             dgv1.Visible = true;
             dgv1.Enabled = true;
+            AtualizarGrid();
         }
+
+
+        
     }
 }

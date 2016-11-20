@@ -227,7 +227,7 @@
             // 
             this.textBoxComplemento.Location = new System.Drawing.Point(30, 212);
             this.textBoxComplemento.Name = "textBoxComplemento";
-            this.textBoxComplemento.Size = new System.Drawing.Size(314, 20);
+            this.textBoxComplemento.Size = new System.Drawing.Size(389, 20);
             this.textBoxComplemento.TabIndex = 23;
             // 
             // label13
@@ -330,7 +330,7 @@
             // 
             // BotaoConfirmar
             // 
-            this.BotaoConfirmar.Location = new System.Drawing.Point(93, 446);
+            this.BotaoConfirmar.Location = new System.Drawing.Point(12, 446);
             this.BotaoConfirmar.Name = "BotaoConfirmar";
             this.BotaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.BotaoConfirmar.TabIndex = 1;
@@ -350,7 +350,7 @@
             // 
             // BotaoCancelar
             // 
-            this.BotaoCancelar.Location = new System.Drawing.Point(12, 446);
+            this.BotaoCancelar.Location = new System.Drawing.Point(93, 446);
             this.BotaoCancelar.Name = "BotaoCancelar";
             this.BotaoCancelar.Size = new System.Drawing.Size(75, 23);
             this.BotaoCancelar.TabIndex = 3;

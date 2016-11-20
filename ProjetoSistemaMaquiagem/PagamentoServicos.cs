@@ -27,7 +27,7 @@ namespace ProjetoSistemaMaquiagem
             PreencherComboServico();
             PreencherComboCliente();
             PreencherComboStatus();
-            PreencherValor();
+            PreencherComboFormaPagamento();
             AtualizarGrid();
             AtualizarGrid2();
         }
@@ -70,6 +70,15 @@ namespace ProjetoSistemaMaquiagem
             //status.Add("Pendente");
             status.Add("Cancelado");
             comboBoxStatus.DataSource = status;
+        }
+
+        public void PreencherComboFormaPagamento()
+        {
+            List<string> Forma = new List<string>();
+            Forma.Add("Dinheiro");
+            Forma.Add("Cartão de crédito");
+            Forma.Add("Cartão de débito");
+            comboBoxFormaPagamento.DataSource = Forma;
         }
 
         public void PreencherValor()

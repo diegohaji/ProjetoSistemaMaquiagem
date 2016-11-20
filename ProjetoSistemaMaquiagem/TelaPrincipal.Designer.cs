@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +47,7 @@
             this.gerarRelatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controleFinanceiroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
+            this.buttonSair = new System.Windows.Forms.Button();
             this.buttonCadUsuario = new System.Windows.Forms.Button();
             this.buttonEsqueciSenha = new System.Windows.Forms.Button();
             this.buttonLogar = new System.Windows.Forms.Button();
@@ -54,7 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.buttonSair = new System.Windows.Forms.Button();
+            this.timerAtualizarGrid = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBoxLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -69,7 +71,7 @@
             this.controleFinanceiroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(750, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -220,6 +222,16 @@
             this.groupBoxLogin.Text = "Login";
             this.groupBoxLogin.Visible = false;
             // 
+            // buttonSair
+            // 
+            this.buttonSair.Location = new System.Drawing.Point(9, 197);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(111, 23);
+            this.buttonSair.TabIndex = 8;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            // 
             // buttonCadUsuario
             // 
             this.buttonCadUsuario.Location = new System.Drawing.Point(9, 139);
@@ -289,25 +301,22 @@
             this.dgv1.Enabled = false;
             this.dgv1.Location = new System.Drawing.Point(12, 27);
             this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(726, 340);
+            this.dgv1.ReadOnly = true;
+            this.dgv1.Size = new System.Drawing.Size(1000, 700);
             this.dgv1.TabIndex = 4;
             this.dgv1.Visible = false;
             // 
-            // buttonSair
+            // timerAtualizarGrid
             // 
-            this.buttonSair.Location = new System.Drawing.Point(9, 197);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(111, 23);
-            this.buttonSair.TabIndex = 8;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
-            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
+            this.timerAtualizarGrid.Enabled = true;
+            this.timerAtualizarGrid.Interval = 1000;
+            this.timerAtualizarGrid.Tick += new System.EventHandler(this.timerAtualizarGrid_Tick);
             // 
             // TelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 379);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBoxLogin);
             this.Controls.Add(this.menuStrip1);
@@ -353,5 +362,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Timer timerAtualizarGrid;
     }
 }

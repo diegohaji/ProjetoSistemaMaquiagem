@@ -141,8 +141,116 @@ namespace CamadaDeNegocio
 
         }
 
+        public DataSet BuscarporHorario()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select horarioinicial as Horarioinicial from tb_horario_func";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
 
-}
+        }
+
+        public DataSet BuscarporDia()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia from tb_horario_func";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+        public DataSet BuscarporDiaSegunda()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Segunda%') or dia like ('%Monday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+        public DataSet BuscarporDiaTerca()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Terca%') or dia like ('%Tuesday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+        public DataSet BuscarporDiaQuarta()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Quarta%') or dia like ('%wednesday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+        public DataSet BuscarporDiaQuinta()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Quinta%') or dia like ('%Thursday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+
+        public DataSet BuscarporDiaSexta()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Sexta%') or dia like ('%Friday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+        public DataSet BuscarporDiaSabado()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Sabado%') or dia like ('%Saturday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+        public DataSet BuscarporDiaDomingo()
+        {
+            //cd_funcionario as Codigo,
+            string csql;
+            csql = "select dia as Dia, horarioinicial as HorarioInicial from tb_horario_func where dia like ('%Domingo%') or dia like ('%Sunday%')";
+            DataSet ds = new DataSet();
+            ClasseDados cd = new ClasseDados();
+            ds = cd.RetornarDataSet(csql);
+            return ds;
+
+        }
+
+
+    }
 
 
 }

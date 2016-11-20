@@ -365,7 +365,7 @@
             // 
             this.textBoxComplemento.Location = new System.Drawing.Point(30, 212);
             this.textBoxComplemento.Name = "textBoxComplemento";
-            this.textBoxComplemento.Size = new System.Drawing.Size(370, 20);
+            this.textBoxComplemento.Size = new System.Drawing.Size(385, 20);
             this.textBoxComplemento.TabIndex = 23;
             // 
             // label13

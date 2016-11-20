@@ -24,13 +24,12 @@ namespace ProjetoSistemaMaquiagem
         //load
         private void AgendamentoServico_Load(object sender, EventArgs e)
         {
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.CustomFormat = "HH:mm";
-            dateTimePicker2.ShowUpDown = true;
+            
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboCliente();
             PreencherComboProduto();
+            HorarioDoDia();
             AtualizarGrid();
         }
 
@@ -71,6 +70,15 @@ namespace ProjetoSistemaMaquiagem
             comboBoxProduto.DataSource = ds.Tables[0];
             comboBoxProduto.DisplayMember = "Nome";
             comboBoxProduto.ValueMember = "Codigo";
+        }
+
+        public void PreencherComboHorario(DataSet pesquisa)
+        {
+            ClnAgendaDeHorario tipo = new ClnAgendaDeHorario();
+            DataSet ds = pesquisa;
+            comboBoxHorario.DataSource = ds.Tables[0];
+            comboBoxHorario.DisplayMember = "Horarioinicial";
+            comboBoxHorario.ValueMember = "Horarioinicial";
         }
 
         //atualiza o grid
@@ -135,7 +143,8 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-            agenda.Hora_agendamento = dateTimePicker2.Value.ToShortTimeString();
+            
+            agenda.Hora_agendamento = comboBoxHorario.Text;
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             agenda.Produto = comboBoxProduto.Text;
             agenda.Quantidade = numericUpDownQtd.Value.ToString();
@@ -173,7 +182,7 @@ namespace ProjetoSistemaMaquiagem
                 comboBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[3].Value.ToString());
-                dateTimePicker2.Value = DateTime.ParseExact(dgv1.CurrentRow.Cells[4].Value.ToString(),"HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None);
+                comboBoxHorario.Text = dgv1.CurrentRow.Cells[4].ToString();
                 comboBoxProduto.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
                 numericUpDownQtd.Value = Convert.ToInt32(dgv1.CurrentRow.Cells[6].Value.ToString());
             }
@@ -197,7 +206,8 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-            agenda.Hora_agendamento = dateTimePicker1.Value.ToShortTimeString();
+            //agenda.Hora_agendamento = dateTimePicker1.Value.ToShortTimeString();
+            agenda.Hora_agendamento = comboBoxHorario.Text;
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             ClnCliente cliente = new ClnCliente();
             agenda.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
@@ -219,6 +229,47 @@ namespace ProjetoSistemaMaquiagem
             ds = agenda.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            HorarioDoDia();
+        }
+
+        private void HorarioDoDia()
+        {
+            ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
+            if(dateTimePicker1.Value.DayOfWeek.ToString() == "Segunda" || dateTimePicker1.Value.DayOfWeek.ToString() == "Monday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaSegunda());
+            }else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Terca" || dateTimePicker1.Value.DayOfWeek.ToString() == "Tuesday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaTerca());
+            }
+            else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Quarta" || dateTimePicker1.Value.DayOfWeek.ToString() == "Wednesday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaQuarta());
+            }
+            else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Quinta" || dateTimePicker1.Value.DayOfWeek.ToString() == "Thursday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaQuinta());
+            }
+            else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Sexta" || dateTimePicker1.Value.DayOfWeek.ToString() == "Friday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaSexta());
+            }
+            else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Sabado" || dateTimePicker1.Value.DayOfWeek.ToString() == "Saturday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaSabado());
+            }
+            else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Domingo" || dateTimePicker1.Value.DayOfWeek.ToString() == "Sunday")
+            {
+                PreencherComboHorario(agenda.BuscarporDiaDomingo());
+            }
+
+
+        }
+
+
     }
 
 }

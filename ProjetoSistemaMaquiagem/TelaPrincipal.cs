@@ -166,7 +166,9 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
         }
 
-
-        
+        private void timerAtualizarGrid_Tick(object sender, EventArgs e)
+        {
+            AtualizarGrid();
+        }
     }
 }

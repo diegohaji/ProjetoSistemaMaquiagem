@@ -35,16 +35,16 @@
             this.buttonPesquisarFuncionario = new System.Windows.Forms.Button();
             this.PesquisarPeriodo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
-            this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -80,7 +80,7 @@
             this.buttonPesquisarCliente.Location = new System.Drawing.Point(214, 26);
             this.buttonPesquisarCliente.Name = "buttonPesquisarCliente";
             this.buttonPesquisarCliente.Size = new System.Drawing.Size(75, 23);
-            this.buttonPesquisarCliente.TabIndex = 5;
+            this.buttonPesquisarCliente.TabIndex = 2;
             this.buttonPesquisarCliente.Text = "Pesquisar";
             this.buttonPesquisarCliente.UseVisualStyleBackColor = true;
             this.buttonPesquisarCliente.Click += new System.EventHandler(this.buttonPesquisarCliente_Click);
@@ -90,7 +90,7 @@
             this.buttonPesquisarFuncionario.Location = new System.Drawing.Point(215, 26);
             this.buttonPesquisarFuncionario.Name = "buttonPesquisarFuncionario";
             this.buttonPesquisarFuncionario.Size = new System.Drawing.Size(75, 23);
-            this.buttonPesquisarFuncionario.TabIndex = 6;
+            this.buttonPesquisarFuncionario.TabIndex = 2;
             this.buttonPesquisarFuncionario.Text = "Pesquisar";
             this.buttonPesquisarFuncionario.UseVisualStyleBackColor = true;
             this.buttonPesquisarFuncionario.Click += new System.EventHandler(this.buttonPesquisarFuncionario_Click);
@@ -100,7 +100,7 @@
             this.PesquisarPeriodo.Location = new System.Drawing.Point(388, 45);
             this.PesquisarPeriodo.Name = "PesquisarPeriodo";
             this.PesquisarPeriodo.Size = new System.Drawing.Size(75, 23);
-            this.PesquisarPeriodo.TabIndex = 7;
+            this.PesquisarPeriodo.TabIndex = 3;
             this.PesquisarPeriodo.Text = "Pesquisar";
             this.PesquisarPeriodo.UseVisualStyleBackColor = true;
             this.PesquisarPeriodo.Click += new System.EventHandler(this.PesquisarPeriodo_Click);
@@ -115,58 +115,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Cliente";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Data inicial";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Funcionario";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(260, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Data final";
-            // 
-            // comboBoxCliente
-            // 
-            this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Location = new System.Drawing.Point(15, 28);
-            this.comboBoxCliente.Name = "comboBoxCliente";
-            this.comboBoxCliente.Size = new System.Drawing.Size(193, 21);
-            this.comboBoxCliente.TabIndex = 12;
-            // 
-            // comboBoxFuncionario
-            // 
-            this.comboBoxFuncionario.FormattingEnabled = true;
-            this.comboBoxFuncionario.Location = new System.Drawing.Point(12, 28);
-            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
-            this.comboBoxFuncionario.Size = new System.Drawing.Size(197, 21);
-            this.comboBoxFuncionario.TabIndex = 13;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -176,7 +124,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(494, 102);
-            this.tabControl1.TabIndex = 14;
+            this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
@@ -191,6 +139,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cliente";
             // 
+            // comboBoxCliente
+            // 
+            this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.Location = new System.Drawing.Point(15, 28);
+            this.comboBoxCliente.Name = "comboBoxCliente";
+            this.comboBoxCliente.Size = new System.Drawing.Size(193, 21);
+            this.comboBoxCliente.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Cliente";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
@@ -203,6 +168,23 @@
             this.tabPage2.Size = new System.Drawing.Size(486, 76);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Funcionario";
+            // 
+            // comboBoxFuncionario
+            // 
+            this.comboBoxFuncionario.FormattingEnabled = true;
+            this.comboBoxFuncionario.Location = new System.Drawing.Point(12, 28);
+            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
+            this.comboBoxFuncionario.Size = new System.Drawing.Size(197, 21);
+            this.comboBoxFuncionario.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Funcionario";
             // 
             // tabPage3
             // 
@@ -218,6 +200,24 @@
             this.tabPage3.Size = new System.Drawing.Size(486, 76);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Periodo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(260, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Data final";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Data inicial";
             // 
             // RelatorioFinanceiro
             // 

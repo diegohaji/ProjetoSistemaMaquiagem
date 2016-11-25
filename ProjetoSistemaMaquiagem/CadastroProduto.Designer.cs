@@ -30,7 +30,9 @@
         {
             this.groupBoxProduto = new System.Windows.Forms.GroupBox();
             this.dateTimePickerVencimento = new System.Windows.Forms.DateTimePicker();
+            this.botaoConfirmar = new System.Windows.Forms.Button();
             this.dateTimePickerAquisicao = new System.Windows.Forms.DateTimePicker();
+            this.botaoCancelar = new System.Windows.Forms.Button();
             this.textBoxVlProduto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxUso = new System.Windows.Forms.TextBox();
@@ -41,9 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
-            this.botaoCancelar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -86,7 +86,17 @@
             this.dateTimePickerVencimento.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerVencimento.Name = "dateTimePickerVencimento";
             this.dateTimePickerVencimento.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickerVencimento.TabIndex = 15;
+            this.dateTimePickerVencimento.TabIndex = 4;
+            // 
+            // botaoConfirmar
+            // 
+            this.botaoConfirmar.Location = new System.Drawing.Point(6, 195);
+            this.botaoConfirmar.Name = "botaoConfirmar";
+            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.botaoConfirmar.TabIndex = 7;
+            this.botaoConfirmar.Text = "Confirmar";
+            this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
             // 
             // dateTimePickerAquisicao
             // 
@@ -97,14 +107,24 @@
             this.dateTimePickerAquisicao.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerAquisicao.Name = "dateTimePickerAquisicao";
             this.dateTimePickerAquisicao.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickerAquisicao.TabIndex = 14;
+            this.dateTimePickerAquisicao.TabIndex = 3;
+            // 
+            // botaoCancelar
+            // 
+            this.botaoCancelar.Location = new System.Drawing.Point(87, 195);
+            this.botaoCancelar.Name = "botaoCancelar";
+            this.botaoCancelar.Size = new System.Drawing.Size(75, 23);
+            this.botaoCancelar.TabIndex = 8;
+            this.botaoCancelar.Text = "Cancelar";
+            this.botaoCancelar.UseVisualStyleBackColor = true;
+            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // textBoxVlProduto
             // 
             this.textBoxVlProduto.Location = new System.Drawing.Point(10, 139);
             this.textBoxVlProduto.Name = "textBoxVlProduto";
             this.textBoxVlProduto.Size = new System.Drawing.Size(212, 20);
-            this.textBoxVlProduto.TabIndex = 13;
+            this.textBoxVlProduto.TabIndex = 5;
             // 
             // label7
             // 
@@ -120,7 +140,7 @@
             this.textBoxUso.Location = new System.Drawing.Point(257, 139);
             this.textBoxUso.Name = "textBoxUso";
             this.textBoxUso.Size = new System.Drawing.Size(212, 20);
-            this.textBoxUso.TabIndex = 11;
+            this.textBoxUso.TabIndex = 6;
             // 
             // label6
             // 
@@ -145,14 +165,14 @@
             this.textBoxMarca.Location = new System.Drawing.Point(257, 32);
             this.textBoxMarca.Name = "textBoxMarca";
             this.textBoxMarca.Size = new System.Drawing.Size(212, 20);
-            this.textBoxMarca.TabIndex = 6;
+            this.textBoxMarca.TabIndex = 2;
             // 
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(10, 32);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(212, 20);
-            this.textBoxNome.TabIndex = 5;
+            this.textBoxNome.TabIndex = 1;
             // 
             // label4
             // 
@@ -181,42 +201,22 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome";
             // 
-            // botaoConfirmar
-            // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(6, 195);
-            this.botaoConfirmar.Name = "botaoConfirmar";
-            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.botaoConfirmar.TabIndex = 1;
-            this.botaoConfirmar.Text = "Confirmar";
-            this.botaoConfirmar.UseVisualStyleBackColor = true;
-            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
-            // 
             // botaoEditar
             // 
             this.botaoEditar.Location = new System.Drawing.Point(282, 93);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
-            this.botaoEditar.TabIndex = 2;
+            this.botaoEditar.TabIndex = 11;
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
             this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
-            // 
-            // botaoCancelar
-            // 
-            this.botaoCancelar.Location = new System.Drawing.Point(87, 195);
-            this.botaoCancelar.Name = "botaoCancelar";
-            this.botaoCancelar.Size = new System.Drawing.Size(75, 23);
-            this.botaoCancelar.TabIndex = 3;
-            this.botaoCancelar.Text = "Cancelar";
-            this.botaoCancelar.UseVisualStyleBackColor = true;
-            this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
             // botaoExcluir
             // 
             this.botaoExcluir.Location = new System.Drawing.Point(373, 93);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
-            this.botaoExcluir.TabIndex = 4;
+            this.botaoExcluir.TabIndex = 12;
             this.botaoExcluir.Text = "Excluir";
             this.botaoExcluir.UseVisualStyleBackColor = true;
             this.botaoExcluir.Click += new System.EventHandler(this.botaoExcluir_Click);
@@ -227,7 +227,7 @@
             this.dgv1.Location = new System.Drawing.Point(516, 13);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(455, 353);
-            this.dgv1.TabIndex = 5;
+            this.dgv1.TabIndex = 14;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // groupBox3
@@ -249,7 +249,7 @@
             this.button1.Location = new System.Drawing.Point(373, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -259,7 +259,7 @@
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(336, 20);
-            this.textBoxPesquisar.TabIndex = 1;
+            this.textBoxPesquisar.TabIndex = 9;
             // 
             // label14
             // 

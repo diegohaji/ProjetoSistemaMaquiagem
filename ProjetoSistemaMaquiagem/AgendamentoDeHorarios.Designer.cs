@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxDia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoCancelar = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBoxDia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -73,6 +73,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // comboBoxDia
+            // 
+            this.comboBoxDia.FormattingEnabled = true;
+            this.comboBoxDia.Location = new System.Drawing.Point(13, 103);
+            this.comboBoxDia.Name = "comboBoxDia";
+            this.comboBoxDia.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDia.TabIndex = 3;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -87,7 +95,7 @@
             this.botaoConfirmar.Location = new System.Drawing.Point(13, 139);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.botaoConfirmar.TabIndex = 7;
+            this.botaoConfirmar.TabIndex = 6;
             this.botaoConfirmar.Text = "Confirmar";
             this.botaoConfirmar.UseVisualStyleBackColor = true;
             this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
@@ -97,7 +105,7 @@
             this.botaoCancelar.Location = new System.Drawing.Point(121, 139);
             this.botaoCancelar.Name = "botaoCancelar";
             this.botaoCancelar.Size = new System.Drawing.Size(75, 23);
-            this.botaoCancelar.TabIndex = 9;
+            this.botaoCancelar.TabIndex = 7;
             this.botaoCancelar.Text = "Cancelar";
             this.botaoCancelar.UseVisualStyleBackColor = true;
             this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
@@ -109,7 +117,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(353, 104);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(75, 20);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dateTimePicker2.TabIndex = 5;
             // 
             // label2
             // 
@@ -127,7 +135,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(234, 103);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(75, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // comboBoxFuncionario
             // 
@@ -135,7 +143,7 @@
             this.comboBoxFuncionario.Location = new System.Drawing.Point(13, 37);
             this.comboBoxFuncionario.Name = "comboBoxFuncionario";
             this.comboBoxFuncionario.Size = new System.Drawing.Size(183, 21);
-            this.comboBoxFuncionario.TabIndex = 8;
+            this.comboBoxFuncionario.TabIndex = 1;
             // 
             // label4
             // 
@@ -152,7 +160,7 @@
             this.comboBoxServico.Location = new System.Drawing.Point(235, 37);
             this.comboBoxServico.Name = "comboBoxServico";
             this.comboBoxServico.Size = new System.Drawing.Size(178, 21);
-            this.comboBoxServico.TabIndex = 5;
+            this.comboBoxServico.TabIndex = 2;
             // 
             // label3
             // 
@@ -178,7 +186,7 @@
             this.dgv1.Location = new System.Drawing.Point(478, 14);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(443, 269);
-            this.dgv1.TabIndex = 6;
+            this.dgv1.TabIndex = 12;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // botaoEditar
@@ -186,7 +194,7 @@
             this.botaoEditar.Location = new System.Drawing.Point(251, 70);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
-            this.botaoEditar.TabIndex = 8;
+            this.botaoEditar.TabIndex = 10;
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
             this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
@@ -196,7 +204,7 @@
             this.botaoExcluir.Location = new System.Drawing.Point(354, 70);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
-            this.botaoExcluir.TabIndex = 10;
+            this.botaoExcluir.TabIndex = 11;
             this.botaoExcluir.Text = "Excluir";
             this.botaoExcluir.UseVisualStyleBackColor = true;
             this.botaoExcluir.Click += new System.EventHandler(this.botaoExcluir_Click);
@@ -220,7 +228,7 @@
             this.button1.Location = new System.Drawing.Point(354, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -230,7 +238,7 @@
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(305, 20);
-            this.textBoxPesquisar.TabIndex = 1;
+            this.textBoxPesquisar.TabIndex = 8;
             // 
             // label14
             // 
@@ -240,14 +248,6 @@
             this.label14.Size = new System.Drawing.Size(35, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
-            // 
-            // comboBoxDia
-            // 
-            this.comboBoxDia.FormattingEnabled = true;
-            this.comboBoxDia.Location = new System.Drawing.Point(13, 103);
-            this.comboBoxDia.Name = "comboBoxDia";
-            this.comboBoxDia.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxDia.TabIndex = 14;
             // 
             // AgendamentoDeHorarios
             // 

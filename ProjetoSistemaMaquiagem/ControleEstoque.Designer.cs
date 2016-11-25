@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.botaoConfirmar = new System.Windows.Forms.Button();
             this.comboBoxProduto = new System.Windows.Forms.ComboBox();
+            this.Cancelar = new System.Windows.Forms.Button();
             this.textBoxQtdMinima = new System.Windows.Forms.TextBox();
             this.textBoxQtdAtual = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,13 +39,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.botaoExcluir = new System.Windows.Forms.Button();
+            this.botaoEditar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.botaoConfirmar = new System.Windows.Forms.Button();
-            this.botaoEditar = new System.Windows.Forms.Button();
-            this.botaoExcluir = new System.Windows.Forms.Button();
-            this.Cancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -65,27 +65,47 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // botaoConfirmar
+            // 
+            this.botaoConfirmar.Enabled = false;
+            this.botaoConfirmar.Location = new System.Drawing.Point(30, 65);
+            this.botaoConfirmar.Name = "botaoConfirmar";
+            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.botaoConfirmar.TabIndex = 4;
+            this.botaoConfirmar.Text = "Confirmar";
+            this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click_1);
+            // 
             // comboBoxProduto
             // 
             this.comboBoxProduto.FormattingEnabled = true;
             this.comboBoxProduto.Location = new System.Drawing.Point(30, 28);
             this.comboBoxProduto.Name = "comboBoxProduto";
             this.comboBoxProduto.Size = new System.Drawing.Size(141, 21);
-            this.comboBoxProduto.TabIndex = 10;
+            this.comboBoxProduto.TabIndex = 1;
+            // 
+            // Cancelar
+            // 
+            this.Cancelar.Location = new System.Drawing.Point(116, 65);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cancelar.TabIndex = 5;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseVisualStyleBackColor = true;
             // 
             // textBoxQtdMinima
             // 
             this.textBoxQtdMinima.Location = new System.Drawing.Point(345, 28);
             this.textBoxQtdMinima.Name = "textBoxQtdMinima";
             this.textBoxQtdMinima.Size = new System.Drawing.Size(90, 20);
-            this.textBoxQtdMinima.TabIndex = 9;
+            this.textBoxQtdMinima.TabIndex = 3;
             // 
             // textBoxQtdAtual
             // 
             this.textBoxQtdAtual.Location = new System.Drawing.Point(204, 28);
             this.textBoxQtdAtual.Name = "textBoxQtdAtual";
             this.textBoxQtdAtual.Size = new System.Drawing.Size(87, 20);
-            this.textBoxQtdAtual.TabIndex = 8;
+            this.textBoxQtdAtual.TabIndex = 2;
             // 
             // label5
             // 
@@ -120,7 +140,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 240);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(465, 183);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox3
@@ -137,12 +157,31 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filtrar";
             // 
+            // botaoExcluir
+            // 
+            this.botaoExcluir.Location = new System.Drawing.Point(359, 83);
+            this.botaoExcluir.Name = "botaoExcluir";
+            this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
+            this.botaoExcluir.TabIndex = 9;
+            this.botaoExcluir.Text = "Excluir";
+            this.botaoExcluir.UseVisualStyleBackColor = true;
+            // 
+            // botaoEditar
+            // 
+            this.botaoEditar.Location = new System.Drawing.Point(261, 83);
+            this.botaoEditar.Name = "botaoEditar";
+            this.botaoEditar.Size = new System.Drawing.Size(75, 23);
+            this.botaoEditar.TabIndex = 8;
+            this.botaoEditar.Text = "Editar";
+            this.botaoEditar.UseVisualStyleBackColor = true;
+            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(359, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -151,7 +190,7 @@
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(315, 20);
-            this.textBoxPesquisar.TabIndex = 1;
+            this.textBoxPesquisar.TabIndex = 6;
             // 
             // label14
             // 
@@ -161,45 +200,6 @@
             this.label14.Size = new System.Drawing.Size(35, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
-            // 
-            // botaoConfirmar
-            // 
-            this.botaoConfirmar.Enabled = false;
-            this.botaoConfirmar.Location = new System.Drawing.Point(30, 65);
-            this.botaoConfirmar.Name = "botaoConfirmar";
-            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.botaoConfirmar.TabIndex = 1;
-            this.botaoConfirmar.Text = "Confirmar";
-            this.botaoConfirmar.UseVisualStyleBackColor = true;
-            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click_1);
-            // 
-            // botaoEditar
-            // 
-            this.botaoEditar.Location = new System.Drawing.Point(261, 83);
-            this.botaoEditar.Name = "botaoEditar";
-            this.botaoEditar.Size = new System.Drawing.Size(75, 23);
-            this.botaoEditar.TabIndex = 2;
-            this.botaoEditar.Text = "Editar";
-            this.botaoEditar.UseVisualStyleBackColor = true;
-            this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
-            // 
-            // botaoExcluir
-            // 
-            this.botaoExcluir.Location = new System.Drawing.Point(359, 83);
-            this.botaoExcluir.Name = "botaoExcluir";
-            this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
-            this.botaoExcluir.TabIndex = 4;
-            this.botaoExcluir.Text = "Excluir";
-            this.botaoExcluir.UseVisualStyleBackColor = true;
-            // 
-            // Cancelar
-            // 
-            this.Cancelar.Location = new System.Drawing.Point(116, 65);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cancelar.TabIndex = 3;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = true;
             // 
             // ControleEstoque
             // 

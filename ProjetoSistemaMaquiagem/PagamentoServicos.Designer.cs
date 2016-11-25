@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBoxFormaPagamento = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.Cancelar = new System.Windows.Forms.Button();
@@ -54,9 +57,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxFormaPagamento = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -91,12 +91,38 @@
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(303, 115);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 13);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Forma de pagamento";
+            // 
+            // comboBoxFormaPagamento
+            // 
+            this.comboBoxFormaPagamento.FormattingEnabled = true;
+            this.comboBoxFormaPagamento.Location = new System.Drawing.Point(303, 131);
+            this.comboBoxFormaPagamento.Name = "comboBoxFormaPagamento";
+            this.comboBoxFormaPagamento.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxFormaPagamento.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(152, 66);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 13);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Hora do serviço";
+            // 
             // botaoConfirmar
             // 
             this.botaoConfirmar.Location = new System.Drawing.Point(8, 172);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.botaoConfirmar.TabIndex = 1;
+            this.botaoConfirmar.TabIndex = 4;
             this.botaoConfirmar.Text = "Confirmar";
             this.botaoConfirmar.UseVisualStyleBackColor = true;
             this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
@@ -109,14 +135,14 @@
             this.dateTimePicker3.Location = new System.Drawing.Point(152, 82);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(120, 20);
-            this.dateTimePicker3.TabIndex = 43;
+            this.dateTimePicker3.TabIndex = 0;
             // 
             // Cancelar
             // 
             this.Cancelar.Location = new System.Drawing.Point(111, 172);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cancelar.TabIndex = 3;
+            this.Cancelar.TabIndex = 5;
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
@@ -128,7 +154,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(9, 131);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker2.TabIndex = 42;
+            this.dateTimePicker2.TabIndex = 1;
             // 
             // label7
             // 
@@ -147,7 +173,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(9, 82);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 40;
+            this.dateTimePicker1.TabIndex = 0;
             // 
             // comboBoxCliente
             // 
@@ -156,7 +182,7 @@
             this.comboBoxCliente.Location = new System.Drawing.Point(303, 29);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCliente.TabIndex = 39;
+            this.comboBoxCliente.TabIndex = 0;
             // 
             // label6
             // 
@@ -173,7 +199,7 @@
             this.textBoxValor.Location = new System.Drawing.Point(303, 83);
             this.textBoxValor.Name = "textBoxValor";
             this.textBoxValor.Size = new System.Drawing.Size(120, 20);
-            this.textBoxValor.TabIndex = 37;
+            this.textBoxValor.TabIndex = 0;
             // 
             // label5
             // 
@@ -190,7 +216,7 @@
             this.comboBoxStatus.Location = new System.Drawing.Point(152, 131);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxStatus.TabIndex = 35;
+            this.comboBoxStatus.TabIndex = 2;
             // 
             // label4
             // 
@@ -226,7 +252,7 @@
             this.comboBoxServico.Location = new System.Drawing.Point(152, 29);
             this.comboBoxServico.Name = "comboBoxServico";
             this.comboBoxServico.Size = new System.Drawing.Size(120, 21);
-            this.comboBoxServico.TabIndex = 30;
+            this.comboBoxServico.TabIndex = 0;
             // 
             // comboBoxFuncionario
             // 
@@ -235,7 +261,7 @@
             this.comboBoxFuncionario.Location = new System.Drawing.Point(8, 29);
             this.comboBoxFuncionario.Name = "comboBoxFuncionario";
             this.comboBoxFuncionario.Size = new System.Drawing.Size(122, 21);
-            this.comboBoxFuncionario.TabIndex = 31;
+            this.comboBoxFuncionario.TabIndex = 0;
             // 
             // label2
             // 
@@ -265,7 +291,7 @@
             this.botaoEditar.Location = new System.Drawing.Point(247, 89);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
-            this.botaoEditar.TabIndex = 2;
+            this.botaoEditar.TabIndex = 8;
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
             this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
@@ -275,7 +301,7 @@
             this.button2.Location = new System.Drawing.Point(339, 41);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Pesquisar";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -284,7 +310,7 @@
             this.botaoExcluir.Location = new System.Drawing.Point(339, 89);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
-            this.botaoExcluir.TabIndex = 4;
+            this.botaoExcluir.TabIndex = 9;
             this.botaoExcluir.Text = "Excluir";
             this.botaoExcluir.UseVisualStyleBackColor = true;
             this.botaoExcluir.Click += new System.EventHandler(this.botaoExcluir_Click);
@@ -294,7 +320,7 @@
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(301, 20);
-            this.textBoxPesquisar.TabIndex = 1;
+            this.textBoxPesquisar.TabIndex = 6;
             // 
             // label14
             // 
@@ -311,7 +337,7 @@
             this.dgv1.Location = new System.Drawing.Point(467, 12);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(506, 165);
-            this.dgv1.TabIndex = 5;
+            this.dgv1.TabIndex = 20;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // dgv2
@@ -320,34 +346,8 @@
             this.dgv2.Location = new System.Drawing.Point(467, 197);
             this.dgv2.Name = "dgv2";
             this.dgv2.Size = new System.Drawing.Size(506, 159);
-            this.dgv2.TabIndex = 6;
+            this.dgv2.TabIndex = 30;
             this.dgv2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellContentClick);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(152, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 13);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Hora do serviço";
-            // 
-            // comboBoxFormaPagamento
-            // 
-            this.comboBoxFormaPagamento.FormattingEnabled = true;
-            this.comboBoxFormaPagamento.Location = new System.Drawing.Point(303, 131);
-            this.comboBoxFormaPagamento.Name = "comboBoxFormaPagamento";
-            this.comboBoxFormaPagamento.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFormaPagamento.TabIndex = 45;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(303, 115);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 13);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "Forma de pagamento";
             // 
             // PagamentoServicos
             // 

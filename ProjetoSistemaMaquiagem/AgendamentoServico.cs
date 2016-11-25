@@ -178,13 +178,16 @@ namespace ProjetoSistemaMaquiagem
             ClnAgendaDeServico agenda = new ClnAgendaDeServico(); ;
             if (dgv1.RowCount > 0)
             {
-                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
-                comboBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[3].Value.ToString());
-                comboBoxHorario.Text = dgv1.CurrentRow.Cells[4].ToString();
-                comboBoxProduto.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                numericUpDownQtd.Value = Convert.ToInt32(dgv1.CurrentRow.Cells[6].Value.ToString());
+                textBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
+                textBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
+                textBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[6].Value.ToString());
+                comboBoxHorario.Text = dgv1.CurrentRow.Cells[7].ToString();
+                comboBoxProduto.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
+                numericUpDownQtd.Value = Convert.ToInt32(dgv1.CurrentRow.Cells[9].Value.ToString());
             }
         }
 
@@ -269,7 +272,43 @@ namespace ProjetoSistemaMaquiagem
 
         }
 
+        private void buttonFuncionario_Click(object sender, EventArgs e)
+        {
+            CadastroFuncionario func = new CadastroFuncionario();
+            func.FormClosing += new FormClosingEventHandler(AtualizarCadastros);
+            func.Show();
+        }
 
+        private void buttonCliente_Click(object sender, EventArgs e)
+        {
+            CadastroCliente cli = new CadastroCliente();
+            cli.FormClosing += new FormClosingEventHandler(AtualizarCadastros);
+            cli.Show();
+        }
+
+        private void buttonServico_Click(object sender, EventArgs e)
+        {
+            CadastroServiços serv = new CadastroServiços();
+            serv.FormClosed += new FormClosedEventHandler(AtualizarCadastros);
+            serv.Show();
+           
+        }
+
+        private void AtualizarCadastros(object sender, EventArgs e)
+        {
+            
+            PreencherComboCliente();
+            PreencherComboFuncionario();
+            PreencherComboProduto();
+        }
+
+       
+
+        private void buttonProduto_Click(object sender, EventArgs e)
+        {
+            CadastroProduto prod = new CadastroProduto();
+            prod.Show();
+        }
     }
 
 }

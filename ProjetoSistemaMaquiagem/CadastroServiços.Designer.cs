@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBoxServico = new System.Windows.Forms.GroupBox();
+            this.botaoConfirmar = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.Cancelar = new System.Windows.Forms.Button();
             this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.botaoConfirmar = new System.Windows.Forms.Button();
             this.botaoEditar = new System.Windows.Forms.Button();
-            this.Cancelar = new System.Windows.Forms.Button();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -65,6 +65,16 @@
             this.groupBoxServico.TabIndex = 0;
             this.groupBoxServico.TabStop = false;
             // 
+            // botaoConfirmar
+            // 
+            this.botaoConfirmar.Location = new System.Drawing.Point(20, 82);
+            this.botaoConfirmar.Name = "botaoConfirmar";
+            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.botaoConfirmar.TabIndex = 4;
+            this.botaoConfirmar.Text = "Confirmar";
+            this.botaoConfirmar.UseVisualStyleBackColor = true;
+            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "HH:mm";
@@ -72,21 +82,31 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(326, 32);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(67, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dateTimePicker1.TabIndex = 3;
             // 
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(20, 32);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(163, 20);
-            this.textBoxNome.TabIndex = 7;
+            this.textBoxNome.TabIndex = 1;
+            // 
+            // Cancelar
+            // 
+            this.Cancelar.Location = new System.Drawing.Point(108, 82);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cancelar.TabIndex = 5;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // textBoxPreco
             // 
             this.textBoxPreco.Location = new System.Drawing.Point(217, 32);
             this.textBoxPreco.Name = "textBoxPreco";
             this.textBoxPreco.Size = new System.Drawing.Size(75, 20);
-            this.textBoxPreco.TabIndex = 6;
+            this.textBoxPreco.TabIndex = 2;
             // 
             // label4
             // 
@@ -115,42 +135,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
-            // botaoConfirmar
-            // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(20, 82);
-            this.botaoConfirmar.Name = "botaoConfirmar";
-            this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.botaoConfirmar.TabIndex = 1;
-            this.botaoConfirmar.Text = "Confirmar";
-            this.botaoConfirmar.UseVisualStyleBackColor = true;
-            this.botaoConfirmar.Click += new System.EventHandler(this.botaoConfirmar_Click);
-            // 
             // botaoEditar
             // 
             this.botaoEditar.Location = new System.Drawing.Point(247, 80);
             this.botaoEditar.Name = "botaoEditar";
             this.botaoEditar.Size = new System.Drawing.Size(75, 23);
-            this.botaoEditar.TabIndex = 2;
+            this.botaoEditar.TabIndex = 8;
             this.botaoEditar.Text = "Editar";
             this.botaoEditar.UseVisualStyleBackColor = true;
             this.botaoEditar.Click += new System.EventHandler(this.botaoEditar_Click);
-            // 
-            // Cancelar
-            // 
-            this.Cancelar.Location = new System.Drawing.Point(108, 82);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cancelar.TabIndex = 3;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = true;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // botaoExcluir
             // 
             this.botaoExcluir.Location = new System.Drawing.Point(339, 80);
             this.botaoExcluir.Name = "botaoExcluir";
             this.botaoExcluir.Size = new System.Drawing.Size(75, 23);
-            this.botaoExcluir.TabIndex = 4;
+            this.botaoExcluir.TabIndex = 9;
             this.botaoExcluir.Text = "Excluir";
             this.botaoExcluir.UseVisualStyleBackColor = true;
             this.botaoExcluir.Click += new System.EventHandler(this.botaoExcluir_Click);
@@ -161,7 +161,7 @@
             this.dgv1.Location = new System.Drawing.Point(15, 245);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(419, 173);
-            this.dgv1.TabIndex = 5;
+            this.dgv1.TabIndex = 10;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox3
@@ -183,7 +183,7 @@
             this.button1.Location = new System.Drawing.Point(339, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -193,7 +193,7 @@
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(301, 20);
-            this.textBoxPesquisar.TabIndex = 1;
+            this.textBoxPesquisar.TabIndex = 6;
             // 
             // label14
             // 

@@ -98,7 +98,7 @@
             this.maskedTextBoxCPF.Mask = "000.000.000-00";
             this.maskedTextBoxCPF.Name = "maskedTextBoxCPF";
             this.maskedTextBoxCPF.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCPF.TabIndex = 25;
+            this.maskedTextBoxCPF.TabIndex = 4;
             // 
             // maskedTextBoxRG
             // 
@@ -106,14 +106,14 @@
             this.maskedTextBoxRG.Mask = "00.000.000";
             this.maskedTextBoxRG.Name = "maskedTextBoxRG";
             this.maskedTextBoxRG.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxRG.TabIndex = 24;
+            this.maskedTextBoxRG.TabIndex = 3;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(246, 44);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(198, 20);
-            this.textBoxEmail.TabIndex = 23;
+            this.textBoxEmail.TabIndex = 2;
             // 
             // label12
             // 
@@ -130,7 +130,7 @@
             this.maskedTextBoxCelular.Mask = "(99) 00000-0000";
             this.maskedTextBoxCelular.Name = "maskedTextBoxCelular";
             this.maskedTextBoxCelular.Size = new System.Drawing.Size(91, 20);
-            this.maskedTextBoxCelular.TabIndex = 9;
+            this.maskedTextBoxCelular.TabIndex = 5;
             // 
             // label5
             // 
@@ -147,7 +147,7 @@
             this.maskedTextBoxTelefone.Mask = "(99) 0000-0000";
             this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
             this.maskedTextBoxTelefone.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxTelefone.TabIndex = 7;
+            this.maskedTextBoxTelefone.TabIndex = 6;
             // 
             // label4
             // 
@@ -197,28 +197,28 @@
             this.textBoxEstado.Location = new System.Drawing.Point(244, 163);
             this.textBoxEstado.Name = "textBoxEstado";
             this.textBoxEstado.Size = new System.Drawing.Size(171, 20);
-            this.textBoxEstado.TabIndex = 21;
+            this.textBoxEstado.TabIndex = 12;
             // 
             // textBoxCidade
             // 
             this.textBoxCidade.Location = new System.Drawing.Point(30, 163);
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(176, 20);
-            this.textBoxCidade.TabIndex = 20;
+            this.textBoxCidade.TabIndex = 11;
             // 
             // textBoxBairro
             // 
             this.textBoxBairro.Location = new System.Drawing.Point(244, 106);
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.Size = new System.Drawing.Size(171, 20);
-            this.textBoxBairro.TabIndex = 19;
+            this.textBoxBairro.TabIndex = 10;
             // 
             // textBoxNumero
             // 
             this.textBoxNumero.Location = new System.Drawing.Point(244, 43);
             this.textBoxNumero.Name = "textBoxNumero";
             this.textBoxNumero.Size = new System.Drawing.Size(58, 20);
-            this.textBoxNumero.TabIndex = 18;
+            this.textBoxNumero.TabIndex = 8;
             // 
             // label11
             // 
@@ -234,7 +234,7 @@
             this.textBoxRua.Location = new System.Drawing.Point(30, 106);
             this.textBoxRua.Name = "textBoxRua";
             this.textBoxRua.Size = new System.Drawing.Size(176, 20);
-            this.textBoxRua.TabIndex = 16;
+            this.textBoxRua.TabIndex = 9;
             // 
             // label10
             // 
@@ -286,7 +286,7 @@
             this.BotaoConfirmar.Location = new System.Drawing.Point(13, 448);
             this.BotaoConfirmar.Name = "BotaoConfirmar";
             this.BotaoConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.BotaoConfirmar.TabIndex = 1;
+            this.BotaoConfirmar.TabIndex = 14;
             this.BotaoConfirmar.Text = "Confirmar";
             this.BotaoConfirmar.UseVisualStyleBackColor = true;
             this.BotaoConfirmar.Click += new System.EventHandler(this.BotaoConfirmar_Click);
@@ -296,7 +296,7 @@
             this.BotaoEditar.Location = new System.Drawing.Point(282, 87);
             this.BotaoEditar.Name = "BotaoEditar";
             this.BotaoEditar.Size = new System.Drawing.Size(75, 23);
-            this.BotaoEditar.TabIndex = 2;
+            this.BotaoEditar.TabIndex = 18;
             this.BotaoEditar.Text = "Editar";
             this.BotaoEditar.UseVisualStyleBackColor = true;
             this.BotaoEditar.Click += new System.EventHandler(this.BotaoEditar_Click);
@@ -306,7 +306,7 @@
             this.BotaoCancelar.Location = new System.Drawing.Point(94, 448);
             this.BotaoCancelar.Name = "BotaoCancelar";
             this.BotaoCancelar.Size = new System.Drawing.Size(75, 23);
-            this.BotaoCancelar.TabIndex = 3;
+            this.BotaoCancelar.TabIndex = 15;
             this.BotaoCancelar.Text = "Cancelar";
             this.BotaoCancelar.UseVisualStyleBackColor = true;
             this.BotaoCancelar.Click += new System.EventHandler(this.BotaoCancelar_Click);
@@ -316,7 +316,7 @@
             this.BotaoExcluir.Location = new System.Drawing.Point(374, 87);
             this.BotaoExcluir.Name = "BotaoExcluir";
             this.BotaoExcluir.Size = new System.Drawing.Size(75, 23);
-            this.BotaoExcluir.TabIndex = 4;
+            this.BotaoExcluir.TabIndex = 19;
             this.BotaoExcluir.Text = "Excluir";
             this.BotaoExcluir.UseVisualStyleBackColor = true;
             this.BotaoExcluir.Click += new System.EventHandler(this.BotaoExcluir_Click);
@@ -327,7 +327,7 @@
             this.dgv1.Location = new System.Drawing.Point(512, 142);
             this.dgv1.Name = "dgv1";
             this.dgv1.Size = new System.Drawing.Size(477, 329);
-            this.dgv1.TabIndex = 5;
+            this.dgv1.TabIndex = 20;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
             // groupBoxEndereco
@@ -358,7 +358,7 @@
             this.textBoxCEP.Location = new System.Drawing.Point(30, 43);
             this.textBoxCEP.Name = "textBoxCEP";
             this.textBoxCEP.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCEP.TabIndex = 24;
+            this.textBoxCEP.TabIndex = 7;
             this.textBoxCEP.Leave += new System.EventHandler(this.textBoxCEP_Leave);
             // 
             // textBoxComplemento
@@ -366,7 +366,7 @@
             this.textBoxComplemento.Location = new System.Drawing.Point(30, 212);
             this.textBoxComplemento.Name = "textBoxComplemento";
             this.textBoxComplemento.Size = new System.Drawing.Size(385, 20);
-            this.textBoxComplemento.TabIndex = 23;
+            this.textBoxComplemento.TabIndex = 13;
             // 
             // label13
             // 
@@ -397,7 +397,7 @@
             this.button1.Location = new System.Drawing.Point(374, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 17;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -407,7 +407,7 @@
             this.textBoxPesquisar.Location = new System.Drawing.Point(21, 44);
             this.textBoxPesquisar.Name = "textBoxPesquisar";
             this.textBoxPesquisar.Size = new System.Drawing.Size(336, 20);
-            this.textBoxPesquisar.TabIndex = 1;
+            this.textBoxPesquisar.TabIndex = 16;
             // 
             // label14
             // 

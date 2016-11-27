@@ -181,13 +181,14 @@ namespace ProjetoSistemaMaquiagem
                 textBoxFuncionario.Text = dgv1.CurrentRow.Cells[0].Value.ToString();
                 textBoxCliente.Text = dgv1.CurrentRow.Cells[1].Value.ToString();
                 textBoxServico.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
-                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
-                comboBoxCliente.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                comboBoxServico.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[6].Value.ToString());
-                comboBoxHorario.Text = dgv1.CurrentRow.Cells[7].ToString();
-                comboBoxProduto.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
-                numericUpDownQtd.Value = Convert.ToInt32(dgv1.CurrentRow.Cells[9].Value.ToString());
+                textBoxProduto.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
+                comboBoxFuncionario.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
+                comboBoxCliente.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                comboBoxServico.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                dateTimePicker1.Value = Convert.ToDateTime(dgv1.CurrentRow.Cells[7].Value.ToString());
+                comboBoxHorario.Text = dgv1.CurrentRow.Cells[8].ToString();
+                comboBoxProduto.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
+                numericUpDownQtd.Value = Convert.ToInt32(dgv1.CurrentRow.Cells[10].Value.ToString());
             }
         }
 
@@ -294,21 +295,23 @@ namespace ProjetoSistemaMaquiagem
            
         }
 
+        private void buttonProduto_Click(object sender, EventArgs e)
+        {
+            CadastroProduto prod = new CadastroProduto();
+            prod.FormClosing += new FormClosingEventHandler(AtualizarCadastros);
+            prod.Show();
+        }
+
         private void AtualizarCadastros(object sender, EventArgs e)
         {
             
             PreencherComboCliente();
             PreencherComboFuncionario();
+            PreencherComboServico();
             PreencherComboProduto();
         }
 
-       
-
-        private void buttonProduto_Click(object sender, EventArgs e)
-        {
-            CadastroProduto prod = new CadastroProduto();
-            prod.Show();
-        }
+  
     }
 
 }

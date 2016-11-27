@@ -4,4 +4,5 @@ C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\Ace
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\bin\Debug\MySql.Data.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\obj\Debug\AcessoADados.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\obj\Debug\AcessoADados.pdb
+C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\bin\Debug\PdfFileWriter.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\AcessoADados\obj\Debug\AcessoADados.csprojResolveAssemblyReference.cache

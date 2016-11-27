@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AcessoADados;
 using CamadaDeNegocio;
+using System.Diagnostics;
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -28,7 +29,7 @@ namespace ProjetoSistemaMaquiagem
             comboBoxFuncionario.DisplayMember = "Nome";
             comboBoxFuncionario.ValueMember = "Codigo";
         }
-    
+
         //preenche o combobox com os valores dos clientes
         public void PreencherComboCliente()
         {
@@ -57,6 +58,7 @@ namespace ProjetoSistemaMaquiagem
             PreencherComboCliente();
             PreencherComboFuncionario();
             AtualizarGrid();
+            
         }
 
         private void buttonPesquisarFuncionario_Click(object sender, EventArgs e)
@@ -64,12 +66,13 @@ namespace ProjetoSistemaMaquiagem
             ClnRelatorio relatorio = new ClnRelatorio();
             relatorio.Nome_funcionario = comboBoxFuncionario.Text;
 
-            
+
             //AtualizarGrid();
 
             DataSet ds = new DataSet();
             ds = relatorio.BuscarporNomeFuncionario();
             dgv1.DataSource = ds.Tables[0];
+           
 
         }
 
@@ -77,23 +80,28 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnRelatorio relatorio = new ClnRelatorio();
             relatorio.Nome_cliente = comboBoxCliente.Text;
-            
+
             //AtualizarGrid();
             DataSet ds = new DataSet();
             ds = relatorio.BuscarporNomeCliente();
             dgv1.DataSource = ds.Tables[0];
-        }
+                    }
 
         private void PesquisarPeriodo_Click(object sender, EventArgs e)
         {
             ClnRelatorio relatorio = new ClnRelatorio();
             relatorio.Data_final = dateTimePickerFinal.Value.ToShortDateString();
             relatorio.Data_inicial = dateTimePickerInicial.Value.ToShortDateString();
-            
+
             //AtualizarGrid();
             DataSet ds = new DataSet();
             ds = relatorio.BuscarporData();
             dgv1.DataSource = ds.Tables[0];
+            
         }
+        
+
+       
+        
     }
 }

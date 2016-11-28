@@ -185,7 +185,7 @@
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Location = new System.Drawing.Point(478, 14);
             this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(443, 269);
+            this.dgv1.Size = new System.Drawing.Size(514, 269);
             this.dgv1.TabIndex = 12;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 298);
+            this.ClientSize = new System.Drawing.Size(1004, 298);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);

@@ -51,6 +51,7 @@ create table tb_prestacao_servico(
     foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
     foreign key (cd_servico) references tb_servico(cd_servico) on delete cascade,
     nm_funcionario varchar(40),
+    nm_cliente varchar(40),
     nm_servico varchar(40),
     status_prestacao varchar(127),
     data_prestacao varchar(14),

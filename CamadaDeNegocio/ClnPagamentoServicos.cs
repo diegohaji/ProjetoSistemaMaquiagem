@@ -13,6 +13,7 @@ namespace CamadaDeNegocio
         private int cd_funcionario;
         private int cd_servico;
         private int cd_cliente;
+        private string nm_cliente;
         private string nm_funcionario;
         private string nm_servico;
         private string dt_prestacao;
@@ -178,6 +179,19 @@ namespace CamadaDeNegocio
             }
         }
 
+        public string Nm_cliente
+        {
+            get
+            {
+                return nm_cliente;
+            }
+
+            set
+            {
+                nm_cliente = value;
+            }
+        }
+
         //Gravar
         public void Gravar()
         {
@@ -196,6 +210,7 @@ namespace CamadaDeNegocio
             csql.Append("cd_servico,");
             csql.Append("status_prestacao,");
             csql.Append("nm_funcionario,");
+            csql.Append("nm_cliente,");
             csql.Append("nm_servico,");
             csql.Append("data_prestacao,");
             csql.Append("hora_prestacao,");
@@ -208,6 +223,7 @@ namespace CamadaDeNegocio
             csql.Append("'" + (cd_servico - 1) + "',");
             csql.Append("'" + status_prestacao + "',");
             csql.Append("'" + nm_funcionario + "',");
+            csql.Append("'" + nm_cliente + "',");
             csql.Append("'" + nm_servico + "',");
             csql.Append("'" + dt_prestacao + "',");
             csql.Append("'" + hora_prestacao + "',");
@@ -239,6 +255,8 @@ namespace CamadaDeNegocio
             csql.Append(status_prestacao);
             csql.Append("', nm_funcionario = '");
             csql.Append(nm_funcionario);
+            csql.Append("', nm_cliente = '");
+            csql.Append(nm_cliente);
             csql.Append("', nm_servico = '");
             csql.Append(nm_servico);
             csql.Append("', data_prestacao ='");

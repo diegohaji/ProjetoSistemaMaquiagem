@@ -119,7 +119,7 @@
             // 
             // botaoConfirmar
             // 
-            this.botaoConfirmar.Location = new System.Drawing.Point(8, 172);
+            this.botaoConfirmar.Location = new System.Drawing.Point(9, 172);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);
             this.botaoConfirmar.TabIndex = 4;
@@ -139,7 +139,7 @@
             // 
             // Cancelar
             // 
-            this.Cancelar.Location = new System.Drawing.Point(111, 172);
+            this.Cancelar.Location = new System.Drawing.Point(112, 172);
             this.Cancelar.Name = "Cancelar";
             this.Cancelar.Size = new System.Drawing.Size(75, 23);
             this.Cancelar.TabIndex = 5;

@@ -20,7 +20,7 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
-        //preenche o combobox com os valores dos funcionarios
+
         public void PreencherComboFuncionario()
         {
             ClnFuncionario tipo = new ClnFuncionario();
@@ -29,6 +29,7 @@ namespace ProjetoSistemaMaquiagem
             comboBoxFuncionario.DisplayMember = "Nome";
             comboBoxFuncionario.ValueMember = "Codigo";
         }
+
 
         //preenche o combobox com os valores dos clientes
         public void PreencherComboCliente()
@@ -40,63 +41,40 @@ namespace ProjetoSistemaMaquiagem
             comboBoxCliente.ValueMember = "Codigo";
         }
 
-        //atualiza o grid
-
-        private void AtualizarGrid()
-        {
-            DataSet ds = new DataSet();
-            ClnRelatorio agenda = new ClnRelatorio();
-            //agenda.Nm_pesquisa = textBoxPesquisar.Text;
-            ds = agenda.BuscarporNome();
-            dgv1.DataSource = ds.Tables[0];
-
-        }
-
 
         private void Relatorio_Financeiro_load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sistemamaquiagemDataSet.tb_prestacao_servico' table. You can move, or remove it, as needed.
+            this.tb_prestacao_servicoTableAdapter.Fill(this.sistemamaquiagemDataSet.tb_prestacao_servico);
+
             PreencherComboCliente();
             PreencherComboFuncionario();
-            AtualizarGrid();
-            
+            this.reportViewer1.RefreshReport();
+            this.reportViewer2.RefreshReport();
+            this.reportViewer3.RefreshReport();
         }
 
         private void buttonPesquisarFuncionario_Click(object sender, EventArgs e)
         {
-            ClnRelatorio relatorio = new ClnRelatorio();
-            relatorio.Nome_funcionario = comboBoxFuncionario.Text;
-
-
-            //AtualizarGrid();
-
-            DataSet ds = new DataSet();
-            ds = relatorio.BuscarporNomeFuncionario();
-            dgv1.DataSource = ds.Tables[0];
-           
+            
 
         }
 
         private void buttonPesquisarCliente_Click(object sender, EventArgs e)
         {
-            ClnRelatorio relatorio = new ClnRelatorio();
-            relatorio.Nome_cliente = comboBoxCliente.Text;
-
-            //AtualizarGrid();
-            DataSet ds = new DataSet();
-            ds = relatorio.BuscarporNomeCliente();
-            dgv1.DataSource = ds.Tables[0];
-                    }
+            try {
+                
+                this.reportViewer1.RefreshReport();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+        }
 
         private void PesquisarPeriodo_Click(object sender, EventArgs e)
         {
-            ClnRelatorio relatorio = new ClnRelatorio();
-            relatorio.Data_final = dateTimePickerFinal.Value.ToShortDateString();
-            relatorio.Data_inicial = dateTimePickerInicial.Value.ToShortDateString();
-
-            //AtualizarGrid();
-            DataSet ds = new DataSet();
-            ds = relatorio.BuscarporData();
-            dgv1.DataSource = ds.Tables[0];
+            
             
         }
         

@@ -141,6 +141,11 @@
     <Compile Include="PagamentoServicos.Designer.cs">
       <DependentUpon>PagamentoServicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RelatorioFinanceiro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +156,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="sistemamaquiagemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemamaquiagemDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -196,6 +206,9 @@
     <EmbeddedResource Include="RelatorioFinanceiro.resx">
       <DependentUpon>RelatorioFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPeriodo.rdlc" />
+    <EmbeddedResource Include="ReportCliente.rdlc" />
+    <EmbeddedResource Include="ReportFuncionario.rdlc" />
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,11 +226,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <None Include="Service References\APICorreios\AtendeClienteService.wsdl" />
     <None Include="Service References\APICorreios\ProjetoSistemaMaquiagem.APICorreios.assuntoPIMaster.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -350,6 +358,17 @@
     </None>
     <None Include="Service References\APICorreios\ProjetoSistemaMaquiagem.APICorreios.verificaDisponibilidadeServicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="sistemamaquiagemDataSet.xsc">
+      <DependentUpon>sistemamaquiagemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sistemamaquiagemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemamaquiagemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sistemamaquiagemDataSet.xss">
+      <DependentUpon>sistemamaquiagemDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

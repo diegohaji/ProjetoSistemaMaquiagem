@@ -7,4 +7,3 @@ C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\Cam
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\CamadaDeNegocio\obj\Debug\CamadaDeNegocio.csprojResolveAssemblyReference.cache
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\CamadaDeNegocio\obj\Debug\CamadaDeNegocio.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\CamadaDeNegocio\obj\Debug\CamadaDeNegocio.pdb
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\CamadaDeNegocio\bin\Debug\PdfFileWriter.dll

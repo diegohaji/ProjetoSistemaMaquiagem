@@ -36,9 +36,5 @@ C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\Pro
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\PdfFileWriter.dll
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\MigraDoc.DocumentObjectModel-WPF.dll
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\MigraDoc.Rendering-WPF.dll
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\MigraDoc.RtfRendering-WPF.dll
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\PdfSharp-WPF.dll
-C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\bin\Release\PdfSharp.Charting-WPF.dll
+C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\RdlCompile.cache
+C:\Users\Diego\Documents\Visual Studio 2015\Projects\ProjetoSistemaMaquiagem\ProjetoSistemaMaquiagem\obj\Release\RdlCompile.compiled

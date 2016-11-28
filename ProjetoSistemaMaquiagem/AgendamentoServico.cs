@@ -309,9 +309,22 @@ namespace ProjetoSistemaMaquiagem
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboProduto();
+            HorarioDoDia();
+            
         }
 
-  
+        private void buttonHorario_Click(object sender, EventArgs e)
+        {
+            AgendamentoDeHorarios agenda = new AgendamentoDeHorarios();
+            agenda.FormClosing += new FormClosingEventHandler(AtualizarCadastros);
+            agenda.Show();
+        }
+
+        private void buttonQuantidade_Click(object sender, EventArgs e)
+        {
+            ControleEstoque estoque = new ControleEstoque();
+            estoque.Show();
+        }
     }
 
 }

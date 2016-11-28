@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tb_prestacao_servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemamaquiagemDataSet = new ProjetoSistemaMaquiagem.sistemamaquiagemDataSet();
             this.dateTimePickerInicial = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.buttonPesquisarCliente = new System.Windows.Forms.Button();
@@ -37,15 +42,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
+            this.tb_prestacao_servicoTableAdapter = new ProjetoSistemaMaquiagem.sistemamaquiagemDataSetTableAdapters.tb_prestacao_servicoTableAdapter();
+            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_prestacao_servicoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemamaquiagemDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -53,31 +63,33 @@
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgv1
+            // tb_prestacao_servicoBindingSource
             // 
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(13, 157);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(505, 295);
-            this.dgv1.TabIndex = 0;
+            this.tb_prestacao_servicoBindingSource.DataMember = "tb_prestacao_servico";
+            this.tb_prestacao_servicoBindingSource.DataSource = this.sistemamaquiagemDataSet;
+            // 
+            // sistemamaquiagemDataSet
+            // 
+            this.sistemamaquiagemDataSet.DataSetName = "sistemamaquiagemDataSet";
+            this.sistemamaquiagemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dateTimePickerInicial
             // 
             this.dateTimePickerInicial.Location = new System.Drawing.Point(18, 19);
             this.dateTimePickerInicial.Name = "dateTimePickerInicial";
-            this.dateTimePickerInicial.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerInicial.Size = new System.Drawing.Size(211, 20);
             this.dateTimePickerInicial.TabIndex = 1;
             // 
             // dateTimePickerFinal
             // 
             this.dateTimePickerFinal.Location = new System.Drawing.Point(263, 19);
             this.dateTimePickerFinal.Name = "dateTimePickerFinal";
-            this.dateTimePickerFinal.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerFinal.Size = new System.Drawing.Size(221, 20);
             this.dateTimePickerFinal.TabIndex = 2;
             // 
             // buttonPesquisarCliente
             // 
-            this.buttonPesquisarCliente.Location = new System.Drawing.Point(214, 26);
+            this.buttonPesquisarCliente.Location = new System.Drawing.Point(347, 5);
             this.buttonPesquisarCliente.Name = "buttonPesquisarCliente";
             this.buttonPesquisarCliente.Size = new System.Drawing.Size(75, 23);
             this.buttonPesquisarCliente.TabIndex = 2;
@@ -87,7 +99,7 @@
             // 
             // buttonPesquisarFuncionario
             // 
-            this.buttonPesquisarFuncionario.Location = new System.Drawing.Point(215, 26);
+            this.buttonPesquisarFuncionario.Location = new System.Drawing.Point(375, 6);
             this.buttonPesquisarFuncionario.Name = "buttonPesquisarFuncionario";
             this.buttonPesquisarFuncionario.Size = new System.Drawing.Size(75, 23);
             this.buttonPesquisarFuncionario.TabIndex = 2;
@@ -97,7 +109,7 @@
             // 
             // PesquisarPeriodo
             // 
-            this.PesquisarPeriodo.Location = new System.Drawing.Point(388, 45);
+            this.PesquisarPeriodo.Location = new System.Drawing.Point(490, 16);
             this.PesquisarPeriodo.Name = "PesquisarPeriodo";
             this.PesquisarPeriodo.Size = new System.Drawing.Size(75, 23);
             this.PesquisarPeriodo.TabIndex = 3;
@@ -110,7 +122,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(506, 139);
+            this.groupBox1.Size = new System.Drawing.Size(695, 440);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
@@ -123,72 +135,63 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 20);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(494, 102);
+            this.tabControl1.Size = new System.Drawing.Size(683, 414);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage1.Controls.Add(this.comboBoxCliente);
-            this.tabPage1.Controls.Add(this.buttonPesquisarCliente);
             this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.comboBoxCliente);
+            this.tabPage1.Controls.Add(this.reportViewer1);
+            this.tabPage1.Controls.Add(this.buttonPesquisarCliente);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(486, 76);
+            this.tabPage1.Size = new System.Drawing.Size(675, 388);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cliente";
             // 
-            // comboBoxCliente
+            // reportViewer1
             // 
-            this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Location = new System.Drawing.Point(15, 28);
-            this.comboBoxCliente.Name = "comboBoxCliente";
-            this.comboBoxCliente.Size = new System.Drawing.Size(193, 21);
-            this.comboBoxCliente.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Cliente";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.tb_prestacao_servicoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportCliente.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(6, 32);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(663, 347);
+            this.reportViewer1.TabIndex = 9;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.comboBoxFuncionario);
-            this.tabPage2.Controls.Add(this.buttonPesquisarFuncionario);
             this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.comboBoxFuncionario);
+            this.tabPage2.Controls.Add(this.reportViewer2);
+            this.tabPage2.Controls.Add(this.buttonPesquisarFuncionario);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(486, 76);
+            this.tabPage2.Size = new System.Drawing.Size(675, 388);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Funcionario";
             // 
-            // comboBoxFuncionario
+            // reportViewer2
             // 
-            this.comboBoxFuncionario.FormattingEnabled = true;
-            this.comboBoxFuncionario.Location = new System.Drawing.Point(12, 28);
-            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
-            this.comboBoxFuncionario.Size = new System.Drawing.Size(197, 21);
-            this.comboBoxFuncionario.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Funcionario";
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.tb_prestacao_servicoBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportFuncionario.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(3, 38);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(666, 347);
+            this.reportViewer2.TabIndex = 3;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.reportViewer3);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.PesquisarPeriodo);
@@ -197,7 +200,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(486, 76);
+            this.tabPage3.Size = new System.Drawing.Size(675, 388);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Periodo";
             // 
@@ -219,17 +222,70 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Data inicial";
             // 
+            // tb_prestacao_servicoTableAdapter
+            // 
+            this.tb_prestacao_servicoTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBoxCliente
+            // 
+            this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.Location = new System.Drawing.Point(51, 5);
+            this.comboBoxCliente.Name = "comboBoxCliente";
+            this.comboBoxCliente.Size = new System.Drawing.Size(290, 21);
+            this.comboBoxCliente.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Cliente";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Funcionario";
+            // 
+            // comboBoxFuncionario
+            // 
+            this.comboBoxFuncionario.FormattingEnabled = true;
+            this.comboBoxFuncionario.Location = new System.Drawing.Point(74, 6);
+            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
+            this.comboBoxFuncionario.Size = new System.Drawing.Size(290, 21);
+            this.comboBoxFuncionario.TabIndex = 12;
+            // 
+            // reportViewer3
+            // 
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.tb_prestacao_servicoBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportPeriodo.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(6, 46);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.Size = new System.Drawing.Size(663, 336);
+            this.reportViewer3.TabIndex = 12;
+            // 
             // RelatorioFinanceiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 464);
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(720, 480);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgv1);
             this.Name = "RelatorioFinanceiro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio Financeiro";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Relatorio_Financeiro_load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_prestacao_servicoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemamaquiagemDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -243,8 +299,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.DateTimePicker dateTimePickerInicial;
         private System.Windows.Forms.DateTimePicker dateTimePickerFinal;
         private System.Windows.Forms.Button buttonPesquisarCliente;
@@ -253,13 +307,19 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ComboBox comboBoxCliente;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBoxFuncionario;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource tb_prestacao_servicoBindingSource;
+        private sistemamaquiagemDataSet sistemamaquiagemDataSet;
+        private sistemamaquiagemDataSetTableAdapters.tb_prestacao_servicoTableAdapter tb_prestacao_servicoTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxCliente;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxFuncionario;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
     }
 }

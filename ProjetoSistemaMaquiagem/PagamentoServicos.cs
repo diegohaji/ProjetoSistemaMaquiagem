@@ -81,14 +81,7 @@ namespace ProjetoSistemaMaquiagem
             comboBoxFormaPagamento.DataSource = Forma;
         }
 
-        public void PreencherValor()
-        {/*
-            ClnPagamentoServicos lancamento = new ClnPagamentoServicos();
-            DataSet ds = new DataSet();
-            ds = lancamento.BuscarOValor();
-            lancamento.Vl_total = ds.Tables[0].ToString();
-        */
-            }
+       
 
         //atualiza o grid 1
         private void AtualizarGrid()
@@ -180,6 +173,7 @@ namespace ProjetoSistemaMaquiagem
             ClnPagamentoServicos lancamento = new ClnPagamentoServicos();
             lancamento.Nm_funcionario = comboBoxFuncionario.Text;
             lancamento.Nm_servico = comboBoxServico.Text;
+            lancamento.Nm_cliente = comboBoxCliente.Text;
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();
             lancamento.Dt_pagamento = dateTimePicker2.Value.ToShortDateString();
@@ -224,6 +218,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnPagamentoServicos lancamento = new ClnPagamentoServicos();
             lancamento.Nm_funcionario = comboBoxFuncionario.Text;
+            lancamento.Nm_cliente = comboBoxCliente.Text;
             lancamento.Nm_servico = comboBoxServico.Text;
             lancamento.Status_prestacao = comboBoxStatus.Text;
             lancamento.Dt_prestacao = dateTimePicker1.Value.ToShortDateString();

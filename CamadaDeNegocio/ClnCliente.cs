@@ -112,7 +112,7 @@ namespace CamadaDeNegocio
         public void BuscarporCodigo()
         {
             string csql;
-            csql = "Select * From tb_cliente where nm_cliente=" + nm_cliente;
+            csql = "Select * From tb_cliente where cd_cliente=" + cd_cliente;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

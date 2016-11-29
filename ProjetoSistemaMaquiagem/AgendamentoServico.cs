@@ -19,12 +19,9 @@ namespace ProjetoSistemaMaquiagem
             InitializeComponent();
         }
 
-        
-
         //load
         private void AgendamentoServico_Load(object sender, EventArgs e)
         {
-            
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboCliente();
@@ -42,7 +39,7 @@ namespace ProjetoSistemaMaquiagem
             comboBoxFuncionario.DisplayMember = "Nome";
             comboBoxFuncionario.ValueMember = "Codigo";
         }
-    
+
         //preenche o combobox com os valores dos funcionarios
         public void PreencherComboServico()
         {
@@ -106,15 +103,15 @@ namespace ProjetoSistemaMaquiagem
 
                     }
                 }
-                    if (T is ComboBox)
+                if (T is ComboBox)
+                {
+                    if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
                     {
-                        if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
-                        {
-                            MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return false;
+                        MessageBox.Show("Há campos vazios\nFavor verificar!", "Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
 
-                        }
                     }
+                }
                 if (T is MaskedTextBox)
                 {
                     if (string.IsNullOrEmpty(T.Text) || string.IsNullOrWhiteSpace(T.Text))
@@ -143,7 +140,7 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-            
+
             agenda.Hora_agendamento = comboBoxHorario.Text;
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             agenda.Produto = comboBoxProduto.Text;
@@ -154,11 +151,12 @@ namespace ProjetoSistemaMaquiagem
             agenda.Cd_funcionario = funcionario.BuscarId(comboBoxFuncionario.Text);
             ClnServiços servico = new ClnServiços();
             agenda.Cd_servico = servico.BuscarId(comboBoxServico.Text);
-            if (verificaText(groupBox1)) { 
-            agenda.Gravar();
-            AtualizarGrid();
-            LimparTxt(groupBox1);
-            ClnEstoque estoque = new ClnEstoque();
+            if (verificaText(groupBox1))
+            {
+                agenda.Gravar();
+                AtualizarGrid();
+                LimparTxt(groupBox1);
+                ClnEstoque estoque = new ClnEstoque();
                 estoque.Nm_Produto = agenda.Produto;
                 estoque.Qtd_Atual = Convert.ToString(Convert.ToInt32(estoque.BuscarporQtdAtual(agenda.Produto)) - Convert.ToInt32(agenda.Quantidade));
                 estoque.Qtd_Minimo = estoque.BuscarporQtdMinima(agenda.Produto);
@@ -166,8 +164,6 @@ namespace ProjetoSistemaMaquiagem
                 estoque.Cd_Estoque = estoque.BuscarporCodigoEstoque();
                 estoque.Atualizar();
             }
-            
-
 
         }
 
@@ -242,10 +238,11 @@ namespace ProjetoSistemaMaquiagem
         private void HorarioDoDia()
         {
             ClnAgendaDeHorario agenda = new ClnAgendaDeHorario();
-            if(dateTimePicker1.Value.DayOfWeek.ToString() == "Segunda" || dateTimePicker1.Value.DayOfWeek.ToString() == "Monday")
+            if (dateTimePicker1.Value.DayOfWeek.ToString() == "Segunda" || dateTimePicker1.Value.DayOfWeek.ToString() == "Monday")
             {
                 PreencherComboHorario(agenda.BuscarporDiaSegunda());
-            }else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Terca" || dateTimePicker1.Value.DayOfWeek.ToString() == "Tuesday")
+            }
+            else if (dateTimePicker1.Value.DayOfWeek.ToString() == "Terca" || dateTimePicker1.Value.DayOfWeek.ToString() == "Tuesday")
             {
                 PreencherComboHorario(agenda.BuscarporDiaTerca());
             }
@@ -292,7 +289,7 @@ namespace ProjetoSistemaMaquiagem
             CadastroServiços serv = new CadastroServiços();
             serv.FormClosed += new FormClosedEventHandler(AtualizarCadastros);
             serv.Show();
-           
+
         }
 
         private void buttonProduto_Click(object sender, EventArgs e)
@@ -304,13 +301,13 @@ namespace ProjetoSistemaMaquiagem
 
         private void AtualizarCadastros(object sender, EventArgs e)
         {
-            
+
             PreencherComboCliente();
             PreencherComboFuncionario();
             PreencherComboServico();
             PreencherComboProduto();
             HorarioDoDia();
-            
+
         }
 
         private void buttonHorario_Click(object sender, EventArgs e)
@@ -325,6 +322,66 @@ namespace ProjetoSistemaMaquiagem
             ControleEstoque estoque = new ControleEstoque();
             estoque.Show();
         }
+
+        private void textBoxFuncionario_TextChanged(object sender, EventArgs e)
+        {
+            if (!textBoxFuncionario.Text.Equals(""))
+            {
+                ClnFuncionario func = new ClnFuncionario();
+                func.Cd_Funcionario = Convert.ToInt16(textBoxFuncionario.Text);
+                func.BuscarporCodigo();
+                if (!func.Equals(null))
+                {
+                    comboBoxFuncionario.Text = func.Nm_Funcionario;
+                }
+            }
+        }
+
+        private void textBoxCliente_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!textBoxCliente.Text.Equals(""))
+            {
+                ClnCliente cliente = new ClnCliente();
+                cliente.Cd_cliente = Convert.ToInt16(textBoxCliente.Text);
+                cliente.BuscarporCodigo();
+                if (!cliente.Equals(null))
+                {
+                    comboBoxCliente.Text = cliente.Nm_Cliente;
+                }
+            }
+        }
+
+        private void textBoxServico_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!textBoxServico.Text.Equals(""))
+            {
+                ClnServiços servico = new ClnServiços();
+                servico.Cd_Servico = Convert.ToInt16(textBoxServico.Text);
+                servico.BuscarporCodigo();
+                if (!servico.Equals(null))
+                {
+                    comboBoxServico.Text = servico.Nm_Servico;
+                }
+            }
+        }
+
+        private void textBoxProduto_TextChanged(object sender, EventArgs e)
+        {
+
+            if (!textBoxProduto.Text.Equals(""))
+            {
+                ClnProdutos produto = new ClnProdutos();
+                produto.Cd_Produto = Convert.ToInt16(textBoxProduto.Text);
+                produto.BuscarporCodigo();
+                if (!produto.Equals(null))
+                {
+                    comboBoxProduto.Text = produto.Nm_Produto;
+                }
+            }
+        }
+
     }
 
 }

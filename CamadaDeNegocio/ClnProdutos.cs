@@ -66,14 +66,14 @@ namespace CamadaDeNegocio
         public int BuscarporCodigo()
         {
             string csql;
-            csql = "Select cd_produto From tb_produto where cd_produto=" + cd_produto;
+            csql = "Select nm_produto From tb_produto where cd_produto=" + cd_produto;
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 Array dados = ds.Tables[0].Rows[0].ItemArray;
-                cd_produto = Convert.ToInt16(dados.GetValue(0));
+                nm_produto = Convert.ToString(dados.GetValue(0));
             }
             return cd_produto;
         }

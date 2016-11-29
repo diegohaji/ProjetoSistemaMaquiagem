@@ -1,4 +1,6 @@
-﻿namespace ProjetoSistemaMaquiagem
+﻿using System;
+
+namespace ProjetoSistemaMaquiagem
 {
     partial class AgendamentoServico
     {
@@ -29,6 +31,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonHorario = new System.Windows.Forms.Button();
+            this.buttonQuantidade = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxProduto = new System.Windows.Forms.TextBox();
             this.buttonProduto = new System.Windows.Forms.Button();
@@ -64,8 +68,6 @@
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.buttonQuantidade = new System.Windows.Forms.Button();
-            this.buttonHorario = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQtd)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -110,6 +112,28 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // buttonHorario
+            // 
+            this.buttonHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHorario.Location = new System.Drawing.Point(430, 81);
+            this.buttonHorario.Name = "buttonHorario";
+            this.buttonHorario.Size = new System.Drawing.Size(29, 23);
+            this.buttonHorario.TabIndex = 34;
+            this.buttonHorario.Text = "+";
+            this.buttonHorario.UseVisualStyleBackColor = true;
+            this.buttonHorario.Click += new System.EventHandler(this.buttonHorario_Click);
+            // 
+            // buttonQuantidade
+            // 
+            this.buttonQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonQuantidade.Location = new System.Drawing.Point(431, 181);
+            this.buttonQuantidade.Name = "buttonQuantidade";
+            this.buttonQuantidade.Size = new System.Drawing.Size(29, 23);
+            this.buttonQuantidade.TabIndex = 33;
+            this.buttonQuantidade.Text = "+";
+            this.buttonQuantidade.UseVisualStyleBackColor = true;
+            this.buttonQuantidade.Click += new System.EventHandler(this.buttonQuantidade_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -125,6 +149,7 @@
             this.textBoxProduto.Name = "textBoxProduto";
             this.textBoxProduto.Size = new System.Drawing.Size(75, 20);
             this.textBoxProduto.TabIndex = 4;
+            this.textBoxProduto.TextChanged += new System.EventHandler(this.textBoxProduto_TextChanged);
             // 
             // buttonProduto
             // 
@@ -170,6 +195,7 @@
             this.textBoxServico.Name = "textBoxServico";
             this.textBoxServico.Size = new System.Drawing.Size(75, 20);
             this.textBoxServico.TabIndex = 3;
+            this.textBoxServico.TextChanged += new System.EventHandler(this.textBoxServico_TextChanged);
             // 
             // textBoxCliente
             // 
@@ -177,6 +203,7 @@
             this.textBoxCliente.Name = "textBoxCliente";
             this.textBoxCliente.Size = new System.Drawing.Size(75, 20);
             this.textBoxCliente.TabIndex = 2;
+            this.textBoxCliente.TextChanged += new System.EventHandler(this.textBoxCliente_TextChanged);
             // 
             // textBoxFuncionario
             // 
@@ -184,6 +211,7 @@
             this.textBoxFuncionario.Name = "textBoxFuncionario";
             this.textBoxFuncionario.Size = new System.Drawing.Size(75, 20);
             this.textBoxFuncionario.TabIndex = 1;
+            this.textBoxFuncionario.TextChanged += new System.EventHandler(this.textBoxFuncionario_TextChanged);
             // 
             // buttonServico
             // 
@@ -425,28 +453,6 @@
             this.dgv1.TabIndex = 31;
             this.dgv1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellContentClick);
             // 
-            // buttonQuantidade
-            // 
-            this.buttonQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonQuantidade.Location = new System.Drawing.Point(431, 181);
-            this.buttonQuantidade.Name = "buttonQuantidade";
-            this.buttonQuantidade.Size = new System.Drawing.Size(29, 23);
-            this.buttonQuantidade.TabIndex = 33;
-            this.buttonQuantidade.Text = "+";
-            this.buttonQuantidade.UseVisualStyleBackColor = true;
-            this.buttonQuantidade.Click += new System.EventHandler(this.buttonQuantidade_Click);
-            // 
-            // buttonHorario
-            // 
-            this.buttonHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHorario.Location = new System.Drawing.Point(430, 81);
-            this.buttonHorario.Name = "buttonHorario";
-            this.buttonHorario.Size = new System.Drawing.Size(29, 23);
-            this.buttonHorario.TabIndex = 34;
-            this.buttonHorario.Text = "+";
-            this.buttonHorario.UseVisualStyleBackColor = true;
-            this.buttonHorario.Click += new System.EventHandler(this.buttonHorario_Click);
-            // 
             // AgendamentoServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +474,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void comboBoxFuncionario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

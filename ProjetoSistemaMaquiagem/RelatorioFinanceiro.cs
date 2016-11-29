@@ -63,7 +63,7 @@ namespace ProjetoSistemaMaquiagem
         private void buttonPesquisarCliente_Click(object sender, EventArgs e)
         {
             try {
-                
+                this.tb_prestacao_servicoTableAdapter.Fill(this.sistemamaquiagemDataSet.tb_prestacao_servico);
                 this.reportViewer1.RefreshReport();
             }
             catch(Exception ex)

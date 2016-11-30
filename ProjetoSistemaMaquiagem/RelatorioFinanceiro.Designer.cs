@@ -32,10 +32,6 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dataTableClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataTableFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ProjetoSistemaMaquiagem.DataSet1();
-            this.dataTablePeriodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePickerInicial = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.buttonPesquisarCliente = new System.Windows.Forms.Button();
@@ -55,36 +51,23 @@
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataTableClienteTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableClienteTableAdapter();
-            this.dataTableClienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ProjetoSistemaMaquiagem.DataSet1();
+            this.dataTablePeriodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTableFuncionarioTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableFuncionarioTableAdapter();
             this.dataTablePeriodoTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTablePeriodoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).BeginInit();
+            this.dataTableClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableClienteTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableClienteTableAdapter();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataTableFuncionarioBindingSource
-            // 
-            this.dataTableFuncionarioBindingSource.DataMember = "DataTableFuncionario";
-            this.dataTableFuncionarioBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTablePeriodoBindingSource
-            // 
-            this.dataTablePeriodoBindingSource.DataMember = "DataTablePeriodo";
-            this.dataTablePeriodoBindingSource.DataSource = this.dataSet1;
             // 
             // dateTimePickerInicial
             // 
@@ -280,14 +263,20 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Data inicial";
             // 
-            // dataTableClienteTableAdapter
+            // dataTableFuncionarioBindingSource
             // 
-            this.dataTableClienteTableAdapter.ClearBeforeFill = true;
+            this.dataTableFuncionarioBindingSource.DataMember = "DataTableFuncionario";
+            this.dataTableFuncionarioBindingSource.DataSource = this.dataSet1;
             // 
-            // dataTableClienteBindingSource1
+            // dataSet1
             // 
-            this.dataTableClienteBindingSource1.DataMember = "DataTableCliente";
-            this.dataTableClienteBindingSource1.DataSource = this.dataSet1;
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTablePeriodoBindingSource
+            // 
+            this.dataTablePeriodoBindingSource.DataMember = "DataTablePeriodo";
+            this.dataTablePeriodoBindingSource.DataSource = this.dataSet1;
             // 
             // dataTableFuncionarioTableAdapter
             // 
@@ -296,6 +285,15 @@
             // dataTablePeriodoTableAdapter
             // 
             this.dataTablePeriodoTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataTableClienteBindingSource
+            // 
+            this.dataTableClienteBindingSource.DataMember = "DataTableCliente";
+            this.dataTableClienteBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataTableClienteTableAdapter
+            // 
+            this.dataTableClienteTableAdapter.ClearBeforeFill = true;
             // 
             // RelatorioFinanceiro
             // 
@@ -309,10 +307,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio Financeiro";
             this.Load += new System.EventHandler(this.Relatorio_Financeiro_load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -321,7 +315,10 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,13 +343,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxFuncionario;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
-        private System.Windows.Forms.BindingSource dataTableClienteBindingSource;
-        private DataSet1TableAdapters.DataTableClienteTableAdapter dataTableClienteTableAdapter;
         private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource dataTableClienteBindingSource1;
         private System.Windows.Forms.BindingSource dataTableFuncionarioBindingSource;
         private System.Windows.Forms.BindingSource dataTablePeriodoBindingSource;
         private DataSet1TableAdapters.DataTableFuncionarioTableAdapter dataTableFuncionarioTableAdapter;
         private DataSet1TableAdapters.DataTablePeriodoTableAdapter dataTablePeriodoTableAdapter;
+        private System.Windows.Forms.BindingSource dataTableClienteBindingSource;
+        private DataSet1TableAdapters.DataTableClienteTableAdapter dataTableClienteTableAdapter;
     }
 }

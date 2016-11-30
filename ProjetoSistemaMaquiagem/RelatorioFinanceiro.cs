@@ -58,11 +58,11 @@ namespace ProjetoSistemaMaquiagem
             try
             {
                 this.dataTableFuncionarioTableAdapter.Fill(this.dataSet1.DataTableFuncionario, comboBoxFuncionario.Text);
-                this.reportViewer1.RefreshReport();
+                this.reportViewer2.RefreshReport();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao carregar\nFavor clicar novamente!", "Falha", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
         }
 
@@ -77,7 +77,7 @@ namespace ProjetoSistemaMaquiagem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao carregar\nFavor clicar novamente!", "Falha", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
         }
 
@@ -86,12 +86,12 @@ namespace ProjetoSistemaMaquiagem
             try
             {
                 this.dataTablePeriodoTableAdapter.Fill(this.dataSet1.DataTablePeriodo, dateTimePickerInicial.Value.ToShortDateString(), dateTimePickerFinal.Value.ToShortDateString());
-                this.reportViewer1.RefreshReport();
+                this.reportViewer3.RefreshReport();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                MessageBox.Show("Erro ao carregar\nFavor clicar novamente!", "Falha", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
 
 

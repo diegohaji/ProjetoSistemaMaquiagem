@@ -129,6 +129,11 @@
     <Compile Include="ControlePagamento.Designer.cs">
       <DependentUpon>ControlePagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EsqueciSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,11 +161,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="sistemamaquiagemDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>sistemamaquiagemDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
@@ -206,8 +206,8 @@
     <EmbeddedResource Include="RelatorioFinanceiro.resx">
       <DependentUpon>RelatorioFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportPeriodo.rdlc" />
     <EmbeddedResource Include="ReportCliente.rdlc" />
+    <EmbeddedResource Include="ReportPeriodo.rdlc" />
     <EmbeddedResource Include="ReportFuncionario.rdlc" />
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
@@ -222,6 +222,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -358,17 +369,6 @@
     </None>
     <None Include="Service References\APICorreios\ProjetoSistemaMaquiagem.APICorreios.verificaDisponibilidadeServicoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="sistemamaquiagemDataSet.xsc">
-      <DependentUpon>sistemamaquiagemDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="sistemamaquiagemDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>sistemamaquiagemDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="sistemamaquiagemDataSet.xss">
-      <DependentUpon>sistemamaquiagemDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

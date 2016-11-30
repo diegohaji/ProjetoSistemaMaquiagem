@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using AcessoADados;
 using CamadaDeNegocio;
 using System.Diagnostics;
+using Microsoft.Reporting.WinForms;
 
 namespace ProjetoSistemaMaquiagem
 {
@@ -44,8 +45,6 @@ namespace ProjetoSistemaMaquiagem
 
         private void Relatorio_Financeiro_load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemamaquiagemDataSet.tb_prestacao_servico' table. You can move, or remove it, as needed.
-            this.tb_prestacao_servicoTableAdapter.Fill(this.sistemamaquiagemDataSet.tb_prestacao_servico);
 
             PreencherComboCliente();
             PreencherComboFuncionario();
@@ -56,17 +55,27 @@ namespace ProjetoSistemaMaquiagem
 
         private void buttonPesquisarFuncionario_Click(object sender, EventArgs e)
         {
-            
-
+            try
+            {
+                this.dataTableFuncionarioTableAdapter.Fill(this.dataSet1.DataTableFuncionario, comboBoxFuncionario.Text);
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
         }
 
         private void buttonPesquisarCliente_Click(object sender, EventArgs e)
         {
-            try {
-                this.tb_prestacao_servicoTableAdapter.Fill(this.sistemamaquiagemDataSet.tb_prestacao_servico);
+            try
+            {
+
+                // TODO: This line of code loads data into the 'dataSet1.DataTableCliente' table. You can move, or remove it, as needed.
+                this.dataTableClienteTableAdapter.Fill(this.dataSet1.DataTableCliente, comboBoxCliente.Text);
                 this.reportViewer1.RefreshReport();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
@@ -74,12 +83,18 @@ namespace ProjetoSistemaMaquiagem
 
         private void PesquisarPeriodo_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-        
+            try
+            {
+                this.dataTablePeriodoTableAdapter.Fill(this.dataSet1.DataTablePeriodo, dateTimePickerInicial.Value.ToShortDateString(), dateTimePickerFinal.Value.ToShortDateString());
+                this.reportViewer1.RefreshReport();
 
-       
-        
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+
+
+        }
     }
 }

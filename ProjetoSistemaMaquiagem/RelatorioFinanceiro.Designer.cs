@@ -32,8 +32,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.tb_prestacao_servicoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemamaquiagemDataSet = new ProjetoSistemaMaquiagem.sistemamaquiagemDataSet();
+            this.dataTableClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ProjetoSistemaMaquiagem.DataSet1();
+            this.dataTablePeriodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePickerInicial = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.buttonPesquisarCliente = new System.Windows.Forms.Button();
@@ -42,36 +44,47 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_prestacao_servicoTableAdapter = new ProjetoSistemaMaquiagem.sistemamaquiagemDataSetTableAdapters.tb_prestacao_servicoTableAdapter();
-            this.comboBoxCliente = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_prestacao_servicoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemamaquiagemDataSet)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataTableClienteTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableClienteTableAdapter();
+            this.dataTableClienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTableFuncionarioTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableFuncionarioTableAdapter();
+            this.dataTablePeriodoTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTablePeriodoTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tb_prestacao_servicoBindingSource
+            // dataTableFuncionarioBindingSource
             // 
-            this.tb_prestacao_servicoBindingSource.DataMember = "tb_prestacao_servico";
-            this.tb_prestacao_servicoBindingSource.DataSource = this.sistemamaquiagemDataSet;
+            this.dataTableFuncionarioBindingSource.DataMember = "DataTableFuncionario";
+            this.dataTableFuncionarioBindingSource.DataSource = this.dataSet1;
             // 
-            // sistemamaquiagemDataSet
+            // dataSet1
             // 
-            this.sistemamaquiagemDataSet.DataSetName = "sistemamaquiagemDataSet";
-            this.sistemamaquiagemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTablePeriodoBindingSource
+            // 
+            this.dataTablePeriodoBindingSource.DataMember = "DataTablePeriodo";
+            this.dataTablePeriodoBindingSource.DataSource = this.dataSet1;
             // 
             // dateTimePickerInicial
             // 
@@ -122,7 +135,7 @@
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 440);
+            this.groupBox1.Size = new System.Drawing.Size(797, 598);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
@@ -135,7 +148,7 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 20);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(683, 414);
+            this.tabControl1.Size = new System.Drawing.Size(785, 572);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -148,19 +161,36 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(675, 388);
+            this.tabPage1.Size = new System.Drawing.Size(777, 546);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cliente";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Cliente";
+            // 
+            // comboBoxCliente
+            // 
+            this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.Location = new System.Drawing.Point(51, 5);
+            this.comboBoxCliente.Name = "comboBoxCliente";
+            this.comboBoxCliente.Size = new System.Drawing.Size(290, 21);
+            this.comboBoxCliente.TabIndex = 10;
             // 
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.tb_prestacao_servicoBindingSource;
+            reportDataSource1.Value = this.dataTableClienteBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportCliente.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(6, 32);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(663, 347);
+            this.reportViewer1.Size = new System.Drawing.Size(765, 511);
             this.reportViewer1.TabIndex = 9;
             // 
             // tabPage2
@@ -173,19 +203,36 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(675, 388);
+            this.tabPage2.Size = new System.Drawing.Size(777, 546);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Funcionario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Funcionario";
+            // 
+            // comboBoxFuncionario
+            // 
+            this.comboBoxFuncionario.FormattingEnabled = true;
+            this.comboBoxFuncionario.Location = new System.Drawing.Point(74, 6);
+            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
+            this.comboBoxFuncionario.Size = new System.Drawing.Size(290, 21);
+            this.comboBoxFuncionario.TabIndex = 12;
             // 
             // reportViewer2
             // 
             reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.tb_prestacao_servicoBindingSource;
+            reportDataSource2.Value = this.dataTableFuncionarioBindingSource;
             this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportFuncionario.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(3, 38);
             this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(666, 347);
+            this.reportViewer2.Size = new System.Drawing.Size(768, 502);
             this.reportViewer2.TabIndex = 3;
             // 
             // tabPage3
@@ -200,9 +247,20 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(675, 388);
+            this.tabPage3.Size = new System.Drawing.Size(777, 546);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Periodo";
+            // 
+            // reportViewer3
+            // 
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.dataTablePeriodoBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportPeriodo.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(6, 46);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.Size = new System.Drawing.Size(768, 494);
+            this.reportViewer3.TabIndex = 12;
             // 
             // label4
             // 
@@ -222,54 +280,22 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Data inicial";
             // 
-            // tb_prestacao_servicoTableAdapter
+            // dataTableClienteTableAdapter
             // 
-            this.tb_prestacao_servicoTableAdapter.ClearBeforeFill = true;
+            this.dataTableClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBoxCliente
+            // dataTableClienteBindingSource1
             // 
-            this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Location = new System.Drawing.Point(51, 5);
-            this.comboBoxCliente.Name = "comboBoxCliente";
-            this.comboBoxCliente.Size = new System.Drawing.Size(290, 21);
-            this.comboBoxCliente.TabIndex = 10;
+            this.dataTableClienteBindingSource1.DataMember = "DataTableCliente";
+            this.dataTableClienteBindingSource1.DataSource = this.dataSet1;
             // 
-            // label1
+            // dataTableFuncionarioTableAdapter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Cliente";
+            this.dataTableFuncionarioTableAdapter.ClearBeforeFill = true;
             // 
-            // label3
+            // dataTablePeriodoTableAdapter
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Funcionario";
-            // 
-            // comboBoxFuncionario
-            // 
-            this.comboBoxFuncionario.FormattingEnabled = true;
-            this.comboBoxFuncionario.Location = new System.Drawing.Point(74, 6);
-            this.comboBoxFuncionario.Name = "comboBoxFuncionario";
-            this.comboBoxFuncionario.Size = new System.Drawing.Size(290, 21);
-            this.comboBoxFuncionario.TabIndex = 12;
-            // 
-            // reportViewer3
-            // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.tb_prestacao_servicoBindingSource;
-            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer3.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportPeriodo.rdlc";
-            this.reportViewer3.Location = new System.Drawing.Point(6, 46);
-            this.reportViewer3.Name = "reportViewer3";
-            this.reportViewer3.Size = new System.Drawing.Size(663, 336);
-            this.reportViewer3.TabIndex = 12;
+            this.dataTablePeriodoTableAdapter.ClearBeforeFill = true;
             // 
             // RelatorioFinanceiro
             // 
@@ -277,15 +303,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(720, 480);
+            this.ClientSize = new System.Drawing.Size(822, 622);
             this.Controls.Add(this.groupBox1);
             this.Name = "RelatorioFinanceiro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio Financeiro";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Relatorio_Financeiro_load);
-            ((System.ComponentModel.ISupportInitialize)(this.tb_prestacao_servicoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemamaquiagemDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -294,6 +321,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,13 +341,18 @@
         private System.Windows.Forms.Label label2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
-        private System.Windows.Forms.BindingSource tb_prestacao_servicoBindingSource;
-        private sistemamaquiagemDataSet sistemamaquiagemDataSet;
-        private sistemamaquiagemDataSetTableAdapters.tb_prestacao_servicoTableAdapter tb_prestacao_servicoTableAdapter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxFuncionario;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private System.Windows.Forms.BindingSource dataTableClienteBindingSource;
+        private DataSet1TableAdapters.DataTableClienteTableAdapter dataTableClienteTableAdapter;
+        private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource dataTableClienteBindingSource1;
+        private System.Windows.Forms.BindingSource dataTableFuncionarioBindingSource;
+        private System.Windows.Forms.BindingSource dataTablePeriodoBindingSource;
+        private DataSet1TableAdapters.DataTableFuncionarioTableAdapter dataTableFuncionarioTableAdapter;
+        private DataSet1TableAdapters.DataTablePeriodoTableAdapter dataTablePeriodoTableAdapter;
     }
 }

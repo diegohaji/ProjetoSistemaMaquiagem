@@ -156,7 +156,7 @@ namespace ProjetoSistemaMaquiagem
             if (resposta == 6)
             {
                 ClnCliente cliente = new ClnCliente();
-                cliente.Excluir(textBoxNome.Text);
+                cliente.Excluir(cliente.BuscarId(textBoxNome.Text));
             }
             LimparTxt(Cadastro);
             AtualizarGrid();

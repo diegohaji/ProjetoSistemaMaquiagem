@@ -393,7 +393,9 @@
                               <Value>=Fields!Valor.Value</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>'R$'0.00;('R$'0.00)</Format>
                                 <Color>#4d4d4d</Color>
+                                <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -473,7 +475,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>1.2cm</Height>
-        <Width>19.01cm</Width>
+        <Width>19.01001cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -484,7 +486,7 @@
     <Height>2.4375in</Height>
     <Style />
   </Body>
-  <Width>7.48425in</Width>
+  <Width>7.48426in</Width>
   <Page>
     <PageHeader>
       <Height>1.93146cm</Height>

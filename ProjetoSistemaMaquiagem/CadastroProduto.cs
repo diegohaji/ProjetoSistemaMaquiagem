@@ -142,7 +142,8 @@ namespace ProjetoSistemaMaquiagem
             if (resposta == 6)
             {
                 ClnProdutos produto = new ClnProdutos();
-                produto.Excluir(textBoxNome.Text);
+                MessageBox.Show(produto.BuscarId(textBoxNome.Text).ToString(), "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                produto.Excluir(produto.BuscarId(textBoxNome.Text));
             }
             LimparTxt(groupBoxProduto);
             AtualizarGrid();

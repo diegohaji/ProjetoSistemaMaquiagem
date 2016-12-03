@@ -130,7 +130,7 @@ namespace CamadaDeNegocio
             string csql;
             csql = "Select cd_funcionario From tb_funcionario where nm_funcionario like ('%" + nome + "%')";
             ClasseDados cd = new ClasseDados();
-            return cd.RetornarIdNumerico(csql);
+            return (cd.RetornarIdNumerico(csql) - 1);
         }
 
         //3.3 Método para incluir um novo funcionario no 
@@ -257,12 +257,12 @@ namespace CamadaDeNegocio
 
         //3.5 Método para excluir um funcionario do 
         //Banco de dados
-        public void Excluir(string nome)
+        public void Excluir(int cdfunc)
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_funcionario ");
-            csql.Append(" where nm_funcionario='");
-            csql.Append(nome + "'");
+            csql.Append(" where cd_funcionario=");
+            csql.Append(cdfunc);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

@@ -48,6 +48,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -129,6 +149,9 @@
     <Compile Include="ControlePagamento.Designer.cs">
       <DependentUpon>ControlePagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,6 +162,30 @@
     </Compile>
     <Compile Include="EsqueciSenha.Designer.cs">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaPagamentoTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaPagamentoTotal.Designer.cs">
+      <DependentUpon>JanelaPagamentoTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaRelatorioPeriodoTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaRelatorioPeriodoTotal.Designer.cs">
+      <DependentUpon>JanelaRelatorioPeriodoTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaRelatorioTotalClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaRelatorioTotalClientes.Designer.cs">
+      <DependentUpon>JanelaRelatorioTotalClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JanelaRelatorioTotalFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JanelaRelatorioTotalFuncionarios.Designer.cs">
+      <DependentUpon>JanelaRelatorioTotalFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="PagamentoServicos.cs">
       <SubType>Form</SubType>
@@ -200,12 +247,29 @@
     <EmbeddedResource Include="EsqueciSenha.resx">
       <DependentUpon>EsqueciSenha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="JanelaPagamentoTotal.resx">
+      <DependentUpon>JanelaPagamentoTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaRelatorioPeriodoTotal.resx">
+      <DependentUpon>JanelaRelatorioPeriodoTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaRelatorioTotalClientes.resx">
+      <DependentUpon>JanelaRelatorioTotalClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JanelaRelatorioTotalFuncionarios.resx">
+      <DependentUpon>JanelaRelatorioTotalFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PagamentoServicos.resx">
       <DependentUpon>PagamentoServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RelatorioFinanceiro.resx">
       <DependentUpon>RelatorioFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPagamentoTotal.rdlc" />
+    <EmbeddedResource Include="ReportPeriodoTotal.rdlc" />
+    <EmbeddedResource Include="ReportTodosClientes.rdlc" />
+    <EmbeddedResource Include="ReportTodosFuncionarios.rdlc" />
+    <EmbeddedResource Include="ReportPagamento.rdlc" />
     <EmbeddedResource Include="ReportCliente.rdlc" />
     <EmbeddedResource Include="ReportPeriodo.rdlc" />
     <EmbeddedResource Include="ReportFuncionario.rdlc" />

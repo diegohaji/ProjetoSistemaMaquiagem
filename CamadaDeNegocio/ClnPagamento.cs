@@ -66,7 +66,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "select tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, sum(vl_total) as Valor_Total_Mensal from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario = tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico = ts.cd_servico";
+            csql = "select tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, sum(vl_total) as Valor_Total_Mensal from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario = tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico = ts.cd_servico ";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
@@ -77,12 +77,14 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome(string nome)
         {
             string csql;
-            csql = "select tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, sum(vl_total) as Valor_Total_Mensal from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario = tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico = ts.cd_servico where tps.nm_funcionario like('%"+ nome +"%')";
+            csql = "select tps.cd_funcionario as Codigo_Funcionario, tps.nm_funcionario as Funcionario,tc.nm_cliente as Cliente,tps.nm_servico as Servico, sum(vl_total) as Valor_Total_Mensal from tb_prestacao_servico as tps inner join tb_funcionario as tf on tps.cd_funcionario = tf.cd_funcionario inner join tb_cliente as tc on tps.cd_cliente = tc.cd_cliente inner join tb_servico as ts on tps.cd_servico = ts.cd_servico where tps.nm_funcionario like('%"+ nome +"%')";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);
             return ds;
         }
+
+       
 
         public Int32 BuscarCdCliente()
         {

@@ -186,7 +186,7 @@ namespace ProjetoSistemaMaquiagem
             if (resposta == 6)
             {
                 ClnFuncionario funcionario = new ClnFuncionario();
-                funcionario.Excluir(textBoxNome.Text);
+                funcionario.Excluir(funcionario.BuscarId(textBoxNome.Text));
             }
             LimparTxt(Cadastro);
             AtualizarGrid();

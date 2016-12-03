@@ -109,6 +109,7 @@ namespace ProjetoSistemaMaquiagem
         private void Cancelar_Click(object sender, EventArgs e)
         {
             LimparTxt(groupBoxServico);
+            AtualizarGrid();
         }
 
         //funcao do grid
@@ -131,8 +132,8 @@ namespace ProjetoSistemaMaquiagem
             int resposta = Convert.ToInt16(MessageBox.Show(mensagem, "Excluir cadastro", MessageBoxButtons.YesNo, MessageBoxIcon.Question));
             if (resposta == 6)
             {
-                ClnProdutos produto = new ClnProdutos();
-                produto.Excluir(textBoxNome.Text);
+                ClnServiços servico = new ClnServiços();
+                servico.Excluir(servico.BuscarId(textBoxNome.Text));
             }
             LimparTxt(groupBoxServico);
             AtualizarGrid();

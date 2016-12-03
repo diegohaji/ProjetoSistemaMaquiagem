@@ -48,9 +48,9 @@ namespace ProjetoSistemaMaquiagem
 
             PreencherComboCliente();
             PreencherComboFuncionario();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer2.RefreshReport();
-            this.reportViewer3.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer2.RefreshReport();
+            //this.reportViewer3.RefreshReport();
         }
 
         private void buttonPesquisarFuncionario_Click(object sender, EventArgs e)
@@ -71,7 +71,6 @@ namespace ProjetoSistemaMaquiagem
             try
             {
 
-                // TODO: This line of code loads data into the 'dataSet1.DataTableCliente' table. You can move, or remove it, as needed.
                 this.dataTableClienteTableAdapter.Fill(this.dataSet1.DataTableCliente, comboBoxCliente.Text);
                 this.reportViewer1.RefreshReport();
             }
@@ -95,6 +94,25 @@ namespace ProjetoSistemaMaquiagem
             }
 
 
+        }
+
+        
+        private void buttonPeriodoTotal_Click(object sender, EventArgs e)
+        {
+            JanelaRelatorioPeriodoTotal jrpt = new JanelaRelatorioPeriodoTotal();
+            jrpt.Show();
+        }
+
+        private void buttonTodosFuncionarios_Click(object sender, EventArgs e)
+        {
+            JanelaRelatorioTotalFuncionarios jrtf = new JanelaRelatorioTotalFuncionarios();
+            jrtf.Show();
+        }
+
+        private void buttonTodosClientes_Click(object sender, EventArgs e)
+        {
+            JanelaRelatorioTotalClientes jrtc = new JanelaRelatorioTotalClientes();
+            jrtc.Show();
         }
     }
 }

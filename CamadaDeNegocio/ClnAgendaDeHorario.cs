@@ -82,7 +82,7 @@ namespace CamadaDeNegocio
             csql.Append("dia,");
             csql.Append("horarioinicial,");
             csql.Append("horariofinal) Values(");
-            csql.Append(cd_funcionario+1);
+            csql.Append(cd_funcionario);
             csql.Append(",'" + servico + "',");
             csql.Append("'" + funcionario + "',");
             csql.Append("'" + dia + "',");
@@ -112,7 +112,7 @@ namespace CamadaDeNegocio
             csql.Append("', horariofinal = '");
             csql.Append(horariofinal);
             csql.Append("' where cd_funcionario = ");
-            csql.Append((cd_funcionario-1));
+            csql.Append((cd_funcionario));
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

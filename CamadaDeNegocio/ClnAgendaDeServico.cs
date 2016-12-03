@@ -174,9 +174,9 @@ namespace CamadaDeNegocio
             csql.Append("quantidade,");
             csql.Append("status");
             csql.Append(") Values(");
-            csql.Append((cd_funcionario -1 ));
-            csql.Append(",'" + (cd_cliente -1 ) + "',");
-            csql.Append("'" + (cd_servico -1 )+ "',");
+            csql.Append((cd_funcionario));
+            csql.Append(",'" + (cd_cliente ) + "',");
+            csql.Append("'" + (cd_servico )+ "',");
             csql.Append("'" + data_agendamento + "',");
             csql.Append("'" + hora_agendamento + "',");
             csql.Append("'" + produto + "',");
@@ -185,11 +185,6 @@ namespace CamadaDeNegocio
             csql.Append(")");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-
-            csql = new StringBuilder();
-            csql.Append("select cd_cliente from tb_cliente where cd_cliente = '" + cd_cliente + "'");
-            cd = new ClasseDados();
-            int marreta = cd.RetornarIdNumerico(csql.ToString()) - 1;
 
             csql = new StringBuilder();
             csql.Append("SET FOREIGN_KEY_CHECKS = ");
@@ -223,7 +218,7 @@ namespace CamadaDeNegocio
         }
 
 
-        public String BuscarporCodigoFuncionario(int cdfuncionario)
+        public string BuscarporCodigoFuncionario(int cdfuncionario)
         {
             string nm_funcionario;
             string csql;
@@ -290,11 +285,11 @@ namespace CamadaDeNegocio
             csql.Append("', status = '");
             csql.Append(status);
             csql.Append("' where cd_funcionario = ");
-            csql.Append((cd_funcionario - 1));
+            csql.Append((cd_funcionario));
             csql.Append("&& cd_cliente = ");
-            csql.Append((cd_cliente - 1));
+            csql.Append((cd_cliente));
             csql.Append(" && cd_servico = ");
-            csql.Append(cd_servico - 1);
+            csql.Append(cd_servico);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();

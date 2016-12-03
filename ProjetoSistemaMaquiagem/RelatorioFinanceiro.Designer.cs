@@ -32,6 +32,11 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dataTableClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ProjetoSistemaMaquiagem.DataSet1();
+            this.dataTableFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTablePeriodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePickerInicial = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFinal = new System.Windows.Forms.DateTimePicker();
             this.buttonPesquisarCliente = new System.Windows.Forms.Button();
@@ -40,34 +45,53 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonTodosClientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxCliente = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonTodosFuncionarios = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonPeriodoTotal = new System.Windows.Forms.Button();
             this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataTableFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ProjetoSistemaMaquiagem.DataSet1();
-            this.dataTablePeriodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTableFuncionarioTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableFuncionarioTableAdapter();
             this.dataTablePeriodoTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTablePeriodoTableAdapter();
-            this.dataTableClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTableClienteTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTableClienteTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataTableClienteBindingSource
+            // 
+            this.dataTableClienteBindingSource.DataMember = "DataTableCliente";
+            this.dataTableClienteBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTableFuncionarioBindingSource
+            // 
+            this.dataTableFuncionarioBindingSource.DataMember = "DataTableFuncionario";
+            this.dataTableFuncionarioBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataTablePeriodoBindingSource
+            // 
+            this.dataTablePeriodoBindingSource.DataMember = "DataTablePeriodo";
+            this.dataTablePeriodoBindingSource.DataSource = this.dataSet1;
             // 
             // dateTimePickerInicial
             // 
@@ -137,6 +161,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.buttonTodosClientes);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.comboBoxCliente);
             this.tabPage1.Controls.Add(this.reportViewer1);
@@ -147,6 +172,16 @@
             this.tabPage1.Size = new System.Drawing.Size(777, 546);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cliente";
+            // 
+            // buttonTodosClientes
+            // 
+            this.buttonTodosClientes.Location = new System.Drawing.Point(437, 5);
+            this.buttonTodosClientes.Name = "buttonTodosClientes";
+            this.buttonTodosClientes.Size = new System.Drawing.Size(125, 23);
+            this.buttonTodosClientes.TabIndex = 12;
+            this.buttonTodosClientes.Text = "Todos os Clientes";
+            this.buttonTodosClientes.UseVisualStyleBackColor = true;
+            this.buttonTodosClientes.Click += new System.EventHandler(this.buttonTodosClientes_Click);
             // 
             // label1
             // 
@@ -169,7 +204,10 @@
             // 
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.dataTableClienteBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = null;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportCliente.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(6, 32);
             this.reportViewer1.Name = "reportViewer1";
@@ -179,6 +217,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.buttonTodosFuncionarios);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.comboBoxFuncionario);
             this.tabPage2.Controls.Add(this.reportViewer2);
@@ -189,6 +228,16 @@
             this.tabPage2.Size = new System.Drawing.Size(777, 546);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Funcionario";
+            // 
+            // buttonTodosFuncionarios
+            // 
+            this.buttonTodosFuncionarios.Location = new System.Drawing.Point(470, 5);
+            this.buttonTodosFuncionarios.Name = "buttonTodosFuncionarios";
+            this.buttonTodosFuncionarios.Size = new System.Drawing.Size(138, 23);
+            this.buttonTodosFuncionarios.TabIndex = 14;
+            this.buttonTodosFuncionarios.Text = "Todos os Funcionarios";
+            this.buttonTodosFuncionarios.UseVisualStyleBackColor = true;
+            this.buttonTodosFuncionarios.Click += new System.EventHandler(this.buttonTodosFuncionarios_Click);
             // 
             // label3
             // 
@@ -209,9 +258,9 @@
             // 
             // reportViewer2
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.dataTableFuncionarioBindingSource;
-            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.dataTableFuncionarioBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportFuncionario.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(3, 38);
             this.reportViewer2.Name = "reportViewer2";
@@ -221,6 +270,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.buttonPeriodoTotal);
             this.tabPage3.Controls.Add(this.reportViewer3);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label2);
@@ -234,11 +284,21 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Periodo";
             // 
+            // buttonPeriodoTotal
+            // 
+            this.buttonPeriodoTotal.Location = new System.Drawing.Point(599, 16);
+            this.buttonPeriodoTotal.Name = "buttonPeriodoTotal";
+            this.buttonPeriodoTotal.Size = new System.Drawing.Size(114, 23);
+            this.buttonPeriodoTotal.TabIndex = 13;
+            this.buttonPeriodoTotal.Text = "Periodo Total";
+            this.buttonPeriodoTotal.UseVisualStyleBackColor = true;
+            this.buttonPeriodoTotal.Click += new System.EventHandler(this.buttonPeriodoTotal_Click);
+            // 
             // reportViewer3
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.dataTablePeriodoBindingSource;
-            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource4.Name = "DataSet1";
+            reportDataSource4.Value = this.dataTablePeriodoBindingSource;
+            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer3.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportPeriodo.rdlc";
             this.reportViewer3.Location = new System.Drawing.Point(6, 46);
             this.reportViewer3.Name = "reportViewer3";
@@ -263,21 +323,6 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Data inicial";
             // 
-            // dataTableFuncionarioBindingSource
-            // 
-            this.dataTableFuncionarioBindingSource.DataMember = "DataTableFuncionario";
-            this.dataTableFuncionarioBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTablePeriodoBindingSource
-            // 
-            this.dataTablePeriodoBindingSource.DataMember = "DataTablePeriodo";
-            this.dataTablePeriodoBindingSource.DataSource = this.dataSet1;
-            // 
             // dataTableFuncionarioTableAdapter
             // 
             this.dataTableFuncionarioTableAdapter.ClearBeforeFill = true;
@@ -285,11 +330,6 @@
             // dataTablePeriodoTableAdapter
             // 
             this.dataTablePeriodoTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataTableClienteBindingSource
-            // 
-            this.dataTableClienteBindingSource.DataMember = "DataTableCliente";
-            this.dataTableClienteBindingSource.DataSource = this.dataSet1;
             // 
             // dataTableClienteTableAdapter
             // 
@@ -307,6 +347,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio Financeiro";
             this.Load += new System.EventHandler(this.Relatorio_Financeiro_load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -315,10 +359,6 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableFuncionarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTablePeriodoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTableClienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,5 +390,8 @@
         private DataSet1TableAdapters.DataTablePeriodoTableAdapter dataTablePeriodoTableAdapter;
         private System.Windows.Forms.BindingSource dataTableClienteBindingSource;
         private DataSet1TableAdapters.DataTableClienteTableAdapter dataTableClienteTableAdapter;
+        private System.Windows.Forms.Button buttonTodosClientes;
+        private System.Windows.Forms.Button buttonTodosFuncionarios;
+        private System.Windows.Forms.Button buttonPeriodoTotal;
     }
 }

@@ -28,25 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTablePagamentoFuncionarioComDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new ProjetoSistemaMaquiagem.DataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.comboBoxFuncionario = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataTablePagamentoFuncionarioComDataTableAdapter = new ProjetoSistemaMaquiagem.DataSet1TableAdapters.DataTablePagamentoFuncionarioComDataTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTablePagamentoFuncionarioComDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTablePagamentoFuncionarioComDataBindingSource
+            // 
+            this.DataTablePagamentoFuncionarioComDataBindingSource.DataMember = "DataTablePagamentoFuncionarioComData";
+            this.DataTablePagamentoFuncionarioComDataBindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBoxFuncionario);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 57);
+            this.groupBox1.Size = new System.Drawing.Size(576, 57);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(415, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Total do Funcionario";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // comboBoxFuncionario
             // 
@@ -58,11 +86,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(310, 18);
+            this.button1.Location = new System.Drawing.Point(319, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Pesquisar";
+            this.button1.Text = "Data";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -75,27 +103,35 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Funcionario";
             // 
-            // dgv1
+            // reportViewer1
             // 
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(13, 86);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.Size = new System.Drawing.Size(490, 192);
-            this.dgv1.TabIndex = 2;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.DataTablePagamentoFuncionarioComDataBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjetoSistemaMaquiagem.ReportPagamento.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(11, 76);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(699, 317);
+            this.reportViewer1.TabIndex = 1;
+            // 
+            // DataTablePagamentoFuncionarioComDataTableAdapter
+            // 
+            this.DataTablePagamentoFuncionarioComDataTableAdapter.ClearBeforeFill = true;
             // 
             // ControlePagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 298);
+            this.ClientSize = new System.Drawing.Size(722, 405);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgv1);
             this.Name = "ControlePagamento";
             this.Text = "Controle de pagamento";
             this.Load += new System.EventHandler(this.ControleDePagamento_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataTablePagamentoFuncionarioComDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -105,7 +141,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.ComboBox comboBoxFuncionario;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource DataTablePagamentoFuncionarioComDataBindingSource;
+        private DataSet1 DataSet1;
+        private DataSet1TableAdapters.DataTablePagamentoFuncionarioComDataTableAdapter DataTablePagamentoFuncionarioComDataTableAdapter;
+        private System.Windows.Forms.Button button2;
     }
 }

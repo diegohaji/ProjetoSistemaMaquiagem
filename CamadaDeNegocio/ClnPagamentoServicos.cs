@@ -218,9 +218,9 @@ namespace CamadaDeNegocio
             csql.Append("vl_total,");
             csql.Append("forma_pagamento");
             csql.Append(") Values(");
-            csql.Append((cd_funcionario -1));
-            csql.Append(",'" + (cd_cliente -1) + "',");
-            csql.Append("'" + (cd_servico - 1) + "',");
+            csql.Append((cd_funcionario));
+            csql.Append(",'" + (cd_cliente) + "',");
+            csql.Append("'" + (cd_servico) + "',");
             csql.Append("'" + status_prestacao + "',");
             csql.Append("'" + nm_funcionario + "',");
             csql.Append("'" + nm_cliente + "',");
@@ -270,11 +270,11 @@ namespace CamadaDeNegocio
             csql.Append("', forma_pagamento ='");
             csql.Append(formapagamento);
             csql.Append(" where cd_funcionario = ");
-            csql.Append((cd_funcionario - 1));
+            csql.Append((cd_funcionario));
             csql.Append("&& cd_cliente = ");
-            csql.Append((cd_cliente - 1));
+            csql.Append((cd_cliente));
             csql.Append(" && cd_servico = ");
-            csql.Append(cd_servico - 1);
+            csql.Append(cd_servico);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();

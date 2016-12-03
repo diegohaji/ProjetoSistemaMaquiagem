@@ -22,8 +22,11 @@ namespace ProjetoSistemaMaquiagem
         //load
         private void ControleDePagamento_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DataSet1.DataTablePagamentoFuncionarioComData' table. You can move, or remove it, as needed.
+
             PreencherComboFuncionario();
-            AtualizarGrid();
+
+
         }
 
         //limpa o texto da caixa de texto do grupo
@@ -53,14 +56,6 @@ namespace ProjetoSistemaMaquiagem
             return true;
         }
 
-        //atualiza o grid
-        private void AtualizarGrid()
-        {
-            DataSet ds = new DataSet();
-            ClnPagamentoServicos lancaservico = new ClnPagamentoServicos();
-            ds = lancaservico.BuscarporNome();
-            dgv1.DataSource = ds.Tables[0];
-        }
 
         //preenche o combobox com os valores dos funcionarios
         public void PreencherComboFuncionario()
@@ -70,17 +65,27 @@ namespace ProjetoSistemaMaquiagem
             comboBoxFuncionario.DataSource = ds.Tables[0];
             comboBoxFuncionario.DisplayMember = "Nome";
             comboBoxFuncionario.ValueMember = "Codigo";
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClnPagamento pagamento = new ClnPagamento();
-            DataSet ds =  pagamento.BuscarporNome(comboBoxFuncionario.Text);
-            dgv1.DataSource = ds.Tables[0];
-            //AtualizarGrid();
+            try
+            {
+                this.DataTablePagamentoFuncionarioComDataTableAdapter.Fill(this.DataSet1.DataTablePagamentoFuncionarioComData, comboBoxFuncionario.Text);
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar\nFavor clicar novamente!", "Falha", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            JanelaPagamentoTotal jpt = new JanelaPagamentoTotal();
+            jpt.Show();
+        }
     }
 }

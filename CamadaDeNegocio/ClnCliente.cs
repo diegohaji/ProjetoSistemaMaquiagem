@@ -134,7 +134,7 @@ namespace CamadaDeNegocio
             string csql;
             csql = "Select cd_cliente From tb_cliente where nm_cliente like ('%" + nome + "%')";
             ClasseDados cd = new ClasseDados();
-            return cd.RetornarIdNumerico(csql);
+            return (cd.RetornarIdNumerico(csql) - 1);
         }
 
         //3.3 Método para incluir um novo cliente no 
@@ -266,12 +266,12 @@ namespace CamadaDeNegocio
 
         //3.5 Método para excluir um cliente do 
         //Banco de dados
-        public void Excluir(string nome)
+        public void Excluir(int cdcliente)
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_cliente ");
-            csql.Append(" where nm_cliente='");
-            csql.Append(nome + "'");
+            csql.Append(" where cd_cliente=");
+            csql.Append(cdcliente);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

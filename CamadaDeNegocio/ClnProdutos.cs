@@ -80,12 +80,12 @@ namespace CamadaDeNegocio
 
         //3.2 Buscar o próximo Id Numerico para 
         //inclusao de um novo produto.
-        public int BuscarId()
+        public int BuscarId(string nmproduto)
         {
             string csql;
-            csql = "Select * From tb_produto order by cd_produto desc limit 1";
+            csql = "Select cd_produto From tb_produto where nm_produto like ('%"+ nmproduto +"%')";
             ClasseDados cd = new ClasseDados();
-            return cd.RetornarIdNumerico(csql);
+            return (cd.RetornarIdNumerico(csql) - 1);
         }
 
         //3.3 Método para incluir um novo produto no 
@@ -138,12 +138,12 @@ namespace CamadaDeNegocio
 
         //3.5 Método para excluir um produto do 
         //Banco de dados
-        public void Excluir(string produto)
+        public void Excluir(int cdproduto)
         {
             StringBuilder csql = new StringBuilder();
             csql.Append("Delete From tb_produto ");
-            csql.Append(" where nm_produto='");
-            csql.Append(produto + "'");
+            csql.Append(" where cd_produto=");
+            csql.Append(cdproduto);
             ClasseDados cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
         }

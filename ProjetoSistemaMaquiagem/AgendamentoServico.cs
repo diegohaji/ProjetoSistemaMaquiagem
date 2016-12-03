@@ -140,17 +140,13 @@ namespace ProjetoSistemaMaquiagem
         {
             ClnAgendaDeServico agenda = new ClnAgendaDeServico();
             agenda.Dt_agendamento = dateTimePicker1.Value.ToShortDateString();
-
+            agenda.Cd_cliente = Convert.ToInt16(textBoxCliente.Text);
             agenda.Hora_agendamento = comboBoxHorario.Text;
             agenda.Nm_pesquisa = comboBoxCliente.Text;
             agenda.Produto = comboBoxProduto.Text;
             agenda.Quantidade = numericUpDownQtd.Value.ToString();
-            ClnCliente cliente = new ClnCliente();
-            agenda.Cd_cliente = cliente.BuscarId(comboBoxCliente.Text);
-            ClnFuncionario funcionario = new ClnFuncionario();
-            agenda.Cd_funcionario = funcionario.BuscarId(comboBoxFuncionario.Text);
-            ClnServiços servico = new ClnServiços();
-            agenda.Cd_servico = servico.BuscarId(comboBoxServico.Text);
+            agenda.Cd_funcionario = Convert.ToInt16(textBoxFuncionario.Text);
+            agenda.Cd_servico = Convert.ToInt16(textBoxServico.Text);
             if (verificaText(groupBox1))
             {
                 agenda.Gravar();

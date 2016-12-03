@@ -185,32 +185,34 @@ namespace CamadaDeNegocio
             csql.Append("'" + estado_funcionario + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+           
+            
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_fones_funcionario");
+            csql.Append("(");
+            csql.Append("fone,");
+            csql.Append("cd_funcionario) Values('");
+            csql.Append(telefone_funcionario);
+            csql.Append("','" + marreta + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            
+            csql = new StringBuilder();
+            csql.Append("Insert into tb_cel_funcionario");
+            csql.Append("(");
+            csql.Append("fone,");
+            csql.Append("cd_funcionario) Values('");
+            csql.Append(celular_funcionario);
+            csql.Append("','" + marreta + "')");
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+            
+
             csql = new StringBuilder();
             csql.Append("SET FOREIGN_KEY_CHECKS = ");
             csql.Append(1);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-            /*
-            csql = new StringBuilder();
-            csql.Append("Insert into tb_fones_funcionario");
-            csql.Append("(");
-            csql.Append("fone,");
-            csql.Append("cd_funcionario) Values('");
-            csql.Append(telefone_funcionario);
-            csql.Append("'," + cd_funcionario + "')");
-            cd = new ClasseDados();
-            cd.ExecutarComando(csql.ToString());
-
-            csql = new StringBuilder();
-            csql.Append("Insert into tb_fones_funcionario");
-            csql.Append("(");
-            csql.Append("fone,");
-            csql.Append("cd_funcionario) Values('");
-            csql.Append(telefone_funcionario);
-            csql.Append("'," + cd_funcionario + "')");
-            cd = new ClasseDados();
-            cd.ExecutarComando(csql.ToString());
-            */
         }
 
         //3.4 Método para atualizar (alterar um registro)
@@ -271,7 +273,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select tf.cd_funcionario as Codigo, tf.nm_funcionario as Nome, tf.rg_funcionario as RG, tf.cpf_funcionario as CPF, tf.email_funcionario as Email, tef.cep as CEP, teF.num as Numero, tef.logradouro as Logradouro, tef.bairro as Bairro, tef.cidade as Cidade, tef.estado as Estado, tef.complemento as Complemento From tb_funcionario as tf inner join tb_endereco_funcionario as tef on tf.cd_funcionario = tef.cd_funcionario";
+            csql = "Select tf.cd_funcionario as Codigo, tf.nm_funcionario as Nome, tf.rg_funcionario as RG, tf.cpf_funcionario as CPF, tf.email_funcionario as Email,tcf.fone as Celular ,tff.fone as Telefone,tef.cep as CEP, teF.num as Numero, tef.logradouro as Logradouro, tef.bairro as Bairro, tef.cidade as Cidade, tef.estado as Estado, tef.complemento as Complemento From tb_funcionario as tf inner join tb_endereco_funcionario as tef on tf.cd_funcionario = tef.cd_funcionario inner join tb_fones_funcionario as tff on tf.cd_funcionario = tff.cd_funcionario inner join tb_cel_funcionario as tcf on tf.cd_funcionario = tcf.cd_funcionario";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

@@ -147,6 +147,7 @@ namespace ProjetoSistemaMaquiagem
             agenda.Quantidade = numericUpDownQtd.Value.ToString();
             agenda.Cd_funcionario = Convert.ToInt16(textBoxFuncionario.Text);
             agenda.Cd_servico = Convert.ToInt16(textBoxServico.Text);
+            agenda.Cd_produto = Convert.ToInt16(textBoxProduto.Text);
             if (verificaText(groupBox1))
             {
                 agenda.Gravar();

@@ -265,7 +265,7 @@
     <EmbeddedResource Include="RelatorioFinanceiro.resx">
       <DependentUpon>RelatorioFinanceiro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="ReportPeriodo.rdlc" />
     <EmbeddedResource Include="ReportFuncionario.rdlc" />
     <EmbeddedResource Include="ReportPagamentoTotal.rdlc" />
     <EmbeddedResource Include="ReportPeriodoTotal.rdlc" />

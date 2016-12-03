@@ -19,6 +19,14 @@ create table tb_fones_cliente(
     primary key (cd_cliente, fone)
 ) engine = innodb;
 
+create table tb_cel_cliente(
+	fone varchar(15) not null,
+    cd_cliente int unsigned not null,
+    foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
+    primary key (cd_cliente, fone)
+) engine = innodb;
+
+
 create table tb_endereco_cliente(
 	cep varchar(9) not null,	
     estado varchar(127) not null,
@@ -62,6 +70,12 @@ create table tb_fones_funcionario(
     primary key (cd_funcionario, fone)
 ) engine = innodb;
 
+create table tb_cel_funcionario(
+	fone varchar(15) not null,
+    cd_funcionario int unsigned not null,
+    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario) on delete cascade,
+    primary key (cd_funcionario, fone)
+) engine = innodb;
 
 create table tb_servico(
 	cd_servico int unsigned not null auto_increment, 
@@ -179,6 +193,8 @@ cd_pagamento int unsigned not null auto_increment,
 cd_funcionario int unsigned not null,
 cd_cliente int unsigned not null,
 cd_servico int unsigned not null,
+cd_produto int unsigned not null,
+foreign key (cd_produto) references tb_produto(cd_produto) on delete cascade,
 foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
 foreign key (cd_cliente) references tb_cliente(cd_cliente)on delete cascade,
 foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,

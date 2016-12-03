@@ -15,6 +15,7 @@ namespace CamadaDeNegocio
         private int cd_funcionario;
         private int cd_servico;
         private int cd_cliente;
+        private int cd_produto;
         private string data_agendamento;
         private string hora_agendamento;
         private string nm_pesquisa;
@@ -152,6 +153,19 @@ namespace CamadaDeNegocio
             }
         }
 
+        public int Cd_produto
+        {
+            get
+            {
+                return cd_produto;
+            }
+
+            set
+            {
+                cd_produto = value;
+            }
+        }
+
         //gravar
         public void Gravar()
         {
@@ -168,6 +182,7 @@ namespace CamadaDeNegocio
             csql.Append("cd_funcionario,");
             csql.Append("cd_cliente,");
             csql.Append("cd_servico,");
+            csql.Append("cd_produto,");
             csql.Append("data_agendamento,");
             csql.Append("hora_agendamento,");
             csql.Append("produto,");
@@ -177,6 +192,7 @@ namespace CamadaDeNegocio
             csql.Append((cd_funcionario));
             csql.Append(",'" + (cd_cliente ) + "',");
             csql.Append("'" + (cd_servico )+ "',");
+            csql.Append("'" + (cd_produto) + "',");
             csql.Append("'" + data_agendamento + "',");
             csql.Append("'" + hora_agendamento + "',");
             csql.Append("'" + produto + "',");
@@ -290,6 +306,8 @@ namespace CamadaDeNegocio
             csql.Append((cd_cliente));
             csql.Append(" && cd_servico = ");
             csql.Append(cd_servico);
+            csql.Append(" && cd_produto = ");
+            csql.Append(cd_produto);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             csql = new StringBuilder();

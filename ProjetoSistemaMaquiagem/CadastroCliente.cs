@@ -28,7 +28,7 @@ namespace ProjetoSistemaMaquiagem
             AtualizarGrid();
         }
 
- 
+
         //limpa o texto da caixa de texto do grupo
         public void LimparTxt(Control controles)
         {
@@ -41,13 +41,13 @@ namespace ProjetoSistemaMaquiagem
 
         //atualiza o grid
         private void AtualizarGrid()
-        {  
+        {
             DataSet ds = new DataSet();
             ClnCliente cliente = new ClnCliente();
             cliente.Nm_Cliente = textBoxPesquisar.Text;
             ds = cliente.BuscarporNome();
             dgv1.DataSource = ds.Tables[0];
-            
+
         }
 
         //Funcao que verifica se há algum campo em branco
@@ -94,7 +94,7 @@ namespace ProjetoSistemaMaquiagem
                     LimparTxt(Cadastro);
                     LimparTxt(groupBoxEndereco);
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -123,16 +123,16 @@ namespace ProjetoSistemaMaquiagem
                 maskedTextBoxRG.Text = dgv1.CurrentRow.Cells[2].Value.ToString();
                 maskedTextBoxCPF.Text = dgv1.CurrentRow.Cells[3].Value.ToString();
                 textBoxEmail.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                //maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[4].Value.ToString();
-                //maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                textBoxCEP.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
-                textBoxEstado.Text = dgv1.CurrentRow.Cells[10].Value.ToString();
-                textBoxCidade.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
-                textBoxBairro.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
-                textBoxRua.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
-                textBoxNumero.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
-                textBoxComplemento.Text = dgv1.CurrentRow.Cells[11].Value.ToString();
-                
+                maskedTextBoxCelular.Text = dgv1.CurrentRow.Cells[5].Value.ToString();
+                maskedTextBoxTelefone.Text = dgv1.CurrentRow.Cells[6].Value.ToString();
+                textBoxCEP.Text = dgv1.CurrentRow.Cells[7].Value.ToString();
+                textBoxNumero.Text = dgv1.CurrentRow.Cells[8].Value.ToString();
+                textBoxRua.Text = dgv1.CurrentRow.Cells[9].Value.ToString();
+                textBoxBairro.Text = dgv1.CurrentRow.Cells[10].Value.ToString();
+                textBoxCidade.Text = dgv1.CurrentRow.Cells[11].Value.ToString();
+                textBoxEstado.Text = dgv1.CurrentRow.Cells[12].Value.ToString();
+                textBoxComplemento.Text = dgv1.CurrentRow.Cells[13].Value.ToString();
+
 
             }
         }
@@ -218,10 +218,7 @@ namespace ProjetoSistemaMaquiagem
             LimparTxt(groupBoxEndereco);
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
 
-        }
     }
 }
 

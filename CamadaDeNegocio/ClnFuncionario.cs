@@ -241,20 +241,39 @@ namespace CamadaDeNegocio
             csql.Append(cidade_funcionario);
             csql.Append("',bairro = '");
             csql.Append(bairro_funcionario);
-            csql.Append("',logradouro='");
+            csql.Append("',logradouro ='");
             csql.Append(rua_funcionario);
-            csql.Append("num=");
+            csql.Append("',num='");
             csql.Append(numero_funcionario);
             csql.Append("',complemento='");
             csql.Append(complemento_funcionario);
-            csql.Append("cd_funcionario=");
-            csql.Append(cd_funcionario - 1);
+            csql.Append("',cd_funcionario='");
+            csql.Append(cd_funcionario);
             csql.Append("',estado='");
             csql.Append(estado_funcionario);
             csql.Append("' where cd_funcionario = ");
             csql.Append(cd_funcionario);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Update tb_fones_funcionario ");
+            csql.Append("set fone = '");
+            csql.Append(telefone_funcionario);
+            csql.Append("' where cd_funcionario =");
+            csql.Append(cd_funcionario);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Update tb_cel_funcionario ");
+            csql.Append("set fone = '");
+            csql.Append(celular_funcionario);
+            csql.Append("' where cd_funcionario =");
+            csql.Append(cd_funcionario);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
         }
 
         //3.5 Método para excluir um funcionario do 

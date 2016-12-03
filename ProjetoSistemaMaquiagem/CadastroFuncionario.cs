@@ -212,6 +212,7 @@ namespace ProjetoSistemaMaquiagem
             funcionario.Complemento_funcionario = textBoxComplemento.Text;
             funcionario.Cd_Funcionario = funcionario.BuscarId(textBoxNome.Text);
             funcionario.Atualizar();
+            AtualizarGrid();
             LimparTxt(Cadastro);
             LimparTxt(groupBoxEndereco);
         }

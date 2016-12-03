@@ -193,27 +193,27 @@ namespace CamadaDeNegocio
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
             //Consertar a SQL dos Telefones
-            /*
+        
             csql = new StringBuilder();
             csql.Append("Insert into tb_fones_cliente");
             csql.Append("(");
             csql.Append("fone,");
             csql.Append("cd_cliente) Values('");
             csql.Append(telefone_cliente);
-            csql.Append("'," + cd_cliente + "')");
+            csql.Append("','" + marreta + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
 
             csql = new StringBuilder();
-            csql.Append("Insert into tb_fones_cliente");
+            csql.Append("Insert into tb_cel_cliente");
             csql.Append("(");
             csql.Append("fone,");
             csql.Append("cd_cliente) Values('");
-            csql.Append(telefone_cliente);
-            csql.Append("'," + cd_cliente + "')");
+            csql.Append(celular_cliente);
+            csql.Append("','" + marreta + "')");
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
-           */
+         
             csql = new StringBuilder();
             csql.Append("SET FOREIGN_KEY_CHECKS = ");
             csql.Append(1);
@@ -246,22 +246,41 @@ namespace CamadaDeNegocio
             csql.Append(cep_cliente);
             csql.Append(", cidade ='");
             csql.Append(cidade_cliente);
-            csql.Append("',bairro = '");
+            csql.Append("',bairro ='");
             csql.Append(bairro_cliente);
             csql.Append("',logradouro='");
             csql.Append(rua_cliente);
-            csql.Append("num=");
+            csql.Append("', num ='");
             csql.Append(numero_cliente);
             csql.Append("',complemento='");
             csql.Append(complemento_cliente);
-            csql.Append("cd_cliente=");
-            csql.Append(cd_cliente - 1);
+            csql.Append("',cd_cliente='");
+            csql.Append(cd_cliente);
             csql.Append("',estado='");
             csql.Append(estado_cliente);
             csql.Append("' where cd_cliente = ");
             csql.Append(cd_cliente);
             cd = new ClasseDados();
             cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Update tb_fones_cliente ");
+            csql.Append("set fone = '");
+            csql.Append(telefone_cliente);
+            csql.Append("' where cd_cliente=");
+            csql.Append(cd_cliente);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
+            csql = new StringBuilder();
+            csql.Append("Update tb_cel_cliente ");
+            csql.Append("set fone = '");
+            csql.Append(celular_cliente);
+            csql.Append("' where cd_cliente=");
+            csql.Append(cd_cliente);
+            cd = new ClasseDados();
+            cd.ExecutarComando(csql.ToString());
+
         }
 
         //3.5 Método para excluir um cliente do 
@@ -280,7 +299,7 @@ namespace CamadaDeNegocio
         public DataSet BuscarporNome()
         {
             string csql;
-            csql = "Select tc.cd_cliente as Codigo, tc.nm_cliente as Nome, tc.rg_cliente as RG, tc.cpf_cliente as CPF, tc.email_cliente as Email, tec.cep as CEP, tec.num as Numero, tec.logradouro as Logradouro, tec.bairro as Bairro, tec.cidade as Cidade, tec.estado as Estado, tec.complemento as Complemento From tb_cliente as tc inner join tb_endereco_cliente as tec on tc.cd_cliente = tec.cd_cliente";
+            csql = "Select tc.cd_cliente as Codigo, tc.nm_cliente as Nome, tc.rg_cliente as RG, tc.cpf_cliente as CPF, tc.email_cliente as Email,tcc.fone as Celular,tfc.fone as Telefone ,tec.cep as CEP, tec.num as Numero, tec.logradouro as Logradouro, tec.bairro as Bairro, tec.cidade as Cidade, tec.estado as Estado, tec.complemento as Complemento From tb_cliente as tc inner join tb_endereco_cliente as tec on tc.cd_cliente = tec.cd_cliente inner join tb_cel_cliente as tcc on tc.cd_cliente = tcc.cd_cliente inner join tb_fones_cliente as tfc on tc.cd_cliente = tfc.cd_cliente";
             DataSet ds;
             ClasseDados cd = new ClasseDados();
             ds = cd.RetornarDataSet(csql);

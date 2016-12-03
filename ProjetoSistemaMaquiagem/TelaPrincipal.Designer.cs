@@ -38,6 +38,7 @@
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviçosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lançamentoDeHorariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agendamentoDeServiçosClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.controleFinanceiroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxLogin = new System.Windows.Forms.GroupBox();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.buttonCadUsuario = new System.Windows.Forms.Button();
             this.buttonEsqueciSenha = new System.Windows.Forms.Button();
             this.buttonLogar = new System.Windows.Forms.Button();
             this.textBoxSenha = new System.Windows.Forms.TextBox();
@@ -71,7 +71,7 @@
             this.controleFinanceiroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(739, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,14 +87,14 @@
             // loginToolStripMenuItem1
             // 
             this.loginToolStripMenuItem1.Name = "loginToolStripMenuItem1";
-            this.loginToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.loginToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
             this.loginToolStripMenuItem1.Text = "Login";
             this.loginToolStripMenuItem1.Click += new System.EventHandler(this.loginToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click_1);
             // 
@@ -104,7 +104,8 @@
             this.funcionarioToolStripMenuItem,
             this.clienteToolStripMenuItem,
             this.serviçosToolStripMenuItem,
-            this.produtoToolStripMenuItem});
+            this.produtoToolStripMenuItem,
+            this.usuarioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Enabled = false;
             this.cadastroToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
@@ -138,6 +139,13 @@
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // serviçosToolStripMenuItem1
             // 
@@ -206,7 +214,6 @@
             // groupBoxLogin
             // 
             this.groupBoxLogin.Controls.Add(this.buttonSair);
-            this.groupBoxLogin.Controls.Add(this.buttonCadUsuario);
             this.groupBoxLogin.Controls.Add(this.buttonEsqueciSenha);
             this.groupBoxLogin.Controls.Add(this.buttonLogar);
             this.groupBoxLogin.Controls.Add(this.textBoxSenha);
@@ -216,7 +223,7 @@
             this.groupBoxLogin.Enabled = false;
             this.groupBoxLogin.Location = new System.Drawing.Point(12, 27);
             this.groupBoxLogin.Name = "groupBoxLogin";
-            this.groupBoxLogin.Size = new System.Drawing.Size(139, 237);
+            this.groupBoxLogin.Size = new System.Drawing.Size(139, 205);
             this.groupBoxLogin.TabIndex = 3;
             this.groupBoxLogin.TabStop = false;
             this.groupBoxLogin.Text = "Login";
@@ -224,7 +231,7 @@
             // 
             // buttonSair
             // 
-            this.buttonSair.Location = new System.Drawing.Point(9, 197);
+            this.buttonSair.Location = new System.Drawing.Point(9, 169);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(111, 23);
             this.buttonSair.TabIndex = 8;
@@ -232,19 +239,9 @@
             this.buttonSair.UseVisualStyleBackColor = true;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
-            // buttonCadUsuario
-            // 
-            this.buttonCadUsuario.Location = new System.Drawing.Point(9, 139);
-            this.buttonCadUsuario.Name = "buttonCadUsuario";
-            this.buttonCadUsuario.Size = new System.Drawing.Size(111, 23);
-            this.buttonCadUsuario.TabIndex = 7;
-            this.buttonCadUsuario.Text = "Cadastrar Usuario";
-            this.buttonCadUsuario.UseVisualStyleBackColor = true;
-            this.buttonCadUsuario.Click += new System.EventHandler(this.buttonCadUsuario_Click);
-            // 
             // buttonEsqueciSenha
             // 
-            this.buttonEsqueciSenha.Location = new System.Drawing.Point(9, 168);
+            this.buttonEsqueciSenha.Location = new System.Drawing.Point(9, 140);
             this.buttonEsqueciSenha.Name = "buttonEsqueciSenha";
             this.buttonEsqueciSenha.Size = new System.Drawing.Size(111, 23);
             this.buttonEsqueciSenha.TabIndex = 6;
@@ -302,7 +299,7 @@
             this.dgv1.Location = new System.Drawing.Point(12, 27);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
-            this.dgv1.Size = new System.Drawing.Size(1000, 700);
+            this.dgv1.Size = new System.Drawing.Size(715, 445);
             this.dgv1.TabIndex = 4;
             this.dgv1.Visible = false;
             // 
@@ -316,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(739, 487);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBoxLogin);
             this.Controls.Add(this.menuStrip1);
@@ -353,7 +350,6 @@
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBoxLogin;
-        private System.Windows.Forms.Button buttonCadUsuario;
         private System.Windows.Forms.Button buttonEsqueciSenha;
         private System.Windows.Forms.Button buttonLogar;
         private System.Windows.Forms.TextBox textBoxSenha;
@@ -363,5 +359,6 @@
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Timer timerAtualizarGrid;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
     }
 }

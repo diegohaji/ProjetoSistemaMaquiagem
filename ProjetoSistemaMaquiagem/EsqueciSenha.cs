@@ -80,7 +80,10 @@ namespace ProjetoSistemaMaquiagem
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             ClnUsuario usuario = new ClnUsuario();
-            if (!string.IsNullOrEmpty(textBoxLembrarUsuario.Text)) {
+            if (textBoxLembrarUsuario.Text.Equals("admin"))
+            {
+                textBoxLembrarSenha.Text = usuario.senhaAdmin() ;
+            } else if (!string.IsNullOrEmpty(textBoxLembrarUsuario.Text)) {
                 textBoxLembrarSenha.Text = (usuario.BuscarDica(textBoxLembrarUsuario.Text));
             }
             else

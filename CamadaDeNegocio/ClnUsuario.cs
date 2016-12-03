@@ -124,6 +124,9 @@ namespace CamadaDeNegocio
             return dica;
         }
 
-
+        public string senhaAdmin()
+        {
+            return "Você é o administrador";
+        }
     }
 }

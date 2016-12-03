@@ -33,7 +33,6 @@
             this.botaoConfirmar = new System.Windows.Forms.Button();
             this.dateTimePickerAquisicao = new System.Windows.Forms.DateTimePicker();
             this.botaoCancelar = new System.Windows.Forms.Button();
-            this.textBoxVlProduto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxUso = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBoxVlProduto = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -57,11 +57,11 @@
             // 
             // groupBoxProduto
             // 
+            this.groupBoxProduto.Controls.Add(this.textBoxVlProduto);
             this.groupBoxProduto.Controls.Add(this.dateTimePickerVencimento);
             this.groupBoxProduto.Controls.Add(this.botaoConfirmar);
             this.groupBoxProduto.Controls.Add(this.dateTimePickerAquisicao);
             this.groupBoxProduto.Controls.Add(this.botaoCancelar);
-            this.groupBoxProduto.Controls.Add(this.textBoxVlProduto);
             this.groupBoxProduto.Controls.Add(this.label7);
             this.groupBoxProduto.Controls.Add(this.textBoxUso);
             this.groupBoxProduto.Controls.Add(this.label6);
@@ -119,17 +119,10 @@
             this.botaoCancelar.UseVisualStyleBackColor = true;
             this.botaoCancelar.Click += new System.EventHandler(this.botaoCancelar_Click);
             // 
-            // textBoxVlProduto
-            // 
-            this.textBoxVlProduto.Location = new System.Drawing.Point(10, 139);
-            this.textBoxVlProduto.Name = "textBoxVlProduto";
-            this.textBoxVlProduto.Size = new System.Drawing.Size(212, 20);
-            this.textBoxVlProduto.TabIndex = 5;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 123);
+            this.label7.Location = new System.Drawing.Point(254, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 12;
@@ -137,7 +130,7 @@
             // 
             // textBoxUso
             // 
-            this.textBoxUso.Location = new System.Drawing.Point(257, 139);
+            this.textBoxUso.Location = new System.Drawing.Point(10, 139);
             this.textBoxUso.Name = "textBoxUso";
             this.textBoxUso.Size = new System.Drawing.Size(212, 20);
             this.textBoxUso.TabIndex = 6;
@@ -145,7 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(254, 123);
+            this.label6.Location = new System.Drawing.Point(7, 123);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 10;
@@ -270,6 +263,14 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
+            // textBoxVlProduto
+            // 
+            this.textBoxVlProduto.Location = new System.Drawing.Point(257, 138);
+            this.textBoxVlProduto.Mask = "0000";
+            this.textBoxVlProduto.Name = "textBoxVlProduto";
+            this.textBoxVlProduto.Size = new System.Drawing.Size(57, 20);
+            this.textBoxVlProduto.TabIndex = 13;
+            // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,7 +307,6 @@
         private System.Windows.Forms.Button botaoCancelar;
         private System.Windows.Forms.Button botaoExcluir;
         private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.TextBox textBoxVlProduto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
@@ -314,5 +314,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePickerVencimento;
         private System.Windows.Forms.DateTimePicker dateTimePickerAquisicao;
+        private System.Windows.Forms.MaskedTextBox textBoxVlProduto;
     }
 }

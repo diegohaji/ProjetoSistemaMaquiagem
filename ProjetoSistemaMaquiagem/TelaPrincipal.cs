@@ -145,11 +145,7 @@ namespace ProjetoSistemaMaquiagem
             }
         }
 
-        private void buttonCadUsuario_Click(object sender, EventArgs e)
-        {
-            CadastroUsuario cu = new CadastroUsuario();
-            cu.Show();
-        }
+       
 
         private void buttonEsqueciSenha_Click(object sender, EventArgs e)
         {
@@ -169,6 +165,12 @@ namespace ProjetoSistemaMaquiagem
         private void timerAtualizarGrid_Tick(object sender, EventArgs e)
         {
             AtualizarGrid();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroUsuario cu = new CadastroUsuario();
+            cu.Show();
         }
     }
 }

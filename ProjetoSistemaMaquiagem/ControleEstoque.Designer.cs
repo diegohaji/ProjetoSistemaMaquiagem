@@ -67,7 +67,6 @@
             // 
             // botaoConfirmar
             // 
-            this.botaoConfirmar.Enabled = false;
             this.botaoConfirmar.Location = new System.Drawing.Point(30, 65);
             this.botaoConfirmar.Name = "botaoConfirmar";
             this.botaoConfirmar.Size = new System.Drawing.Size(75, 23);

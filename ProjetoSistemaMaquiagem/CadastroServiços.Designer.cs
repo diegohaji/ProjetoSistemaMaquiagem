@@ -33,7 +33,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.Cancelar = new System.Windows.Forms.Button();
-            this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxPesquisar = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBoxPreco = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxServico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -51,11 +51,11 @@
             // 
             // groupBoxServico
             // 
+            this.groupBoxServico.Controls.Add(this.textBoxPreco);
             this.groupBoxServico.Controls.Add(this.botaoConfirmar);
             this.groupBoxServico.Controls.Add(this.dateTimePicker1);
             this.groupBoxServico.Controls.Add(this.textBoxNome);
             this.groupBoxServico.Controls.Add(this.Cancelar);
-            this.groupBoxServico.Controls.Add(this.textBoxPreco);
             this.groupBoxServico.Controls.Add(this.label4);
             this.groupBoxServico.Controls.Add(this.label3);
             this.groupBoxServico.Controls.Add(this.label1);
@@ -100,13 +100,6 @@
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
-            // textBoxPreco
-            // 
-            this.textBoxPreco.Location = new System.Drawing.Point(217, 32);
-            this.textBoxPreco.Name = "textBoxPreco";
-            this.textBoxPreco.Size = new System.Drawing.Size(75, 20);
-            this.textBoxPreco.TabIndex = 2;
             // 
             // label4
             // 
@@ -204,6 +197,14 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Nome";
             // 
+            // textBoxPreco
+            // 
+            this.textBoxPreco.Location = new System.Drawing.Point(217, 31);
+            this.textBoxPreco.Mask = "0000";
+            this.textBoxPreco.Name = "textBoxPreco";
+            this.textBoxPreco.Size = new System.Drawing.Size(73, 20);
+            this.textBoxPreco.TabIndex = 6;
+            // 
             // CadastroServiços
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,7 +232,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNome;
-        private System.Windows.Forms.TextBox textBoxPreco;
         private System.Windows.Forms.Button botaoConfirmar;
         private System.Windows.Forms.Button botaoEditar;
         private System.Windows.Forms.Button Cancelar;
@@ -242,5 +242,6 @@
         private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.MaskedTextBox textBoxPreco;
     }
 }

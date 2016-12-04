@@ -85,27 +85,6 @@ create table tb_servico(
     duracao varchar(8)
 ) engine = innodb;
 
-
-create table tb_prestacao_servico(
-    numero_pagamento int not null auto_increment,
-    cd_funcionario int unsigned not null,
-    cd_cliente int unsigned not null,
-    cd_servico int unsigned not null,
-    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
-    foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
-    foreign key (cd_servico) references tb_servico(cd_servico) on delete cascade,
-    nm_funcionario varchar(40),
-    nm_cliente varchar(40),
-    nm_servico varchar(40),
-    status_prestacao varchar(127),
-    data_prestacao varchar(14),
-    hora_prestacao varchar(14),
-    data_pagamento varchar(14),
-    vl_total double not null,
-    forma_pagamento varchar(40),
-    primary key (numero_pagamento,cd_funcionario, cd_cliente, cd_servico, data_prestacao,data_pagamento,hora_prestacao,vl_total,forma_pagamento)
-)engine = innodb;
-
 create table tb_produto(
 	cd_produto int unsigned not null auto_increment, 
     primary key(cd_produto),
@@ -126,6 +105,29 @@ create table tb_estoque_produto(
     qte_minima int not null,
     qte_atual int not null
 ) engine = innodb;
+
+create table tb_prestacao_servico(
+    numero_pagamento int not null auto_increment,
+    cd_funcionario int unsigned not null,
+    cd_cliente int unsigned not null,
+    cd_servico int unsigned not null,
+    cd_produto int unsigned not null,
+    foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
+    foreign key (cd_cliente) references tb_cliente(cd_cliente) on delete cascade,
+    foreign key (cd_servico) references tb_servico(cd_servico) on delete cascade,
+    foreign key(cd_produto) references tb_produto(cd_produto) on delete cascade,
+    nm_funcionario varchar(40),
+    nm_cliente varchar(40),
+    nm_servico varchar(40),
+    status_prestacao varchar(127),
+    data_prestacao varchar(14),
+    hora_prestacao varchar(14),
+    data_pagamento varchar(14),
+    vl_total double not null,
+    forma_pagamento varchar(40),
+    primary key (numero_pagamento,cd_funcionario, cd_cliente, cd_servico, data_prestacao,data_pagamento,hora_prestacao,vl_total,forma_pagamento)
+)engine = innodb;
+
 
 create table tb_horario_func(
 	cd_horario int not null auto_increment,
@@ -163,23 +165,16 @@ create table tb_produtos_venda(
 
 */
 
-
-create table tb_usuario(
-cd_usuario int unsigned not null auto_increment,
-nome_usuario varchar(127) not null,
-senha_usuario varchar(127) not null,
-dica_senha varchar(127) not null,
-primary key(cd_usuario)
-)engine=innodb;
-
 create table tb_agendamento_servico(
 ordem_pagamento int not null auto_increment,
 cd_funcionario int unsigned not null,
 cd_cliente int unsigned not null,
 cd_servico int unsigned not null,
+ cd_produto int unsigned not null,
 foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
 foreign key (cd_cliente) references tb_cliente(cd_cliente)on delete cascade,
 foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,
+foreign key(cd_produto) references tb_produto(cd_produto) on delete cascade,
 data_agendamento varchar(14) not null,
 hora_agendamento varchar(14) not null,
 produto varchar(50) not null,
@@ -193,10 +188,17 @@ cd_pagamento int unsigned not null auto_increment,
 cd_funcionario int unsigned not null,
 cd_cliente int unsigned not null,
 cd_servico int unsigned not null,
-cd_produto int unsigned not null,
-foreign key (cd_produto) references tb_produto(cd_produto) on delete cascade,
 foreign key (cd_funcionario) references tb_funcionario(cd_funcionario)on delete cascade,
 foreign key (cd_cliente) references tb_cliente(cd_cliente)on delete cascade,
 foreign key (cd_servico) references tb_servico(cd_servico)on delete cascade,
 primary key(cd_pagamento)
 )engine = innodb;
+
+create table tb_usuario(
+cd_usuario int unsigned not null auto_increment,
+nome_usuario varchar(127) not null,
+senha_usuario varchar(127) not null,
+dica_senha varchar(127) not null,
+primary key(cd_usuario)
+)engine=innodb;
+
